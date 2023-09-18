@@ -1,0 +1,6 @@
+package: api
+output: api/server.gen.go
+generate:
+  embedded-spec: true
+  strict-server: true
+  models: true
