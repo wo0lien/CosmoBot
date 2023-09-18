@@ -32,44 +32,44 @@ type Attachment struct {
 
 // BotEventsBotEventsGridRequest defines model for BotEventsBotEventsGridRequest.
 type BotEventsBotEventsGridRequest struct {
-	CreatedAt        *string `json:"CreatedAt,omitempty"`
-	Id               *int    `json:"Id,omitempty"`
-	IsChannelCreated *bool   `json:"IsChannelCreated,omitempty"`
-	IsPosted         *bool   `json:"IsPosted,omitempty"`
-	Title            *string `json:"Title,omitempty"`
-	UpdatedAt        *string `json:"UpdatedAt,omitempty"`
+	ChannelId           *string `json:"ChannelId,omitempty"`
+	CreatedAt           *string `json:"CreatedAt,omitempty"`
+	EnrollmentMessageId *string `json:"EnrollmentMessageId,omitempty"`
+	Id                  *int    `json:"Id,omitempty"`
+	Title               *string `json:"Title,omitempty"`
+	UpdatedAt           *string `json:"UpdatedAt,omitempty"`
 }
 
 // BotEventsBotEventsGridResponse defines model for BotEventsBotEventsGridResponse.
 type BotEventsBotEventsGridResponse struct {
-	CreatedAt        *string  `json:"CreatedAt,omitempty"`
-	Event            *float32 `json:"Event,omitempty"`
-	Id               *int     `json:"Id,omitempty"`
-	IsChannelCreated *bool    `json:"IsChannelCreated,omitempty"`
-	IsPosted         *bool    `json:"IsPosted,omitempty"`
-	Title            *string  `json:"Title,omitempty"`
-	UpdatedAt        *string  `json:"UpdatedAt,omitempty"`
+	ChannelId           *string  `json:"ChannelId,omitempty"`
+	CreatedAt           *string  `json:"CreatedAt,omitempty"`
+	EnrollmentMessageId *string  `json:"EnrollmentMessageId,omitempty"`
+	Event               *float32 `json:"Event,omitempty"`
+	Id                  *int     `json:"Id,omitempty"`
+	Title               *string  `json:"Title,omitempty"`
+	UpdatedAt           *string  `json:"UpdatedAt,omitempty"`
 }
 
 // BotEventsRequest defines model for BotEventsRequest.
 type BotEventsRequest struct {
-	CreatedAt        *string `json:"CreatedAt,omitempty"`
-	Id               *int    `json:"Id,omitempty"`
-	IsChannelCreated *bool   `json:"IsChannelCreated,omitempty"`
-	IsPosted         *bool   `json:"IsPosted,omitempty"`
-	Title            *string `json:"Title,omitempty"`
-	UpdatedAt        *string `json:"UpdatedAt,omitempty"`
+	ChannelId           *string `json:"ChannelId,omitempty"`
+	CreatedAt           *string `json:"CreatedAt,omitempty"`
+	EnrollmentMessageId *string `json:"EnrollmentMessageId,omitempty"`
+	Id                  *int    `json:"Id,omitempty"`
+	Title               *string `json:"Title,omitempty"`
+	UpdatedAt           *string `json:"UpdatedAt,omitempty"`
 }
 
 // BotEventsResponse defines model for BotEventsResponse.
 type BotEventsResponse struct {
-	CreatedAt        *string  `json:"CreatedAt,omitempty"`
-	Event            *float32 `json:"Event,omitempty"`
-	Id               *int     `json:"Id,omitempty"`
-	IsChannelCreated *bool    `json:"IsChannelCreated,omitempty"`
-	IsPosted         *bool    `json:"IsPosted,omitempty"`
-	Title            *string  `json:"Title,omitempty"`
-	UpdatedAt        *string  `json:"UpdatedAt,omitempty"`
+	ChannelId           *string  `json:"ChannelId,omitempty"`
+	CreatedAt           *string  `json:"CreatedAt,omitempty"`
+	EnrollmentMessageId *string  `json:"EnrollmentMessageId,omitempty"`
+	Event               *float32 `json:"Event,omitempty"`
+	Id                  *int     `json:"Id,omitempty"`
+	Title               *string  `json:"Title,omitempty"`
+	UpdatedAt           *string  `json:"UpdatedAt,omitempty"`
 }
 
 // EventsRequest defines model for EventsRequest.

@@ -5212,11 +5212,11 @@
                     "UpdatedAt": {
                         "type": "string"
                     },
-                    "IsChannelCreated": {
-                        "type": "boolean"
+                    "ChannelId": {
+                        "type": "string"
                     },
-                    "IsPosted": {
-                        "type": "boolean"
+                    "EnrollmentMessageId": {
+                        "type": "string"
                     },
                     "Event": {
                         "type": "number"
@@ -5241,11 +5241,11 @@
                     "UpdatedAt": {
                         "type": "string"
                     },
-                    "IsChannelCreated": {
-                        "type": "boolean"
+                    "ChannelId": {
+                        "type": "string"
                     },
-                    "IsPosted": {
-                        "type": "boolean"
+                    "EnrollmentMessageId": {
+                        "type": "string"
                     }
                 }
             },
@@ -5267,11 +5267,11 @@
                     "UpdatedAt": {
                         "type": "string"
                     },
-                    "IsChannelCreated": {
-                        "type": "boolean"
+                    "ChannelId": {
+                        "type": "string"
                     },
-                    "IsPosted": {
-                        "type": "boolean"
+                    "EnrollmentMessageId": {
+                        "type": "string"
                     },
                     "Event": {
                         "type": "number"
@@ -5296,11 +5296,11 @@
                     "UpdatedAt": {
                         "type": "string"
                     },
-                    "IsChannelCreated": {
-                        "type": "boolean"
+                    "ChannelId": {
+                        "type": "string"
                     },
-                    "IsPosted": {
-                        "type": "boolean"
+                    "EnrollmentMessageId": {
+                        "type": "string"
                     }
                 }
             }
