@@ -19,7 +19,7 @@
         }
     ],
     "paths": {
-        "/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers": {
             "get": {
                 "summary": "Volunteers list",
                 "operationId": "volunteers-db-table-row-list",
@@ -88,8 +88,44 @@
                             "type": "string"
                         },
                         "in": "query",
-                        "name": "nested[events][fields]",
-                        "description": "Array of field names or comma separated filed names to include in the in nested column `events` result. In array syntax pass it like `fields[]=field1&fields[]=field2.`. Example : `nested[events][fields]=field1,field2`"
+                        "name": "nested[nc_curg___nc_m2m_w5i3lbdpwrs][where]",
+                        "description": "This can be used for filtering rows in nested column `nc_curg___nc_m2m_w5i3lbdpwrs`, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][where]=(field1,eq,value)`"
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 0
+                        },
+                        "in": "query",
+                        "name": "nested[nc_curg___nc_m2m_w5i3lbdpwrs][offset]",
+                        "description": "The `offset` parameter used for pagination  of nested `nc_curg___nc_m2m_w5i3lbdpwrs` rows, the value helps to select collection from a certain index.",
+                        "example": 0
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 1
+                        },
+                        "in": "query",
+                        "name": "nested[nc_curg___nc_m2m_w5i3lbdpwrs][limit]",
+                        "description": "The `limit` parameter used for pagination of nested `nc_curg___nc_m2m_w5i3lbdpwrs` rows, the response collection size depends on limit value and default value is `25`.",
+                        "example": "25"
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields]",
+                        "description": "Array of field names or comma separated filed names to include in the in nested column `nc_curg___nc_m2m_w5i3lbdpwrs` result. In array syntax pass it like `fields[]=field1&fields[]=field2.`. Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields]=field1,field2`"
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort]",
+                        "description": "Comma separated field names to sort rows in nested column `nc_curg___nc_m2m_w5i3lbdpwrs` rows, it will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort]=field1,-field2`"
                     }
                 ],
                 "responses": {
@@ -146,7 +182,7 @@
                 }
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/{rowId}": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/{rowId}": {
             "parameters": [
                 {
                     "schema": {
@@ -230,7 +266,7 @@
                 "description": "Delete a row by using the **primary key** column value."
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/count": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/count": {
             "get": {
                 "summary": "Volunteers count",
                 "operationId": "volunteers-count",
@@ -260,7 +296,7 @@
                 }
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/find-one": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/find-one": {
             "get": {
                 "summary": "Volunteers find-one",
                 "operationId": "volunteers-db-table-row-find-one",
@@ -308,7 +344,7 @@
                 }
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/groupby": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/groupby": {
             "get": {
                 "summary": "Volunteers groupby",
                 "operationId": "volunteers-groupby",
@@ -398,7 +434,7 @@
                 }
             }
         },
-        "/api/v1/db/data/bulk/v1/pp2k69kcyjib180/Volunteers": {
+        "/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/Volunteers": {
             "post": {
                 "summary": "Volunteers bulk insert",
                 "description": "To insert large amount of data in a single api call you can use this api. It's similar to insert method but here you can pass array of objects to insert into table. Array object will be key value paired column name and value.",
@@ -475,7 +511,7 @@
                 }
             }
         },
-        "/api/v1/db/data/bulk/v1/pp2k69kcyjib180/Volunteers/all": {
+        "/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/Volunteers/all": {
             "parameters": [
                 {
                     "schema": {
@@ -530,7 +566,7 @@
                 ]
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/{rowId}/{relationType}/{columnName}": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/{rowId}/{relationType}/{columnName}": {
             "parameters": [
                 {
                     "schema": {
@@ -558,7 +594,7 @@
                     "schema": {
                         "type": "string",
                         "enum": [
-                            "events"
+                            "Events"
                         ]
                     },
                     "name": "columnName",
@@ -606,7 +642,7 @@
                 ]
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/{rowId}/{relationType}/{columnName}/{refRowId}": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/{rowId}/{relationType}/{columnName}/{refRowId}": {
             "parameters": [
                 {
                     "schema": {
@@ -634,7 +670,7 @@
                     "schema": {
                         "type": "string",
                         "enum": [
-                            "events"
+                            "Events"
                         ]
                     },
                     "name": "columnName",
@@ -719,7 +755,7 @@
                 ]
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/{rowId}/{relationType}/{columnName}/exclude": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/{rowId}/{relationType}/{columnName}/exclude": {
             "parameters": [
                 {
                     "schema": {
@@ -747,7 +783,7 @@
                     "schema": {
                         "type": "string",
                         "enum": [
-                            "events"
+                            "Events"
                         ]
                     },
                     "name": "columnName",
@@ -806,7 +842,7 @@
                 ]
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/export/{type}": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/export/{type}": {
             "parameters": [
                 {
                     "schema": {
@@ -861,13 +897,13 @@
                 ]
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/views/Volunteers": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/views/grid": {
             "get": {
-                "summary": "Volunteers list",
-                "operationId": "Volunteers-Volunteers-row-list",
-                "description": "List of all rows from Volunteers grid view and data of fields can be filtered based on query params. Data and fields in a grid view will be filtered and sorted by default based on the applied options in Dashboard.",
+                "summary": "grid list",
+                "operationId": "Volunteers-grid-row-list",
+                "description": "List of all rows from grid grid view and data of fields can be filtered based on query params. Data and fields in a grid view will be filtered and sorted by default based on the applied options in Dashboard.",
                 "tags": [
-                    "Volunteers ( Volunteers grid )"
+                    "grid ( Volunteers grid )"
                 ],
                 "parameters": [
                     {
@@ -899,8 +935,44 @@
                             "type": "string"
                         },
                         "in": "query",
-                        "name": "nested[events][fields]",
-                        "description": "Array of field names or comma separated filed names to include in the in nested column `events` result. In array syntax pass it like `fields[]=field1&fields[]=field2.`. Example : `nested[events][fields]=field1,field2`"
+                        "name": "nested[nc_curg___nc_m2m_w5i3lbdpwrs][where]",
+                        "description": "This can be used for filtering rows in nested column `nc_curg___nc_m2m_w5i3lbdpwrs`, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][where]=(field1,eq,value)`"
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 0
+                        },
+                        "in": "query",
+                        "name": "nested[nc_curg___nc_m2m_w5i3lbdpwrs][offset]",
+                        "description": "The `offset` parameter used for pagination  of nested `nc_curg___nc_m2m_w5i3lbdpwrs` rows, the value helps to select collection from a certain index.",
+                        "example": 0
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 1
+                        },
+                        "in": "query",
+                        "name": "nested[nc_curg___nc_m2m_w5i3lbdpwrs][limit]",
+                        "description": "The `limit` parameter used for pagination of nested `nc_curg___nc_m2m_w5i3lbdpwrs` rows, the response collection size depends on limit value and default value is `25`.",
+                        "example": "25"
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields]",
+                        "description": "Array of field names or comma separated filed names to include in the in nested column `nc_curg___nc_m2m_w5i3lbdpwrs` result. In array syntax pass it like `fields[]=field1&fields[]=field2.`. Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields]=field1,field2`"
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort]",
+                        "description": "Comma separated field names to sort rows in nested column `nc_curg___nc_m2m_w5i3lbdpwrs` rows, it will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort]=field1,-field2`"
                     }
                 ],
                 "responses": {
@@ -914,7 +986,7 @@
                                         "list": {
                                             "type": "array",
                                             "items": {
-                                                "$ref": "#/components/schemas/VolunteersVolunteersGridResponse"
+                                                "$ref": "#/components/schemas/VolunteersgridGridResponse"
                                             }
                                         },
                                         "PageInfo": {
@@ -928,9 +1000,9 @@
                 }
             },
             "post": {
-                "summary": "Volunteers create",
+                "summary": "grid create",
                 "description": "Insert a new row in table by providing a key value pair object where key refers to the column alias. All the required fields should be included with payload excluding `autoincrement` and column with default value.",
-                "operationId": "Volunteers-Volunteers-row-create",
+                "operationId": "Volunteers-grid-row-create",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -942,26 +1014,26 @@
                     }
                 },
                 "tags": [
-                    "Volunteers ( Volunteers grid )"
+                    "grid ( Volunteers grid )"
                 ],
                 "requestBody": {
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/VolunteersVolunteersGridRequest"
+                                "$ref": "#/components/schemas/VolunteersgridGridRequest"
                             }
                         }
                     }
                 }
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/views/Volunteers/count": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/views/grid/count": {
             "get": {
-                "summary": "Volunteers count",
-                "operationId": "Volunteers-Volunteers-row-count",
+                "summary": "grid count",
+                "operationId": "Volunteers-grid-row-count",
                 "description": "",
                 "tags": [
-                    "Volunteers ( Volunteers grid )"
+                    "grid ( Volunteers grid )"
                 ],
                 "parameters": [
                     {
@@ -992,7 +1064,7 @@
                 }
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/views/Volunteers/{rowId}": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/views/grid/{rowId}": {
             "parameters": [
                 {
                     "schema": {
@@ -1006,29 +1078,29 @@
                 }
             ],
             "get": {
-                "summary": "Volunteers read",
+                "summary": "grid read",
                 "description": "Read a row data by using the **primary key** column value.",
-                "operationId": "Volunteers-Volunteers-row-read",
+                "operationId": "Volunteers-grid-row-read",
                 "responses": {
                     "200": {
                         "description": "Created",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/VolunteersVolunteersGridResponse"
+                                    "$ref": "#/components/schemas/VolunteersgridGridResponse"
                                 }
                             }
                         }
                     }
                 },
                 "tags": [
-                    "Volunteers ( Volunteers grid )"
+                    "grid ( Volunteers grid )"
                 ]
             },
             "patch": {
-                "summary": "Volunteers update",
+                "summary": "grid update",
                 "description": "Partial update row in table by providing a key value pair object where key refers to the column alias. You need to only include columns which you want to update.",
-                "operationId": "Volunteers-Volunteers-row-update",
+                "operationId": "Volunteers-grid-row-update",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1040,33 +1112,33 @@
                     }
                 },
                 "tags": [
-                    "Volunteers ( Volunteers grid )"
+                    "grid ( Volunteers grid )"
                 ],
                 "requestBody": {
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/VolunteersVolunteersGridRequest"
+                                "$ref": "#/components/schemas/VolunteersgridGridRequest"
                             }
                         }
                     }
                 }
             },
             "delete": {
-                "summary": "Volunteers delete",
-                "operationId": "Volunteers-Volunteers-row-delete",
+                "summary": "grid delete",
+                "operationId": "Volunteers-grid-row-delete",
                 "responses": {
                     "200": {
                         "description": "OK"
                     }
                 },
                 "tags": [
-                    "Volunteers ( Volunteers grid )"
+                    "grid ( Volunteers grid )"
                 ],
                 "description": "Delete a row by using the **primary key** column value."
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/views/Volunteers/export/{type}": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/views/grid/export/{type}": {
             "parameters": [
                 {
                     "schema": {
@@ -1082,11 +1154,11 @@
                 }
             ],
             "get": {
-                "summary": "Volunteers export",
-                "operationId": "Volunteers-Volunteers-row-export",
+                "summary": "grid export",
+                "operationId": "Volunteers-grid-row-export",
                 "description": "Export all the records from a table view. Currently we are only supports `csv` export.",
                 "tags": [
-                    "Volunteers ( Volunteers grid )"
+                    "grid ( Volunteers grid )"
                 ],
                 "responses": {
                     "200": {
@@ -1110,13 +1182,13 @@
                 "parameters": []
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/events": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events": {
             "get": {
-                "summary": "events list",
+                "summary": "Events list",
                 "operationId": "events-db-table-row-list",
-                "description": "List of all rows from events table and response data fields can be filtered based on query params.",
+                "description": "List of all rows from Events table and response data fields can be filtered based on query params.",
                 "tags": [
-                    "events"
+                    "Events"
                 ],
                 "parameters": [
                     {
@@ -1173,6 +1245,66 @@
                         "name": "offset",
                         "description": "The `offset` parameter used for pagination, the value helps to select collection from a certain index.",
                         "example": 0
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "nested[nc_curg___nc_m2m_w5i3lbdpwrs][where]",
+                        "description": "This can be used for filtering rows in nested column `nc_curg___nc_m2m_w5i3lbdpwrs`, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][where]=(field1,eq,value)`"
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 0
+                        },
+                        "in": "query",
+                        "name": "nested[nc_curg___nc_m2m_w5i3lbdpwrs][offset]",
+                        "description": "The `offset` parameter used for pagination  of nested `nc_curg___nc_m2m_w5i3lbdpwrs` rows, the value helps to select collection from a certain index.",
+                        "example": 0
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 1
+                        },
+                        "in": "query",
+                        "name": "nested[nc_curg___nc_m2m_w5i3lbdpwrs][limit]",
+                        "description": "The `limit` parameter used for pagination of nested `nc_curg___nc_m2m_w5i3lbdpwrs` rows, the response collection size depends on limit value and default value is `25`.",
+                        "example": "25"
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields]",
+                        "description": "Array of field names or comma separated filed names to include in the in nested column `nc_curg___nc_m2m_w5i3lbdpwrs` result. In array syntax pass it like `fields[]=field1&fields[]=field2.`. Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields]=field1,field2`"
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort]",
+                        "description": "Comma separated field names to sort rows in nested column `nc_curg___nc_m2m_w5i3lbdpwrs` rows, it will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort]=field1,-field2`"
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "nested[communicationOnEvents][fields]",
+                        "description": "Array of field names or comma separated filed names to include in the in nested column `communicationOnEvents` result. In array syntax pass it like `fields[]=field1&fields[]=field2.`. Example : `nested[communicationOnEvents][fields]=field1,field2`"
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "nested[BotEvents][fields]",
+                        "description": "Array of field names or comma separated filed names to include in the in nested column `BotEvents` result. In array syntax pass it like `fields[]=field1&fields[]=field2.`. Example : `nested[BotEvents][fields]=field1,field2`"
                     }
                 ],
                 "responses": {
@@ -1186,7 +1318,7 @@
                                         "list": {
                                             "type": "array",
                                             "items": {
-                                                "$ref": "#/components/schemas/eventsResponse"
+                                                "$ref": "#/components/schemas/EventsResponse"
                                             }
                                         },
                                         "PageInfo": {
@@ -1200,7 +1332,7 @@
                 }
             },
             "post": {
-                "summary": "events create",
+                "summary": "Events create",
                 "description": "Insert a new row in table by providing a key value pair object where key refers to the column alias. All the required fields should be included with payload excluding `autoincrement` and column with default value.",
                 "operationId": "events-create",
                 "responses": {
@@ -1209,27 +1341,27 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/eventsResponse"
+                                    "$ref": "#/components/schemas/EventsResponse"
                                 }
                             }
                         }
                     }
                 },
                 "tags": [
-                    "events"
+                    "Events"
                 ],
                 "requestBody": {
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/eventsRequest"
+                                "$ref": "#/components/schemas/EventsRequest"
                             }
                         }
                     }
                 }
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/events/{rowId}": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/{rowId}": {
             "parameters": [
                 {
                     "schema": {
@@ -1253,7 +1385,7 @@
                         "description": "Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`."
                     }
                 ],
-                "summary": "events read",
+                "summary": "Events read",
                 "description": "Read a row data by using the **primary key** column value.",
                 "operationId": "events-read",
                 "responses": {
@@ -1262,18 +1394,18 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/eventsResponse"
+                                    "$ref": "#/components/schemas/EventsResponse"
                                 }
                             }
                         }
                     }
                 },
                 "tags": [
-                    "events"
+                    "Events"
                 ]
             },
             "patch": {
-                "summary": "events update",
+                "summary": "Events update",
                 "operationId": "events-update",
                 "description": "Partial update row in table by providing a key value pair object where key refers to the column alias. You need to only include columns which you want to update.",
                 "responses": {
@@ -1282,14 +1414,14 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/eventsRequest"
+                                    "$ref": "#/components/schemas/EventsRequest"
                                 }
                             }
                         }
                     }
                 },
                 "tags": [
-                    "events"
+                    "Events"
                 ],
                 "requestBody": {
                     "content": {
@@ -1300,7 +1432,7 @@
                 }
             },
             "delete": {
-                "summary": "events delete",
+                "summary": "Events delete",
                 "operationId": "events-delete",
                 "responses": {
                     "200": {
@@ -1308,18 +1440,18 @@
                     }
                 },
                 "tags": [
-                    "events"
+                    "Events"
                 ],
                 "description": "Delete a row by using the **primary key** column value."
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/events/count": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/count": {
             "get": {
-                "summary": "events count",
+                "summary": "Events count",
                 "operationId": "events-count",
                 "description": "Get rows count of a table by applying optional filters.",
                 "tags": [
-                    "events"
+                    "Events"
                 ],
                 "parameters": [
                     {
@@ -1343,13 +1475,13 @@
                 }
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/events/find-one": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/find-one": {
             "get": {
-                "summary": "events find-one",
+                "summary": "Events find-one",
                 "operationId": "events-db-table-row-find-one",
                 "description": "Find first record matching the conditions.",
                 "tags": [
-                    "events"
+                    "Events"
                 ],
                 "parameters": [
                     {
@@ -1383,7 +1515,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/eventsResponse"
+                                    "$ref": "#/components/schemas/EventsResponse"
                                 }
                             }
                         }
@@ -1391,13 +1523,13 @@
                 }
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/events/groupby": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/groupby": {
             "get": {
-                "summary": "events groupby",
+                "summary": "Events groupby",
                 "operationId": "events-groupby",
                 "description": "Group by a column.",
                 "tags": [
-                    "events"
+                    "Events"
                 ],
                 "parameters": [
                     {
@@ -1481,9 +1613,9 @@
                 }
             }
         },
-        "/api/v1/db/data/bulk/v1/pp2k69kcyjib180/events": {
+        "/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/Events": {
             "post": {
-                "summary": "events bulk insert",
+                "summary": "Events bulk insert",
                 "description": "To insert large amount of data in a single api call you can use this api. It's similar to insert method but here you can pass array of objects to insert into table. Array object will be key value paired column name and value.",
                 "operationId": "events-bulk-create",
                 "responses": {
@@ -1497,7 +1629,7 @@
                     }
                 },
                 "tags": [
-                    "events"
+                    "Events"
                 ],
                 "requestBody": {
                     "content": {
@@ -1508,7 +1640,7 @@
                 }
             },
             "patch": {
-                "summary": "events bulk  update",
+                "summary": "Events bulk  update",
                 "description": "To update multiple records using it's primary key you can use this api. Bulk updated api accepts array object in which each object should contain it's primary columns value mapped to corresponding alias. In addition to primary key you can include the fields which you want to update",
                 "operationId": "events-bulk-update",
                 "responses": {
@@ -1522,7 +1654,7 @@
                     }
                 },
                 "tags": [
-                    "events"
+                    "Events"
                 ],
                 "requestBody": {
                     "content": {
@@ -1533,7 +1665,7 @@
                 }
             },
             "delete": {
-                "summary": "events bulk delete by IDs",
+                "summary": "Events bulk delete by IDs",
                 "description": "To delete multiple records using it's primary key you can use this api. Bulk delete api accepts array object in which each object should contain it's primary columns value mapped to corresponding alias.",
                 "operationId": "events-bulk-delete",
                 "responses": {
@@ -1547,7 +1679,7 @@
                     }
                 },
                 "tags": [
-                    "events"
+                    "Events"
                 ],
                 "requestBody": {
                     "content": {
@@ -1558,7 +1690,7 @@
                 }
             }
         },
-        "/api/v1/db/data/bulk/v1/pp2k69kcyjib180/events/all": {
+        "/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/Events/all": {
             "parameters": [
                 {
                     "schema": {
@@ -1570,7 +1702,7 @@
                 }
             ],
             "patch": {
-                "summary": "events Bulk update with conditions",
+                "summary": "Events Bulk update with conditions",
                 "description": "This api helps you update multiple table rows in a single api call. You don't have to pass the record id instead you can filter records and apply the changes to filtered records. Payload is similar as normal update in which you can pass any partial row data to be updated.",
                 "operationId": "events-bulk-update-all",
                 "responses": {
@@ -1584,7 +1716,7 @@
                     }
                 },
                 "tags": [
-                    "events"
+                    "Events"
                 ],
                 "requestBody": {
                     "content": {
@@ -1609,11 +1741,11 @@
                     }
                 },
                 "tags": [
-                    "events"
+                    "Events"
                 ]
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/events/{rowId}/{relationType}/{columnName}": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/{rowId}/{relationType}/{columnName}": {
             "parameters": [
                 {
                     "schema": {
@@ -1641,7 +1773,9 @@
                     "schema": {
                         "type": "string",
                         "enum": [
-                            "Volunteers"
+                            "Volunteers",
+                            "communicationOnEvents",
+                            "BotEvents"
                         ]
                     },
                     "name": "columnName",
@@ -1663,7 +1797,7 @@
                     }
                 },
                 "tags": [
-                    "events"
+                    "Events"
                 ],
                 "parameters": [
                     {
@@ -1689,7 +1823,7 @@
                 ]
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/events/{rowId}/{relationType}/{columnName}/{refRowId}": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/{rowId}/{relationType}/{columnName}/{refRowId}": {
             "parameters": [
                 {
                     "schema": {
@@ -1717,7 +1851,9 @@
                     "schema": {
                         "type": "string",
                         "enum": [
-                            "Volunteers"
+                            "Volunteers",
+                            "communicationOnEvents",
+                            "BotEvents"
                         ]
                     },
                     "name": "columnName",
@@ -1747,7 +1883,7 @@
                     }
                 },
                 "tags": [
-                    "events"
+                    "Events"
                 ],
                 "parameters": [
                     {
@@ -1798,11 +1934,11 @@
                     }
                 },
                 "tags": [
-                    "events"
+                    "Events"
                 ]
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/events/{rowId}/{relationType}/{columnName}/exclude": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/{rowId}/{relationType}/{columnName}/exclude": {
             "parameters": [
                 {
                     "schema": {
@@ -1830,7 +1966,9 @@
                     "schema": {
                         "type": "string",
                         "enum": [
-                            "Volunteers"
+                            "Volunteers",
+                            "communicationOnEvents",
+                            "BotEvents"
                         ]
                     },
                     "name": "columnName",
@@ -1852,7 +1990,7 @@
                     }
                 },
                 "tags": [
-                    "events"
+                    "Events"
                 ],
                 "parameters": [
                     {
@@ -1889,7 +2027,7 @@
                 ]
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/events/export/{type}": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/export/{type}": {
             "parameters": [
                 {
                     "schema": {
@@ -1909,7 +2047,7 @@
                 "operationId": "events-csv-export",
                 "description": "Export all the records from a table.Currently we are only supports `csv` export.",
                 "tags": [
-                    "events"
+                    "Events"
                 ],
                 "responses": {
                     "200": {
@@ -1944,13 +2082,13 @@
                 ]
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/events/views/events": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/views/events": {
             "get": {
                 "summary": "events list",
-                "operationId": "events-events-row-list",
+                "operationId": "Events-events-row-list",
                 "description": "List of all rows from events grid view and data of fields can be filtered based on query params. Data and fields in a grid view will be filtered and sorted by default based on the applied options in Dashboard.",
                 "tags": [
-                    "events ( events grid )"
+                    "events ( Events grid )"
                 ],
                 "parameters": [
                     {
@@ -1976,6 +2114,66 @@
                         "in": "query",
                         "name": "where",
                         "description": "This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`"
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "nested[nc_curg___nc_m2m_w5i3lbdpwrs][where]",
+                        "description": "This can be used for filtering rows in nested column `nc_curg___nc_m2m_w5i3lbdpwrs`, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][where]=(field1,eq,value)`"
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 0
+                        },
+                        "in": "query",
+                        "name": "nested[nc_curg___nc_m2m_w5i3lbdpwrs][offset]",
+                        "description": "The `offset` parameter used for pagination  of nested `nc_curg___nc_m2m_w5i3lbdpwrs` rows, the value helps to select collection from a certain index.",
+                        "example": 0
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 1
+                        },
+                        "in": "query",
+                        "name": "nested[nc_curg___nc_m2m_w5i3lbdpwrs][limit]",
+                        "description": "The `limit` parameter used for pagination of nested `nc_curg___nc_m2m_w5i3lbdpwrs` rows, the response collection size depends on limit value and default value is `25`.",
+                        "example": "25"
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields]",
+                        "description": "Array of field names or comma separated filed names to include in the in nested column `nc_curg___nc_m2m_w5i3lbdpwrs` result. In array syntax pass it like `fields[]=field1&fields[]=field2.`. Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields]=field1,field2`"
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort]",
+                        "description": "Comma separated field names to sort rows in nested column `nc_curg___nc_m2m_w5i3lbdpwrs` rows, it will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort]=field1,-field2`"
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "nested[communicationOnEvents][fields]",
+                        "description": "Array of field names or comma separated filed names to include in the in nested column `communicationOnEvents` result. In array syntax pass it like `fields[]=field1&fields[]=field2.`. Example : `nested[communicationOnEvents][fields]=field1,field2`"
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "nested[BotEvents][fields]",
+                        "description": "Array of field names or comma separated filed names to include in the in nested column `BotEvents` result. In array syntax pass it like `fields[]=field1&fields[]=field2.`. Example : `nested[BotEvents][fields]=field1,field2`"
                     }
                 ],
                 "responses": {
@@ -1989,7 +2187,7 @@
                                         "list": {
                                             "type": "array",
                                             "items": {
-                                                "$ref": "#/components/schemas/eventseventsGridResponse"
+                                                "$ref": "#/components/schemas/EventseventsGridResponse"
                                             }
                                         },
                                         "PageInfo": {
@@ -2005,7 +2203,7 @@
             "post": {
                 "summary": "events create",
                 "description": "Insert a new row in table by providing a key value pair object where key refers to the column alias. All the required fields should be included with payload excluding `autoincrement` and column with default value.",
-                "operationId": "events-events-row-create",
+                "operationId": "Events-events-row-create",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -2017,26 +2215,26 @@
                     }
                 },
                 "tags": [
-                    "events ( events grid )"
+                    "events ( Events grid )"
                 ],
                 "requestBody": {
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/eventseventsGridRequest"
+                                "$ref": "#/components/schemas/EventseventsGridRequest"
                             }
                         }
                     }
                 }
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/events/views/events/count": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/views/events/count": {
             "get": {
                 "summary": "events count",
-                "operationId": "events-events-row-count",
+                "operationId": "Events-events-row-count",
                 "description": "",
                 "tags": [
-                    "events ( events grid )"
+                    "events ( Events grid )"
                 ],
                 "parameters": [
                     {
@@ -2067,7 +2265,7 @@
                 }
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/events/views/events/{rowId}": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/views/events/{rowId}": {
             "parameters": [
                 {
                     "schema": {
@@ -2083,27 +2281,27 @@
             "get": {
                 "summary": "events read",
                 "description": "Read a row data by using the **primary key** column value.",
-                "operationId": "events-events-row-read",
+                "operationId": "Events-events-row-read",
                 "responses": {
                     "200": {
                         "description": "Created",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/eventseventsGridResponse"
+                                    "$ref": "#/components/schemas/EventseventsGridResponse"
                                 }
                             }
                         }
                     }
                 },
                 "tags": [
-                    "events ( events grid )"
+                    "events ( Events grid )"
                 ]
             },
             "patch": {
                 "summary": "events update",
                 "description": "Partial update row in table by providing a key value pair object where key refers to the column alias. You need to only include columns which you want to update.",
-                "operationId": "events-events-row-update",
+                "operationId": "Events-events-row-update",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -2115,13 +2313,13 @@
                     }
                 },
                 "tags": [
-                    "events ( events grid )"
+                    "events ( Events grid )"
                 ],
                 "requestBody": {
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/eventseventsGridRequest"
+                                "$ref": "#/components/schemas/EventseventsGridRequest"
                             }
                         }
                     }
@@ -2129,19 +2327,19 @@
             },
             "delete": {
                 "summary": "events delete",
-                "operationId": "events-events-row-delete",
+                "operationId": "Events-events-row-delete",
                 "responses": {
                     "200": {
                         "description": "OK"
                     }
                 },
                 "tags": [
-                    "events ( events grid )"
+                    "events ( Events grid )"
                 ],
                 "description": "Delete a row by using the **primary key** column value."
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/events/views/events/export/{type}": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/views/events/export/{type}": {
             "parameters": [
                 {
                     "schema": {
@@ -2158,10 +2356,10 @@
             ],
             "get": {
                 "summary": "events export",
-                "operationId": "events-events-row-export",
+                "operationId": "Events-events-row-export",
                 "description": "Export all the records from a table view. Currently we are only supports `csv` export.",
                 "tags": [
-                    "events ( events grid )"
+                    "events ( Events grid )"
                 ],
                 "responses": {
                     "200": {
@@ -2185,13 +2383,13 @@
                 "parameters": []
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/comm_events": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents": {
             "get": {
-                "summary": "comm_events list",
-                "operationId": "comm_events-db-table-row-list",
-                "description": "List of all rows from comm_events table and response data fields can be filtered based on query params.",
+                "summary": "communicationOnEvents list",
+                "operationId": "communicationonevents-db-table-row-list",
+                "description": "List of all rows from communicationOnEvents table and response data fields can be filtered based on query params.",
                 "tags": [
-                    "comm_events"
+                    "communicationOnEvents"
                 ],
                 "parameters": [
                     {
@@ -2261,7 +2459,7 @@
                                         "list": {
                                             "type": "array",
                                             "items": {
-                                                "$ref": "#/components/schemas/comm_eventsResponse"
+                                                "$ref": "#/components/schemas/communicationOnEventsResponse"
                                             }
                                         },
                                         "PageInfo": {
@@ -2275,36 +2473,36 @@
                 }
             },
             "post": {
-                "summary": "comm_events create",
+                "summary": "communicationOnEvents create",
                 "description": "Insert a new row in table by providing a key value pair object where key refers to the column alias. All the required fields should be included with payload excluding `autoincrement` and column with default value.",
-                "operationId": "comm_events-create",
+                "operationId": "communicationonevents-create",
                 "responses": {
                     "200": {
                         "description": "OK",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/comm_eventsResponse"
+                                    "$ref": "#/components/schemas/communicationOnEventsResponse"
                                 }
                             }
                         }
                     }
                 },
                 "tags": [
-                    "comm_events"
+                    "communicationOnEvents"
                 ],
                 "requestBody": {
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/comm_eventsRequest"
+                                "$ref": "#/components/schemas/communicationOnEventsRequest"
                             }
                         }
                     }
                 }
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/{rowId}": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/{rowId}": {
             "parameters": [
                 {
                     "schema": {
@@ -2328,28 +2526,28 @@
                         "description": "Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`."
                     }
                 ],
-                "summary": "comm_events read",
+                "summary": "communicationOnEvents read",
                 "description": "Read a row data by using the **primary key** column value.",
-                "operationId": "comm_events-read",
+                "operationId": "communicationonevents-read",
                 "responses": {
                     "201": {
                         "description": "Created",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/comm_eventsResponse"
+                                    "$ref": "#/components/schemas/communicationOnEventsResponse"
                                 }
                             }
                         }
                     }
                 },
                 "tags": [
-                    "comm_events"
+                    "communicationOnEvents"
                 ]
             },
             "patch": {
-                "summary": "comm_events update",
-                "operationId": "comm_events-update",
+                "summary": "communicationOnEvents update",
+                "operationId": "communicationonevents-update",
                 "description": "Partial update row in table by providing a key value pair object where key refers to the column alias. You need to only include columns which you want to update.",
                 "responses": {
                     "200": {
@@ -2357,14 +2555,14 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/comm_eventsRequest"
+                                    "$ref": "#/components/schemas/communicationOnEventsRequest"
                                 }
                             }
                         }
                     }
                 },
                 "tags": [
-                    "comm_events"
+                    "communicationOnEvents"
                 ],
                 "requestBody": {
                     "content": {
@@ -2375,26 +2573,26 @@
                 }
             },
             "delete": {
-                "summary": "comm_events delete",
-                "operationId": "comm_events-delete",
+                "summary": "communicationOnEvents delete",
+                "operationId": "communicationonevents-delete",
                 "responses": {
                     "200": {
                         "description": "OK"
                     }
                 },
                 "tags": [
-                    "comm_events"
+                    "communicationOnEvents"
                 ],
                 "description": "Delete a row by using the **primary key** column value."
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/count": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/count": {
             "get": {
-                "summary": "comm_events count",
-                "operationId": "comm_events-count",
+                "summary": "communicationOnEvents count",
+                "operationId": "communicationonevents-count",
                 "description": "Get rows count of a table by applying optional filters.",
                 "tags": [
-                    "comm_events"
+                    "communicationOnEvents"
                 ],
                 "parameters": [
                     {
@@ -2418,13 +2616,13 @@
                 }
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/find-one": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/find-one": {
             "get": {
-                "summary": "comm_events find-one",
-                "operationId": "comm_events-db-table-row-find-one",
+                "summary": "communicationOnEvents find-one",
+                "operationId": "communicationonevents-db-table-row-find-one",
                 "description": "Find first record matching the conditions.",
                 "tags": [
-                    "comm_events"
+                    "communicationOnEvents"
                 ],
                 "parameters": [
                     {
@@ -2458,7 +2656,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/comm_eventsResponse"
+                                    "$ref": "#/components/schemas/communicationOnEventsResponse"
                                 }
                             }
                         }
@@ -2466,13 +2664,13 @@
                 }
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/groupby": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/groupby": {
             "get": {
-                "summary": "comm_events groupby",
-                "operationId": "comm_events-groupby",
+                "summary": "communicationOnEvents groupby",
+                "operationId": "communicationonevents-groupby",
                 "description": "Group by a column.",
                 "tags": [
-                    "comm_events"
+                    "communicationOnEvents"
                 ],
                 "parameters": [
                     {
@@ -2556,11 +2754,11 @@
                 }
             }
         },
-        "/api/v1/db/data/bulk/v1/pp2k69kcyjib180/comm_events": {
+        "/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/communicationOnEvents": {
             "post": {
-                "summary": "comm_events bulk insert",
+                "summary": "communicationOnEvents bulk insert",
                 "description": "To insert large amount of data in a single api call you can use this api. It's similar to insert method but here you can pass array of objects to insert into table. Array object will be key value paired column name and value.",
-                "operationId": "comm_events-bulk-create",
+                "operationId": "communicationonevents-bulk-create",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -2572,7 +2770,7 @@
                     }
                 },
                 "tags": [
-                    "comm_events"
+                    "communicationOnEvents"
                 ],
                 "requestBody": {
                     "content": {
@@ -2583,9 +2781,9 @@
                 }
             },
             "patch": {
-                "summary": "comm_events bulk  update",
+                "summary": "communicationOnEvents bulk  update",
                 "description": "To update multiple records using it's primary key you can use this api. Bulk updated api accepts array object in which each object should contain it's primary columns value mapped to corresponding alias. In addition to primary key you can include the fields which you want to update",
-                "operationId": "comm_events-bulk-update",
+                "operationId": "communicationonevents-bulk-update",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -2597,7 +2795,7 @@
                     }
                 },
                 "tags": [
-                    "comm_events"
+                    "communicationOnEvents"
                 ],
                 "requestBody": {
                     "content": {
@@ -2608,9 +2806,9 @@
                 }
             },
             "delete": {
-                "summary": "comm_events bulk delete by IDs",
+                "summary": "communicationOnEvents bulk delete by IDs",
                 "description": "To delete multiple records using it's primary key you can use this api. Bulk delete api accepts array object in which each object should contain it's primary columns value mapped to corresponding alias.",
-                "operationId": "comm_events-bulk-delete",
+                "operationId": "communicationonevents-bulk-delete",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -2622,7 +2820,7 @@
                     }
                 },
                 "tags": [
-                    "comm_events"
+                    "communicationOnEvents"
                 ],
                 "requestBody": {
                     "content": {
@@ -2633,7 +2831,7 @@
                 }
             }
         },
-        "/api/v1/db/data/bulk/v1/pp2k69kcyjib180/comm_events/all": {
+        "/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/communicationOnEvents/all": {
             "parameters": [
                 {
                     "schema": {
@@ -2645,9 +2843,9 @@
                 }
             ],
             "patch": {
-                "summary": "comm_events Bulk update with conditions",
+                "summary": "communicationOnEvents Bulk update with conditions",
                 "description": "This api helps you update multiple table rows in a single api call. You don't have to pass the record id instead you can filter records and apply the changes to filtered records. Payload is similar as normal update in which you can pass any partial row data to be updated.",
-                "operationId": "comm_events-bulk-update-all",
+                "operationId": "communicationonevents-bulk-update-all",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -2659,7 +2857,7 @@
                     }
                 },
                 "tags": [
-                    "comm_events"
+                    "communicationOnEvents"
                 ],
                 "requestBody": {
                     "content": {
@@ -2672,7 +2870,7 @@
             "delete": {
                 "summary": "Bulk delete with conditions",
                 "description": "This api helps you delete multiple table rows in a single api call. You don't have to pass the record id instead you can filter records and delete filtered records.",
-                "operationId": "comm_events-bulk-delete-all",
+                "operationId": "communicationonevents-bulk-delete-all",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -2684,11 +2882,287 @@
                     }
                 },
                 "tags": [
-                    "comm_events"
+                    "communicationOnEvents"
                 ]
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/export/{type}": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/{rowId}/{relationType}/{columnName}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "rowId",
+                    "in": "path",
+                    "required": true,
+                    "example": 1,
+                    "description": "Primary key of the record you want to read. If the table have composite primary key then combine them by using `___` and pass it as primary key."
+                },
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "mm",
+                            "hm"
+                        ]
+                    },
+                    "name": "relationType",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "Event"
+                        ]
+                    },
+                    "name": "columnName",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Relation row list",
+                "operationId": "communicationonevents-nested-list",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "communicationOnEvents"
+                ],
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 1
+                        },
+                        "in": "query",
+                        "name": "limit",
+                        "description": "The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.",
+                        "example": 25
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 0
+                        },
+                        "in": "query",
+                        "name": "offset",
+                        "description": "The `offset` parameter used for pagination, the value helps to select collection from a certain index.",
+                        "example": 0
+                    }
+                ]
+            }
+        },
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/{rowId}/{relationType}/{columnName}/{refRowId}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "rowId",
+                    "in": "path",
+                    "required": true,
+                    "example": 1,
+                    "description": "Primary key of the record you want to read. If the table have composite primary key then combine them by using `___` and pass it as primary key."
+                },
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "mm",
+                            "hm"
+                        ]
+                    },
+                    "name": "relationType",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "Event"
+                        ]
+                    },
+                    "name": "columnName",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "refRowId",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "post": {
+                "summary": "Relation row add",
+                "operationId": "communicationonevents-nested-add",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "communicationOnEvents"
+                ],
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 1
+                        },
+                        "in": "query",
+                        "name": "limit",
+                        "description": "The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.",
+                        "example": 25
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                        },
+                        "in": "query",
+                        "name": "shuffle",
+                        "description": "The `shuffle` parameter used for pagination, the response will be shuffled if it is set to 1.",
+                        "example": 0
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 0
+                        },
+                        "in": "query",
+                        "name": "offset",
+                        "description": "The `offset` parameter used for pagination, the value helps to select collection from a certain index.",
+                        "example": 0
+                    }
+                ],
+                "description": ""
+            },
+            "delete": {
+                "summary": "Relation row remove",
+                "operationId": "communicationonevents-nested-remove",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "communicationOnEvents"
+                ]
+            }
+        },
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/{rowId}/{relationType}/{columnName}/exclude": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "rowId",
+                    "in": "path",
+                    "required": true,
+                    "example": 1,
+                    "description": "Primary key of the record you want to read. If the table have composite primary key then combine them by using `___` and pass it as primary key."
+                },
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "mm",
+                            "hm"
+                        ]
+                    },
+                    "name": "relationType",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "Event"
+                        ]
+                    },
+                    "name": "columnName",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Referenced tables rows excluding current records children/parent",
+                "operationId": "communicationonevents-nested-children-excluded-list",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "communicationOnEvents"
+                ],
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 1
+                        },
+                        "in": "query",
+                        "name": "limit",
+                        "description": "The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.",
+                        "example": 25
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                        },
+                        "in": "query",
+                        "name": "shuffle",
+                        "description": "The `shuffle` parameter used for pagination, the response will be shuffled if it is set to 1.",
+                        "example": 0
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 0
+                        },
+                        "in": "query",
+                        "name": "offset",
+                        "description": "The `offset` parameter used for pagination, the value helps to select collection from a certain index.",
+                        "example": 0
+                    }
+                ]
+            }
+        },
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/export/{type}": {
             "parameters": [
                 {
                     "schema": {
@@ -2705,10 +3179,10 @@
             ],
             "get": {
                 "summary": "Rows export",
-                "operationId": "comm_events-csv-export",
+                "operationId": "communicationonevents-csv-export",
                 "description": "Export all the records from a table.Currently we are only supports `csv` export.",
                 "tags": [
-                    "comm_events"
+                    "communicationOnEvents"
                 ],
                 "responses": {
                     "200": {
@@ -2743,13 +3217,13 @@
                 ]
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/views/comm_events": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/views/communicationOnEvents": {
             "get": {
-                "summary": "comm_events list",
-                "operationId": "comm_events-comm_events-row-list",
-                "description": "List of all rows from comm_events grid view and data of fields can be filtered based on query params. Data and fields in a grid view will be filtered and sorted by default based on the applied options in Dashboard.",
+                "summary": "communicationOnEvents list",
+                "operationId": "communicationOnEvents-communicationOnEvents-row-list",
+                "description": "List of all rows from communicationOnEvents grid view and data of fields can be filtered based on query params. Data and fields in a grid view will be filtered and sorted by default based on the applied options in Dashboard.",
                 "tags": [
-                    "comm_events ( comm_events grid )"
+                    "communicationOnEvents ( communicationOnEvents grid )"
                 ],
                 "parameters": [
                     {
@@ -2788,7 +3262,7 @@
                                         "list": {
                                             "type": "array",
                                             "items": {
-                                                "$ref": "#/components/schemas/comm_eventscomm_eventsGridResponse"
+                                                "$ref": "#/components/schemas/communicationOnEventscommunicationOnEventsGridResponse"
                                             }
                                         },
                                         "PageInfo": {
@@ -2802,9 +3276,9 @@
                 }
             },
             "post": {
-                "summary": "comm_events create",
+                "summary": "communicationOnEvents create",
                 "description": "Insert a new row in table by providing a key value pair object where key refers to the column alias. All the required fields should be included with payload excluding `autoincrement` and column with default value.",
-                "operationId": "comm_events-comm_events-row-create",
+                "operationId": "communicationOnEvents-communicationOnEvents-row-create",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -2816,26 +3290,26 @@
                     }
                 },
                 "tags": [
-                    "comm_events ( comm_events grid )"
+                    "communicationOnEvents ( communicationOnEvents grid )"
                 ],
                 "requestBody": {
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/comm_eventscomm_eventsGridRequest"
+                                "$ref": "#/components/schemas/communicationOnEventscommunicationOnEventsGridRequest"
                             }
                         }
                     }
                 }
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/views/comm_events/count": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/views/communicationOnEvents/count": {
             "get": {
-                "summary": "comm_events count",
-                "operationId": "comm_events-comm_events-row-count",
+                "summary": "communicationOnEvents count",
+                "operationId": "communicationOnEvents-communicationOnEvents-row-count",
                 "description": "",
                 "tags": [
-                    "comm_events ( comm_events grid )"
+                    "communicationOnEvents ( communicationOnEvents grid )"
                 ],
                 "parameters": [
                     {
@@ -2866,7 +3340,7 @@
                 }
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/views/comm_events/{rowId}": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/views/communicationOnEvents/{rowId}": {
             "parameters": [
                 {
                     "schema": {
@@ -2880,29 +3354,29 @@
                 }
             ],
             "get": {
-                "summary": "comm_events read",
+                "summary": "communicationOnEvents read",
                 "description": "Read a row data by using the **primary key** column value.",
-                "operationId": "comm_events-comm_events-row-read",
+                "operationId": "communicationOnEvents-communicationOnEvents-row-read",
                 "responses": {
                     "200": {
                         "description": "Created",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/comm_eventscomm_eventsGridResponse"
+                                    "$ref": "#/components/schemas/communicationOnEventscommunicationOnEventsGridResponse"
                                 }
                             }
                         }
                     }
                 },
                 "tags": [
-                    "comm_events ( comm_events grid )"
+                    "communicationOnEvents ( communicationOnEvents grid )"
                 ]
             },
             "patch": {
-                "summary": "comm_events update",
+                "summary": "communicationOnEvents update",
                 "description": "Partial update row in table by providing a key value pair object where key refers to the column alias. You need to only include columns which you want to update.",
-                "operationId": "comm_events-comm_events-row-update",
+                "operationId": "communicationOnEvents-communicationOnEvents-row-update",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -2914,33 +3388,33 @@
                     }
                 },
                 "tags": [
-                    "comm_events ( comm_events grid )"
+                    "communicationOnEvents ( communicationOnEvents grid )"
                 ],
                 "requestBody": {
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/comm_eventscomm_eventsGridRequest"
+                                "$ref": "#/components/schemas/communicationOnEventscommunicationOnEventsGridRequest"
                             }
                         }
                     }
                 }
             },
             "delete": {
-                "summary": "comm_events delete",
-                "operationId": "comm_events-comm_events-row-delete",
+                "summary": "communicationOnEvents delete",
+                "operationId": "communicationOnEvents-communicationOnEvents-row-delete",
                 "responses": {
                     "200": {
                         "description": "OK"
                     }
                 },
                 "tags": [
-                    "comm_events ( comm_events grid )"
+                    "communicationOnEvents ( communicationOnEvents grid )"
                 ],
                 "description": "Delete a row by using the **primary key** column value."
             }
         },
-        "/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/views/comm_events/export/{type}": {
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/views/communicationOnEvents/export/{type}": {
             "parameters": [
                 {
                     "schema": {
@@ -2956,11 +3430,1086 @@
                 }
             ],
             "get": {
-                "summary": "comm_events export",
-                "operationId": "comm_events-comm_events-row-export",
+                "summary": "communicationOnEvents export",
+                "operationId": "communicationOnEvents-communicationOnEvents-row-export",
                 "description": "Export all the records from a table view. Currently we are only supports `csv` export.",
                 "tags": [
-                    "comm_events ( comm_events grid )"
+                    "communicationOnEvents ( communicationOnEvents grid )"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/octet-stream": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {
+                            "nc-export-offset": {
+                                "schema": {
+                                    "type": "integer"
+                                },
+                                "description": "Offset of next set of data which will be helpful if there is large amount of data. It will returns `-1` if all set of data exported.",
+                                "example": "1000"
+                            }
+                        }
+                    }
+                },
+                "parameters": []
+            }
+        },
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents": {
+            "get": {
+                "summary": "BotEvents list",
+                "operationId": "botevents-db-table-row-list",
+                "description": "List of all rows from BotEvents table and response data fields can be filtered based on query params.",
+                "tags": [
+                    "BotEvents"
+                ],
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`."
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "sort",
+                        "description": "Comma separated field names to sort rows, rows will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `sort=field1,-field2`"
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "where",
+                        "description": "This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`"
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 1
+                        },
+                        "in": "query",
+                        "name": "limit",
+                        "description": "The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.",
+                        "example": 25
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                        },
+                        "in": "query",
+                        "name": "shuffle",
+                        "description": "The `shuffle` parameter used for pagination, the response will be shuffled if it is set to 1.",
+                        "example": 0
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 0
+                        },
+                        "in": "query",
+                        "name": "offset",
+                        "description": "The `offset` parameter used for pagination, the value helps to select collection from a certain index.",
+                        "example": 0
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "list": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/BotEventsResponse"
+                                            }
+                                        },
+                                        "PageInfo": {
+                                            "$ref": "#/components/schemas/Paginated"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "BotEvents create",
+                "description": "Insert a new row in table by providing a key value pair object where key refers to the column alias. All the required fields should be included with payload excluding `autoincrement` and column with default value.",
+                "operationId": "botevents-create",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BotEventsResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "BotEvents"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BotEventsRequest"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/{rowId}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "rowId",
+                    "in": "path",
+                    "required": true,
+                    "example": 1,
+                    "description": "Primary key of the record you want to read. If the table have composite primary key then combine them by using `___` and pass it as primary key."
+                }
+            ],
+            "get": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`."
+                    }
+                ],
+                "summary": "BotEvents read",
+                "description": "Read a row data by using the **primary key** column value.",
+                "operationId": "botevents-read",
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BotEventsResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "BotEvents"
+                ]
+            },
+            "patch": {
+                "summary": "BotEvents update",
+                "operationId": "botevents-update",
+                "description": "Partial update row in table by providing a key value pair object where key refers to the column alias. You need to only include columns which you want to update.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BotEventsRequest"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "BotEvents"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "BotEvents delete",
+                "operationId": "botevents-delete",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "tags": [
+                    "BotEvents"
+                ],
+                "description": "Delete a row by using the **primary key** column value."
+            }
+        },
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/count": {
+            "get": {
+                "summary": "BotEvents count",
+                "operationId": "botevents-count",
+                "description": "Get rows count of a table by applying optional filters.",
+                "tags": [
+                    "BotEvents"
+                ],
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "where",
+                        "description": "This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/find-one": {
+            "get": {
+                "summary": "BotEvents find-one",
+                "operationId": "botevents-db-table-row-find-one",
+                "description": "Find first record matching the conditions.",
+                "tags": [
+                    "BotEvents"
+                ],
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`."
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "where",
+                        "description": "This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`"
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "sort",
+                        "description": "Comma separated field names to sort rows, rows will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `sort=field1,-field2`"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BotEventsResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/groupby": {
+            "get": {
+                "summary": "BotEvents groupby",
+                "operationId": "botevents-groupby",
+                "description": "Group by a column.",
+                "tags": [
+                    "BotEvents"
+                ],
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "column_name",
+                        "description": "Column name of the column you want to group by, eg. `column_name=column1`"
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "sort",
+                        "description": "Comma separated field names to sort rows, rows will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `sort=field1,-field2`"
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "where",
+                        "description": "This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`"
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 1
+                        },
+                        "in": "query",
+                        "name": "limit",
+                        "description": "The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.",
+                        "example": 25
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 0
+                        },
+                        "in": "query",
+                        "name": "offset",
+                        "description": "The `offset` parameter used for pagination, the value helps to select collection from a certain index.",
+                        "example": 0
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                        },
+                        "in": "query",
+                        "name": "shuffle",
+                        "description": "The `shuffle` parameter used for pagination, the response will be shuffled if it is set to 1.",
+                        "example": 0
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "list": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Groupby"
+                                            }
+                                        },
+                                        "PageInfo": {
+                                            "$ref": "#/components/schemas/Paginated"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/BotEvents": {
+            "post": {
+                "summary": "BotEvents bulk insert",
+                "description": "To insert large amount of data in a single api call you can use this api. It's similar to insert method but here you can pass array of objects to insert into table. Array object will be key value paired column name and value.",
+                "operationId": "botevents-bulk-create",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "BotEvents"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "summary": "BotEvents bulk  update",
+                "description": "To update multiple records using it's primary key you can use this api. Bulk updated api accepts array object in which each object should contain it's primary columns value mapped to corresponding alias. In addition to primary key you can include the fields which you want to update",
+                "operationId": "botevents-bulk-update",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "BotEvents"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "BotEvents bulk delete by IDs",
+                "description": "To delete multiple records using it's primary key you can use this api. Bulk delete api accepts array object in which each object should contain it's primary columns value mapped to corresponding alias.",
+                "operationId": "botevents-bulk-delete",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "BotEvents"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/BotEvents/all": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "in": "query",
+                    "name": "where",
+                    "description": "This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`"
+                }
+            ],
+            "patch": {
+                "summary": "BotEvents Bulk update with conditions",
+                "description": "This api helps you update multiple table rows in a single api call. You don't have to pass the record id instead you can filter records and apply the changes to filtered records. Payload is similar as normal update in which you can pass any partial row data to be updated.",
+                "operationId": "botevents-bulk-update-all",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "BotEvents"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Bulk delete with conditions",
+                "description": "This api helps you delete multiple table rows in a single api call. You don't have to pass the record id instead you can filter records and delete filtered records.",
+                "operationId": "botevents-bulk-delete-all",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "BotEvents"
+                ]
+            }
+        },
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/{rowId}/{relationType}/{columnName}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "rowId",
+                    "in": "path",
+                    "required": true,
+                    "example": 1,
+                    "description": "Primary key of the record you want to read. If the table have composite primary key then combine them by using `___` and pass it as primary key."
+                },
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "mm",
+                            "hm"
+                        ]
+                    },
+                    "name": "relationType",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "Event"
+                        ]
+                    },
+                    "name": "columnName",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Relation row list",
+                "operationId": "botevents-nested-list",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "BotEvents"
+                ],
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 1
+                        },
+                        "in": "query",
+                        "name": "limit",
+                        "description": "The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.",
+                        "example": 25
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 0
+                        },
+                        "in": "query",
+                        "name": "offset",
+                        "description": "The `offset` parameter used for pagination, the value helps to select collection from a certain index.",
+                        "example": 0
+                    }
+                ]
+            }
+        },
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/{rowId}/{relationType}/{columnName}/{refRowId}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "rowId",
+                    "in": "path",
+                    "required": true,
+                    "example": 1,
+                    "description": "Primary key of the record you want to read. If the table have composite primary key then combine them by using `___` and pass it as primary key."
+                },
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "mm",
+                            "hm"
+                        ]
+                    },
+                    "name": "relationType",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "Event"
+                        ]
+                    },
+                    "name": "columnName",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "refRowId",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "post": {
+                "summary": "Relation row add",
+                "operationId": "botevents-nested-add",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "BotEvents"
+                ],
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 1
+                        },
+                        "in": "query",
+                        "name": "limit",
+                        "description": "The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.",
+                        "example": 25
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                        },
+                        "in": "query",
+                        "name": "shuffle",
+                        "description": "The `shuffle` parameter used for pagination, the response will be shuffled if it is set to 1.",
+                        "example": 0
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 0
+                        },
+                        "in": "query",
+                        "name": "offset",
+                        "description": "The `offset` parameter used for pagination, the value helps to select collection from a certain index.",
+                        "example": 0
+                    }
+                ],
+                "description": ""
+            },
+            "delete": {
+                "summary": "Relation row remove",
+                "operationId": "botevents-nested-remove",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "BotEvents"
+                ]
+            }
+        },
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/{rowId}/{relationType}/{columnName}/exclude": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "rowId",
+                    "in": "path",
+                    "required": true,
+                    "example": 1,
+                    "description": "Primary key of the record you want to read. If the table have composite primary key then combine them by using `___` and pass it as primary key."
+                },
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "mm",
+                            "hm"
+                        ]
+                    },
+                    "name": "relationType",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "Event"
+                        ]
+                    },
+                    "name": "columnName",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Referenced tables rows excluding current records children/parent",
+                "operationId": "botevents-nested-children-excluded-list",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "BotEvents"
+                ],
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 1
+                        },
+                        "in": "query",
+                        "name": "limit",
+                        "description": "The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.",
+                        "example": 25
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                        },
+                        "in": "query",
+                        "name": "shuffle",
+                        "description": "The `shuffle` parameter used for pagination, the response will be shuffled if it is set to 1.",
+                        "example": 0
+                    },
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 0
+                        },
+                        "in": "query",
+                        "name": "offset",
+                        "description": "The `offset` parameter used for pagination, the value helps to select collection from a certain index.",
+                        "example": 0
+                    }
+                ]
+            }
+        },
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/export/{type}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "csv",
+                            "excel"
+                        ]
+                    },
+                    "name": "type",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Rows export",
+                "operationId": "botevents-csv-export",
+                "description": "Export all the records from a table.Currently we are only supports `csv` export.",
+                "tags": [
+                    "BotEvents"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/octet-stream": {
+                                "schema": {}
+                            }
+                        },
+                        "headers": {
+                            "nc-export-offset": {
+                                "schema": {
+                                    "type": "integer"
+                                },
+                                "description": "Offset of next set of data which will be helpful if there is large amount of data. It will returns `-1` if all set of data exported.",
+                                "example": "1000"
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "number",
+                            "minimum": 0
+                        },
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Helps to start export from a certain index. You can get the next set of data offset from previous response header named `nc-export-offset`.",
+                        "example": 0
+                    }
+                ]
+            }
+        },
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/views/BotEvents": {
+            "get": {
+                "summary": "BotEvents list",
+                "operationId": "BotEvents-BotEvents-row-list",
+                "description": "List of all rows from BotEvents grid view and data of fields can be filtered based on query params. Data and fields in a grid view will be filtered and sorted by default based on the applied options in Dashboard.",
+                "tags": [
+                    "BotEvents ( BotEvents grid )"
+                ],
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`."
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "sort",
+                        "description": "Comma separated field names to sort rows, rows will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `sort=field1,-field2`"
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "where",
+                        "description": "This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "list": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/BotEventsBotEventsGridResponse"
+                                            }
+                                        },
+                                        "PageInfo": {
+                                            "$ref": "#/components/schemas/Paginated"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "BotEvents create",
+                "description": "Insert a new row in table by providing a key value pair object where key refers to the column alias. All the required fields should be included with payload excluding `autoincrement` and column with default value.",
+                "operationId": "BotEvents-BotEvents-row-create",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "BotEvents ( BotEvents grid )"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BotEventsBotEventsGridRequest"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/views/BotEvents/count": {
+            "get": {
+                "summary": "BotEvents count",
+                "operationId": "BotEvents-BotEvents-row-count",
+                "description": "",
+                "tags": [
+                    "BotEvents ( BotEvents grid )"
+                ],
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "where",
+                        "description": "This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "count": {
+                                            "type": "number"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/views/BotEvents/{rowId}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "rowId",
+                    "in": "path",
+                    "required": true,
+                    "example": 1,
+                    "description": "Primary key of the record you want to read. If the table have composite primary key then combine them by using `___` and pass it as primary key."
+                }
+            ],
+            "get": {
+                "summary": "BotEvents read",
+                "description": "Read a row data by using the **primary key** column value.",
+                "operationId": "BotEvents-BotEvents-row-read",
+                "responses": {
+                    "200": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BotEventsBotEventsGridResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "BotEvents ( BotEvents grid )"
+                ]
+            },
+            "patch": {
+                "summary": "BotEvents update",
+                "description": "Partial update row in table by providing a key value pair object where key refers to the column alias. You need to only include columns which you want to update.",
+                "operationId": "BotEvents-BotEvents-row-update",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "BotEvents ( BotEvents grid )"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BotEventsBotEventsGridRequest"
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "BotEvents delete",
+                "operationId": "BotEvents-BotEvents-row-delete",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "tags": [
+                    "BotEvents ( BotEvents grid )"
+                ],
+                "description": "Delete a row by using the **primary key** column value."
+            }
+        },
+        "/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/views/BotEvents/export/{type}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "csv",
+                            "excel"
+                        ]
+                    },
+                    "name": "type",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "BotEvents export",
+                "operationId": "BotEvents-BotEvents-row-export",
+                "description": "Export all the records from a table view. Currently we are only supports `csv` export.",
+                "tags": [
+                    "BotEvents ( BotEvents grid )"
                 ],
                 "responses": {
                     "200": {
@@ -3052,7 +4601,7 @@
                     "Id": {
                         "type": "integer"
                     },
-                    "name": {
+                    "Firstname": {
                         "type": "string"
                     },
                     "CreatedAt": {
@@ -3061,20 +4610,23 @@
                     "UpdatedAt": {
                         "type": "string"
                     },
-                    "discordId": {
+                    "DiscordId": {
                         "type": "string"
                     },
-                    "tel": {
+                    "Tel": {
                         "type": "string"
                     },
-                    "email": {
+                    "Email": {
                         "type": "string"
                     },
-                    "nc_zosb___events_id": {
-                        "type": "integer"
+                    "Lastname": {
+                        "type": "string"
                     },
-                    "events": {
-                        "$ref": "#/components/schemas/eventsRequest"
+                    "nc_curg___nc_m2m_w5i3lbdpwrs": {
+                        "$ref": "#/components/schemas/nc_curg___nc_m2m_w5i3lbdpwrRequest"
+                    },
+                    "Events": {
+                        "type": "number"
                     }
                 }
             },
@@ -3087,7 +4639,7 @@
                     "Id": {
                         "type": "integer"
                     },
-                    "name": {
+                    "Firstname": {
                         "type": "string"
                     },
                     "CreatedAt": {
@@ -3096,22 +4648,22 @@
                     "UpdatedAt": {
                         "type": "string"
                     },
-                    "discordId": {
+                    "DiscordId": {
                         "type": "string"
                     },
-                    "tel": {
+                    "Tel": {
                         "type": "string"
                     },
-                    "email": {
+                    "Email": {
                         "type": "string"
                     },
-                    "nc_zosb___events_id": {
-                        "type": "integer"
+                    "Lastname": {
+                        "type": "string"
                     }
                 }
             },
-            "VolunteersVolunteersGridResponse": {
-                "title": "Volunteers : Volunteers Response",
+            "VolunteersgridGridResponse": {
+                "title": "Volunteers : grid Response",
                 "type": "object",
                 "description": "",
                 "x-internal": false,
@@ -3119,7 +4671,7 @@
                     "Id": {
                         "type": "integer"
                     },
-                    "name": {
+                    "Firstname": {
                         "type": "string"
                     },
                     "CreatedAt": {
@@ -3128,86 +4680,28 @@
                     "UpdatedAt": {
                         "type": "string"
                     },
-                    "discordId": {
+                    "DiscordId": {
                         "type": "string"
                     },
-                    "tel": {
+                    "Tel": {
                         "type": "string"
                     },
-                    "email": {
+                    "Email": {
                         "type": "string"
                     },
-                    "nc_zosb___events_id": {
-                        "type": "integer"
-                    },
-                    "events": {
-                        "$ref": "#/components/schemas/eventsRequest"
-                    }
-                }
-            },
-            "VolunteersVolunteersGridRequest": {
-                "title": "Volunteers : Volunteers Request",
-                "type": "object",
-                "description": "",
-                "x-internal": false,
-                "properties": {
-                    "Id": {
-                        "type": "integer"
-                    },
-                    "name": {
+                    "Lastname": {
                         "type": "string"
                     },
-                    "CreatedAt": {
-                        "type": "string"
+                    "nc_curg___nc_m2m_w5i3lbdpwrs": {
+                        "$ref": "#/components/schemas/nc_curg___nc_m2m_w5i3lbdpwrRequest"
                     },
-                    "UpdatedAt": {
-                        "type": "string"
-                    },
-                    "discordId": {
-                        "type": "string"
-                    },
-                    "tel": {
-                        "type": "string"
-                    },
-                    "email": {
-                        "type": "string"
-                    },
-                    "nc_zosb___events_id": {
-                        "type": "integer"
-                    }
-                }
-            },
-            "eventsResponse": {
-                "title": "events Response",
-                "type": "object",
-                "description": "",
-                "x-internal": false,
-                "properties": {
-                    "Id": {
-                        "type": "integer"
-                    },
-                    "Title": {
-                        "type": "string"
-                    },
-                    "CreatedAt": {
-                        "type": "string"
-                    },
-                    "UpdatedAt": {
-                        "type": "string"
-                    },
-                    "Debut": {
-                        "type": "string"
-                    },
-                    "Fin": {
-                        "type": "string"
-                    },
-                    "Volunteers": {
+                    "Events": {
                         "type": "number"
                     }
                 }
             },
-            "eventsRequest": {
-                "title": "events Request",
+            "VolunteersgridGridRequest": {
+                "title": "Volunteers : grid Request",
                 "type": "object",
                 "description": "",
                 "x-internal": false,
@@ -3215,7 +4709,7 @@
                     "Id": {
                         "type": "integer"
                     },
-                    "Title": {
+                    "Firstname": {
                         "type": "string"
                     },
                     "CreatedAt": {
@@ -3224,16 +4718,22 @@
                     "UpdatedAt": {
                         "type": "string"
                     },
-                    "Debut": {
+                    "DiscordId": {
                         "type": "string"
                     },
-                    "Fin": {
+                    "Tel": {
+                        "type": "string"
+                    },
+                    "Email": {
+                        "type": "string"
+                    },
+                    "Lastname": {
                         "type": "string"
                     }
                 }
             },
-            "eventseventsGridResponse": {
-                "title": "events : events Response",
+            "EventsResponse": {
+                "title": "Events Response",
                 "type": "object",
                 "description": "",
                 "x-internal": false,
@@ -3250,19 +4750,249 @@
                     "UpdatedAt": {
                         "type": "string"
                     },
-                    "Debut": {
+                    "Start": {
                         "type": "string"
                     },
-                    "Fin": {
+                    "End": {
                         "type": "string"
+                    },
+                    "Place": {
+                        "type": "string"
+                    },
+                    "nc_curg__communicationOnEvents_id": {
+                        "type": "integer"
+                    },
+                    "NbVolunteers": {
+                        "type": "integer"
+                    },
+                    "nc_curg___nc_m2m_w5i3lbdpwrs": {
+                        "$ref": "#/components/schemas/nc_curg___nc_m2m_w5i3lbdpwrRequest"
                     },
                     "Volunteers": {
+                        "type": "number"
+                    },
+                    "nc_curg__communicationOnEvents_id1": {
+                        "type": "integer"
+                    },
+                    "communicationOnEvents": {
+                        "$ref": "#/components/schemas/communicationOnEventsRequest"
+                    },
+                    "Picture": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Attachment"
+                        }
+                    },
+                    "Type": {
+                        "type": "string"
+                    },
+                    "nc_curg___BotEvents_id": {
+                        "type": "integer"
+                    },
+                    "BotEvents": {
+                        "$ref": "#/components/schemas/BotEventsRequest"
+                    }
+                }
+            },
+            "EventsRequest": {
+                "title": "Events Request",
+                "type": "object",
+                "description": "",
+                "x-internal": false,
+                "properties": {
+                    "Id": {
+                        "type": "integer"
+                    },
+                    "Title": {
+                        "type": "string"
+                    },
+                    "CreatedAt": {
+                        "type": "string"
+                    },
+                    "UpdatedAt": {
+                        "type": "string"
+                    },
+                    "Start": {
+                        "type": "string"
+                    },
+                    "End": {
+                        "type": "string"
+                    },
+                    "Place": {
+                        "type": "string"
+                    },
+                    "nc_curg__communicationOnEvents_id": {
+                        "type": "integer"
+                    },
+                    "NbVolunteers": {
+                        "type": "integer"
+                    },
+                    "nc_curg__communicationOnEvents_id1": {
+                        "type": "integer"
+                    },
+                    "Type": {
+                        "type": "string"
+                    },
+                    "nc_curg___BotEvents_id": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "EventseventsGridResponse": {
+                "title": "Events : events Response",
+                "type": "object",
+                "description": "",
+                "x-internal": false,
+                "properties": {
+                    "Id": {
+                        "type": "integer"
+                    },
+                    "Title": {
+                        "type": "string"
+                    },
+                    "CreatedAt": {
+                        "type": "string"
+                    },
+                    "UpdatedAt": {
+                        "type": "string"
+                    },
+                    "Start": {
+                        "type": "string"
+                    },
+                    "End": {
+                        "type": "string"
+                    },
+                    "Place": {
+                        "type": "string"
+                    },
+                    "nc_curg__communicationOnEvents_id": {
+                        "type": "integer"
+                    },
+                    "NbVolunteers": {
+                        "type": "integer"
+                    },
+                    "nc_curg___nc_m2m_w5i3lbdpwrs": {
+                        "$ref": "#/components/schemas/nc_curg___nc_m2m_w5i3lbdpwrRequest"
+                    },
+                    "Volunteers": {
+                        "type": "number"
+                    },
+                    "nc_curg__communicationOnEvents_id1": {
+                        "type": "integer"
+                    },
+                    "communicationOnEvents": {
+                        "$ref": "#/components/schemas/communicationOnEventsRequest"
+                    },
+                    "Picture": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Attachment"
+                        }
+                    },
+                    "Type": {
+                        "type": "string"
+                    },
+                    "nc_curg___BotEvents_id": {
+                        "type": "integer"
+                    },
+                    "BotEvents": {
+                        "$ref": "#/components/schemas/BotEventsRequest"
+                    }
+                }
+            },
+            "EventseventsGridRequest": {
+                "title": "Events : events Request",
+                "type": "object",
+                "description": "",
+                "x-internal": false,
+                "properties": {
+                    "Id": {
+                        "type": "integer"
+                    },
+                    "Title": {
+                        "type": "string"
+                    },
+                    "CreatedAt": {
+                        "type": "string"
+                    },
+                    "UpdatedAt": {
+                        "type": "string"
+                    },
+                    "Start": {
+                        "type": "string"
+                    },
+                    "End": {
+                        "type": "string"
+                    },
+                    "Place": {
+                        "type": "string"
+                    },
+                    "nc_curg__communicationOnEvents_id": {
+                        "type": "integer"
+                    },
+                    "NbVolunteers": {
+                        "type": "integer"
+                    },
+                    "nc_curg__communicationOnEvents_id1": {
+                        "type": "integer"
+                    },
+                    "Type": {
+                        "type": "string"
+                    },
+                    "nc_curg___BotEvents_id": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "communicationOnEventsResponse": {
+                "title": "communicationOnEvents Response",
+                "type": "object",
+                "description": "",
+                "x-internal": false,
+                "properties": {
+                    "Id": {
+                        "type": "integer"
+                    },
+                    "Title": {
+                        "type": "string"
+                    },
+                    "CreatedAt": {
+                        "type": "string"
+                    },
+                    "UpdatedAt": {
+                        "type": "string"
+                    },
+                    "needTickets": {
+                        "type": "boolean"
+                    },
+                    "TicketingURL": {
+                        "type": "string"
+                    },
+                    "DescFR": {
+                        "type": "string"
+                    },
+                    "DescEN": {
+                        "type": "string"
+                    },
+                    "NearestStation": {
+                        "type": "string"
+                    },
+                    "MembershipRequired": {
+                        "type": "boolean"
+                    },
+                    "AdditionnalLink": {
+                        "type": "string"
+                    },
+                    "Price": {
+                        "type": "string"
+                    },
+                    "Event": {
                         "type": "number"
                     }
                 }
             },
-            "eventseventsGridRequest": {
-                "title": "events : events Request",
+            "communicationOnEventsRequest": {
+                "title": "communicationOnEvents Request",
                 "type": "object",
                 "description": "",
                 "x-internal": false,
@@ -3279,16 +5009,34 @@
                     "UpdatedAt": {
                         "type": "string"
                     },
-                    "Debut": {
+                    "needTickets": {
+                        "type": "boolean"
+                    },
+                    "TicketingURL": {
                         "type": "string"
                     },
-                    "Fin": {
+                    "DescFR": {
+                        "type": "string"
+                    },
+                    "DescEN": {
+                        "type": "string"
+                    },
+                    "NearestStation": {
+                        "type": "string"
+                    },
+                    "MembershipRequired": {
+                        "type": "boolean"
+                    },
+                    "AdditionnalLink": {
+                        "type": "string"
+                    },
+                    "Price": {
                         "type": "string"
                     }
                 }
             },
-            "comm_eventsResponse": {
-                "title": "comm_events Response",
+            "communicationOnEventscommunicationOnEventsGridResponse": {
+                "title": "communicationOnEvents : communicationOnEvents Response",
                 "type": "object",
                 "description": "",
                 "x-internal": false,
@@ -3303,52 +5051,151 @@
                         "type": "string"
                     },
                     "UpdatedAt": {
+                        "type": "string"
+                    },
+                    "needTickets": {
+                        "type": "boolean"
+                    },
+                    "TicketingURL": {
+                        "type": "string"
+                    },
+                    "DescFR": {
+                        "type": "string"
+                    },
+                    "DescEN": {
+                        "type": "string"
+                    },
+                    "NearestStation": {
+                        "type": "string"
+                    },
+                    "MembershipRequired": {
+                        "type": "boolean"
+                    },
+                    "AdditionnalLink": {
+                        "type": "string"
+                    },
+                    "Price": {
+                        "type": "string"
+                    },
+                    "Event": {
+                        "type": "number"
+                    }
+                }
+            },
+            "communicationOnEventscommunicationOnEventsGridRequest": {
+                "title": "communicationOnEvents : communicationOnEvents Request",
+                "type": "object",
+                "description": "",
+                "x-internal": false,
+                "properties": {
+                    "Id": {
+                        "type": "integer"
+                    },
+                    "Title": {
+                        "type": "string"
+                    },
+                    "CreatedAt": {
+                        "type": "string"
+                    },
+                    "UpdatedAt": {
+                        "type": "string"
+                    },
+                    "needTickets": {
+                        "type": "boolean"
+                    },
+                    "TicketingURL": {
+                        "type": "string"
+                    },
+                    "DescFR": {
+                        "type": "string"
+                    },
+                    "DescEN": {
+                        "type": "string"
+                    },
+                    "NearestStation": {
+                        "type": "string"
+                    },
+                    "MembershipRequired": {
+                        "type": "boolean"
+                    },
+                    "AdditionnalLink": {
+                        "type": "string"
+                    },
+                    "Price": {
                         "type": "string"
                     }
                 }
             },
-            "comm_eventsRequest": {
-                "title": "comm_events Request",
+            "nc_curg___nc_m2m_w5i3lbdpwrResponse": {
+                "title": "nc_curg___nc_m2m_w5i3lbdpwr Response",
                 "type": "object",
                 "description": "",
                 "x-internal": false,
                 "properties": {
-                    "Id": {
+                    "table2_id": {
                         "type": "integer"
                     },
-                    "Title": {
-                        "type": "string"
+                    "table1_id": {
+                        "type": "integer"
                     },
-                    "CreatedAt": {
-                        "type": "string"
+                    "Volunteers": {
+                        "$ref": "#/components/schemas/VolunteersRequest"
                     },
-                    "UpdatedAt": {
-                        "type": "string"
+                    "Events": {
+                        "$ref": "#/components/schemas/EventsRequest"
                     }
                 }
             },
-            "comm_eventscomm_eventsGridResponse": {
-                "title": "comm_events : comm_events Response",
+            "nc_curg___nc_m2m_w5i3lbdpwrRequest": {
+                "title": "nc_curg___nc_m2m_w5i3lbdpwr Request",
                 "type": "object",
                 "description": "",
                 "x-internal": false,
                 "properties": {
-                    "Id": {
+                    "table2_id": {
                         "type": "integer"
                     },
-                    "Title": {
-                        "type": "string"
-                    },
-                    "CreatedAt": {
-                        "type": "string"
-                    },
-                    "UpdatedAt": {
-                        "type": "string"
+                    "table1_id": {
+                        "type": "integer"
                     }
                 }
             },
-            "comm_eventscomm_eventsGridRequest": {
-                "title": "comm_events : comm_events Request",
+            "nc_curg___nc_m2m_w5i3lbdpwrnc_curg___nc_m2m_w5i3lbdpwrGridResponse": {
+                "title": "nc_curg___nc_m2m_w5i3lbdpwr : nc_curg___nc_m2m_w5i3lbdpwr Response",
+                "type": "object",
+                "description": "",
+                "x-internal": false,
+                "properties": {
+                    "table2_id": {
+                        "type": "integer"
+                    },
+                    "table1_id": {
+                        "type": "integer"
+                    },
+                    "Volunteers": {
+                        "$ref": "#/components/schemas/VolunteersRequest"
+                    },
+                    "Events": {
+                        "$ref": "#/components/schemas/EventsRequest"
+                    }
+                }
+            },
+            "nc_curg___nc_m2m_w5i3lbdpwrnc_curg___nc_m2m_w5i3lbdpwrGridRequest": {
+                "title": "nc_curg___nc_m2m_w5i3lbdpwr : nc_curg___nc_m2m_w5i3lbdpwr Request",
+                "type": "object",
+                "description": "",
+                "x-internal": false,
+                "properties": {
+                    "table2_id": {
+                        "type": "integer"
+                    },
+                    "table1_id": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "BotEventsResponse": {
+                "title": "BotEvents Response",
                 "type": "object",
                 "description": "",
                 "x-internal": false,
@@ -3364,6 +5211,96 @@
                     },
                     "UpdatedAt": {
                         "type": "string"
+                    },
+                    "IsChannelCreated": {
+                        "type": "boolean"
+                    },
+                    "IsPosted": {
+                        "type": "boolean"
+                    },
+                    "Event": {
+                        "type": "number"
+                    }
+                }
+            },
+            "BotEventsRequest": {
+                "title": "BotEvents Request",
+                "type": "object",
+                "description": "",
+                "x-internal": false,
+                "properties": {
+                    "Id": {
+                        "type": "integer"
+                    },
+                    "Title": {
+                        "type": "string"
+                    },
+                    "CreatedAt": {
+                        "type": "string"
+                    },
+                    "UpdatedAt": {
+                        "type": "string"
+                    },
+                    "IsChannelCreated": {
+                        "type": "boolean"
+                    },
+                    "IsPosted": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "BotEventsBotEventsGridResponse": {
+                "title": "BotEvents : BotEvents Response",
+                "type": "object",
+                "description": "",
+                "x-internal": false,
+                "properties": {
+                    "Id": {
+                        "type": "integer"
+                    },
+                    "Title": {
+                        "type": "string"
+                    },
+                    "CreatedAt": {
+                        "type": "string"
+                    },
+                    "UpdatedAt": {
+                        "type": "string"
+                    },
+                    "IsChannelCreated": {
+                        "type": "boolean"
+                    },
+                    "IsPosted": {
+                        "type": "boolean"
+                    },
+                    "Event": {
+                        "type": "number"
+                    }
+                }
+            },
+            "BotEventsBotEventsGridRequest": {
+                "title": "BotEvents : BotEvents Request",
+                "type": "object",
+                "description": "",
+                "x-internal": false,
+                "properties": {
+                    "Id": {
+                        "type": "integer"
+                    },
+                    "Title": {
+                        "type": "string"
+                    },
+                    "CreatedAt": {
+                        "type": "string"
+                    },
+                    "UpdatedAt": {
+                        "type": "string"
+                    },
+                    "IsChannelCreated": {
+                        "type": "boolean"
+                    },
+                    "IsPosted": {
+                        "type": "boolean"
                     }
                 }
             }

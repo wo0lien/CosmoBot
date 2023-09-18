@@ -21,6 +21,131 @@ const (
 	XcTokenScopes = "xcToken.Scopes"
 )
 
+// Attachment defines model for Attachment.
+type Attachment struct {
+	Icon     *string `json:"icon,omitempty"`
+	Mimetype *string `json:"mimetype,omitempty"`
+	Size     *int    `json:"size,omitempty"`
+	Title    *string `json:"title,omitempty"`
+	Url      *string `json:"url,omitempty"`
+}
+
+// BotEventsBotEventsGridRequest defines model for BotEventsBotEventsGridRequest.
+type BotEventsBotEventsGridRequest struct {
+	CreatedAt        *string `json:"CreatedAt,omitempty"`
+	Id               *int    `json:"Id,omitempty"`
+	IsChannelCreated *bool   `json:"IsChannelCreated,omitempty"`
+	IsPosted         *bool   `json:"IsPosted,omitempty"`
+	Title            *string `json:"Title,omitempty"`
+	UpdatedAt        *string `json:"UpdatedAt,omitempty"`
+}
+
+// BotEventsBotEventsGridResponse defines model for BotEventsBotEventsGridResponse.
+type BotEventsBotEventsGridResponse struct {
+	CreatedAt        *string  `json:"CreatedAt,omitempty"`
+	Event            *float32 `json:"Event,omitempty"`
+	Id               *int     `json:"Id,omitempty"`
+	IsChannelCreated *bool    `json:"IsChannelCreated,omitempty"`
+	IsPosted         *bool    `json:"IsPosted,omitempty"`
+	Title            *string  `json:"Title,omitempty"`
+	UpdatedAt        *string  `json:"UpdatedAt,omitempty"`
+}
+
+// BotEventsRequest defines model for BotEventsRequest.
+type BotEventsRequest struct {
+	CreatedAt        *string `json:"CreatedAt,omitempty"`
+	Id               *int    `json:"Id,omitempty"`
+	IsChannelCreated *bool   `json:"IsChannelCreated,omitempty"`
+	IsPosted         *bool   `json:"IsPosted,omitempty"`
+	Title            *string `json:"Title,omitempty"`
+	UpdatedAt        *string `json:"UpdatedAt,omitempty"`
+}
+
+// BotEventsResponse defines model for BotEventsResponse.
+type BotEventsResponse struct {
+	CreatedAt        *string  `json:"CreatedAt,omitempty"`
+	Event            *float32 `json:"Event,omitempty"`
+	Id               *int     `json:"Id,omitempty"`
+	IsChannelCreated *bool    `json:"IsChannelCreated,omitempty"`
+	IsPosted         *bool    `json:"IsPosted,omitempty"`
+	Title            *string  `json:"Title,omitempty"`
+	UpdatedAt        *string  `json:"UpdatedAt,omitempty"`
+}
+
+// EventsRequest defines model for EventsRequest.
+type EventsRequest struct {
+	CreatedAt                      *string `json:"CreatedAt,omitempty"`
+	End                            *string `json:"End,omitempty"`
+	Id                             *int    `json:"Id,omitempty"`
+	NbVolunteers                   *int    `json:"NbVolunteers,omitempty"`
+	Place                          *string `json:"Place,omitempty"`
+	Start                          *string `json:"Start,omitempty"`
+	Title                          *string `json:"Title,omitempty"`
+	Type                           *string `json:"Type,omitempty"`
+	UpdatedAt                      *string `json:"UpdatedAt,omitempty"`
+	NcCurgBotEventsId              *int    `json:"nc_curg___BotEvents_id,omitempty"`
+	NcCurgCommunicationOnEventsId  *int    `json:"nc_curg__communicationOnEvents_id,omitempty"`
+	NcCurgCommunicationOnEventsId1 *int    `json:"nc_curg__communicationOnEvents_id1,omitempty"`
+}
+
+// EventsResponse defines model for EventsResponse.
+type EventsResponse struct {
+	BotEvents                      *BotEventsRequest             `json:"BotEvents,omitempty"`
+	CreatedAt                      *string                       `json:"CreatedAt,omitempty"`
+	End                            *string                       `json:"End,omitempty"`
+	Id                             *int                          `json:"Id,omitempty"`
+	NbVolunteers                   *int                          `json:"NbVolunteers,omitempty"`
+	Picture                        *[]Attachment                 `json:"Picture,omitempty"`
+	Place                          *string                       `json:"Place,omitempty"`
+	Start                          *string                       `json:"Start,omitempty"`
+	Title                          *string                       `json:"Title,omitempty"`
+	Type                           *string                       `json:"Type,omitempty"`
+	UpdatedAt                      *string                       `json:"UpdatedAt,omitempty"`
+	Volunteers                     *float32                      `json:"Volunteers,omitempty"`
+	CommunicationOnEvents          *CommunicationOnEventsRequest `json:"communicationOnEvents,omitempty"`
+	NcCurgBotEventsId              *int                          `json:"nc_curg___BotEvents_id,omitempty"`
+	NcCurgNcM2mW5i3lbdpwrs         *NcCurgNcM2mW5i3lbdpwrRequest `json:"nc_curg___nc_m2m_w5i3lbdpwrs,omitempty"`
+	NcCurgCommunicationOnEventsId  *int                          `json:"nc_curg__communicationOnEvents_id,omitempty"`
+	NcCurgCommunicationOnEventsId1 *int                          `json:"nc_curg__communicationOnEvents_id1,omitempty"`
+}
+
+// EventseventsGridRequest defines model for EventseventsGridRequest.
+type EventseventsGridRequest struct {
+	CreatedAt                      *string `json:"CreatedAt,omitempty"`
+	End                            *string `json:"End,omitempty"`
+	Id                             *int    `json:"Id,omitempty"`
+	NbVolunteers                   *int    `json:"NbVolunteers,omitempty"`
+	Place                          *string `json:"Place,omitempty"`
+	Start                          *string `json:"Start,omitempty"`
+	Title                          *string `json:"Title,omitempty"`
+	Type                           *string `json:"Type,omitempty"`
+	UpdatedAt                      *string `json:"UpdatedAt,omitempty"`
+	NcCurgBotEventsId              *int    `json:"nc_curg___BotEvents_id,omitempty"`
+	NcCurgCommunicationOnEventsId  *int    `json:"nc_curg__communicationOnEvents_id,omitempty"`
+	NcCurgCommunicationOnEventsId1 *int    `json:"nc_curg__communicationOnEvents_id1,omitempty"`
+}
+
+// EventseventsGridResponse defines model for EventseventsGridResponse.
+type EventseventsGridResponse struct {
+	BotEvents                      *BotEventsRequest             `json:"BotEvents,omitempty"`
+	CreatedAt                      *string                       `json:"CreatedAt,omitempty"`
+	End                            *string                       `json:"End,omitempty"`
+	Id                             *int                          `json:"Id,omitempty"`
+	NbVolunteers                   *int                          `json:"NbVolunteers,omitempty"`
+	Picture                        *[]Attachment                 `json:"Picture,omitempty"`
+	Place                          *string                       `json:"Place,omitempty"`
+	Start                          *string                       `json:"Start,omitempty"`
+	Title                          *string                       `json:"Title,omitempty"`
+	Type                           *string                       `json:"Type,omitempty"`
+	UpdatedAt                      *string                       `json:"UpdatedAt,omitempty"`
+	Volunteers                     *float32                      `json:"Volunteers,omitempty"`
+	CommunicationOnEvents          *CommunicationOnEventsRequest `json:"communicationOnEvents,omitempty"`
+	NcCurgBotEventsId              *int                          `json:"nc_curg___BotEvents_id,omitempty"`
+	NcCurgNcM2mW5i3lbdpwrs         *NcCurgNcM2mW5i3lbdpwrRequest `json:"nc_curg___nc_m2m_w5i3lbdpwrs,omitempty"`
+	NcCurgCommunicationOnEventsId  *int                          `json:"nc_curg__communicationOnEvents_id,omitempty"`
+	NcCurgCommunicationOnEventsId1 *int                          `json:"nc_curg__communicationOnEvents_id1,omitempty"`
+}
+
 // Groupby defines model for Groupby.
 type Groupby struct {
 	// ColumnName the value of the given column
@@ -41,172 +166,148 @@ type Paginated struct {
 
 // VolunteersRequest defines model for VolunteersRequest.
 type VolunteersRequest struct {
-	CreatedAt      *string `json:"CreatedAt,omitempty"`
-	Id             *int    `json:"Id,omitempty"`
-	UpdatedAt      *string `json:"UpdatedAt,omitempty"`
-	DiscordId      *string `json:"discordId,omitempty"`
-	Email          *string `json:"email,omitempty"`
-	Name           *string `json:"name,omitempty"`
-	NcZosbEventsId *int    `json:"nc_zosb___events_id,omitempty"`
-	Tel            *string `json:"tel,omitempty"`
+	CreatedAt *string `json:"CreatedAt,omitempty"`
+	DiscordId *string `json:"DiscordId,omitempty"`
+	Email     *string `json:"Email,omitempty"`
+	Firstname *string `json:"Firstname,omitempty"`
+	Id        *int    `json:"Id,omitempty"`
+	Lastname  *string `json:"Lastname,omitempty"`
+	Tel       *string `json:"Tel,omitempty"`
+	UpdatedAt *string `json:"UpdatedAt,omitempty"`
 }
 
 // VolunteersResponse defines model for VolunteersResponse.
 type VolunteersResponse struct {
-	CreatedAt      *string        `json:"CreatedAt,omitempty"`
-	Id             *int           `json:"Id,omitempty"`
-	UpdatedAt      *string        `json:"UpdatedAt,omitempty"`
-	DiscordId      *string        `json:"discordId,omitempty"`
-	Email          *string        `json:"email,omitempty"`
-	Events         *EventsRequest `json:"events,omitempty"`
-	Name           *string        `json:"name,omitempty"`
-	NcZosbEventsId *int           `json:"nc_zosb___events_id,omitempty"`
-	Tel            *string        `json:"tel,omitempty"`
+	CreatedAt              *string                       `json:"CreatedAt,omitempty"`
+	DiscordId              *string                       `json:"DiscordId,omitempty"`
+	Email                  *string                       `json:"Email,omitempty"`
+	Events                 *float32                      `json:"Events,omitempty"`
+	Firstname              *string                       `json:"Firstname,omitempty"`
+	Id                     *int                          `json:"Id,omitempty"`
+	Lastname               *string                       `json:"Lastname,omitempty"`
+	Tel                    *string                       `json:"Tel,omitempty"`
+	UpdatedAt              *string                       `json:"UpdatedAt,omitempty"`
+	NcCurgNcM2mW5i3lbdpwrs *NcCurgNcM2mW5i3lbdpwrRequest `json:"nc_curg___nc_m2m_w5i3lbdpwrs,omitempty"`
 }
 
-// VolunteersVolunteersGridRequest defines model for VolunteersVolunteersGridRequest.
-type VolunteersVolunteersGridRequest struct {
-	CreatedAt      *string `json:"CreatedAt,omitempty"`
-	Id             *int    `json:"Id,omitempty"`
-	UpdatedAt      *string `json:"UpdatedAt,omitempty"`
-	DiscordId      *string `json:"discordId,omitempty"`
-	Email          *string `json:"email,omitempty"`
-	Name           *string `json:"name,omitempty"`
-	NcZosbEventsId *int    `json:"nc_zosb___events_id,omitempty"`
-	Tel            *string `json:"tel,omitempty"`
-}
-
-// VolunteersVolunteersGridResponse defines model for VolunteersVolunteersGridResponse.
-type VolunteersVolunteersGridResponse struct {
-	CreatedAt      *string        `json:"CreatedAt,omitempty"`
-	Id             *int           `json:"Id,omitempty"`
-	UpdatedAt      *string        `json:"UpdatedAt,omitempty"`
-	DiscordId      *string        `json:"discordId,omitempty"`
-	Email          *string        `json:"email,omitempty"`
-	Events         *EventsRequest `json:"events,omitempty"`
-	Name           *string        `json:"name,omitempty"`
-	NcZosbEventsId *int           `json:"nc_zosb___events_id,omitempty"`
-	Tel            *string        `json:"tel,omitempty"`
-}
-
-// CommEventsRequest defines model for comm_eventsRequest.
-type CommEventsRequest struct {
+// VolunteersgridGridRequest defines model for VolunteersgridGridRequest.
+type VolunteersgridGridRequest struct {
 	CreatedAt *string `json:"CreatedAt,omitempty"`
+	DiscordId *string `json:"DiscordId,omitempty"`
+	Email     *string `json:"Email,omitempty"`
+	Firstname *string `json:"Firstname,omitempty"`
 	Id        *int    `json:"Id,omitempty"`
-	Title     *string `json:"Title,omitempty"`
+	Lastname  *string `json:"Lastname,omitempty"`
+	Tel       *string `json:"Tel,omitempty"`
 	UpdatedAt *string `json:"UpdatedAt,omitempty"`
 }
 
-// CommEventsResponse defines model for comm_eventsResponse.
-type CommEventsResponse struct {
-	CreatedAt *string `json:"CreatedAt,omitempty"`
-	Id        *int    `json:"Id,omitempty"`
-	Title     *string `json:"Title,omitempty"`
-	UpdatedAt *string `json:"UpdatedAt,omitempty"`
+// VolunteersgridGridResponse defines model for VolunteersgridGridResponse.
+type VolunteersgridGridResponse struct {
+	CreatedAt              *string                       `json:"CreatedAt,omitempty"`
+	DiscordId              *string                       `json:"DiscordId,omitempty"`
+	Email                  *string                       `json:"Email,omitempty"`
+	Events                 *float32                      `json:"Events,omitempty"`
+	Firstname              *string                       `json:"Firstname,omitempty"`
+	Id                     *int                          `json:"Id,omitempty"`
+	Lastname               *string                       `json:"Lastname,omitempty"`
+	Tel                    *string                       `json:"Tel,omitempty"`
+	UpdatedAt              *string                       `json:"UpdatedAt,omitempty"`
+	NcCurgNcM2mW5i3lbdpwrs *NcCurgNcM2mW5i3lbdpwrRequest `json:"nc_curg___nc_m2m_w5i3lbdpwrs,omitempty"`
 }
 
-// CommEventscommEventsGridRequest defines model for comm_eventscomm_eventsGridRequest.
-type CommEventscommEventsGridRequest struct {
-	CreatedAt *string `json:"CreatedAt,omitempty"`
-	Id        *int    `json:"Id,omitempty"`
-	Title     *string `json:"Title,omitempty"`
-	UpdatedAt *string `json:"UpdatedAt,omitempty"`
+// CommunicationOnEventsRequest defines model for communicationOnEventsRequest.
+type CommunicationOnEventsRequest struct {
+	AdditionnalLink    *string `json:"AdditionnalLink,omitempty"`
+	CreatedAt          *string `json:"CreatedAt,omitempty"`
+	DescEN             *string `json:"DescEN,omitempty"`
+	DescFR             *string `json:"DescFR,omitempty"`
+	Id                 *int    `json:"Id,omitempty"`
+	MembershipRequired *bool   `json:"MembershipRequired,omitempty"`
+	NearestStation     *string `json:"NearestStation,omitempty"`
+	Price              *string `json:"Price,omitempty"`
+	TicketingURL       *string `json:"TicketingURL,omitempty"`
+	Title              *string `json:"Title,omitempty"`
+	UpdatedAt          *string `json:"UpdatedAt,omitempty"`
+	NeedTickets        *bool   `json:"needTickets,omitempty"`
 }
 
-// CommEventscommEventsGridResponse defines model for comm_eventscomm_eventsGridResponse.
-type CommEventscommEventsGridResponse struct {
-	CreatedAt *string `json:"CreatedAt,omitempty"`
-	Id        *int    `json:"Id,omitempty"`
-	Title     *string `json:"Title,omitempty"`
-	UpdatedAt *string `json:"UpdatedAt,omitempty"`
+// CommunicationOnEventsResponse defines model for communicationOnEventsResponse.
+type CommunicationOnEventsResponse struct {
+	AdditionnalLink    *string  `json:"AdditionnalLink,omitempty"`
+	CreatedAt          *string  `json:"CreatedAt,omitempty"`
+	DescEN             *string  `json:"DescEN,omitempty"`
+	DescFR             *string  `json:"DescFR,omitempty"`
+	Event              *float32 `json:"Event,omitempty"`
+	Id                 *int     `json:"Id,omitempty"`
+	MembershipRequired *bool    `json:"MembershipRequired,omitempty"`
+	NearestStation     *string  `json:"NearestStation,omitempty"`
+	Price              *string  `json:"Price,omitempty"`
+	TicketingURL       *string  `json:"TicketingURL,omitempty"`
+	Title              *string  `json:"Title,omitempty"`
+	UpdatedAt          *string  `json:"UpdatedAt,omitempty"`
+	NeedTickets        *bool    `json:"needTickets,omitempty"`
 }
 
-// EventsRequest defines model for eventsRequest.
-type EventsRequest struct {
-	CreatedAt *string `json:"CreatedAt,omitempty"`
-	Debut     *string `json:"Debut,omitempty"`
-	Fin       *string `json:"Fin,omitempty"`
-	Id        *int    `json:"Id,omitempty"`
-	Title     *string `json:"Title,omitempty"`
-	UpdatedAt *string `json:"UpdatedAt,omitempty"`
+// CommunicationOnEventscommunicationOnEventsGridRequest defines model for communicationOnEventscommunicationOnEventsGridRequest.
+type CommunicationOnEventscommunicationOnEventsGridRequest struct {
+	AdditionnalLink    *string `json:"AdditionnalLink,omitempty"`
+	CreatedAt          *string `json:"CreatedAt,omitempty"`
+	DescEN             *string `json:"DescEN,omitempty"`
+	DescFR             *string `json:"DescFR,omitempty"`
+	Id                 *int    `json:"Id,omitempty"`
+	MembershipRequired *bool   `json:"MembershipRequired,omitempty"`
+	NearestStation     *string `json:"NearestStation,omitempty"`
+	Price              *string `json:"Price,omitempty"`
+	TicketingURL       *string `json:"TicketingURL,omitempty"`
+	Title              *string `json:"Title,omitempty"`
+	UpdatedAt          *string `json:"UpdatedAt,omitempty"`
+	NeedTickets        *bool   `json:"needTickets,omitempty"`
 }
 
-// EventsResponse defines model for eventsResponse.
-type EventsResponse struct {
-	CreatedAt  *string  `json:"CreatedAt,omitempty"`
-	Debut      *string  `json:"Debut,omitempty"`
-	Fin        *string  `json:"Fin,omitempty"`
-	Id         *int     `json:"Id,omitempty"`
-	Title      *string  `json:"Title,omitempty"`
-	UpdatedAt  *string  `json:"UpdatedAt,omitempty"`
-	Volunteers *float32 `json:"Volunteers,omitempty"`
+// CommunicationOnEventscommunicationOnEventsGridResponse defines model for communicationOnEventscommunicationOnEventsGridResponse.
+type CommunicationOnEventscommunicationOnEventsGridResponse struct {
+	AdditionnalLink    *string  `json:"AdditionnalLink,omitempty"`
+	CreatedAt          *string  `json:"CreatedAt,omitempty"`
+	DescEN             *string  `json:"DescEN,omitempty"`
+	DescFR             *string  `json:"DescFR,omitempty"`
+	Event              *float32 `json:"Event,omitempty"`
+	Id                 *int     `json:"Id,omitempty"`
+	MembershipRequired *bool    `json:"MembershipRequired,omitempty"`
+	NearestStation     *string  `json:"NearestStation,omitempty"`
+	Price              *string  `json:"Price,omitempty"`
+	TicketingURL       *string  `json:"TicketingURL,omitempty"`
+	Title              *string  `json:"Title,omitempty"`
+	UpdatedAt          *string  `json:"UpdatedAt,omitempty"`
+	NeedTickets        *bool    `json:"needTickets,omitempty"`
 }
 
-// EventseventsGridRequest defines model for eventseventsGridRequest.
-type EventseventsGridRequest struct {
-	CreatedAt *string `json:"CreatedAt,omitempty"`
-	Debut     *string `json:"Debut,omitempty"`
-	Fin       *string `json:"Fin,omitempty"`
-	Id        *int    `json:"Id,omitempty"`
-	Title     *string `json:"Title,omitempty"`
-	UpdatedAt *string `json:"UpdatedAt,omitempty"`
+// NcCurgNcM2mW5i3lbdpwrRequest defines model for nc_curg___nc_m2m_w5i3lbdpwrRequest.
+type NcCurgNcM2mW5i3lbdpwrRequest struct {
+	Table1Id *int `json:"table1_id,omitempty"`
+	Table2Id *int `json:"table2_id,omitempty"`
 }
 
-// EventseventsGridResponse defines model for eventseventsGridResponse.
-type EventseventsGridResponse struct {
-	CreatedAt  *string  `json:"CreatedAt,omitempty"`
-	Debut      *string  `json:"Debut,omitempty"`
-	Fin        *string  `json:"Fin,omitempty"`
-	Id         *int     `json:"Id,omitempty"`
-	Title      *string  `json:"Title,omitempty"`
-	UpdatedAt  *string  `json:"UpdatedAt,omitempty"`
-	Volunteers *float32 `json:"Volunteers,omitempty"`
-}
+// BoteventsBulkDeleteJSONBody defines parameters for BoteventsBulkDelete.
+type BoteventsBulkDeleteJSONBody = interface{}
 
-// VolunteersBulkDeleteJSONBody defines parameters for VolunteersBulkDelete.
-type VolunteersBulkDeleteJSONBody = interface{}
+// BoteventsBulkUpdateJSONBody defines parameters for BoteventsBulkUpdate.
+type BoteventsBulkUpdateJSONBody = interface{}
 
-// VolunteersBulkUpdateJSONBody defines parameters for VolunteersBulkUpdate.
-type VolunteersBulkUpdateJSONBody = interface{}
+// BoteventsBulkCreateJSONBody defines parameters for BoteventsBulkCreate.
+type BoteventsBulkCreateJSONBody = interface{}
 
-// VolunteersBulkCreateJSONBody defines parameters for VolunteersBulkCreate.
-type VolunteersBulkCreateJSONBody = interface{}
-
-// VolunteersBulkDeleteAllParams defines parameters for VolunteersBulkDeleteAll.
-type VolunteersBulkDeleteAllParams struct {
+// BoteventsBulkDeleteAllParams defines parameters for BoteventsBulkDeleteAll.
+type BoteventsBulkDeleteAllParams struct {
 	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
 	Where *string `form:"where,omitempty" json:"where,omitempty"`
 }
 
-// VolunteersBulkUpdateAllJSONBody defines parameters for VolunteersBulkUpdateAll.
-type VolunteersBulkUpdateAllJSONBody = interface{}
+// BoteventsBulkUpdateAllJSONBody defines parameters for BoteventsBulkUpdateAll.
+type BoteventsBulkUpdateAllJSONBody = interface{}
 
-// VolunteersBulkUpdateAllParams defines parameters for VolunteersBulkUpdateAll.
-type VolunteersBulkUpdateAllParams struct {
-	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
-	Where *string `form:"where,omitempty" json:"where,omitempty"`
-}
-
-// CommEventsBulkDeleteJSONBody defines parameters for CommEventsBulkDelete.
-type CommEventsBulkDeleteJSONBody = interface{}
-
-// CommEventsBulkUpdateJSONBody defines parameters for CommEventsBulkUpdate.
-type CommEventsBulkUpdateJSONBody = interface{}
-
-// CommEventsBulkCreateJSONBody defines parameters for CommEventsBulkCreate.
-type CommEventsBulkCreateJSONBody = interface{}
-
-// CommEventsBulkDeleteAllParams defines parameters for CommEventsBulkDeleteAll.
-type CommEventsBulkDeleteAllParams struct {
-	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
-	Where *string `form:"where,omitempty" json:"where,omitempty"`
-}
-
-// CommEventsBulkUpdateAllJSONBody defines parameters for CommEventsBulkUpdateAll.
-type CommEventsBulkUpdateAllJSONBody = interface{}
-
-// CommEventsBulkUpdateAllParams defines parameters for CommEventsBulkUpdateAll.
-type CommEventsBulkUpdateAllParams struct {
+// BoteventsBulkUpdateAllParams defines parameters for BoteventsBulkUpdateAll.
+type BoteventsBulkUpdateAllParams struct {
 	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
 	Where *string `form:"where,omitempty" json:"where,omitempty"`
 }
@@ -235,8 +336,56 @@ type EventsBulkUpdateAllParams struct {
 	Where *string `form:"where,omitempty" json:"where,omitempty"`
 }
 
-// VolunteersDbTableRowListParams defines parameters for VolunteersDbTableRowList.
-type VolunteersDbTableRowListParams struct {
+// VolunteersBulkDeleteJSONBody defines parameters for VolunteersBulkDelete.
+type VolunteersBulkDeleteJSONBody = interface{}
+
+// VolunteersBulkUpdateJSONBody defines parameters for VolunteersBulkUpdate.
+type VolunteersBulkUpdateJSONBody = interface{}
+
+// VolunteersBulkCreateJSONBody defines parameters for VolunteersBulkCreate.
+type VolunteersBulkCreateJSONBody = interface{}
+
+// VolunteersBulkDeleteAllParams defines parameters for VolunteersBulkDeleteAll.
+type VolunteersBulkDeleteAllParams struct {
+	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
+	Where *string `form:"where,omitempty" json:"where,omitempty"`
+}
+
+// VolunteersBulkUpdateAllJSONBody defines parameters for VolunteersBulkUpdateAll.
+type VolunteersBulkUpdateAllJSONBody = interface{}
+
+// VolunteersBulkUpdateAllParams defines parameters for VolunteersBulkUpdateAll.
+type VolunteersBulkUpdateAllParams struct {
+	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
+	Where *string `form:"where,omitempty" json:"where,omitempty"`
+}
+
+// CommunicationoneventsBulkDeleteJSONBody defines parameters for CommunicationoneventsBulkDelete.
+type CommunicationoneventsBulkDeleteJSONBody = interface{}
+
+// CommunicationoneventsBulkUpdateJSONBody defines parameters for CommunicationoneventsBulkUpdate.
+type CommunicationoneventsBulkUpdateJSONBody = interface{}
+
+// CommunicationoneventsBulkCreateJSONBody defines parameters for CommunicationoneventsBulkCreate.
+type CommunicationoneventsBulkCreateJSONBody = interface{}
+
+// CommunicationoneventsBulkDeleteAllParams defines parameters for CommunicationoneventsBulkDeleteAll.
+type CommunicationoneventsBulkDeleteAllParams struct {
+	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
+	Where *string `form:"where,omitempty" json:"where,omitempty"`
+}
+
+// CommunicationoneventsBulkUpdateAllJSONBody defines parameters for CommunicationoneventsBulkUpdateAll.
+type CommunicationoneventsBulkUpdateAllJSONBody = interface{}
+
+// CommunicationoneventsBulkUpdateAllParams defines parameters for CommunicationoneventsBulkUpdateAll.
+type CommunicationoneventsBulkUpdateAllParams struct {
+	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
+	Where *string `form:"where,omitempty" json:"where,omitempty"`
+}
+
+// BoteventsDbTableRowListParams defines parameters for BoteventsDbTableRowList.
+type BoteventsDbTableRowListParams struct {
 	// Fields Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -254,25 +403,22 @@ type VolunteersDbTableRowListParams struct {
 
 	// Offset The `offset` parameter used for pagination, the value helps to select collection from a certain index.
 	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
-
-	// NestedEventsFields Array of field names or comma separated filed names to include in the in nested column `events` result. In array syntax pass it like `fields[]=field1&fields[]=field2.`. Example : `nested[events][fields]=field1,field2`
-	NestedEventsFields *string `form:"nested[events][fields],omitempty" json:"nested[events][fields],omitempty"`
 }
 
-// VolunteersCountParams defines parameters for VolunteersCount.
-type VolunteersCountParams struct {
+// BoteventsCountParams defines parameters for BoteventsCount.
+type BoteventsCountParams struct {
 	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
 	Where *string `form:"where,omitempty" json:"where,omitempty"`
 }
 
-// VolunteersCsvExportParams defines parameters for VolunteersCsvExport.
-type VolunteersCsvExportParams struct {
+// BoteventsCsvExportParams defines parameters for BoteventsCsvExport.
+type BoteventsCsvExportParams struct {
 	// Offset Helps to start export from a certain index. You can get the next set of data offset from previous response header named `nc-export-offset`.
 	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
 }
 
-// VolunteersDbTableRowFindOneParams defines parameters for VolunteersDbTableRowFindOne.
-type VolunteersDbTableRowFindOneParams struct {
+// BoteventsDbTableRowFindOneParams defines parameters for BoteventsDbTableRowFindOne.
+type BoteventsDbTableRowFindOneParams struct {
 	// Fields Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -283,8 +429,8 @@ type VolunteersDbTableRowFindOneParams struct {
 	Sort *string `form:"sort,omitempty" json:"sort,omitempty"`
 }
 
-// VolunteersGroupbyParams defines parameters for VolunteersGroupby.
-type VolunteersGroupbyParams struct {
+// BoteventsGroupbyParams defines parameters for BoteventsGroupby.
+type BoteventsGroupbyParams struct {
 	// ColumnName Column name of the column you want to group by, eg. `column_name=column1`
 	ColumnName *string `form:"column_name,omitempty" json:"column_name,omitempty"`
 
@@ -304,8 +450,8 @@ type VolunteersGroupbyParams struct {
 	Shuffle *float32 `form:"shuffle,omitempty" json:"shuffle,omitempty"`
 }
 
-// VolunteersVolunteersRowListParams defines parameters for VolunteersVolunteersRowList.
-type VolunteersVolunteersRowListParams struct {
+// BotEventsBotEventsRowListParams defines parameters for BotEventsBotEventsRowList.
+type BotEventsBotEventsRowListParams struct {
 	// Fields Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
@@ -314,28 +460,25 @@ type VolunteersVolunteersRowListParams struct {
 
 	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
 	Where *string `form:"where,omitempty" json:"where,omitempty"`
-
-	// NestedEventsFields Array of field names or comma separated filed names to include in the in nested column `events` result. In array syntax pass it like `fields[]=field1&fields[]=field2.`. Example : `nested[events][fields]=field1,field2`
-	NestedEventsFields *string `form:"nested[events][fields],omitempty" json:"nested[events][fields],omitempty"`
 }
 
-// VolunteersVolunteersRowCountParams defines parameters for VolunteersVolunteersRowCount.
-type VolunteersVolunteersRowCountParams struct {
+// BotEventsBotEventsRowCountParams defines parameters for BotEventsBotEventsRowCount.
+type BotEventsBotEventsRowCountParams struct {
 	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
 	Where *string `form:"where,omitempty" json:"where,omitempty"`
 }
 
-// VolunteersReadParams defines parameters for VolunteersRead.
-type VolunteersReadParams struct {
+// BoteventsReadParams defines parameters for BoteventsRead.
+type BoteventsReadParams struct {
 	// Fields Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`.
 	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 }
 
-// VolunteersUpdateJSONBody defines parameters for VolunteersUpdate.
-type VolunteersUpdateJSONBody = interface{}
+// BoteventsUpdateJSONBody defines parameters for BoteventsUpdate.
+type BoteventsUpdateJSONBody = interface{}
 
-// VolunteersNestedListParams defines parameters for VolunteersNestedList.
-type VolunteersNestedListParams struct {
+// BoteventsNestedListParams defines parameters for BoteventsNestedList.
+type BoteventsNestedListParams struct {
 	// Limit The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.
 	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
 
@@ -343,20 +486,8 @@ type VolunteersNestedListParams struct {
 	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
 }
 
-// VolunteersNestedChildrenExcludedListParams defines parameters for VolunteersNestedChildrenExcludedList.
-type VolunteersNestedChildrenExcludedListParams struct {
-	// Limit The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.
-	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
-
-	// Shuffle The `shuffle` parameter used for pagination, the response will be shuffled if it is set to 1.
-	Shuffle *float32 `form:"shuffle,omitempty" json:"shuffle,omitempty"`
-
-	// Offset The `offset` parameter used for pagination, the value helps to select collection from a certain index.
-	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
-}
-
-// VolunteersNestedAddParams defines parameters for VolunteersNestedAdd.
-type VolunteersNestedAddParams struct {
+// BoteventsNestedChildrenExcludedListParams defines parameters for BoteventsNestedChildrenExcludedList.
+type BoteventsNestedChildrenExcludedListParams struct {
 	// Limit The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.
 	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
 
@@ -367,17 +498,8 @@ type VolunteersNestedAddParams struct {
 	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
 }
 
-// CommEventsDbTableRowListParams defines parameters for CommEventsDbTableRowList.
-type CommEventsDbTableRowListParams struct {
-	// Fields Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`.
-	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
-
-	// Sort Comma separated field names to sort rows, rows will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `sort=field1,-field2`
-	Sort *string `form:"sort,omitempty" json:"sort,omitempty"`
-
-	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
-	Where *string `form:"where,omitempty" json:"where,omitempty"`
-
+// BoteventsNestedAddParams defines parameters for BoteventsNestedAdd.
+type BoteventsNestedAddParams struct {
 	// Limit The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.
 	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
 
@@ -387,78 +509,6 @@ type CommEventsDbTableRowListParams struct {
 	// Offset The `offset` parameter used for pagination, the value helps to select collection from a certain index.
 	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
 }
-
-// CommEventsCountParams defines parameters for CommEventsCount.
-type CommEventsCountParams struct {
-	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
-	Where *string `form:"where,omitempty" json:"where,omitempty"`
-}
-
-// CommEventsCsvExportParams defines parameters for CommEventsCsvExport.
-type CommEventsCsvExportParams struct {
-	// Offset Helps to start export from a certain index. You can get the next set of data offset from previous response header named `nc-export-offset`.
-	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
-}
-
-// CommEventsDbTableRowFindOneParams defines parameters for CommEventsDbTableRowFindOne.
-type CommEventsDbTableRowFindOneParams struct {
-	// Fields Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`.
-	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
-
-	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
-	Where *string `form:"where,omitempty" json:"where,omitempty"`
-
-	// Sort Comma separated field names to sort rows, rows will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `sort=field1,-field2`
-	Sort *string `form:"sort,omitempty" json:"sort,omitempty"`
-}
-
-// CommEventsGroupbyParams defines parameters for CommEventsGroupby.
-type CommEventsGroupbyParams struct {
-	// ColumnName Column name of the column you want to group by, eg. `column_name=column1`
-	ColumnName *string `form:"column_name,omitempty" json:"column_name,omitempty"`
-
-	// Sort Comma separated field names to sort rows, rows will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `sort=field1,-field2`
-	Sort *string `form:"sort,omitempty" json:"sort,omitempty"`
-
-	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
-	Where *string `form:"where,omitempty" json:"where,omitempty"`
-
-	// Limit The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.
-	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
-
-	// Offset The `offset` parameter used for pagination, the value helps to select collection from a certain index.
-	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
-
-	// Shuffle The `shuffle` parameter used for pagination, the response will be shuffled if it is set to 1.
-	Shuffle *float32 `form:"shuffle,omitempty" json:"shuffle,omitempty"`
-}
-
-// CommEventsCommEventsRowListParams defines parameters for CommEventsCommEventsRowList.
-type CommEventsCommEventsRowListParams struct {
-	// Fields Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`.
-	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
-
-	// Sort Comma separated field names to sort rows, rows will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `sort=field1,-field2`
-	Sort *string `form:"sort,omitempty" json:"sort,omitempty"`
-
-	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
-	Where *string `form:"where,omitempty" json:"where,omitempty"`
-}
-
-// CommEventsCommEventsRowCountParams defines parameters for CommEventsCommEventsRowCount.
-type CommEventsCommEventsRowCountParams struct {
-	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
-	Where *string `form:"where,omitempty" json:"where,omitempty"`
-}
-
-// CommEventsReadParams defines parameters for CommEventsRead.
-type CommEventsReadParams struct {
-	// Fields Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`.
-	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
-}
-
-// CommEventsUpdateJSONBody defines parameters for CommEventsUpdate.
-type CommEventsUpdateJSONBody = interface{}
 
 // EventsDbTableRowListParams defines parameters for EventsDbTableRowList.
 type EventsDbTableRowListParams struct {
@@ -479,6 +529,27 @@ type EventsDbTableRowListParams struct {
 
 	// Offset The `offset` parameter used for pagination, the value helps to select collection from a certain index.
 	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
+
+	// NestedNcCurgNcM2mW5i3lbdpwrsWhere This can be used for filtering rows in nested column `nc_curg___nc_m2m_w5i3lbdpwrs`, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][where]=(field1,eq,value)`
+	NestedNcCurgNcM2mW5i3lbdpwrsWhere *string `form:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][where],omitempty" json:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][where],omitempty"`
+
+	// NestedNcCurgNcM2mW5i3lbdpwrsOffset The `offset` parameter used for pagination  of nested `nc_curg___nc_m2m_w5i3lbdpwrs` rows, the value helps to select collection from a certain index.
+	NestedNcCurgNcM2mW5i3lbdpwrsOffset *float32 `form:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][offset],omitempty" json:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][offset],omitempty"`
+
+	// NestedNcCurgNcM2mW5i3lbdpwrsLimit The `limit` parameter used for pagination of nested `nc_curg___nc_m2m_w5i3lbdpwrs` rows, the response collection size depends on limit value and default value is `25`.
+	NestedNcCurgNcM2mW5i3lbdpwrsLimit *float32 `form:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][limit],omitempty" json:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][limit],omitempty"`
+
+	// NestedNcCurgNcM2mW5i3lbdpwrsFields Array of field names or comma separated filed names to include in the in nested column `nc_curg___nc_m2m_w5i3lbdpwrs` result. In array syntax pass it like `fields[]=field1&fields[]=field2.`. Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields]=field1,field2`
+	NestedNcCurgNcM2mW5i3lbdpwrsFields *string `form:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields],omitempty" json:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields],omitempty"`
+
+	// NestedNcCurgNcM2mW5i3lbdpwrsSort Comma separated field names to sort rows in nested column `nc_curg___nc_m2m_w5i3lbdpwrs` rows, it will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort]=field1,-field2`
+	NestedNcCurgNcM2mW5i3lbdpwrsSort *string `form:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort],omitempty" json:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort],omitempty"`
+
+	// NestedCommunicationOnEventsFields Array of field names or comma separated filed names to include in the in nested column `communicationOnEvents` result. In array syntax pass it like `fields[]=field1&fields[]=field2.`. Example : `nested[communicationOnEvents][fields]=field1,field2`
+	NestedCommunicationOnEventsFields *string `form:"nested[communicationOnEvents][fields],omitempty" json:"nested[communicationOnEvents][fields],omitempty"`
+
+	// NestedBotEventsFields Array of field names or comma separated filed names to include in the in nested column `BotEvents` result. In array syntax pass it like `fields[]=field1&fields[]=field2.`. Example : `nested[BotEvents][fields]=field1,field2`
+	NestedBotEventsFields *string `form:"nested[BotEvents][fields],omitempty" json:"nested[BotEvents][fields],omitempty"`
 }
 
 // EventsCountParams defines parameters for EventsCount.
@@ -536,6 +607,27 @@ type EventsEventsRowListParams struct {
 
 	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
 	Where *string `form:"where,omitempty" json:"where,omitempty"`
+
+	// NestedNcCurgNcM2mW5i3lbdpwrsWhere This can be used for filtering rows in nested column `nc_curg___nc_m2m_w5i3lbdpwrs`, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][where]=(field1,eq,value)`
+	NestedNcCurgNcM2mW5i3lbdpwrsWhere *string `form:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][where],omitempty" json:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][where],omitempty"`
+
+	// NestedNcCurgNcM2mW5i3lbdpwrsOffset The `offset` parameter used for pagination  of nested `nc_curg___nc_m2m_w5i3lbdpwrs` rows, the value helps to select collection from a certain index.
+	NestedNcCurgNcM2mW5i3lbdpwrsOffset *float32 `form:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][offset],omitempty" json:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][offset],omitempty"`
+
+	// NestedNcCurgNcM2mW5i3lbdpwrsLimit The `limit` parameter used for pagination of nested `nc_curg___nc_m2m_w5i3lbdpwrs` rows, the response collection size depends on limit value and default value is `25`.
+	NestedNcCurgNcM2mW5i3lbdpwrsLimit *float32 `form:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][limit],omitempty" json:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][limit],omitempty"`
+
+	// NestedNcCurgNcM2mW5i3lbdpwrsFields Array of field names or comma separated filed names to include in the in nested column `nc_curg___nc_m2m_w5i3lbdpwrs` result. In array syntax pass it like `fields[]=field1&fields[]=field2.`. Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields]=field1,field2`
+	NestedNcCurgNcM2mW5i3lbdpwrsFields *string `form:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields],omitempty" json:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields],omitempty"`
+
+	// NestedNcCurgNcM2mW5i3lbdpwrsSort Comma separated field names to sort rows in nested column `nc_curg___nc_m2m_w5i3lbdpwrs` rows, it will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort]=field1,-field2`
+	NestedNcCurgNcM2mW5i3lbdpwrsSort *string `form:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort],omitempty" json:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort],omitempty"`
+
+	// NestedCommunicationOnEventsFields Array of field names or comma separated filed names to include in the in nested column `communicationOnEvents` result. In array syntax pass it like `fields[]=field1&fields[]=field2.`. Example : `nested[communicationOnEvents][fields]=field1,field2`
+	NestedCommunicationOnEventsFields *string `form:"nested[communicationOnEvents][fields],omitempty" json:"nested[communicationOnEvents][fields],omitempty"`
+
+	// NestedBotEventsFields Array of field names or comma separated filed names to include in the in nested column `BotEvents` result. In array syntax pass it like `fields[]=field1&fields[]=field2.`. Example : `nested[BotEvents][fields]=field1,field2`
+	NestedBotEventsFields *string `form:"nested[BotEvents][fields],omitempty" json:"nested[BotEvents][fields],omitempty"`
 }
 
 // EventsEventsRowCountParams defines parameters for EventsEventsRowCount.
@@ -586,29 +678,299 @@ type EventsNestedAddParams struct {
 	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
 }
 
-// VolunteersBulkDeleteJSONRequestBody defines body for VolunteersBulkDelete for application/json ContentType.
-type VolunteersBulkDeleteJSONRequestBody = VolunteersBulkDeleteJSONBody
+// VolunteersDbTableRowListParams defines parameters for VolunteersDbTableRowList.
+type VolunteersDbTableRowListParams struct {
+	// Fields Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`.
+	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
 
-// VolunteersBulkUpdateJSONRequestBody defines body for VolunteersBulkUpdate for application/json ContentType.
-type VolunteersBulkUpdateJSONRequestBody = VolunteersBulkUpdateJSONBody
+	// Sort Comma separated field names to sort rows, rows will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `sort=field1,-field2`
+	Sort *string `form:"sort,omitempty" json:"sort,omitempty"`
 
-// VolunteersBulkCreateJSONRequestBody defines body for VolunteersBulkCreate for application/json ContentType.
-type VolunteersBulkCreateJSONRequestBody = VolunteersBulkCreateJSONBody
+	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
+	Where *string `form:"where,omitempty" json:"where,omitempty"`
 
-// VolunteersBulkUpdateAllJSONRequestBody defines body for VolunteersBulkUpdateAll for application/json ContentType.
-type VolunteersBulkUpdateAllJSONRequestBody = VolunteersBulkUpdateAllJSONBody
+	// Limit The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.
+	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
 
-// CommEventsBulkDeleteJSONRequestBody defines body for CommEventsBulkDelete for application/json ContentType.
-type CommEventsBulkDeleteJSONRequestBody = CommEventsBulkDeleteJSONBody
+	// Shuffle The `shuffle` parameter used for pagination, the response will be shuffled if it is set to 1.
+	Shuffle *float32 `form:"shuffle,omitempty" json:"shuffle,omitempty"`
 
-// CommEventsBulkUpdateJSONRequestBody defines body for CommEventsBulkUpdate for application/json ContentType.
-type CommEventsBulkUpdateJSONRequestBody = CommEventsBulkUpdateJSONBody
+	// Offset The `offset` parameter used for pagination, the value helps to select collection from a certain index.
+	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
 
-// CommEventsBulkCreateJSONRequestBody defines body for CommEventsBulkCreate for application/json ContentType.
-type CommEventsBulkCreateJSONRequestBody = CommEventsBulkCreateJSONBody
+	// NestedNcCurgNcM2mW5i3lbdpwrsWhere This can be used for filtering rows in nested column `nc_curg___nc_m2m_w5i3lbdpwrs`, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][where]=(field1,eq,value)`
+	NestedNcCurgNcM2mW5i3lbdpwrsWhere *string `form:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][where],omitempty" json:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][where],omitempty"`
 
-// CommEventsBulkUpdateAllJSONRequestBody defines body for CommEventsBulkUpdateAll for application/json ContentType.
-type CommEventsBulkUpdateAllJSONRequestBody = CommEventsBulkUpdateAllJSONBody
+	// NestedNcCurgNcM2mW5i3lbdpwrsOffset The `offset` parameter used for pagination  of nested `nc_curg___nc_m2m_w5i3lbdpwrs` rows, the value helps to select collection from a certain index.
+	NestedNcCurgNcM2mW5i3lbdpwrsOffset *float32 `form:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][offset],omitempty" json:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][offset],omitempty"`
+
+	// NestedNcCurgNcM2mW5i3lbdpwrsLimit The `limit` parameter used for pagination of nested `nc_curg___nc_m2m_w5i3lbdpwrs` rows, the response collection size depends on limit value and default value is `25`.
+	NestedNcCurgNcM2mW5i3lbdpwrsLimit *float32 `form:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][limit],omitempty" json:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][limit],omitempty"`
+
+	// NestedNcCurgNcM2mW5i3lbdpwrsFields Array of field names or comma separated filed names to include in the in nested column `nc_curg___nc_m2m_w5i3lbdpwrs` result. In array syntax pass it like `fields[]=field1&fields[]=field2.`. Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields]=field1,field2`
+	NestedNcCurgNcM2mW5i3lbdpwrsFields *string `form:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields],omitempty" json:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields],omitempty"`
+
+	// NestedNcCurgNcM2mW5i3lbdpwrsSort Comma separated field names to sort rows in nested column `nc_curg___nc_m2m_w5i3lbdpwrs` rows, it will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort]=field1,-field2`
+	NestedNcCurgNcM2mW5i3lbdpwrsSort *string `form:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort],omitempty" json:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort],omitempty"`
+}
+
+// VolunteersCountParams defines parameters for VolunteersCount.
+type VolunteersCountParams struct {
+	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
+	Where *string `form:"where,omitempty" json:"where,omitempty"`
+}
+
+// VolunteersCsvExportParams defines parameters for VolunteersCsvExport.
+type VolunteersCsvExportParams struct {
+	// Offset Helps to start export from a certain index. You can get the next set of data offset from previous response header named `nc-export-offset`.
+	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
+}
+
+// VolunteersDbTableRowFindOneParams defines parameters for VolunteersDbTableRowFindOne.
+type VolunteersDbTableRowFindOneParams struct {
+	// Fields Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`.
+	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
+
+	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
+	Where *string `form:"where,omitempty" json:"where,omitempty"`
+
+	// Sort Comma separated field names to sort rows, rows will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `sort=field1,-field2`
+	Sort *string `form:"sort,omitempty" json:"sort,omitempty"`
+}
+
+// VolunteersGroupbyParams defines parameters for VolunteersGroupby.
+type VolunteersGroupbyParams struct {
+	// ColumnName Column name of the column you want to group by, eg. `column_name=column1`
+	ColumnName *string `form:"column_name,omitempty" json:"column_name,omitempty"`
+
+	// Sort Comma separated field names to sort rows, rows will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `sort=field1,-field2`
+	Sort *string `form:"sort,omitempty" json:"sort,omitempty"`
+
+	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
+	Where *string `form:"where,omitempty" json:"where,omitempty"`
+
+	// Limit The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.
+	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Offset The `offset` parameter used for pagination, the value helps to select collection from a certain index.
+	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
+
+	// Shuffle The `shuffle` parameter used for pagination, the response will be shuffled if it is set to 1.
+	Shuffle *float32 `form:"shuffle,omitempty" json:"shuffle,omitempty"`
+}
+
+// VolunteersGridRowListParams defines parameters for VolunteersGridRowList.
+type VolunteersGridRowListParams struct {
+	// Fields Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`.
+	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
+
+	// Sort Comma separated field names to sort rows, rows will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `sort=field1,-field2`
+	Sort *string `form:"sort,omitempty" json:"sort,omitempty"`
+
+	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
+	Where *string `form:"where,omitempty" json:"where,omitempty"`
+
+	// NestedNcCurgNcM2mW5i3lbdpwrsWhere This can be used for filtering rows in nested column `nc_curg___nc_m2m_w5i3lbdpwrs`, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][where]=(field1,eq,value)`
+	NestedNcCurgNcM2mW5i3lbdpwrsWhere *string `form:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][where],omitempty" json:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][where],omitempty"`
+
+	// NestedNcCurgNcM2mW5i3lbdpwrsOffset The `offset` parameter used for pagination  of nested `nc_curg___nc_m2m_w5i3lbdpwrs` rows, the value helps to select collection from a certain index.
+	NestedNcCurgNcM2mW5i3lbdpwrsOffset *float32 `form:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][offset],omitempty" json:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][offset],omitempty"`
+
+	// NestedNcCurgNcM2mW5i3lbdpwrsLimit The `limit` parameter used for pagination of nested `nc_curg___nc_m2m_w5i3lbdpwrs` rows, the response collection size depends on limit value and default value is `25`.
+	NestedNcCurgNcM2mW5i3lbdpwrsLimit *float32 `form:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][limit],omitempty" json:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][limit],omitempty"`
+
+	// NestedNcCurgNcM2mW5i3lbdpwrsFields Array of field names or comma separated filed names to include in the in nested column `nc_curg___nc_m2m_w5i3lbdpwrs` result. In array syntax pass it like `fields[]=field1&fields[]=field2.`. Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields]=field1,field2`
+	NestedNcCurgNcM2mW5i3lbdpwrsFields *string `form:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields],omitempty" json:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields],omitempty"`
+
+	// NestedNcCurgNcM2mW5i3lbdpwrsSort Comma separated field names to sort rows in nested column `nc_curg___nc_m2m_w5i3lbdpwrs` rows, it will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort]=field1,-field2`
+	NestedNcCurgNcM2mW5i3lbdpwrsSort *string `form:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort],omitempty" json:"nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort],omitempty"`
+}
+
+// VolunteersGridRowCountParams defines parameters for VolunteersGridRowCount.
+type VolunteersGridRowCountParams struct {
+	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
+	Where *string `form:"where,omitempty" json:"where,omitempty"`
+}
+
+// VolunteersReadParams defines parameters for VolunteersRead.
+type VolunteersReadParams struct {
+	// Fields Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`.
+	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
+}
+
+// VolunteersUpdateJSONBody defines parameters for VolunteersUpdate.
+type VolunteersUpdateJSONBody = interface{}
+
+// VolunteersNestedListParams defines parameters for VolunteersNestedList.
+type VolunteersNestedListParams struct {
+	// Limit The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.
+	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Offset The `offset` parameter used for pagination, the value helps to select collection from a certain index.
+	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
+}
+
+// VolunteersNestedChildrenExcludedListParams defines parameters for VolunteersNestedChildrenExcludedList.
+type VolunteersNestedChildrenExcludedListParams struct {
+	// Limit The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.
+	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Shuffle The `shuffle` parameter used for pagination, the response will be shuffled if it is set to 1.
+	Shuffle *float32 `form:"shuffle,omitempty" json:"shuffle,omitempty"`
+
+	// Offset The `offset` parameter used for pagination, the value helps to select collection from a certain index.
+	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
+}
+
+// VolunteersNestedAddParams defines parameters for VolunteersNestedAdd.
+type VolunteersNestedAddParams struct {
+	// Limit The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.
+	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Shuffle The `shuffle` parameter used for pagination, the response will be shuffled if it is set to 1.
+	Shuffle *float32 `form:"shuffle,omitempty" json:"shuffle,omitempty"`
+
+	// Offset The `offset` parameter used for pagination, the value helps to select collection from a certain index.
+	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
+}
+
+// CommunicationoneventsDbTableRowListParams defines parameters for CommunicationoneventsDbTableRowList.
+type CommunicationoneventsDbTableRowListParams struct {
+	// Fields Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`.
+	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
+
+	// Sort Comma separated field names to sort rows, rows will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `sort=field1,-field2`
+	Sort *string `form:"sort,omitempty" json:"sort,omitempty"`
+
+	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
+	Where *string `form:"where,omitempty" json:"where,omitempty"`
+
+	// Limit The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.
+	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Shuffle The `shuffle` parameter used for pagination, the response will be shuffled if it is set to 1.
+	Shuffle *float32 `form:"shuffle,omitempty" json:"shuffle,omitempty"`
+
+	// Offset The `offset` parameter used for pagination, the value helps to select collection from a certain index.
+	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
+}
+
+// CommunicationoneventsCountParams defines parameters for CommunicationoneventsCount.
+type CommunicationoneventsCountParams struct {
+	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
+	Where *string `form:"where,omitempty" json:"where,omitempty"`
+}
+
+// CommunicationoneventsCsvExportParams defines parameters for CommunicationoneventsCsvExport.
+type CommunicationoneventsCsvExportParams struct {
+	// Offset Helps to start export from a certain index. You can get the next set of data offset from previous response header named `nc-export-offset`.
+	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
+}
+
+// CommunicationoneventsDbTableRowFindOneParams defines parameters for CommunicationoneventsDbTableRowFindOne.
+type CommunicationoneventsDbTableRowFindOneParams struct {
+	// Fields Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`.
+	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
+
+	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
+	Where *string `form:"where,omitempty" json:"where,omitempty"`
+
+	// Sort Comma separated field names to sort rows, rows will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `sort=field1,-field2`
+	Sort *string `form:"sort,omitempty" json:"sort,omitempty"`
+}
+
+// CommunicationoneventsGroupbyParams defines parameters for CommunicationoneventsGroupby.
+type CommunicationoneventsGroupbyParams struct {
+	// ColumnName Column name of the column you want to group by, eg. `column_name=column1`
+	ColumnName *string `form:"column_name,omitempty" json:"column_name,omitempty"`
+
+	// Sort Comma separated field names to sort rows, rows will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `sort=field1,-field2`
+	Sort *string `form:"sort,omitempty" json:"sort,omitempty"`
+
+	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
+	Where *string `form:"where,omitempty" json:"where,omitempty"`
+
+	// Limit The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.
+	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Offset The `offset` parameter used for pagination, the value helps to select collection from a certain index.
+	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
+
+	// Shuffle The `shuffle` parameter used for pagination, the response will be shuffled if it is set to 1.
+	Shuffle *float32 `form:"shuffle,omitempty" json:"shuffle,omitempty"`
+}
+
+// CommunicationOnEventsCommunicationOnEventsRowListParams defines parameters for CommunicationOnEventsCommunicationOnEventsRowList.
+type CommunicationOnEventsCommunicationOnEventsRowListParams struct {
+	// Fields Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`.
+	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
+
+	// Sort Comma separated field names to sort rows, rows will sort in ascending order based on provided columns. To sort in descending order provide `-` prefix along with column name, like `-field`. Example : `sort=field1,-field2`
+	Sort *string `form:"sort,omitempty" json:"sort,omitempty"`
+
+	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
+	Where *string `form:"where,omitempty" json:"where,omitempty"`
+}
+
+// CommunicationOnEventsCommunicationOnEventsRowCountParams defines parameters for CommunicationOnEventsCommunicationOnEventsRowCount.
+type CommunicationOnEventsCommunicationOnEventsRowCountParams struct {
+	// Where This can be used for filtering rows, which accepts complicated where conditions. For more info visit [here](https://docs.nocodb.com/developer-resources/rest-apis#comparison-operators). Example : `where=(field1,eq,value)`
+	Where *string `form:"where,omitempty" json:"where,omitempty"`
+}
+
+// CommunicationoneventsReadParams defines parameters for CommunicationoneventsRead.
+type CommunicationoneventsReadParams struct {
+	// Fields Array of field names or comma separated filed names to include in the response objects. In array syntax pass it like `fields[]=field1&fields[]=field2` or alternately `fields=field1,field2`.
+	Fields *string `form:"fields,omitempty" json:"fields,omitempty"`
+}
+
+// CommunicationoneventsUpdateJSONBody defines parameters for CommunicationoneventsUpdate.
+type CommunicationoneventsUpdateJSONBody = interface{}
+
+// CommunicationoneventsNestedListParams defines parameters for CommunicationoneventsNestedList.
+type CommunicationoneventsNestedListParams struct {
+	// Limit The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.
+	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Offset The `offset` parameter used for pagination, the value helps to select collection from a certain index.
+	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
+}
+
+// CommunicationoneventsNestedChildrenExcludedListParams defines parameters for CommunicationoneventsNestedChildrenExcludedList.
+type CommunicationoneventsNestedChildrenExcludedListParams struct {
+	// Limit The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.
+	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Shuffle The `shuffle` parameter used for pagination, the response will be shuffled if it is set to 1.
+	Shuffle *float32 `form:"shuffle,omitempty" json:"shuffle,omitempty"`
+
+	// Offset The `offset` parameter used for pagination, the value helps to select collection from a certain index.
+	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
+}
+
+// CommunicationoneventsNestedAddParams defines parameters for CommunicationoneventsNestedAdd.
+type CommunicationoneventsNestedAddParams struct {
+	// Limit The `limit` parameter used for pagination, the response collection size depends on limit value with default value `25` and maximum value `1000`, which can be overridden by environment variables `DB_QUERY_LIMIT_DEFAULT` and `DB_QUERY_LIMIT_MAX` respectively.
+	Limit *float32 `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Shuffle The `shuffle` parameter used for pagination, the response will be shuffled if it is set to 1.
+	Shuffle *float32 `form:"shuffle,omitempty" json:"shuffle,omitempty"`
+
+	// Offset The `offset` parameter used for pagination, the value helps to select collection from a certain index.
+	Offset *float32 `form:"offset,omitempty" json:"offset,omitempty"`
+}
+
+// BoteventsBulkDeleteJSONRequestBody defines body for BoteventsBulkDelete for application/json ContentType.
+type BoteventsBulkDeleteJSONRequestBody = BoteventsBulkDeleteJSONBody
+
+// BoteventsBulkUpdateJSONRequestBody defines body for BoteventsBulkUpdate for application/json ContentType.
+type BoteventsBulkUpdateJSONRequestBody = BoteventsBulkUpdateJSONBody
+
+// BoteventsBulkCreateJSONRequestBody defines body for BoteventsBulkCreate for application/json ContentType.
+type BoteventsBulkCreateJSONRequestBody = BoteventsBulkCreateJSONBody
+
+// BoteventsBulkUpdateAllJSONRequestBody defines body for BoteventsBulkUpdateAll for application/json ContentType.
+type BoteventsBulkUpdateAllJSONRequestBody = BoteventsBulkUpdateAllJSONBody
 
 // EventsBulkDeleteJSONRequestBody defines body for EventsBulkDelete for application/json ContentType.
 type EventsBulkDeleteJSONRequestBody = EventsBulkDeleteJSONBody
@@ -622,29 +984,41 @@ type EventsBulkCreateJSONRequestBody = EventsBulkCreateJSONBody
 // EventsBulkUpdateAllJSONRequestBody defines body for EventsBulkUpdateAll for application/json ContentType.
 type EventsBulkUpdateAllJSONRequestBody = EventsBulkUpdateAllJSONBody
 
-// VolunteersCreateJSONRequestBody defines body for VolunteersCreate for application/json ContentType.
-type VolunteersCreateJSONRequestBody = VolunteersRequest
+// VolunteersBulkDeleteJSONRequestBody defines body for VolunteersBulkDelete for application/json ContentType.
+type VolunteersBulkDeleteJSONRequestBody = VolunteersBulkDeleteJSONBody
 
-// VolunteersVolunteersRowCreateJSONRequestBody defines body for VolunteersVolunteersRowCreate for application/json ContentType.
-type VolunteersVolunteersRowCreateJSONRequestBody = VolunteersVolunteersGridRequest
+// VolunteersBulkUpdateJSONRequestBody defines body for VolunteersBulkUpdate for application/json ContentType.
+type VolunteersBulkUpdateJSONRequestBody = VolunteersBulkUpdateJSONBody
 
-// VolunteersVolunteersRowUpdateJSONRequestBody defines body for VolunteersVolunteersRowUpdate for application/json ContentType.
-type VolunteersVolunteersRowUpdateJSONRequestBody = VolunteersVolunteersGridRequest
+// VolunteersBulkCreateJSONRequestBody defines body for VolunteersBulkCreate for application/json ContentType.
+type VolunteersBulkCreateJSONRequestBody = VolunteersBulkCreateJSONBody
 
-// VolunteersUpdateJSONRequestBody defines body for VolunteersUpdate for application/json ContentType.
-type VolunteersUpdateJSONRequestBody = VolunteersUpdateJSONBody
+// VolunteersBulkUpdateAllJSONRequestBody defines body for VolunteersBulkUpdateAll for application/json ContentType.
+type VolunteersBulkUpdateAllJSONRequestBody = VolunteersBulkUpdateAllJSONBody
 
-// CommEventsCreateJSONRequestBody defines body for CommEventsCreate for application/json ContentType.
-type CommEventsCreateJSONRequestBody = CommEventsRequest
+// CommunicationoneventsBulkDeleteJSONRequestBody defines body for CommunicationoneventsBulkDelete for application/json ContentType.
+type CommunicationoneventsBulkDeleteJSONRequestBody = CommunicationoneventsBulkDeleteJSONBody
 
-// CommEventsCommEventsRowCreateJSONRequestBody defines body for CommEventsCommEventsRowCreate for application/json ContentType.
-type CommEventsCommEventsRowCreateJSONRequestBody = CommEventscommEventsGridRequest
+// CommunicationoneventsBulkUpdateJSONRequestBody defines body for CommunicationoneventsBulkUpdate for application/json ContentType.
+type CommunicationoneventsBulkUpdateJSONRequestBody = CommunicationoneventsBulkUpdateJSONBody
 
-// CommEventsCommEventsRowUpdateJSONRequestBody defines body for CommEventsCommEventsRowUpdate for application/json ContentType.
-type CommEventsCommEventsRowUpdateJSONRequestBody = CommEventscommEventsGridRequest
+// CommunicationoneventsBulkCreateJSONRequestBody defines body for CommunicationoneventsBulkCreate for application/json ContentType.
+type CommunicationoneventsBulkCreateJSONRequestBody = CommunicationoneventsBulkCreateJSONBody
 
-// CommEventsUpdateJSONRequestBody defines body for CommEventsUpdate for application/json ContentType.
-type CommEventsUpdateJSONRequestBody = CommEventsUpdateJSONBody
+// CommunicationoneventsBulkUpdateAllJSONRequestBody defines body for CommunicationoneventsBulkUpdateAll for application/json ContentType.
+type CommunicationoneventsBulkUpdateAllJSONRequestBody = CommunicationoneventsBulkUpdateAllJSONBody
+
+// BoteventsCreateJSONRequestBody defines body for BoteventsCreate for application/json ContentType.
+type BoteventsCreateJSONRequestBody = BotEventsRequest
+
+// BotEventsBotEventsRowCreateJSONRequestBody defines body for BotEventsBotEventsRowCreate for application/json ContentType.
+type BotEventsBotEventsRowCreateJSONRequestBody = BotEventsBotEventsGridRequest
+
+// BotEventsBotEventsRowUpdateJSONRequestBody defines body for BotEventsBotEventsRowUpdate for application/json ContentType.
+type BotEventsBotEventsRowUpdateJSONRequestBody = BotEventsBotEventsGridRequest
+
+// BoteventsUpdateJSONRequestBody defines body for BoteventsUpdate for application/json ContentType.
+type BoteventsUpdateJSONRequestBody = BoteventsUpdateJSONBody
 
 // EventsCreateJSONRequestBody defines body for EventsCreate for application/json ContentType.
 type EventsCreateJSONRequestBody = EventsRequest
@@ -657,6 +1031,30 @@ type EventsEventsRowUpdateJSONRequestBody = EventseventsGridRequest
 
 // EventsUpdateJSONRequestBody defines body for EventsUpdate for application/json ContentType.
 type EventsUpdateJSONRequestBody = EventsUpdateJSONBody
+
+// VolunteersCreateJSONRequestBody defines body for VolunteersCreate for application/json ContentType.
+type VolunteersCreateJSONRequestBody = VolunteersRequest
+
+// VolunteersGridRowCreateJSONRequestBody defines body for VolunteersGridRowCreate for application/json ContentType.
+type VolunteersGridRowCreateJSONRequestBody = VolunteersgridGridRequest
+
+// VolunteersGridRowUpdateJSONRequestBody defines body for VolunteersGridRowUpdate for application/json ContentType.
+type VolunteersGridRowUpdateJSONRequestBody = VolunteersgridGridRequest
+
+// VolunteersUpdateJSONRequestBody defines body for VolunteersUpdate for application/json ContentType.
+type VolunteersUpdateJSONRequestBody = VolunteersUpdateJSONBody
+
+// CommunicationoneventsCreateJSONRequestBody defines body for CommunicationoneventsCreate for application/json ContentType.
+type CommunicationoneventsCreateJSONRequestBody = CommunicationOnEventsRequest
+
+// CommunicationOnEventsCommunicationOnEventsRowCreateJSONRequestBody defines body for CommunicationOnEventsCommunicationOnEventsRowCreate for application/json ContentType.
+type CommunicationOnEventsCommunicationOnEventsRowCreateJSONRequestBody = CommunicationOnEventscommunicationOnEventsGridRequest
+
+// CommunicationOnEventsCommunicationOnEventsRowUpdateJSONRequestBody defines body for CommunicationOnEventsCommunicationOnEventsRowUpdate for application/json ContentType.
+type CommunicationOnEventsCommunicationOnEventsRowUpdateJSONRequestBody = CommunicationOnEventscommunicationOnEventsGridRequest
+
+// CommunicationoneventsUpdateJSONRequestBody defines body for CommunicationoneventsUpdate for application/json ContentType.
+type CommunicationoneventsUpdateJSONRequestBody = CommunicationoneventsUpdateJSONBody
 
 // RequestEditorFn  is the function signature for the RequestEditor callback function
 type RequestEditorFn func(ctx context.Context, req *http.Request) error
@@ -731,51 +1129,28 @@ func WithRequestEditorFn(fn RequestEditorFn) ClientOption {
 
 // The interface specification for the client above.
 type ClientInterface interface {
-	// VolunteersBulkDeleteWithBody request with any body
-	VolunteersBulkDeleteWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BoteventsBulkDeleteWithBody request with any body
+	BoteventsBulkDeleteWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	VolunteersBulkDelete(ctx context.Context, body VolunteersBulkDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BoteventsBulkDelete(ctx context.Context, body BoteventsBulkDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersBulkUpdateWithBody request with any body
-	VolunteersBulkUpdateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BoteventsBulkUpdateWithBody request with any body
+	BoteventsBulkUpdateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	VolunteersBulkUpdate(ctx context.Context, body VolunteersBulkUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BoteventsBulkUpdate(ctx context.Context, body BoteventsBulkUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersBulkCreateWithBody request with any body
-	VolunteersBulkCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BoteventsBulkCreateWithBody request with any body
+	BoteventsBulkCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	VolunteersBulkCreate(ctx context.Context, body VolunteersBulkCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BoteventsBulkCreate(ctx context.Context, body BoteventsBulkCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersBulkDeleteAll request
-	VolunteersBulkDeleteAll(ctx context.Context, params *VolunteersBulkDeleteAllParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BoteventsBulkDeleteAll request
+	BoteventsBulkDeleteAll(ctx context.Context, params *BoteventsBulkDeleteAllParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersBulkUpdateAllWithBody request with any body
-	VolunteersBulkUpdateAllWithBody(ctx context.Context, params *VolunteersBulkUpdateAllParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BoteventsBulkUpdateAllWithBody request with any body
+	BoteventsBulkUpdateAllWithBody(ctx context.Context, params *BoteventsBulkUpdateAllParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	VolunteersBulkUpdateAll(ctx context.Context, params *VolunteersBulkUpdateAllParams, body VolunteersBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CommEventsBulkDeleteWithBody request with any body
-	CommEventsBulkDeleteWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	CommEventsBulkDelete(ctx context.Context, body CommEventsBulkDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CommEventsBulkUpdateWithBody request with any body
-	CommEventsBulkUpdateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	CommEventsBulkUpdate(ctx context.Context, body CommEventsBulkUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CommEventsBulkCreateWithBody request with any body
-	CommEventsBulkCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	CommEventsBulkCreate(ctx context.Context, body CommEventsBulkCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CommEventsBulkDeleteAll request
-	CommEventsBulkDeleteAll(ctx context.Context, params *CommEventsBulkDeleteAllParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CommEventsBulkUpdateAllWithBody request with any body
-	CommEventsBulkUpdateAllWithBody(ctx context.Context, params *CommEventsBulkUpdateAllParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	CommEventsBulkUpdateAll(ctx context.Context, params *CommEventsBulkUpdateAllParams, body CommEventsBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BoteventsBulkUpdateAll(ctx context.Context, params *BoteventsBulkUpdateAllParams, body BoteventsBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// EventsBulkDeleteWithBody request with any body
 	EventsBulkDeleteWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -800,129 +1175,119 @@ type ClientInterface interface {
 
 	EventsBulkUpdateAll(ctx context.Context, params *EventsBulkUpdateAllParams, body EventsBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersDbTableRowList request
-	VolunteersDbTableRowList(ctx context.Context, params *VolunteersDbTableRowListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// VolunteersBulkDeleteWithBody request with any body
+	VolunteersBulkDeleteWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersCreateWithBody request with any body
-	VolunteersCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	VolunteersBulkDelete(ctx context.Context, body VolunteersBulkDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	VolunteersCreate(ctx context.Context, body VolunteersCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// VolunteersBulkUpdateWithBody request with any body
+	VolunteersBulkUpdateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersCount request
-	VolunteersCount(ctx context.Context, params *VolunteersCountParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	VolunteersBulkUpdate(ctx context.Context, body VolunteersBulkUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersCsvExport request
-	VolunteersCsvExport(ctx context.Context, pType string, params *VolunteersCsvExportParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// VolunteersBulkCreateWithBody request with any body
+	VolunteersBulkCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersDbTableRowFindOne request
-	VolunteersDbTableRowFindOne(ctx context.Context, params *VolunteersDbTableRowFindOneParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	VolunteersBulkCreate(ctx context.Context, body VolunteersBulkCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersGroupby request
-	VolunteersGroupby(ctx context.Context, params *VolunteersGroupbyParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// VolunteersBulkDeleteAll request
+	VolunteersBulkDeleteAll(ctx context.Context, params *VolunteersBulkDeleteAllParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersVolunteersRowList request
-	VolunteersVolunteersRowList(ctx context.Context, params *VolunteersVolunteersRowListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// VolunteersBulkUpdateAllWithBody request with any body
+	VolunteersBulkUpdateAllWithBody(ctx context.Context, params *VolunteersBulkUpdateAllParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersVolunteersRowCreateWithBody request with any body
-	VolunteersVolunteersRowCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	VolunteersBulkUpdateAll(ctx context.Context, params *VolunteersBulkUpdateAllParams, body VolunteersBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	VolunteersVolunteersRowCreate(ctx context.Context, body VolunteersVolunteersRowCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// CommunicationoneventsBulkDeleteWithBody request with any body
+	CommunicationoneventsBulkDeleteWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersVolunteersRowCount request
-	VolunteersVolunteersRowCount(ctx context.Context, params *VolunteersVolunteersRowCountParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CommunicationoneventsBulkDelete(ctx context.Context, body CommunicationoneventsBulkDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersVolunteersRowExport request
-	VolunteersVolunteersRowExport(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// CommunicationoneventsBulkUpdateWithBody request with any body
+	CommunicationoneventsBulkUpdateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersVolunteersRowDelete request
-	VolunteersVolunteersRowDelete(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CommunicationoneventsBulkUpdate(ctx context.Context, body CommunicationoneventsBulkUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersVolunteersRowRead request
-	VolunteersVolunteersRowRead(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// CommunicationoneventsBulkCreateWithBody request with any body
+	CommunicationoneventsBulkCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersVolunteersRowUpdateWithBody request with any body
-	VolunteersVolunteersRowUpdateWithBody(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CommunicationoneventsBulkCreate(ctx context.Context, body CommunicationoneventsBulkCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	VolunteersVolunteersRowUpdate(ctx context.Context, rowId string, body VolunteersVolunteersRowUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// CommunicationoneventsBulkDeleteAll request
+	CommunicationoneventsBulkDeleteAll(ctx context.Context, params *CommunicationoneventsBulkDeleteAllParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersDelete request
-	VolunteersDelete(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// CommunicationoneventsBulkUpdateAllWithBody request with any body
+	CommunicationoneventsBulkUpdateAllWithBody(ctx context.Context, params *CommunicationoneventsBulkUpdateAllParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersRead request
-	VolunteersRead(ctx context.Context, rowId string, params *VolunteersReadParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CommunicationoneventsBulkUpdateAll(ctx context.Context, params *CommunicationoneventsBulkUpdateAllParams, body CommunicationoneventsBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersUpdateWithBody request with any body
-	VolunteersUpdateWithBody(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BoteventsDbTableRowList request
+	BoteventsDbTableRowList(ctx context.Context, params *BoteventsDbTableRowListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	VolunteersUpdate(ctx context.Context, rowId string, body VolunteersUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BoteventsCreateWithBody request with any body
+	BoteventsCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersNestedList request
-	VolunteersNestedList(ctx context.Context, rowId string, relationType string, columnName string, params *VolunteersNestedListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BoteventsCreate(ctx context.Context, body BoteventsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersNestedChildrenExcludedList request
-	VolunteersNestedChildrenExcludedList(ctx context.Context, rowId string, relationType string, columnName string, params *VolunteersNestedChildrenExcludedListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BoteventsCount request
+	BoteventsCount(ctx context.Context, params *BoteventsCountParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersNestedRemove request
-	VolunteersNestedRemove(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BoteventsCsvExport request
+	BoteventsCsvExport(ctx context.Context, pType string, params *BoteventsCsvExportParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VolunteersNestedAdd request
-	VolunteersNestedAdd(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, params *VolunteersNestedAddParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BoteventsDbTableRowFindOne request
+	BoteventsDbTableRowFindOne(ctx context.Context, params *BoteventsDbTableRowFindOneParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CommEventsDbTableRowList request
-	CommEventsDbTableRowList(ctx context.Context, params *CommEventsDbTableRowListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BoteventsGroupby request
+	BoteventsGroupby(ctx context.Context, params *BoteventsGroupbyParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CommEventsCreateWithBody request with any body
-	CommEventsCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BotEventsBotEventsRowList request
+	BotEventsBotEventsRowList(ctx context.Context, params *BotEventsBotEventsRowListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	CommEventsCreate(ctx context.Context, body CommEventsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BotEventsBotEventsRowCreateWithBody request with any body
+	BotEventsBotEventsRowCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CommEventsCount request
-	CommEventsCount(ctx context.Context, params *CommEventsCountParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BotEventsBotEventsRowCreate(ctx context.Context, body BotEventsBotEventsRowCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CommEventsCsvExport request
-	CommEventsCsvExport(ctx context.Context, pType string, params *CommEventsCsvExportParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BotEventsBotEventsRowCount request
+	BotEventsBotEventsRowCount(ctx context.Context, params *BotEventsBotEventsRowCountParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CommEventsDbTableRowFindOne request
-	CommEventsDbTableRowFindOne(ctx context.Context, params *CommEventsDbTableRowFindOneParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BotEventsBotEventsRowExport request
+	BotEventsBotEventsRowExport(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CommEventsGroupby request
-	CommEventsGroupby(ctx context.Context, params *CommEventsGroupbyParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BotEventsBotEventsRowDelete request
+	BotEventsBotEventsRowDelete(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CommEventsCommEventsRowList request
-	CommEventsCommEventsRowList(ctx context.Context, params *CommEventsCommEventsRowListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BotEventsBotEventsRowRead request
+	BotEventsBotEventsRowRead(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CommEventsCommEventsRowCreateWithBody request with any body
-	CommEventsCommEventsRowCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BotEventsBotEventsRowUpdateWithBody request with any body
+	BotEventsBotEventsRowUpdateWithBody(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	CommEventsCommEventsRowCreate(ctx context.Context, body CommEventsCommEventsRowCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BotEventsBotEventsRowUpdate(ctx context.Context, rowId string, body BotEventsBotEventsRowUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CommEventsCommEventsRowCount request
-	CommEventsCommEventsRowCount(ctx context.Context, params *CommEventsCommEventsRowCountParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BoteventsDelete request
+	BoteventsDelete(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CommEventsCommEventsRowExport request
-	CommEventsCommEventsRowExport(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BoteventsRead request
+	BoteventsRead(ctx context.Context, rowId string, params *BoteventsReadParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CommEventsCommEventsRowDelete request
-	CommEventsCommEventsRowDelete(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BoteventsUpdateWithBody request with any body
+	BoteventsUpdateWithBody(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CommEventsCommEventsRowRead request
-	CommEventsCommEventsRowRead(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BoteventsUpdate(ctx context.Context, rowId string, body BoteventsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CommEventsCommEventsRowUpdateWithBody request with any body
-	CommEventsCommEventsRowUpdateWithBody(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BoteventsNestedList request
+	BoteventsNestedList(ctx context.Context, rowId string, relationType string, columnName string, params *BoteventsNestedListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	CommEventsCommEventsRowUpdate(ctx context.Context, rowId string, body CommEventsCommEventsRowUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BoteventsNestedChildrenExcludedList request
+	BoteventsNestedChildrenExcludedList(ctx context.Context, rowId string, relationType string, columnName string, params *BoteventsNestedChildrenExcludedListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CommEventsDelete request
-	CommEventsDelete(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BoteventsNestedRemove request
+	BoteventsNestedRemove(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CommEventsRead request
-	CommEventsRead(ctx context.Context, rowId string, params *CommEventsReadParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CommEventsUpdateWithBody request with any body
-	CommEventsUpdateWithBody(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	CommEventsUpdate(ctx context.Context, rowId string, body CommEventsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BoteventsNestedAdd request
+	BoteventsNestedAdd(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, params *BoteventsNestedAddParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// EventsDbTableRowList request
 	EventsDbTableRowList(ctx context.Context, params *EventsDbTableRowListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -991,10 +1356,146 @@ type ClientInterface interface {
 
 	// EventsNestedAdd request
 	EventsNestedAdd(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, params *EventsNestedAddParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// VolunteersDbTableRowList request
+	VolunteersDbTableRowList(ctx context.Context, params *VolunteersDbTableRowListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// VolunteersCreateWithBody request with any body
+	VolunteersCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	VolunteersCreate(ctx context.Context, body VolunteersCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// VolunteersCount request
+	VolunteersCount(ctx context.Context, params *VolunteersCountParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// VolunteersCsvExport request
+	VolunteersCsvExport(ctx context.Context, pType string, params *VolunteersCsvExportParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// VolunteersDbTableRowFindOne request
+	VolunteersDbTableRowFindOne(ctx context.Context, params *VolunteersDbTableRowFindOneParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// VolunteersGroupby request
+	VolunteersGroupby(ctx context.Context, params *VolunteersGroupbyParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// VolunteersGridRowList request
+	VolunteersGridRowList(ctx context.Context, params *VolunteersGridRowListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// VolunteersGridRowCreateWithBody request with any body
+	VolunteersGridRowCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	VolunteersGridRowCreate(ctx context.Context, body VolunteersGridRowCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// VolunteersGridRowCount request
+	VolunteersGridRowCount(ctx context.Context, params *VolunteersGridRowCountParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// VolunteersGridRowExport request
+	VolunteersGridRowExport(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// VolunteersGridRowDelete request
+	VolunteersGridRowDelete(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// VolunteersGridRowRead request
+	VolunteersGridRowRead(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// VolunteersGridRowUpdateWithBody request with any body
+	VolunteersGridRowUpdateWithBody(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	VolunteersGridRowUpdate(ctx context.Context, rowId string, body VolunteersGridRowUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// VolunteersDelete request
+	VolunteersDelete(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// VolunteersRead request
+	VolunteersRead(ctx context.Context, rowId string, params *VolunteersReadParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// VolunteersUpdateWithBody request with any body
+	VolunteersUpdateWithBody(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	VolunteersUpdate(ctx context.Context, rowId string, body VolunteersUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// VolunteersNestedList request
+	VolunteersNestedList(ctx context.Context, rowId string, relationType string, columnName string, params *VolunteersNestedListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// VolunteersNestedChildrenExcludedList request
+	VolunteersNestedChildrenExcludedList(ctx context.Context, rowId string, relationType string, columnName string, params *VolunteersNestedChildrenExcludedListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// VolunteersNestedRemove request
+	VolunteersNestedRemove(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// VolunteersNestedAdd request
+	VolunteersNestedAdd(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, params *VolunteersNestedAddParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CommunicationoneventsDbTableRowList request
+	CommunicationoneventsDbTableRowList(ctx context.Context, params *CommunicationoneventsDbTableRowListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CommunicationoneventsCreateWithBody request with any body
+	CommunicationoneventsCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	CommunicationoneventsCreate(ctx context.Context, body CommunicationoneventsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CommunicationoneventsCount request
+	CommunicationoneventsCount(ctx context.Context, params *CommunicationoneventsCountParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CommunicationoneventsCsvExport request
+	CommunicationoneventsCsvExport(ctx context.Context, pType string, params *CommunicationoneventsCsvExportParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CommunicationoneventsDbTableRowFindOne request
+	CommunicationoneventsDbTableRowFindOne(ctx context.Context, params *CommunicationoneventsDbTableRowFindOneParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CommunicationoneventsGroupby request
+	CommunicationoneventsGroupby(ctx context.Context, params *CommunicationoneventsGroupbyParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CommunicationOnEventsCommunicationOnEventsRowList request
+	CommunicationOnEventsCommunicationOnEventsRowList(ctx context.Context, params *CommunicationOnEventsCommunicationOnEventsRowListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CommunicationOnEventsCommunicationOnEventsRowCreateWithBody request with any body
+	CommunicationOnEventsCommunicationOnEventsRowCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	CommunicationOnEventsCommunicationOnEventsRowCreate(ctx context.Context, body CommunicationOnEventsCommunicationOnEventsRowCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CommunicationOnEventsCommunicationOnEventsRowCount request
+	CommunicationOnEventsCommunicationOnEventsRowCount(ctx context.Context, params *CommunicationOnEventsCommunicationOnEventsRowCountParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CommunicationOnEventsCommunicationOnEventsRowExport request
+	CommunicationOnEventsCommunicationOnEventsRowExport(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CommunicationOnEventsCommunicationOnEventsRowDelete request
+	CommunicationOnEventsCommunicationOnEventsRowDelete(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CommunicationOnEventsCommunicationOnEventsRowRead request
+	CommunicationOnEventsCommunicationOnEventsRowRead(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CommunicationOnEventsCommunicationOnEventsRowUpdateWithBody request with any body
+	CommunicationOnEventsCommunicationOnEventsRowUpdateWithBody(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	CommunicationOnEventsCommunicationOnEventsRowUpdate(ctx context.Context, rowId string, body CommunicationOnEventsCommunicationOnEventsRowUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CommunicationoneventsDelete request
+	CommunicationoneventsDelete(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CommunicationoneventsRead request
+	CommunicationoneventsRead(ctx context.Context, rowId string, params *CommunicationoneventsReadParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CommunicationoneventsUpdateWithBody request with any body
+	CommunicationoneventsUpdateWithBody(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	CommunicationoneventsUpdate(ctx context.Context, rowId string, body CommunicationoneventsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CommunicationoneventsNestedList request
+	CommunicationoneventsNestedList(ctx context.Context, rowId string, relationType string, columnName string, params *CommunicationoneventsNestedListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CommunicationoneventsNestedChildrenExcludedList request
+	CommunicationoneventsNestedChildrenExcludedList(ctx context.Context, rowId string, relationType string, columnName string, params *CommunicationoneventsNestedChildrenExcludedListParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CommunicationoneventsNestedRemove request
+	CommunicationoneventsNestedRemove(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CommunicationoneventsNestedAdd request
+	CommunicationoneventsNestedAdd(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, params *CommunicationoneventsNestedAddParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 }
 
-func (c *Client) VolunteersBulkDeleteWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersBulkDeleteRequestWithBody(c.Server, contentType, body)
+func (c *Client) BoteventsBulkDeleteWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsBulkDeleteRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1005,8 +1506,8 @@ func (c *Client) VolunteersBulkDeleteWithBody(ctx context.Context, contentType s
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersBulkDelete(ctx context.Context, body VolunteersBulkDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersBulkDeleteRequest(c.Server, body)
+func (c *Client) BoteventsBulkDelete(ctx context.Context, body BoteventsBulkDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsBulkDeleteRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1017,8 +1518,8 @@ func (c *Client) VolunteersBulkDelete(ctx context.Context, body VolunteersBulkDe
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersBulkUpdateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersBulkUpdateRequestWithBody(c.Server, contentType, body)
+func (c *Client) BoteventsBulkUpdateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsBulkUpdateRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1029,8 +1530,8 @@ func (c *Client) VolunteersBulkUpdateWithBody(ctx context.Context, contentType s
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersBulkUpdate(ctx context.Context, body VolunteersBulkUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersBulkUpdateRequest(c.Server, body)
+func (c *Client) BoteventsBulkUpdate(ctx context.Context, body BoteventsBulkUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsBulkUpdateRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1041,8 +1542,8 @@ func (c *Client) VolunteersBulkUpdate(ctx context.Context, body VolunteersBulkUp
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersBulkCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersBulkCreateRequestWithBody(c.Server, contentType, body)
+func (c *Client) BoteventsBulkCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsBulkCreateRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1053,8 +1554,8 @@ func (c *Client) VolunteersBulkCreateWithBody(ctx context.Context, contentType s
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersBulkCreate(ctx context.Context, body VolunteersBulkCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersBulkCreateRequest(c.Server, body)
+func (c *Client) BoteventsBulkCreate(ctx context.Context, body BoteventsBulkCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsBulkCreateRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1065,8 +1566,8 @@ func (c *Client) VolunteersBulkCreate(ctx context.Context, body VolunteersBulkCr
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersBulkDeleteAll(ctx context.Context, params *VolunteersBulkDeleteAllParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersBulkDeleteAllRequest(c.Server, params)
+func (c *Client) BoteventsBulkDeleteAll(ctx context.Context, params *BoteventsBulkDeleteAllParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsBulkDeleteAllRequest(c.Server, params)
 	if err != nil {
 		return nil, err
 	}
@@ -1077,8 +1578,8 @@ func (c *Client) VolunteersBulkDeleteAll(ctx context.Context, params *Volunteers
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersBulkUpdateAllWithBody(ctx context.Context, params *VolunteersBulkUpdateAllParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersBulkUpdateAllRequestWithBody(c.Server, params, contentType, body)
+func (c *Client) BoteventsBulkUpdateAllWithBody(ctx context.Context, params *BoteventsBulkUpdateAllParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsBulkUpdateAllRequestWithBody(c.Server, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1089,116 +1590,8 @@ func (c *Client) VolunteersBulkUpdateAllWithBody(ctx context.Context, params *Vo
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersBulkUpdateAll(ctx context.Context, params *VolunteersBulkUpdateAllParams, body VolunteersBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersBulkUpdateAllRequest(c.Server, params, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CommEventsBulkDeleteWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsBulkDeleteRequestWithBody(c.Server, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CommEventsBulkDelete(ctx context.Context, body CommEventsBulkDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsBulkDeleteRequest(c.Server, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CommEventsBulkUpdateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsBulkUpdateRequestWithBody(c.Server, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CommEventsBulkUpdate(ctx context.Context, body CommEventsBulkUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsBulkUpdateRequest(c.Server, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CommEventsBulkCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsBulkCreateRequestWithBody(c.Server, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CommEventsBulkCreate(ctx context.Context, body CommEventsBulkCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsBulkCreateRequest(c.Server, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CommEventsBulkDeleteAll(ctx context.Context, params *CommEventsBulkDeleteAllParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsBulkDeleteAllRequest(c.Server, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CommEventsBulkUpdateAllWithBody(ctx context.Context, params *CommEventsBulkUpdateAllParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsBulkUpdateAllRequestWithBody(c.Server, params, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CommEventsBulkUpdateAll(ctx context.Context, params *CommEventsBulkUpdateAllParams, body CommEventsBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsBulkUpdateAllRequest(c.Server, params, body)
+func (c *Client) BoteventsBulkUpdateAll(ctx context.Context, params *BoteventsBulkUpdateAllParams, body BoteventsBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsBulkUpdateAllRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1317,8 +1710,8 @@ func (c *Client) EventsBulkUpdateAll(ctx context.Context, params *EventsBulkUpda
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersDbTableRowList(ctx context.Context, params *VolunteersDbTableRowListParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersDbTableRowListRequest(c.Server, params)
+func (c *Client) VolunteersBulkDeleteWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersBulkDeleteRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1329,8 +1722,8 @@ func (c *Client) VolunteersDbTableRowList(ctx context.Context, params *Volunteer
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersCreateRequestWithBody(c.Server, contentType, body)
+func (c *Client) VolunteersBulkDelete(ctx context.Context, body VolunteersBulkDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersBulkDeleteRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1341,8 +1734,8 @@ func (c *Client) VolunteersCreateWithBody(ctx context.Context, contentType strin
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersCreate(ctx context.Context, body VolunteersCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersCreateRequest(c.Server, body)
+func (c *Client) VolunteersBulkUpdateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersBulkUpdateRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1353,8 +1746,8 @@ func (c *Client) VolunteersCreate(ctx context.Context, body VolunteersCreateJSON
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersCount(ctx context.Context, params *VolunteersCountParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersCountRequest(c.Server, params)
+func (c *Client) VolunteersBulkUpdate(ctx context.Context, body VolunteersBulkUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersBulkUpdateRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1365,8 +1758,8 @@ func (c *Client) VolunteersCount(ctx context.Context, params *VolunteersCountPar
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersCsvExport(ctx context.Context, pType string, params *VolunteersCsvExportParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersCsvExportRequest(c.Server, pType, params)
+func (c *Client) VolunteersBulkCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersBulkCreateRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1377,8 +1770,8 @@ func (c *Client) VolunteersCsvExport(ctx context.Context, pType string, params *
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersDbTableRowFindOne(ctx context.Context, params *VolunteersDbTableRowFindOneParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersDbTableRowFindOneRequest(c.Server, params)
+func (c *Client) VolunteersBulkCreate(ctx context.Context, body VolunteersBulkCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersBulkCreateRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1389,8 +1782,8 @@ func (c *Client) VolunteersDbTableRowFindOne(ctx context.Context, params *Volunt
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersGroupby(ctx context.Context, params *VolunteersGroupbyParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersGroupbyRequest(c.Server, params)
+func (c *Client) VolunteersBulkDeleteAll(ctx context.Context, params *VolunteersBulkDeleteAllParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersBulkDeleteAllRequest(c.Server, params)
 	if err != nil {
 		return nil, err
 	}
@@ -1401,8 +1794,8 @@ func (c *Client) VolunteersGroupby(ctx context.Context, params *VolunteersGroupb
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersVolunteersRowList(ctx context.Context, params *VolunteersVolunteersRowListParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersVolunteersRowListRequest(c.Server, params)
+func (c *Client) VolunteersBulkUpdateAllWithBody(ctx context.Context, params *VolunteersBulkUpdateAllParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersBulkUpdateAllRequestWithBody(c.Server, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1413,8 +1806,8 @@ func (c *Client) VolunteersVolunteersRowList(ctx context.Context, params *Volunt
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersVolunteersRowCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersVolunteersRowCreateRequestWithBody(c.Server, contentType, body)
+func (c *Client) VolunteersBulkUpdateAll(ctx context.Context, params *VolunteersBulkUpdateAllParams, body VolunteersBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersBulkUpdateAllRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1425,8 +1818,8 @@ func (c *Client) VolunteersVolunteersRowCreateWithBody(ctx context.Context, cont
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersVolunteersRowCreate(ctx context.Context, body VolunteersVolunteersRowCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersVolunteersRowCreateRequest(c.Server, body)
+func (c *Client) CommunicationoneventsBulkDeleteWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsBulkDeleteRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1437,8 +1830,8 @@ func (c *Client) VolunteersVolunteersRowCreate(ctx context.Context, body Volunte
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersVolunteersRowCount(ctx context.Context, params *VolunteersVolunteersRowCountParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersVolunteersRowCountRequest(c.Server, params)
+func (c *Client) CommunicationoneventsBulkDelete(ctx context.Context, body CommunicationoneventsBulkDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsBulkDeleteRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1449,8 +1842,8 @@ func (c *Client) VolunteersVolunteersRowCount(ctx context.Context, params *Volun
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersVolunteersRowExport(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersVolunteersRowExportRequest(c.Server, pType)
+func (c *Client) CommunicationoneventsBulkUpdateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsBulkUpdateRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1461,8 +1854,8 @@ func (c *Client) VolunteersVolunteersRowExport(ctx context.Context, pType string
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersVolunteersRowDelete(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersVolunteersRowDeleteRequest(c.Server, rowId)
+func (c *Client) CommunicationoneventsBulkUpdate(ctx context.Context, body CommunicationoneventsBulkUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsBulkUpdateRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1473,8 +1866,8 @@ func (c *Client) VolunteersVolunteersRowDelete(ctx context.Context, rowId string
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersVolunteersRowRead(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersVolunteersRowReadRequest(c.Server, rowId)
+func (c *Client) CommunicationoneventsBulkCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsBulkCreateRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1485,8 +1878,8 @@ func (c *Client) VolunteersVolunteersRowRead(ctx context.Context, rowId string, 
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersVolunteersRowUpdateWithBody(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersVolunteersRowUpdateRequestWithBody(c.Server, rowId, contentType, body)
+func (c *Client) CommunicationoneventsBulkCreate(ctx context.Context, body CommunicationoneventsBulkCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsBulkCreateRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1497,8 +1890,8 @@ func (c *Client) VolunteersVolunteersRowUpdateWithBody(ctx context.Context, rowI
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersVolunteersRowUpdate(ctx context.Context, rowId string, body VolunteersVolunteersRowUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersVolunteersRowUpdateRequest(c.Server, rowId, body)
+func (c *Client) CommunicationoneventsBulkDeleteAll(ctx context.Context, params *CommunicationoneventsBulkDeleteAllParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsBulkDeleteAllRequest(c.Server, params)
 	if err != nil {
 		return nil, err
 	}
@@ -1509,8 +1902,8 @@ func (c *Client) VolunteersVolunteersRowUpdate(ctx context.Context, rowId string
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersDelete(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersDeleteRequest(c.Server, rowId)
+func (c *Client) CommunicationoneventsBulkUpdateAllWithBody(ctx context.Context, params *CommunicationoneventsBulkUpdateAllParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsBulkUpdateAllRequestWithBody(c.Server, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1521,8 +1914,8 @@ func (c *Client) VolunteersDelete(ctx context.Context, rowId string, reqEditors 
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersRead(ctx context.Context, rowId string, params *VolunteersReadParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersReadRequest(c.Server, rowId, params)
+func (c *Client) CommunicationoneventsBulkUpdateAll(ctx context.Context, params *CommunicationoneventsBulkUpdateAllParams, body CommunicationoneventsBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsBulkUpdateAllRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1533,8 +1926,8 @@ func (c *Client) VolunteersRead(ctx context.Context, rowId string, params *Volun
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersUpdateWithBody(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersUpdateRequestWithBody(c.Server, rowId, contentType, body)
+func (c *Client) BoteventsDbTableRowList(ctx context.Context, params *BoteventsDbTableRowListParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsDbTableRowListRequest(c.Server, params)
 	if err != nil {
 		return nil, err
 	}
@@ -1545,8 +1938,8 @@ func (c *Client) VolunteersUpdateWithBody(ctx context.Context, rowId string, con
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersUpdate(ctx context.Context, rowId string, body VolunteersUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersUpdateRequest(c.Server, rowId, body)
+func (c *Client) BoteventsCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsCreateRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1557,8 +1950,8 @@ func (c *Client) VolunteersUpdate(ctx context.Context, rowId string, body Volunt
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersNestedList(ctx context.Context, rowId string, relationType string, columnName string, params *VolunteersNestedListParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersNestedListRequest(c.Server, rowId, relationType, columnName, params)
+func (c *Client) BoteventsCreate(ctx context.Context, body BoteventsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsCreateRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1569,8 +1962,8 @@ func (c *Client) VolunteersNestedList(ctx context.Context, rowId string, relatio
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersNestedChildrenExcludedList(ctx context.Context, rowId string, relationType string, columnName string, params *VolunteersNestedChildrenExcludedListParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersNestedChildrenExcludedListRequest(c.Server, rowId, relationType, columnName, params)
+func (c *Client) BoteventsCount(ctx context.Context, params *BoteventsCountParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsCountRequest(c.Server, params)
 	if err != nil {
 		return nil, err
 	}
@@ -1581,8 +1974,8 @@ func (c *Client) VolunteersNestedChildrenExcludedList(ctx context.Context, rowId
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersNestedRemove(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersNestedRemoveRequest(c.Server, rowId, relationType, columnName, refRowId)
+func (c *Client) BoteventsCsvExport(ctx context.Context, pType string, params *BoteventsCsvExportParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsCsvExportRequest(c.Server, pType, params)
 	if err != nil {
 		return nil, err
 	}
@@ -1593,8 +1986,8 @@ func (c *Client) VolunteersNestedRemove(ctx context.Context, rowId string, relat
 	return c.Client.Do(req)
 }
 
-func (c *Client) VolunteersNestedAdd(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, params *VolunteersNestedAddParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVolunteersNestedAddRequest(c.Server, rowId, relationType, columnName, refRowId, params)
+func (c *Client) BoteventsDbTableRowFindOne(ctx context.Context, params *BoteventsDbTableRowFindOneParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsDbTableRowFindOneRequest(c.Server, params)
 	if err != nil {
 		return nil, err
 	}
@@ -1605,8 +1998,8 @@ func (c *Client) VolunteersNestedAdd(ctx context.Context, rowId string, relation
 	return c.Client.Do(req)
 }
 
-func (c *Client) CommEventsDbTableRowList(ctx context.Context, params *CommEventsDbTableRowListParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsDbTableRowListRequest(c.Server, params)
+func (c *Client) BoteventsGroupby(ctx context.Context, params *BoteventsGroupbyParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsGroupbyRequest(c.Server, params)
 	if err != nil {
 		return nil, err
 	}
@@ -1617,8 +2010,8 @@ func (c *Client) CommEventsDbTableRowList(ctx context.Context, params *CommEvent
 	return c.Client.Do(req)
 }
 
-func (c *Client) CommEventsCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsCreateRequestWithBody(c.Server, contentType, body)
+func (c *Client) BotEventsBotEventsRowList(ctx context.Context, params *BotEventsBotEventsRowListParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBotEventsBotEventsRowListRequest(c.Server, params)
 	if err != nil {
 		return nil, err
 	}
@@ -1629,8 +2022,8 @@ func (c *Client) CommEventsCreateWithBody(ctx context.Context, contentType strin
 	return c.Client.Do(req)
 }
 
-func (c *Client) CommEventsCreate(ctx context.Context, body CommEventsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsCreateRequest(c.Server, body)
+func (c *Client) BotEventsBotEventsRowCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBotEventsBotEventsRowCreateRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1641,8 +2034,8 @@ func (c *Client) CommEventsCreate(ctx context.Context, body CommEventsCreateJSON
 	return c.Client.Do(req)
 }
 
-func (c *Client) CommEventsCount(ctx context.Context, params *CommEventsCountParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsCountRequest(c.Server, params)
+func (c *Client) BotEventsBotEventsRowCreate(ctx context.Context, body BotEventsBotEventsRowCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBotEventsBotEventsRowCreateRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1653,8 +2046,8 @@ func (c *Client) CommEventsCount(ctx context.Context, params *CommEventsCountPar
 	return c.Client.Do(req)
 }
 
-func (c *Client) CommEventsCsvExport(ctx context.Context, pType string, params *CommEventsCsvExportParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsCsvExportRequest(c.Server, pType, params)
+func (c *Client) BotEventsBotEventsRowCount(ctx context.Context, params *BotEventsBotEventsRowCountParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBotEventsBotEventsRowCountRequest(c.Server, params)
 	if err != nil {
 		return nil, err
 	}
@@ -1665,8 +2058,8 @@ func (c *Client) CommEventsCsvExport(ctx context.Context, pType string, params *
 	return c.Client.Do(req)
 }
 
-func (c *Client) CommEventsDbTableRowFindOne(ctx context.Context, params *CommEventsDbTableRowFindOneParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsDbTableRowFindOneRequest(c.Server, params)
+func (c *Client) BotEventsBotEventsRowExport(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBotEventsBotEventsRowExportRequest(c.Server, pType)
 	if err != nil {
 		return nil, err
 	}
@@ -1677,8 +2070,8 @@ func (c *Client) CommEventsDbTableRowFindOne(ctx context.Context, params *CommEv
 	return c.Client.Do(req)
 }
 
-func (c *Client) CommEventsGroupby(ctx context.Context, params *CommEventsGroupbyParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsGroupbyRequest(c.Server, params)
+func (c *Client) BotEventsBotEventsRowDelete(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBotEventsBotEventsRowDeleteRequest(c.Server, rowId)
 	if err != nil {
 		return nil, err
 	}
@@ -1689,8 +2082,8 @@ func (c *Client) CommEventsGroupby(ctx context.Context, params *CommEventsGroupb
 	return c.Client.Do(req)
 }
 
-func (c *Client) CommEventsCommEventsRowList(ctx context.Context, params *CommEventsCommEventsRowListParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsCommEventsRowListRequest(c.Server, params)
+func (c *Client) BotEventsBotEventsRowRead(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBotEventsBotEventsRowReadRequest(c.Server, rowId)
 	if err != nil {
 		return nil, err
 	}
@@ -1701,8 +2094,8 @@ func (c *Client) CommEventsCommEventsRowList(ctx context.Context, params *CommEv
 	return c.Client.Do(req)
 }
 
-func (c *Client) CommEventsCommEventsRowCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsCommEventsRowCreateRequestWithBody(c.Server, contentType, body)
+func (c *Client) BotEventsBotEventsRowUpdateWithBody(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBotEventsBotEventsRowUpdateRequestWithBody(c.Server, rowId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1713,8 +2106,8 @@ func (c *Client) CommEventsCommEventsRowCreateWithBody(ctx context.Context, cont
 	return c.Client.Do(req)
 }
 
-func (c *Client) CommEventsCommEventsRowCreate(ctx context.Context, body CommEventsCommEventsRowCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsCommEventsRowCreateRequest(c.Server, body)
+func (c *Client) BotEventsBotEventsRowUpdate(ctx context.Context, rowId string, body BotEventsBotEventsRowUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBotEventsBotEventsRowUpdateRequest(c.Server, rowId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1725,8 +2118,8 @@ func (c *Client) CommEventsCommEventsRowCreate(ctx context.Context, body CommEve
 	return c.Client.Do(req)
 }
 
-func (c *Client) CommEventsCommEventsRowCount(ctx context.Context, params *CommEventsCommEventsRowCountParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsCommEventsRowCountRequest(c.Server, params)
+func (c *Client) BoteventsDelete(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsDeleteRequest(c.Server, rowId)
 	if err != nil {
 		return nil, err
 	}
@@ -1737,8 +2130,8 @@ func (c *Client) CommEventsCommEventsRowCount(ctx context.Context, params *CommE
 	return c.Client.Do(req)
 }
 
-func (c *Client) CommEventsCommEventsRowExport(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsCommEventsRowExportRequest(c.Server, pType)
+func (c *Client) BoteventsRead(ctx context.Context, rowId string, params *BoteventsReadParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsReadRequest(c.Server, rowId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -1749,8 +2142,8 @@ func (c *Client) CommEventsCommEventsRowExport(ctx context.Context, pType string
 	return c.Client.Do(req)
 }
 
-func (c *Client) CommEventsCommEventsRowDelete(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsCommEventsRowDeleteRequest(c.Server, rowId)
+func (c *Client) BoteventsUpdateWithBody(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsUpdateRequestWithBody(c.Server, rowId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1761,8 +2154,8 @@ func (c *Client) CommEventsCommEventsRowDelete(ctx context.Context, rowId string
 	return c.Client.Do(req)
 }
 
-func (c *Client) CommEventsCommEventsRowRead(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsCommEventsRowReadRequest(c.Server, rowId)
+func (c *Client) BoteventsUpdate(ctx context.Context, rowId string, body BoteventsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsUpdateRequest(c.Server, rowId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1773,8 +2166,8 @@ func (c *Client) CommEventsCommEventsRowRead(ctx context.Context, rowId string, 
 	return c.Client.Do(req)
 }
 
-func (c *Client) CommEventsCommEventsRowUpdateWithBody(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsCommEventsRowUpdateRequestWithBody(c.Server, rowId, contentType, body)
+func (c *Client) BoteventsNestedList(ctx context.Context, rowId string, relationType string, columnName string, params *BoteventsNestedListParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsNestedListRequest(c.Server, rowId, relationType, columnName, params)
 	if err != nil {
 		return nil, err
 	}
@@ -1785,8 +2178,8 @@ func (c *Client) CommEventsCommEventsRowUpdateWithBody(ctx context.Context, rowI
 	return c.Client.Do(req)
 }
 
-func (c *Client) CommEventsCommEventsRowUpdate(ctx context.Context, rowId string, body CommEventsCommEventsRowUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsCommEventsRowUpdateRequest(c.Server, rowId, body)
+func (c *Client) BoteventsNestedChildrenExcludedList(ctx context.Context, rowId string, relationType string, columnName string, params *BoteventsNestedChildrenExcludedListParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsNestedChildrenExcludedListRequest(c.Server, rowId, relationType, columnName, params)
 	if err != nil {
 		return nil, err
 	}
@@ -1797,8 +2190,8 @@ func (c *Client) CommEventsCommEventsRowUpdate(ctx context.Context, rowId string
 	return c.Client.Do(req)
 }
 
-func (c *Client) CommEventsDelete(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsDeleteRequest(c.Server, rowId)
+func (c *Client) BoteventsNestedRemove(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsNestedRemoveRequest(c.Server, rowId, relationType, columnName, refRowId)
 	if err != nil {
 		return nil, err
 	}
@@ -1809,32 +2202,8 @@ func (c *Client) CommEventsDelete(ctx context.Context, rowId string, reqEditors 
 	return c.Client.Do(req)
 }
 
-func (c *Client) CommEventsRead(ctx context.Context, rowId string, params *CommEventsReadParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsReadRequest(c.Server, rowId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CommEventsUpdateWithBody(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsUpdateRequestWithBody(c.Server, rowId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CommEventsUpdate(ctx context.Context, rowId string, body CommEventsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommEventsUpdateRequest(c.Server, rowId, body)
+func (c *Client) BoteventsNestedAdd(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, params *BoteventsNestedAddParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBoteventsNestedAddRequest(c.Server, rowId, relationType, columnName, refRowId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -2133,19 +2502,595 @@ func (c *Client) EventsNestedAdd(ctx context.Context, rowId string, relationType
 	return c.Client.Do(req)
 }
 
-// NewVolunteersBulkDeleteRequest calls the generic VolunteersBulkDelete builder with application/json body
-func NewVolunteersBulkDeleteRequest(server string, body VolunteersBulkDeleteJSONRequestBody) (*http.Request, error) {
+func (c *Client) VolunteersDbTableRowList(ctx context.Context, params *VolunteersDbTableRowListParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersDbTableRowListRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersCreateRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersCreate(ctx context.Context, body VolunteersCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersCreateRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersCount(ctx context.Context, params *VolunteersCountParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersCountRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersCsvExport(ctx context.Context, pType string, params *VolunteersCsvExportParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersCsvExportRequest(c.Server, pType, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersDbTableRowFindOne(ctx context.Context, params *VolunteersDbTableRowFindOneParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersDbTableRowFindOneRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersGroupby(ctx context.Context, params *VolunteersGroupbyParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersGroupbyRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersGridRowList(ctx context.Context, params *VolunteersGridRowListParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersGridRowListRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersGridRowCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersGridRowCreateRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersGridRowCreate(ctx context.Context, body VolunteersGridRowCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersGridRowCreateRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersGridRowCount(ctx context.Context, params *VolunteersGridRowCountParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersGridRowCountRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersGridRowExport(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersGridRowExportRequest(c.Server, pType)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersGridRowDelete(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersGridRowDeleteRequest(c.Server, rowId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersGridRowRead(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersGridRowReadRequest(c.Server, rowId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersGridRowUpdateWithBody(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersGridRowUpdateRequestWithBody(c.Server, rowId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersGridRowUpdate(ctx context.Context, rowId string, body VolunteersGridRowUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersGridRowUpdateRequest(c.Server, rowId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersDelete(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersDeleteRequest(c.Server, rowId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersRead(ctx context.Context, rowId string, params *VolunteersReadParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersReadRequest(c.Server, rowId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersUpdateWithBody(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersUpdateRequestWithBody(c.Server, rowId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersUpdate(ctx context.Context, rowId string, body VolunteersUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersUpdateRequest(c.Server, rowId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersNestedList(ctx context.Context, rowId string, relationType string, columnName string, params *VolunteersNestedListParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersNestedListRequest(c.Server, rowId, relationType, columnName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersNestedChildrenExcludedList(ctx context.Context, rowId string, relationType string, columnName string, params *VolunteersNestedChildrenExcludedListParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersNestedChildrenExcludedListRequest(c.Server, rowId, relationType, columnName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersNestedRemove(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersNestedRemoveRequest(c.Server, rowId, relationType, columnName, refRowId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) VolunteersNestedAdd(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, params *VolunteersNestedAddParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVolunteersNestedAddRequest(c.Server, rowId, relationType, columnName, refRowId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationoneventsDbTableRowList(ctx context.Context, params *CommunicationoneventsDbTableRowListParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsDbTableRowListRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationoneventsCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsCreateRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationoneventsCreate(ctx context.Context, body CommunicationoneventsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsCreateRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationoneventsCount(ctx context.Context, params *CommunicationoneventsCountParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsCountRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationoneventsCsvExport(ctx context.Context, pType string, params *CommunicationoneventsCsvExportParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsCsvExportRequest(c.Server, pType, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationoneventsDbTableRowFindOne(ctx context.Context, params *CommunicationoneventsDbTableRowFindOneParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsDbTableRowFindOneRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationoneventsGroupby(ctx context.Context, params *CommunicationoneventsGroupbyParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsGroupbyRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationOnEventsCommunicationOnEventsRowList(ctx context.Context, params *CommunicationOnEventsCommunicationOnEventsRowListParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationOnEventsCommunicationOnEventsRowListRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationOnEventsCommunicationOnEventsRowCreateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationOnEventsCommunicationOnEventsRowCreateRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationOnEventsCommunicationOnEventsRowCreate(ctx context.Context, body CommunicationOnEventsCommunicationOnEventsRowCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationOnEventsCommunicationOnEventsRowCreateRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationOnEventsCommunicationOnEventsRowCount(ctx context.Context, params *CommunicationOnEventsCommunicationOnEventsRowCountParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationOnEventsCommunicationOnEventsRowCountRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationOnEventsCommunicationOnEventsRowExport(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationOnEventsCommunicationOnEventsRowExportRequest(c.Server, pType)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationOnEventsCommunicationOnEventsRowDelete(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationOnEventsCommunicationOnEventsRowDeleteRequest(c.Server, rowId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationOnEventsCommunicationOnEventsRowRead(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationOnEventsCommunicationOnEventsRowReadRequest(c.Server, rowId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationOnEventsCommunicationOnEventsRowUpdateWithBody(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationOnEventsCommunicationOnEventsRowUpdateRequestWithBody(c.Server, rowId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationOnEventsCommunicationOnEventsRowUpdate(ctx context.Context, rowId string, body CommunicationOnEventsCommunicationOnEventsRowUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationOnEventsCommunicationOnEventsRowUpdateRequest(c.Server, rowId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationoneventsDelete(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsDeleteRequest(c.Server, rowId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationoneventsRead(ctx context.Context, rowId string, params *CommunicationoneventsReadParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsReadRequest(c.Server, rowId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationoneventsUpdateWithBody(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsUpdateRequestWithBody(c.Server, rowId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationoneventsUpdate(ctx context.Context, rowId string, body CommunicationoneventsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsUpdateRequest(c.Server, rowId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationoneventsNestedList(ctx context.Context, rowId string, relationType string, columnName string, params *CommunicationoneventsNestedListParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsNestedListRequest(c.Server, rowId, relationType, columnName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationoneventsNestedChildrenExcludedList(ctx context.Context, rowId string, relationType string, columnName string, params *CommunicationoneventsNestedChildrenExcludedListParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsNestedChildrenExcludedListRequest(c.Server, rowId, relationType, columnName, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationoneventsNestedRemove(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsNestedRemoveRequest(c.Server, rowId, relationType, columnName, refRowId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CommunicationoneventsNestedAdd(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, params *CommunicationoneventsNestedAddParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCommunicationoneventsNestedAddRequest(c.Server, rowId, relationType, columnName, refRowId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// NewBoteventsBulkDeleteRequest calls the generic BoteventsBulkDelete builder with application/json body
+func NewBoteventsBulkDeleteRequest(server string, body BoteventsBulkDeleteJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewVolunteersBulkDeleteRequestWithBody(server, "application/json", bodyReader)
+	return NewBoteventsBulkDeleteRequestWithBody(server, "application/json", bodyReader)
 }
 
-// NewVolunteersBulkDeleteRequestWithBody generates requests for VolunteersBulkDelete with any type of body
-func NewVolunteersBulkDeleteRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+// NewBoteventsBulkDeleteRequestWithBody generates requests for BoteventsBulkDelete with any type of body
+func NewBoteventsBulkDeleteRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -2153,7 +3098,7 @@ func NewVolunteersBulkDeleteRequestWithBody(server string, contentType string, b
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/pp2k69kcyjib180/Volunteers")
+	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/BotEvents")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -2173,19 +3118,19 @@ func NewVolunteersBulkDeleteRequestWithBody(server string, contentType string, b
 	return req, nil
 }
 
-// NewVolunteersBulkUpdateRequest calls the generic VolunteersBulkUpdate builder with application/json body
-func NewVolunteersBulkUpdateRequest(server string, body VolunteersBulkUpdateJSONRequestBody) (*http.Request, error) {
+// NewBoteventsBulkUpdateRequest calls the generic BoteventsBulkUpdate builder with application/json body
+func NewBoteventsBulkUpdateRequest(server string, body BoteventsBulkUpdateJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewVolunteersBulkUpdateRequestWithBody(server, "application/json", bodyReader)
+	return NewBoteventsBulkUpdateRequestWithBody(server, "application/json", bodyReader)
 }
 
-// NewVolunteersBulkUpdateRequestWithBody generates requests for VolunteersBulkUpdate with any type of body
-func NewVolunteersBulkUpdateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+// NewBoteventsBulkUpdateRequestWithBody generates requests for BoteventsBulkUpdate with any type of body
+func NewBoteventsBulkUpdateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -2193,7 +3138,7 @@ func NewVolunteersBulkUpdateRequestWithBody(server string, contentType string, b
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/pp2k69kcyjib180/Volunteers")
+	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/BotEvents")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -2213,19 +3158,19 @@ func NewVolunteersBulkUpdateRequestWithBody(server string, contentType string, b
 	return req, nil
 }
 
-// NewVolunteersBulkCreateRequest calls the generic VolunteersBulkCreate builder with application/json body
-func NewVolunteersBulkCreateRequest(server string, body VolunteersBulkCreateJSONRequestBody) (*http.Request, error) {
+// NewBoteventsBulkCreateRequest calls the generic BoteventsBulkCreate builder with application/json body
+func NewBoteventsBulkCreateRequest(server string, body BoteventsBulkCreateJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewVolunteersBulkCreateRequestWithBody(server, "application/json", bodyReader)
+	return NewBoteventsBulkCreateRequestWithBody(server, "application/json", bodyReader)
 }
 
-// NewVolunteersBulkCreateRequestWithBody generates requests for VolunteersBulkCreate with any type of body
-func NewVolunteersBulkCreateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+// NewBoteventsBulkCreateRequestWithBody generates requests for BoteventsBulkCreate with any type of body
+func NewBoteventsBulkCreateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -2233,7 +3178,7 @@ func NewVolunteersBulkCreateRequestWithBody(server string, contentType string, b
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/pp2k69kcyjib180/Volunteers")
+	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/BotEvents")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -2253,8 +3198,8 @@ func NewVolunteersBulkCreateRequestWithBody(server string, contentType string, b
 	return req, nil
 }
 
-// NewVolunteersBulkDeleteAllRequest generates requests for VolunteersBulkDeleteAll
-func NewVolunteersBulkDeleteAllRequest(server string, params *VolunteersBulkDeleteAllParams) (*http.Request, error) {
+// NewBoteventsBulkDeleteAllRequest generates requests for BoteventsBulkDeleteAll
+func NewBoteventsBulkDeleteAllRequest(server string, params *BoteventsBulkDeleteAllParams) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -2262,7 +3207,7 @@ func NewVolunteersBulkDeleteAllRequest(server string, params *VolunteersBulkDele
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/pp2k69kcyjib180/Volunteers/all")
+	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/BotEvents/all")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -2302,19 +3247,19 @@ func NewVolunteersBulkDeleteAllRequest(server string, params *VolunteersBulkDele
 	return req, nil
 }
 
-// NewVolunteersBulkUpdateAllRequest calls the generic VolunteersBulkUpdateAll builder with application/json body
-func NewVolunteersBulkUpdateAllRequest(server string, params *VolunteersBulkUpdateAllParams, body VolunteersBulkUpdateAllJSONRequestBody) (*http.Request, error) {
+// NewBoteventsBulkUpdateAllRequest calls the generic BoteventsBulkUpdateAll builder with application/json body
+func NewBoteventsBulkUpdateAllRequest(server string, params *BoteventsBulkUpdateAllParams, body BoteventsBulkUpdateAllJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewVolunteersBulkUpdateAllRequestWithBody(server, params, "application/json", bodyReader)
+	return NewBoteventsBulkUpdateAllRequestWithBody(server, params, "application/json", bodyReader)
 }
 
-// NewVolunteersBulkUpdateAllRequestWithBody generates requests for VolunteersBulkUpdateAll with any type of body
-func NewVolunteersBulkUpdateAllRequestWithBody(server string, params *VolunteersBulkUpdateAllParams, contentType string, body io.Reader) (*http.Request, error) {
+// NewBoteventsBulkUpdateAllRequestWithBody generates requests for BoteventsBulkUpdateAll with any type of body
+func NewBoteventsBulkUpdateAllRequestWithBody(server string, params *BoteventsBulkUpdateAllParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -2322,238 +3267,7 @@ func NewVolunteersBulkUpdateAllRequestWithBody(server string, params *Volunteers
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/pp2k69kcyjib180/Volunteers/all")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		queryValues := queryURL.Query()
-
-		if params.Where != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		queryURL.RawQuery = queryValues.Encode()
-	}
-
-	req, err := http.NewRequest("PATCH", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewCommEventsBulkDeleteRequest calls the generic CommEventsBulkDelete builder with application/json body
-func NewCommEventsBulkDeleteRequest(server string, body CommEventsBulkDeleteJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCommEventsBulkDeleteRequestWithBody(server, "application/json", bodyReader)
-}
-
-// NewCommEventsBulkDeleteRequestWithBody generates requests for CommEventsBulkDelete with any type of body
-func NewCommEventsBulkDeleteRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/pp2k69kcyjib180/comm_events")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("DELETE", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewCommEventsBulkUpdateRequest calls the generic CommEventsBulkUpdate builder with application/json body
-func NewCommEventsBulkUpdateRequest(server string, body CommEventsBulkUpdateJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCommEventsBulkUpdateRequestWithBody(server, "application/json", bodyReader)
-}
-
-// NewCommEventsBulkUpdateRequestWithBody generates requests for CommEventsBulkUpdate with any type of body
-func NewCommEventsBulkUpdateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/pp2k69kcyjib180/comm_events")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("PATCH", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewCommEventsBulkCreateRequest calls the generic CommEventsBulkCreate builder with application/json body
-func NewCommEventsBulkCreateRequest(server string, body CommEventsBulkCreateJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCommEventsBulkCreateRequestWithBody(server, "application/json", bodyReader)
-}
-
-// NewCommEventsBulkCreateRequestWithBody generates requests for CommEventsBulkCreate with any type of body
-func NewCommEventsBulkCreateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/pp2k69kcyjib180/comm_events")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("POST", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewCommEventsBulkDeleteAllRequest generates requests for CommEventsBulkDeleteAll
-func NewCommEventsBulkDeleteAllRequest(server string, params *CommEventsBulkDeleteAllParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/pp2k69kcyjib180/comm_events/all")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		queryValues := queryURL.Query()
-
-		if params.Where != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		queryURL.RawQuery = queryValues.Encode()
-	}
-
-	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCommEventsBulkUpdateAllRequest calls the generic CommEventsBulkUpdateAll builder with application/json body
-func NewCommEventsBulkUpdateAllRequest(server string, params *CommEventsBulkUpdateAllParams, body CommEventsBulkUpdateAllJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCommEventsBulkUpdateAllRequestWithBody(server, params, "application/json", bodyReader)
-}
-
-// NewCommEventsBulkUpdateAllRequestWithBody generates requests for CommEventsBulkUpdateAll with any type of body
-func NewCommEventsBulkUpdateAllRequestWithBody(server string, params *CommEventsBulkUpdateAllParams, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/pp2k69kcyjib180/comm_events/all")
+	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/BotEvents/all")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -2615,7 +3329,7 @@ func NewEventsBulkDeleteRequestWithBody(server string, contentType string, body 
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/pp2k69kcyjib180/events")
+	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/Events")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -2655,7 +3369,7 @@ func NewEventsBulkUpdateRequestWithBody(server string, contentType string, body 
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/pp2k69kcyjib180/events")
+	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/Events")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -2695,7 +3409,7 @@ func NewEventsBulkCreateRequestWithBody(server string, contentType string, body 
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/pp2k69kcyjib180/events")
+	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/Events")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -2724,7 +3438,7 @@ func NewEventsBulkDeleteAllRequest(server string, params *EventsBulkDeleteAllPar
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/pp2k69kcyjib180/events/all")
+	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/Events/all")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -2784,7 +3498,7 @@ func NewEventsBulkUpdateAllRequestWithBody(server string, params *EventsBulkUpda
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/pp2k69kcyjib180/events/all")
+	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/Events/all")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -2826,8 +3540,19 @@ func NewEventsBulkUpdateAllRequestWithBody(server string, params *EventsBulkUpda
 	return req, nil
 }
 
-// NewVolunteersDbTableRowListRequest generates requests for VolunteersDbTableRowList
-func NewVolunteersDbTableRowListRequest(server string, params *VolunteersDbTableRowListParams) (*http.Request, error) {
+// NewVolunteersBulkDeleteRequest calls the generic VolunteersBulkDelete builder with application/json body
+func NewVolunteersBulkDeleteRequest(server string, body VolunteersBulkDeleteJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewVolunteersBulkDeleteRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewVolunteersBulkDeleteRequestWithBody generates requests for VolunteersBulkDelete with any type of body
+func NewVolunteersBulkDeleteRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -2835,7 +3560,458 @@ func NewVolunteersDbTableRowListRequest(server string, params *VolunteersDbTable
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers")
+	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/Volunteers")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewVolunteersBulkUpdateRequest calls the generic VolunteersBulkUpdate builder with application/json body
+func NewVolunteersBulkUpdateRequest(server string, body VolunteersBulkUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewVolunteersBulkUpdateRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewVolunteersBulkUpdateRequestWithBody generates requests for VolunteersBulkUpdate with any type of body
+func NewVolunteersBulkUpdateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/Volunteers")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewVolunteersBulkCreateRequest calls the generic VolunteersBulkCreate builder with application/json body
+func NewVolunteersBulkCreateRequest(server string, body VolunteersBulkCreateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewVolunteersBulkCreateRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewVolunteersBulkCreateRequestWithBody generates requests for VolunteersBulkCreate with any type of body
+func NewVolunteersBulkCreateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/Volunteers")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewVolunteersBulkDeleteAllRequest generates requests for VolunteersBulkDeleteAll
+func NewVolunteersBulkDeleteAllRequest(server string, params *VolunteersBulkDeleteAllParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/Volunteers/all")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Where != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewVolunteersBulkUpdateAllRequest calls the generic VolunteersBulkUpdateAll builder with application/json body
+func NewVolunteersBulkUpdateAllRequest(server string, params *VolunteersBulkUpdateAllParams, body VolunteersBulkUpdateAllJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewVolunteersBulkUpdateAllRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewVolunteersBulkUpdateAllRequestWithBody generates requests for VolunteersBulkUpdateAll with any type of body
+func NewVolunteersBulkUpdateAllRequestWithBody(server string, params *VolunteersBulkUpdateAllParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/Volunteers/all")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Where != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCommunicationoneventsBulkDeleteRequest calls the generic CommunicationoneventsBulkDelete builder with application/json body
+func NewCommunicationoneventsBulkDeleteRequest(server string, body CommunicationoneventsBulkDeleteJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCommunicationoneventsBulkDeleteRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewCommunicationoneventsBulkDeleteRequestWithBody generates requests for CommunicationoneventsBulkDelete with any type of body
+func NewCommunicationoneventsBulkDeleteRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/communicationOnEvents")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCommunicationoneventsBulkUpdateRequest calls the generic CommunicationoneventsBulkUpdate builder with application/json body
+func NewCommunicationoneventsBulkUpdateRequest(server string, body CommunicationoneventsBulkUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCommunicationoneventsBulkUpdateRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewCommunicationoneventsBulkUpdateRequestWithBody generates requests for CommunicationoneventsBulkUpdate with any type of body
+func NewCommunicationoneventsBulkUpdateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/communicationOnEvents")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCommunicationoneventsBulkCreateRequest calls the generic CommunicationoneventsBulkCreate builder with application/json body
+func NewCommunicationoneventsBulkCreateRequest(server string, body CommunicationoneventsBulkCreateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCommunicationoneventsBulkCreateRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewCommunicationoneventsBulkCreateRequestWithBody generates requests for CommunicationoneventsBulkCreate with any type of body
+func NewCommunicationoneventsBulkCreateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/communicationOnEvents")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCommunicationoneventsBulkDeleteAllRequest generates requests for CommunicationoneventsBulkDeleteAll
+func NewCommunicationoneventsBulkDeleteAllRequest(server string, params *CommunicationoneventsBulkDeleteAllParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/communicationOnEvents/all")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Where != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCommunicationoneventsBulkUpdateAllRequest calls the generic CommunicationoneventsBulkUpdateAll builder with application/json body
+func NewCommunicationoneventsBulkUpdateAllRequest(server string, params *CommunicationoneventsBulkUpdateAllParams, body CommunicationoneventsBulkUpdateAllJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCommunicationoneventsBulkUpdateAllRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewCommunicationoneventsBulkUpdateAllRequestWithBody generates requests for CommunicationoneventsBulkUpdateAll with any type of body
+func NewCommunicationoneventsBulkUpdateAllRequestWithBody(server string, params *CommunicationoneventsBulkUpdateAllParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/bulk/v1/p1d5e0hzwz1r39a/communicationOnEvents/all")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Where != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBoteventsDbTableRowListRequest generates requests for BoteventsDbTableRowList
+func NewBoteventsDbTableRowListRequest(server string, params *BoteventsDbTableRowListParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -2944,22 +4120,6 @@ func NewVolunteersDbTableRowListRequest(server string, params *VolunteersDbTable
 
 		}
 
-		if params.NestedEventsFields != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[events][fields]", runtime.ParamLocationQuery, *params.NestedEventsFields); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		queryURL.RawQuery = queryValues.Encode()
 	}
 
@@ -2971,19 +4131,19 @@ func NewVolunteersDbTableRowListRequest(server string, params *VolunteersDbTable
 	return req, nil
 }
 
-// NewVolunteersCreateRequest calls the generic VolunteersCreate builder with application/json body
-func NewVolunteersCreateRequest(server string, body VolunteersCreateJSONRequestBody) (*http.Request, error) {
+// NewBoteventsCreateRequest calls the generic BoteventsCreate builder with application/json body
+func NewBoteventsCreateRequest(server string, body BoteventsCreateJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewVolunteersCreateRequestWithBody(server, "application/json", bodyReader)
+	return NewBoteventsCreateRequestWithBody(server, "application/json", bodyReader)
 }
 
-// NewVolunteersCreateRequestWithBody generates requests for VolunteersCreate with any type of body
-func NewVolunteersCreateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+// NewBoteventsCreateRequestWithBody generates requests for BoteventsCreate with any type of body
+func NewBoteventsCreateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -2991,7 +4151,7 @@ func NewVolunteersCreateRequestWithBody(server string, contentType string, body 
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers")
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -3011,8 +4171,8 @@ func NewVolunteersCreateRequestWithBody(server string, contentType string, body 
 	return req, nil
 }
 
-// NewVolunteersCountRequest generates requests for VolunteersCount
-func NewVolunteersCountRequest(server string, params *VolunteersCountParams) (*http.Request, error) {
+// NewBoteventsCountRequest generates requests for BoteventsCount
+func NewBoteventsCountRequest(server string, params *BoteventsCountParams) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -3020,7 +4180,7 @@ func NewVolunteersCountRequest(server string, params *VolunteersCountParams) (*h
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/count")
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/count")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -3060,8 +4220,8 @@ func NewVolunteersCountRequest(server string, params *VolunteersCountParams) (*h
 	return req, nil
 }
 
-// NewVolunteersCsvExportRequest generates requests for VolunteersCsvExport
-func NewVolunteersCsvExportRequest(server string, pType string, params *VolunteersCsvExportParams) (*http.Request, error) {
+// NewBoteventsCsvExportRequest generates requests for BoteventsCsvExport
+func NewBoteventsCsvExportRequest(server string, pType string, params *BoteventsCsvExportParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -3076,7 +4236,7 @@ func NewVolunteersCsvExportRequest(server string, pType string, params *Voluntee
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/export/%s", pathParam0)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/export/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -3116,8 +4276,8 @@ func NewVolunteersCsvExportRequest(server string, pType string, params *Voluntee
 	return req, nil
 }
 
-// NewVolunteersDbTableRowFindOneRequest generates requests for VolunteersDbTableRowFindOne
-func NewVolunteersDbTableRowFindOneRequest(server string, params *VolunteersDbTableRowFindOneParams) (*http.Request, error) {
+// NewBoteventsDbTableRowFindOneRequest generates requests for BoteventsDbTableRowFindOne
+func NewBoteventsDbTableRowFindOneRequest(server string, params *BoteventsDbTableRowFindOneParams) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -3125,7 +4285,7 @@ func NewVolunteersDbTableRowFindOneRequest(server string, params *VolunteersDbTa
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/find-one")
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/find-one")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -3197,8 +4357,8 @@ func NewVolunteersDbTableRowFindOneRequest(server string, params *VolunteersDbTa
 	return req, nil
 }
 
-// NewVolunteersGroupbyRequest generates requests for VolunteersGroupby
-func NewVolunteersGroupbyRequest(server string, params *VolunteersGroupbyParams) (*http.Request, error) {
+// NewBoteventsGroupbyRequest generates requests for BoteventsGroupby
+func NewBoteventsGroupbyRequest(server string, params *BoteventsGroupbyParams) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -3206,7 +4366,7 @@ func NewVolunteersGroupbyRequest(server string, params *VolunteersGroupbyParams)
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/groupby")
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/groupby")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -3326,8 +4486,8 @@ func NewVolunteersGroupbyRequest(server string, params *VolunteersGroupbyParams)
 	return req, nil
 }
 
-// NewVolunteersVolunteersRowListRequest generates requests for VolunteersVolunteersRowList
-func NewVolunteersVolunteersRowListRequest(server string, params *VolunteersVolunteersRowListParams) (*http.Request, error) {
+// NewBotEventsBotEventsRowListRequest generates requests for BotEventsBotEventsRowList
+func NewBotEventsBotEventsRowListRequest(server string, params *BotEventsBotEventsRowListParams) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -3335,7 +4495,7 @@ func NewVolunteersVolunteersRowListRequest(server string, params *VolunteersVolu
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/views/Volunteers")
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/views/BotEvents")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -3396,22 +4556,6 @@ func NewVolunteersVolunteersRowListRequest(server string, params *VolunteersVolu
 
 		}
 
-		if params.NestedEventsFields != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[events][fields]", runtime.ParamLocationQuery, *params.NestedEventsFields); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		queryURL.RawQuery = queryValues.Encode()
 	}
 
@@ -3423,19 +4567,19 @@ func NewVolunteersVolunteersRowListRequest(server string, params *VolunteersVolu
 	return req, nil
 }
 
-// NewVolunteersVolunteersRowCreateRequest calls the generic VolunteersVolunteersRowCreate builder with application/json body
-func NewVolunteersVolunteersRowCreateRequest(server string, body VolunteersVolunteersRowCreateJSONRequestBody) (*http.Request, error) {
+// NewBotEventsBotEventsRowCreateRequest calls the generic BotEventsBotEventsRowCreate builder with application/json body
+func NewBotEventsBotEventsRowCreateRequest(server string, body BotEventsBotEventsRowCreateJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewVolunteersVolunteersRowCreateRequestWithBody(server, "application/json", bodyReader)
+	return NewBotEventsBotEventsRowCreateRequestWithBody(server, "application/json", bodyReader)
 }
 
-// NewVolunteersVolunteersRowCreateRequestWithBody generates requests for VolunteersVolunteersRowCreate with any type of body
-func NewVolunteersVolunteersRowCreateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+// NewBotEventsBotEventsRowCreateRequestWithBody generates requests for BotEventsBotEventsRowCreate with any type of body
+func NewBotEventsBotEventsRowCreateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -3443,7 +4587,7 @@ func NewVolunteersVolunteersRowCreateRequestWithBody(server string, contentType 
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/views/Volunteers")
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/views/BotEvents")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -3463,8 +4607,8 @@ func NewVolunteersVolunteersRowCreateRequestWithBody(server string, contentType 
 	return req, nil
 }
 
-// NewVolunteersVolunteersRowCountRequest generates requests for VolunteersVolunteersRowCount
-func NewVolunteersVolunteersRowCountRequest(server string, params *VolunteersVolunteersRowCountParams) (*http.Request, error) {
+// NewBotEventsBotEventsRowCountRequest generates requests for BotEventsBotEventsRowCount
+func NewBotEventsBotEventsRowCountRequest(server string, params *BotEventsBotEventsRowCountParams) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -3472,7 +4616,7 @@ func NewVolunteersVolunteersRowCountRequest(server string, params *VolunteersVol
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/views/Volunteers/count")
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/views/BotEvents/count")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -3512,8 +4656,8 @@ func NewVolunteersVolunteersRowCountRequest(server string, params *VolunteersVol
 	return req, nil
 }
 
-// NewVolunteersVolunteersRowExportRequest generates requests for VolunteersVolunteersRowExport
-func NewVolunteersVolunteersRowExportRequest(server string, pType string) (*http.Request, error) {
+// NewBotEventsBotEventsRowExportRequest generates requests for BotEventsBotEventsRowExport
+func NewBotEventsBotEventsRowExportRequest(server string, pType string) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -3528,7 +4672,7 @@ func NewVolunteersVolunteersRowExportRequest(server string, pType string) (*http
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/views/Volunteers/export/%s", pathParam0)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/views/BotEvents/export/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -3546,8 +4690,8 @@ func NewVolunteersVolunteersRowExportRequest(server string, pType string) (*http
 	return req, nil
 }
 
-// NewVolunteersVolunteersRowDeleteRequest generates requests for VolunteersVolunteersRowDelete
-func NewVolunteersVolunteersRowDeleteRequest(server string, rowId string) (*http.Request, error) {
+// NewBotEventsBotEventsRowDeleteRequest generates requests for BotEventsBotEventsRowDelete
+func NewBotEventsBotEventsRowDeleteRequest(server string, rowId string) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -3562,7 +4706,7 @@ func NewVolunteersVolunteersRowDeleteRequest(server string, rowId string) (*http
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/views/Volunteers/%s", pathParam0)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/views/BotEvents/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -3580,8 +4724,8 @@ func NewVolunteersVolunteersRowDeleteRequest(server string, rowId string) (*http
 	return req, nil
 }
 
-// NewVolunteersVolunteersRowReadRequest generates requests for VolunteersVolunteersRowRead
-func NewVolunteersVolunteersRowReadRequest(server string, rowId string) (*http.Request, error) {
+// NewBotEventsBotEventsRowReadRequest generates requests for BotEventsBotEventsRowRead
+func NewBotEventsBotEventsRowReadRequest(server string, rowId string) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -3596,7 +4740,7 @@ func NewVolunteersVolunteersRowReadRequest(server string, rowId string) (*http.R
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/views/Volunteers/%s", pathParam0)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/views/BotEvents/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -3614,19 +4758,19 @@ func NewVolunteersVolunteersRowReadRequest(server string, rowId string) (*http.R
 	return req, nil
 }
 
-// NewVolunteersVolunteersRowUpdateRequest calls the generic VolunteersVolunteersRowUpdate builder with application/json body
-func NewVolunteersVolunteersRowUpdateRequest(server string, rowId string, body VolunteersVolunteersRowUpdateJSONRequestBody) (*http.Request, error) {
+// NewBotEventsBotEventsRowUpdateRequest calls the generic BotEventsBotEventsRowUpdate builder with application/json body
+func NewBotEventsBotEventsRowUpdateRequest(server string, rowId string, body BotEventsBotEventsRowUpdateJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewVolunteersVolunteersRowUpdateRequestWithBody(server, rowId, "application/json", bodyReader)
+	return NewBotEventsBotEventsRowUpdateRequestWithBody(server, rowId, "application/json", bodyReader)
 }
 
-// NewVolunteersVolunteersRowUpdateRequestWithBody generates requests for VolunteersVolunteersRowUpdate with any type of body
-func NewVolunteersVolunteersRowUpdateRequestWithBody(server string, rowId string, contentType string, body io.Reader) (*http.Request, error) {
+// NewBotEventsBotEventsRowUpdateRequestWithBody generates requests for BotEventsBotEventsRowUpdate with any type of body
+func NewBotEventsBotEventsRowUpdateRequestWithBody(server string, rowId string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -3641,7 +4785,7 @@ func NewVolunteersVolunteersRowUpdateRequestWithBody(server string, rowId string
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/views/Volunteers/%s", pathParam0)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/views/BotEvents/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -3661,8 +4805,8 @@ func NewVolunteersVolunteersRowUpdateRequestWithBody(server string, rowId string
 	return req, nil
 }
 
-// NewVolunteersDeleteRequest generates requests for VolunteersDelete
-func NewVolunteersDeleteRequest(server string, rowId string) (*http.Request, error) {
+// NewBoteventsDeleteRequest generates requests for BoteventsDelete
+func NewBoteventsDeleteRequest(server string, rowId string) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -3677,7 +4821,7 @@ func NewVolunteersDeleteRequest(server string, rowId string) (*http.Request, err
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/%s", pathParam0)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -3695,8 +4839,8 @@ func NewVolunteersDeleteRequest(server string, rowId string) (*http.Request, err
 	return req, nil
 }
 
-// NewVolunteersReadRequest generates requests for VolunteersRead
-func NewVolunteersReadRequest(server string, rowId string, params *VolunteersReadParams) (*http.Request, error) {
+// NewBoteventsReadRequest generates requests for BoteventsRead
+func NewBoteventsReadRequest(server string, rowId string, params *BoteventsReadParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -3711,7 +4855,7 @@ func NewVolunteersReadRequest(server string, rowId string, params *VolunteersRea
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/%s", pathParam0)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -3751,19 +4895,19 @@ func NewVolunteersReadRequest(server string, rowId string, params *VolunteersRea
 	return req, nil
 }
 
-// NewVolunteersUpdateRequest calls the generic VolunteersUpdate builder with application/json body
-func NewVolunteersUpdateRequest(server string, rowId string, body VolunteersUpdateJSONRequestBody) (*http.Request, error) {
+// NewBoteventsUpdateRequest calls the generic BoteventsUpdate builder with application/json body
+func NewBoteventsUpdateRequest(server string, rowId string, body BoteventsUpdateJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewVolunteersUpdateRequestWithBody(server, rowId, "application/json", bodyReader)
+	return NewBoteventsUpdateRequestWithBody(server, rowId, "application/json", bodyReader)
 }
 
-// NewVolunteersUpdateRequestWithBody generates requests for VolunteersUpdate with any type of body
-func NewVolunteersUpdateRequestWithBody(server string, rowId string, contentType string, body io.Reader) (*http.Request, error) {
+// NewBoteventsUpdateRequestWithBody generates requests for BoteventsUpdate with any type of body
+func NewBoteventsUpdateRequestWithBody(server string, rowId string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -3778,7 +4922,7 @@ func NewVolunteersUpdateRequestWithBody(server string, rowId string, contentType
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/%s", pathParam0)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -3798,8 +4942,8 @@ func NewVolunteersUpdateRequestWithBody(server string, rowId string, contentType
 	return req, nil
 }
 
-// NewVolunteersNestedListRequest generates requests for VolunteersNestedList
-func NewVolunteersNestedListRequest(server string, rowId string, relationType string, columnName string, params *VolunteersNestedListParams) (*http.Request, error) {
+// NewBoteventsNestedListRequest generates requests for BoteventsNestedList
+func NewBoteventsNestedListRequest(server string, rowId string, relationType string, columnName string, params *BoteventsNestedListParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -3828,7 +4972,7 @@ func NewVolunteersNestedListRequest(server string, rowId string, relationType st
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/%s/%s/%s", pathParam0, pathParam1, pathParam2)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/%s/%s/%s", pathParam0, pathParam1, pathParam2)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -3884,8 +5028,8 @@ func NewVolunteersNestedListRequest(server string, rowId string, relationType st
 	return req, nil
 }
 
-// NewVolunteersNestedChildrenExcludedListRequest generates requests for VolunteersNestedChildrenExcludedList
-func NewVolunteersNestedChildrenExcludedListRequest(server string, rowId string, relationType string, columnName string, params *VolunteersNestedChildrenExcludedListParams) (*http.Request, error) {
+// NewBoteventsNestedChildrenExcludedListRequest generates requests for BoteventsNestedChildrenExcludedList
+func NewBoteventsNestedChildrenExcludedListRequest(server string, rowId string, relationType string, columnName string, params *BoteventsNestedChildrenExcludedListParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -3914,7 +5058,7 @@ func NewVolunteersNestedChildrenExcludedListRequest(server string, rowId string,
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/%s/%s/%s/exclude", pathParam0, pathParam1, pathParam2)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/%s/%s/%s/exclude", pathParam0, pathParam1, pathParam2)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -3986,8 +5130,8 @@ func NewVolunteersNestedChildrenExcludedListRequest(server string, rowId string,
 	return req, nil
 }
 
-// NewVolunteersNestedRemoveRequest generates requests for VolunteersNestedRemove
-func NewVolunteersNestedRemoveRequest(server string, rowId string, relationType string, columnName string, refRowId string) (*http.Request, error) {
+// NewBoteventsNestedRemoveRequest generates requests for BoteventsNestedRemove
+func NewBoteventsNestedRemoveRequest(server string, rowId string, relationType string, columnName string, refRowId string) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -4023,7 +5167,7 @@ func NewVolunteersNestedRemoveRequest(server string, rowId string, relationType 
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/%s/%s/%s/%s", pathParam0, pathParam1, pathParam2, pathParam3)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/%s/%s/%s/%s", pathParam0, pathParam1, pathParam2, pathParam3)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -4041,8 +5185,8 @@ func NewVolunteersNestedRemoveRequest(server string, rowId string, relationType 
 	return req, nil
 }
 
-// NewVolunteersNestedAddRequest generates requests for VolunteersNestedAdd
-func NewVolunteersNestedAddRequest(server string, rowId string, relationType string, columnName string, refRowId string, params *VolunteersNestedAddParams) (*http.Request, error) {
+// NewBoteventsNestedAddRequest generates requests for BoteventsNestedAdd
+func NewBoteventsNestedAddRequest(server string, rowId string, relationType string, columnName string, refRowId string, params *BoteventsNestedAddParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -4078,7 +5222,7 @@ func NewVolunteersNestedAddRequest(server string, rowId string, relationType str
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/Volunteers/%s/%s/%s/%s", pathParam0, pathParam1, pathParam2, pathParam3)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/BotEvents/%s/%s/%s/%s", pathParam0, pathParam1, pathParam2, pathParam3)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -4150,946 +5294,6 @@ func NewVolunteersNestedAddRequest(server string, rowId string, relationType str
 	return req, nil
 }
 
-// NewCommEventsDbTableRowListRequest generates requests for CommEventsDbTableRowList
-func NewCommEventsDbTableRowListRequest(server string, params *CommEventsDbTableRowListParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/comm_events")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		queryValues := queryURL.Query()
-
-		if params.Fields != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		if params.Sort != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "sort", runtime.ParamLocationQuery, *params.Sort); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		if params.Where != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		if params.Limit != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		if params.Shuffle != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "shuffle", runtime.ParamLocationQuery, *params.Shuffle); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		if params.Offset != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		queryURL.RawQuery = queryValues.Encode()
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCommEventsCreateRequest calls the generic CommEventsCreate builder with application/json body
-func NewCommEventsCreateRequest(server string, body CommEventsCreateJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCommEventsCreateRequestWithBody(server, "application/json", bodyReader)
-}
-
-// NewCommEventsCreateRequestWithBody generates requests for CommEventsCreate with any type of body
-func NewCommEventsCreateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/comm_events")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("POST", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewCommEventsCountRequest generates requests for CommEventsCount
-func NewCommEventsCountRequest(server string, params *CommEventsCountParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/count")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		queryValues := queryURL.Query()
-
-		if params.Where != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		queryURL.RawQuery = queryValues.Encode()
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCommEventsCsvExportRequest generates requests for CommEventsCsvExport
-func NewCommEventsCsvExportRequest(server string, pType string, params *CommEventsCsvExportParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "type", runtime.ParamLocationPath, pType)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/export/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		queryValues := queryURL.Query()
-
-		if params.Offset != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		queryURL.RawQuery = queryValues.Encode()
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCommEventsDbTableRowFindOneRequest generates requests for CommEventsDbTableRowFindOne
-func NewCommEventsDbTableRowFindOneRequest(server string, params *CommEventsDbTableRowFindOneParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/find-one")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		queryValues := queryURL.Query()
-
-		if params.Fields != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		if params.Where != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		if params.Sort != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "sort", runtime.ParamLocationQuery, *params.Sort); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		queryURL.RawQuery = queryValues.Encode()
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCommEventsGroupbyRequest generates requests for CommEventsGroupby
-func NewCommEventsGroupbyRequest(server string, params *CommEventsGroupbyParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/groupby")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		queryValues := queryURL.Query()
-
-		if params.ColumnName != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "column_name", runtime.ParamLocationQuery, *params.ColumnName); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		if params.Sort != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "sort", runtime.ParamLocationQuery, *params.Sort); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		if params.Where != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		if params.Limit != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		if params.Offset != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		if params.Shuffle != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "shuffle", runtime.ParamLocationQuery, *params.Shuffle); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		queryURL.RawQuery = queryValues.Encode()
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCommEventsCommEventsRowListRequest generates requests for CommEventsCommEventsRowList
-func NewCommEventsCommEventsRowListRequest(server string, params *CommEventsCommEventsRowListParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/views/comm_events")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		queryValues := queryURL.Query()
-
-		if params.Fields != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		if params.Sort != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "sort", runtime.ParamLocationQuery, *params.Sort); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		if params.Where != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		queryURL.RawQuery = queryValues.Encode()
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCommEventsCommEventsRowCreateRequest calls the generic CommEventsCommEventsRowCreate builder with application/json body
-func NewCommEventsCommEventsRowCreateRequest(server string, body CommEventsCommEventsRowCreateJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCommEventsCommEventsRowCreateRequestWithBody(server, "application/json", bodyReader)
-}
-
-// NewCommEventsCommEventsRowCreateRequestWithBody generates requests for CommEventsCommEventsRowCreate with any type of body
-func NewCommEventsCommEventsRowCreateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/views/comm_events")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("POST", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewCommEventsCommEventsRowCountRequest generates requests for CommEventsCommEventsRowCount
-func NewCommEventsCommEventsRowCountRequest(server string, params *CommEventsCommEventsRowCountParams) (*http.Request, error) {
-	var err error
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/views/comm_events/count")
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		queryValues := queryURL.Query()
-
-		if params.Where != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		queryURL.RawQuery = queryValues.Encode()
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCommEventsCommEventsRowExportRequest generates requests for CommEventsCommEventsRowExport
-func NewCommEventsCommEventsRowExportRequest(server string, pType string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "type", runtime.ParamLocationPath, pType)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/views/comm_events/export/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCommEventsCommEventsRowDeleteRequest generates requests for CommEventsCommEventsRowDelete
-func NewCommEventsCommEventsRowDeleteRequest(server string, rowId string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/views/comm_events/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCommEventsCommEventsRowReadRequest generates requests for CommEventsCommEventsRowRead
-func NewCommEventsCommEventsRowReadRequest(server string, rowId string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/views/comm_events/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCommEventsCommEventsRowUpdateRequest calls the generic CommEventsCommEventsRowUpdate builder with application/json body
-func NewCommEventsCommEventsRowUpdateRequest(server string, rowId string, body CommEventsCommEventsRowUpdateJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCommEventsCommEventsRowUpdateRequestWithBody(server, rowId, "application/json", bodyReader)
-}
-
-// NewCommEventsCommEventsRowUpdateRequestWithBody generates requests for CommEventsCommEventsRowUpdate with any type of body
-func NewCommEventsCommEventsRowUpdateRequestWithBody(server string, rowId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/views/comm_events/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("PATCH", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewCommEventsDeleteRequest generates requests for CommEventsDelete
-func NewCommEventsDeleteRequest(server string, rowId string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCommEventsReadRequest generates requests for CommEventsRead
-func NewCommEventsReadRequest(server string, rowId string, params *CommEventsReadParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		queryValues := queryURL.Query()
-
-		if params.Fields != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		queryURL.RawQuery = queryValues.Encode()
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCommEventsUpdateRequest calls the generic CommEventsUpdate builder with application/json body
-func NewCommEventsUpdateRequest(server string, rowId string, body CommEventsUpdateJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCommEventsUpdateRequestWithBody(server, rowId, "application/json", bodyReader)
-}
-
-// NewCommEventsUpdateRequestWithBody generates requests for CommEventsUpdate with any type of body
-func NewCommEventsUpdateRequestWithBody(server string, rowId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/comm_events/%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("PATCH", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
 // NewEventsDbTableRowListRequest generates requests for EventsDbTableRowList
 func NewEventsDbTableRowListRequest(server string, params *EventsDbTableRowListParams) (*http.Request, error) {
 	var err error
@@ -5099,7 +5303,7 @@ func NewEventsDbTableRowListRequest(server string, params *EventsDbTableRowListP
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/events")
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5195,6 +5399,118 @@ func NewEventsDbTableRowListRequest(server string, params *EventsDbTableRowListP
 		if params.Offset != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedNcCurgNcM2mW5i3lbdpwrsWhere != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[nc_curg___nc_m2m_w5i3lbdpwrs][where]", runtime.ParamLocationQuery, *params.NestedNcCurgNcM2mW5i3lbdpwrsWhere); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedNcCurgNcM2mW5i3lbdpwrsOffset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[nc_curg___nc_m2m_w5i3lbdpwrs][offset]", runtime.ParamLocationQuery, *params.NestedNcCurgNcM2mW5i3lbdpwrsOffset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedNcCurgNcM2mW5i3lbdpwrsLimit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[nc_curg___nc_m2m_w5i3lbdpwrs][limit]", runtime.ParamLocationQuery, *params.NestedNcCurgNcM2mW5i3lbdpwrsLimit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedNcCurgNcM2mW5i3lbdpwrsFields != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields]", runtime.ParamLocationQuery, *params.NestedNcCurgNcM2mW5i3lbdpwrsFields); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedNcCurgNcM2mW5i3lbdpwrsSort != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort]", runtime.ParamLocationQuery, *params.NestedNcCurgNcM2mW5i3lbdpwrsSort); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedCommunicationOnEventsFields != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[communicationOnEvents][fields]", runtime.ParamLocationQuery, *params.NestedCommunicationOnEventsFields); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedBotEventsFields != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[BotEvents][fields]", runtime.ParamLocationQuery, *params.NestedBotEventsFields); err != nil {
 				return nil, err
 			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
 				return nil, err
@@ -5239,7 +5555,7 @@ func NewEventsCreateRequestWithBody(server string, contentType string, body io.R
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/events")
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5268,7 +5584,7 @@ func NewEventsCountRequest(server string, params *EventsCountParams) (*http.Requ
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/events/count")
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/count")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5324,7 +5640,7 @@ func NewEventsCsvExportRequest(server string, pType string, params *EventsCsvExp
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/events/export/%s", pathParam0)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/export/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5373,7 +5689,7 @@ func NewEventsDbTableRowFindOneRequest(server string, params *EventsDbTableRowFi
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/events/find-one")
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/find-one")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5454,7 +5770,7 @@ func NewEventsGroupbyRequest(server string, params *EventsGroupbyParams) (*http.
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/events/groupby")
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/groupby")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5583,7 +5899,7 @@ func NewEventsEventsRowListRequest(server string, params *EventsEventsRowListPar
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/events/views/events")
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/views/events")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5644,6 +5960,118 @@ func NewEventsEventsRowListRequest(server string, params *EventsEventsRowListPar
 
 		}
 
+		if params.NestedNcCurgNcM2mW5i3lbdpwrsWhere != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[nc_curg___nc_m2m_w5i3lbdpwrs][where]", runtime.ParamLocationQuery, *params.NestedNcCurgNcM2mW5i3lbdpwrsWhere); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedNcCurgNcM2mW5i3lbdpwrsOffset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[nc_curg___nc_m2m_w5i3lbdpwrs][offset]", runtime.ParamLocationQuery, *params.NestedNcCurgNcM2mW5i3lbdpwrsOffset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedNcCurgNcM2mW5i3lbdpwrsLimit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[nc_curg___nc_m2m_w5i3lbdpwrs][limit]", runtime.ParamLocationQuery, *params.NestedNcCurgNcM2mW5i3lbdpwrsLimit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedNcCurgNcM2mW5i3lbdpwrsFields != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields]", runtime.ParamLocationQuery, *params.NestedNcCurgNcM2mW5i3lbdpwrsFields); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedNcCurgNcM2mW5i3lbdpwrsSort != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort]", runtime.ParamLocationQuery, *params.NestedNcCurgNcM2mW5i3lbdpwrsSort); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedCommunicationOnEventsFields != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[communicationOnEvents][fields]", runtime.ParamLocationQuery, *params.NestedCommunicationOnEventsFields); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedBotEventsFields != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[BotEvents][fields]", runtime.ParamLocationQuery, *params.NestedBotEventsFields); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
 		queryURL.RawQuery = queryValues.Encode()
 	}
 
@@ -5675,7 +6103,7 @@ func NewEventsEventsRowCreateRequestWithBody(server string, contentType string, 
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/events/views/events")
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/views/events")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5704,7 +6132,7 @@ func NewEventsEventsRowCountRequest(server string, params *EventsEventsRowCountP
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/events/views/events/count")
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/views/events/count")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5760,7 +6188,7 @@ func NewEventsEventsRowExportRequest(server string, pType string) (*http.Request
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/events/views/events/export/%s", pathParam0)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/views/events/export/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5794,7 +6222,7 @@ func NewEventsEventsRowDeleteRequest(server string, rowId string) (*http.Request
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/events/views/events/%s", pathParam0)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/views/events/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5828,7 +6256,7 @@ func NewEventsEventsRowReadRequest(server string, rowId string) (*http.Request, 
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/events/views/events/%s", pathParam0)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/views/events/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5873,7 +6301,7 @@ func NewEventsEventsRowUpdateRequestWithBody(server string, rowId string, conten
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/events/views/events/%s", pathParam0)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/views/events/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5909,7 +6337,7 @@ func NewEventsDeleteRequest(server string, rowId string) (*http.Request, error) 
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/events/%s", pathParam0)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5943,7 +6371,7 @@ func NewEventsReadRequest(server string, rowId string, params *EventsReadParams)
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/events/%s", pathParam0)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -6010,7 +6438,7 @@ func NewEventsUpdateRequestWithBody(server string, rowId string, contentType str
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/events/%s", pathParam0)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/%s", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -6060,7 +6488,7 @@ func NewEventsNestedListRequest(server string, rowId string, relationType string
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/events/%s/%s/%s", pathParam0, pathParam1, pathParam2)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/%s/%s/%s", pathParam0, pathParam1, pathParam2)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -6146,7 +6574,7 @@ func NewEventsNestedChildrenExcludedListRequest(server string, rowId string, rel
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/events/%s/%s/%s/exclude", pathParam0, pathParam1, pathParam2)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/%s/%s/%s/exclude", pathParam0, pathParam1, pathParam2)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -6255,7 +6683,7 @@ func NewEventsNestedRemoveRequest(server string, rowId string, relationType stri
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/events/%s/%s/%s/%s", pathParam0, pathParam1, pathParam2, pathParam3)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/%s/%s/%s/%s", pathParam0, pathParam1, pathParam2, pathParam3)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -6310,7 +6738,2751 @@ func NewEventsNestedAddRequest(server string, rowId string, relationType string,
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/api/v1/db/data/v1/pp2k69kcyjib180/events/%s/%s/%s/%s", pathParam0, pathParam1, pathParam2, pathParam3)
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Events/%s/%s/%s/%s", pathParam0, pathParam1, pathParam2, pathParam3)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Shuffle != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "shuffle", runtime.ParamLocationQuery, *params.Shuffle); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewVolunteersDbTableRowListRequest generates requests for VolunteersDbTableRowList
+func NewVolunteersDbTableRowListRequest(server string, params *VolunteersDbTableRowListParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Fields != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Sort != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "sort", runtime.ParamLocationQuery, *params.Sort); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Where != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Shuffle != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "shuffle", runtime.ParamLocationQuery, *params.Shuffle); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedNcCurgNcM2mW5i3lbdpwrsWhere != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[nc_curg___nc_m2m_w5i3lbdpwrs][where]", runtime.ParamLocationQuery, *params.NestedNcCurgNcM2mW5i3lbdpwrsWhere); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedNcCurgNcM2mW5i3lbdpwrsOffset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[nc_curg___nc_m2m_w5i3lbdpwrs][offset]", runtime.ParamLocationQuery, *params.NestedNcCurgNcM2mW5i3lbdpwrsOffset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedNcCurgNcM2mW5i3lbdpwrsLimit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[nc_curg___nc_m2m_w5i3lbdpwrs][limit]", runtime.ParamLocationQuery, *params.NestedNcCurgNcM2mW5i3lbdpwrsLimit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedNcCurgNcM2mW5i3lbdpwrsFields != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields]", runtime.ParamLocationQuery, *params.NestedNcCurgNcM2mW5i3lbdpwrsFields); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedNcCurgNcM2mW5i3lbdpwrsSort != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort]", runtime.ParamLocationQuery, *params.NestedNcCurgNcM2mW5i3lbdpwrsSort); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewVolunteersCreateRequest calls the generic VolunteersCreate builder with application/json body
+func NewVolunteersCreateRequest(server string, body VolunteersCreateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewVolunteersCreateRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewVolunteersCreateRequestWithBody generates requests for VolunteersCreate with any type of body
+func NewVolunteersCreateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewVolunteersCountRequest generates requests for VolunteersCount
+func NewVolunteersCountRequest(server string, params *VolunteersCountParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/count")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Where != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewVolunteersCsvExportRequest generates requests for VolunteersCsvExport
+func NewVolunteersCsvExportRequest(server string, pType string, params *VolunteersCsvExportParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "type", runtime.ParamLocationPath, pType)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/export/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewVolunteersDbTableRowFindOneRequest generates requests for VolunteersDbTableRowFindOne
+func NewVolunteersDbTableRowFindOneRequest(server string, params *VolunteersDbTableRowFindOneParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/find-one")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Fields != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Where != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Sort != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "sort", runtime.ParamLocationQuery, *params.Sort); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewVolunteersGroupbyRequest generates requests for VolunteersGroupby
+func NewVolunteersGroupbyRequest(server string, params *VolunteersGroupbyParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/groupby")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.ColumnName != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "column_name", runtime.ParamLocationQuery, *params.ColumnName); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Sort != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "sort", runtime.ParamLocationQuery, *params.Sort); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Where != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Shuffle != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "shuffle", runtime.ParamLocationQuery, *params.Shuffle); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewVolunteersGridRowListRequest generates requests for VolunteersGridRowList
+func NewVolunteersGridRowListRequest(server string, params *VolunteersGridRowListParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/views/grid")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Fields != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Sort != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "sort", runtime.ParamLocationQuery, *params.Sort); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Where != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedNcCurgNcM2mW5i3lbdpwrsWhere != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[nc_curg___nc_m2m_w5i3lbdpwrs][where]", runtime.ParamLocationQuery, *params.NestedNcCurgNcM2mW5i3lbdpwrsWhere); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedNcCurgNcM2mW5i3lbdpwrsOffset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[nc_curg___nc_m2m_w5i3lbdpwrs][offset]", runtime.ParamLocationQuery, *params.NestedNcCurgNcM2mW5i3lbdpwrsOffset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedNcCurgNcM2mW5i3lbdpwrsLimit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[nc_curg___nc_m2m_w5i3lbdpwrs][limit]", runtime.ParamLocationQuery, *params.NestedNcCurgNcM2mW5i3lbdpwrsLimit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedNcCurgNcM2mW5i3lbdpwrsFields != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[nc_curg___nc_m2m_w5i3lbdpwrs][fields]", runtime.ParamLocationQuery, *params.NestedNcCurgNcM2mW5i3lbdpwrsFields); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.NestedNcCurgNcM2mW5i3lbdpwrsSort != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "nested[nc_curg___nc_m2m_w5i3lbdpwrs][sort]", runtime.ParamLocationQuery, *params.NestedNcCurgNcM2mW5i3lbdpwrsSort); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewVolunteersGridRowCreateRequest calls the generic VolunteersGridRowCreate builder with application/json body
+func NewVolunteersGridRowCreateRequest(server string, body VolunteersGridRowCreateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewVolunteersGridRowCreateRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewVolunteersGridRowCreateRequestWithBody generates requests for VolunteersGridRowCreate with any type of body
+func NewVolunteersGridRowCreateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/views/grid")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewVolunteersGridRowCountRequest generates requests for VolunteersGridRowCount
+func NewVolunteersGridRowCountRequest(server string, params *VolunteersGridRowCountParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/views/grid/count")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Where != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewVolunteersGridRowExportRequest generates requests for VolunteersGridRowExport
+func NewVolunteersGridRowExportRequest(server string, pType string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "type", runtime.ParamLocationPath, pType)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/views/grid/export/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewVolunteersGridRowDeleteRequest generates requests for VolunteersGridRowDelete
+func NewVolunteersGridRowDeleteRequest(server string, rowId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/views/grid/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewVolunteersGridRowReadRequest generates requests for VolunteersGridRowRead
+func NewVolunteersGridRowReadRequest(server string, rowId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/views/grid/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewVolunteersGridRowUpdateRequest calls the generic VolunteersGridRowUpdate builder with application/json body
+func NewVolunteersGridRowUpdateRequest(server string, rowId string, body VolunteersGridRowUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewVolunteersGridRowUpdateRequestWithBody(server, rowId, "application/json", bodyReader)
+}
+
+// NewVolunteersGridRowUpdateRequestWithBody generates requests for VolunteersGridRowUpdate with any type of body
+func NewVolunteersGridRowUpdateRequestWithBody(server string, rowId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/views/grid/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewVolunteersDeleteRequest generates requests for VolunteersDelete
+func NewVolunteersDeleteRequest(server string, rowId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewVolunteersReadRequest generates requests for VolunteersRead
+func NewVolunteersReadRequest(server string, rowId string, params *VolunteersReadParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Fields != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewVolunteersUpdateRequest calls the generic VolunteersUpdate builder with application/json body
+func NewVolunteersUpdateRequest(server string, rowId string, body VolunteersUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewVolunteersUpdateRequestWithBody(server, rowId, "application/json", bodyReader)
+}
+
+// NewVolunteersUpdateRequestWithBody generates requests for VolunteersUpdate with any type of body
+func NewVolunteersUpdateRequestWithBody(server string, rowId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewVolunteersNestedListRequest generates requests for VolunteersNestedList
+func NewVolunteersNestedListRequest(server string, rowId string, relationType string, columnName string, params *VolunteersNestedListParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "relationType", runtime.ParamLocationPath, relationType)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "columnName", runtime.ParamLocationPath, columnName)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/%s/%s/%s", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewVolunteersNestedChildrenExcludedListRequest generates requests for VolunteersNestedChildrenExcludedList
+func NewVolunteersNestedChildrenExcludedListRequest(server string, rowId string, relationType string, columnName string, params *VolunteersNestedChildrenExcludedListParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "relationType", runtime.ParamLocationPath, relationType)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "columnName", runtime.ParamLocationPath, columnName)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/%s/%s/%s/exclude", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Shuffle != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "shuffle", runtime.ParamLocationQuery, *params.Shuffle); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewVolunteersNestedRemoveRequest generates requests for VolunteersNestedRemove
+func NewVolunteersNestedRemoveRequest(server string, rowId string, relationType string, columnName string, refRowId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "relationType", runtime.ParamLocationPath, relationType)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "columnName", runtime.ParamLocationPath, columnName)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam3 string
+
+	pathParam3, err = runtime.StyleParamWithLocation("simple", false, "refRowId", runtime.ParamLocationPath, refRowId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/%s/%s/%s/%s", pathParam0, pathParam1, pathParam2, pathParam3)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewVolunteersNestedAddRequest generates requests for VolunteersNestedAdd
+func NewVolunteersNestedAddRequest(server string, rowId string, relationType string, columnName string, refRowId string, params *VolunteersNestedAddParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "relationType", runtime.ParamLocationPath, relationType)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "columnName", runtime.ParamLocationPath, columnName)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam3 string
+
+	pathParam3, err = runtime.StyleParamWithLocation("simple", false, "refRowId", runtime.ParamLocationPath, refRowId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/Volunteers/%s/%s/%s/%s", pathParam0, pathParam1, pathParam2, pathParam3)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Shuffle != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "shuffle", runtime.ParamLocationQuery, *params.Shuffle); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCommunicationoneventsDbTableRowListRequest generates requests for CommunicationoneventsDbTableRowList
+func NewCommunicationoneventsDbTableRowListRequest(server string, params *CommunicationoneventsDbTableRowListParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Fields != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Sort != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "sort", runtime.ParamLocationQuery, *params.Sort); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Where != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Shuffle != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "shuffle", runtime.ParamLocationQuery, *params.Shuffle); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCommunicationoneventsCreateRequest calls the generic CommunicationoneventsCreate builder with application/json body
+func NewCommunicationoneventsCreateRequest(server string, body CommunicationoneventsCreateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCommunicationoneventsCreateRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewCommunicationoneventsCreateRequestWithBody generates requests for CommunicationoneventsCreate with any type of body
+func NewCommunicationoneventsCreateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCommunicationoneventsCountRequest generates requests for CommunicationoneventsCount
+func NewCommunicationoneventsCountRequest(server string, params *CommunicationoneventsCountParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/count")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Where != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCommunicationoneventsCsvExportRequest generates requests for CommunicationoneventsCsvExport
+func NewCommunicationoneventsCsvExportRequest(server string, pType string, params *CommunicationoneventsCsvExportParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "type", runtime.ParamLocationPath, pType)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/export/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCommunicationoneventsDbTableRowFindOneRequest generates requests for CommunicationoneventsDbTableRowFindOne
+func NewCommunicationoneventsDbTableRowFindOneRequest(server string, params *CommunicationoneventsDbTableRowFindOneParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/find-one")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Fields != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Where != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Sort != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "sort", runtime.ParamLocationQuery, *params.Sort); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCommunicationoneventsGroupbyRequest generates requests for CommunicationoneventsGroupby
+func NewCommunicationoneventsGroupbyRequest(server string, params *CommunicationoneventsGroupbyParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/groupby")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.ColumnName != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "column_name", runtime.ParamLocationQuery, *params.ColumnName); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Sort != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "sort", runtime.ParamLocationQuery, *params.Sort); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Where != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Shuffle != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "shuffle", runtime.ParamLocationQuery, *params.Shuffle); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCommunicationOnEventsCommunicationOnEventsRowListRequest generates requests for CommunicationOnEventsCommunicationOnEventsRowList
+func NewCommunicationOnEventsCommunicationOnEventsRowListRequest(server string, params *CommunicationOnEventsCommunicationOnEventsRowListParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/views/communicationOnEvents")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Fields != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Sort != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "sort", runtime.ParamLocationQuery, *params.Sort); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Where != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCommunicationOnEventsCommunicationOnEventsRowCreateRequest calls the generic CommunicationOnEventsCommunicationOnEventsRowCreate builder with application/json body
+func NewCommunicationOnEventsCommunicationOnEventsRowCreateRequest(server string, body CommunicationOnEventsCommunicationOnEventsRowCreateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCommunicationOnEventsCommunicationOnEventsRowCreateRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewCommunicationOnEventsCommunicationOnEventsRowCreateRequestWithBody generates requests for CommunicationOnEventsCommunicationOnEventsRowCreate with any type of body
+func NewCommunicationOnEventsCommunicationOnEventsRowCreateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/views/communicationOnEvents")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCommunicationOnEventsCommunicationOnEventsRowCountRequest generates requests for CommunicationOnEventsCommunicationOnEventsRowCount
+func NewCommunicationOnEventsCommunicationOnEventsRowCountRequest(server string, params *CommunicationOnEventsCommunicationOnEventsRowCountParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/views/communicationOnEvents/count")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Where != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "where", runtime.ParamLocationQuery, *params.Where); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCommunicationOnEventsCommunicationOnEventsRowExportRequest generates requests for CommunicationOnEventsCommunicationOnEventsRowExport
+func NewCommunicationOnEventsCommunicationOnEventsRowExportRequest(server string, pType string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "type", runtime.ParamLocationPath, pType)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/views/communicationOnEvents/export/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCommunicationOnEventsCommunicationOnEventsRowDeleteRequest generates requests for CommunicationOnEventsCommunicationOnEventsRowDelete
+func NewCommunicationOnEventsCommunicationOnEventsRowDeleteRequest(server string, rowId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/views/communicationOnEvents/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCommunicationOnEventsCommunicationOnEventsRowReadRequest generates requests for CommunicationOnEventsCommunicationOnEventsRowRead
+func NewCommunicationOnEventsCommunicationOnEventsRowReadRequest(server string, rowId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/views/communicationOnEvents/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCommunicationOnEventsCommunicationOnEventsRowUpdateRequest calls the generic CommunicationOnEventsCommunicationOnEventsRowUpdate builder with application/json body
+func NewCommunicationOnEventsCommunicationOnEventsRowUpdateRequest(server string, rowId string, body CommunicationOnEventsCommunicationOnEventsRowUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCommunicationOnEventsCommunicationOnEventsRowUpdateRequestWithBody(server, rowId, "application/json", bodyReader)
+}
+
+// NewCommunicationOnEventsCommunicationOnEventsRowUpdateRequestWithBody generates requests for CommunicationOnEventsCommunicationOnEventsRowUpdate with any type of body
+func NewCommunicationOnEventsCommunicationOnEventsRowUpdateRequestWithBody(server string, rowId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/views/communicationOnEvents/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCommunicationoneventsDeleteRequest generates requests for CommunicationoneventsDelete
+func NewCommunicationoneventsDeleteRequest(server string, rowId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCommunicationoneventsReadRequest generates requests for CommunicationoneventsRead
+func NewCommunicationoneventsReadRequest(server string, rowId string, params *CommunicationoneventsReadParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Fields != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "fields", runtime.ParamLocationQuery, *params.Fields); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCommunicationoneventsUpdateRequest calls the generic CommunicationoneventsUpdate builder with application/json body
+func NewCommunicationoneventsUpdateRequest(server string, rowId string, body CommunicationoneventsUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCommunicationoneventsUpdateRequestWithBody(server, rowId, "application/json", bodyReader)
+}
+
+// NewCommunicationoneventsUpdateRequestWithBody generates requests for CommunicationoneventsUpdate with any type of body
+func NewCommunicationoneventsUpdateRequestWithBody(server string, rowId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCommunicationoneventsNestedListRequest generates requests for CommunicationoneventsNestedList
+func NewCommunicationoneventsNestedListRequest(server string, rowId string, relationType string, columnName string, params *CommunicationoneventsNestedListParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "relationType", runtime.ParamLocationPath, relationType)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "columnName", runtime.ParamLocationPath, columnName)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/%s/%s/%s", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCommunicationoneventsNestedChildrenExcludedListRequest generates requests for CommunicationoneventsNestedChildrenExcludedList
+func NewCommunicationoneventsNestedChildrenExcludedListRequest(server string, rowId string, relationType string, columnName string, params *CommunicationoneventsNestedChildrenExcludedListParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "relationType", runtime.ParamLocationPath, relationType)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "columnName", runtime.ParamLocationPath, columnName)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/%s/%s/%s/exclude", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Shuffle != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "shuffle", runtime.ParamLocationQuery, *params.Shuffle); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCommunicationoneventsNestedRemoveRequest generates requests for CommunicationoneventsNestedRemove
+func NewCommunicationoneventsNestedRemoveRequest(server string, rowId string, relationType string, columnName string, refRowId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "relationType", runtime.ParamLocationPath, relationType)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "columnName", runtime.ParamLocationPath, columnName)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam3 string
+
+	pathParam3, err = runtime.StyleParamWithLocation("simple", false, "refRowId", runtime.ParamLocationPath, refRowId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/%s/%s/%s/%s", pathParam0, pathParam1, pathParam2, pathParam3)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCommunicationoneventsNestedAddRequest generates requests for CommunicationoneventsNestedAdd
+func NewCommunicationoneventsNestedAddRequest(server string, rowId string, relationType string, columnName string, refRowId string, params *CommunicationoneventsNestedAddParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "rowId", runtime.ParamLocationPath, rowId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "relationType", runtime.ParamLocationPath, relationType)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "columnName", runtime.ParamLocationPath, columnName)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam3 string
+
+	pathParam3, err = runtime.StyleParamWithLocation("simple", false, "refRowId", runtime.ParamLocationPath, refRowId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/api/v1/db/data/v1/p1d5e0hzwz1r39a/communicationOnEvents/%s/%s/%s/%s", pathParam0, pathParam1, pathParam2, pathParam3)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -6425,51 +9597,28 @@ func WithBaseURL(baseURL string) ClientOption {
 
 // ClientWithResponsesInterface is the interface specification for the client with responses above.
 type ClientWithResponsesInterface interface {
-	// VolunteersBulkDeleteWithBodyWithResponse request with any body
-	VolunteersBulkDeleteWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersBulkDeleteResponse, error)
+	// BoteventsBulkDeleteWithBodyWithResponse request with any body
+	BoteventsBulkDeleteWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BoteventsBulkDeleteResponse, error)
 
-	VolunteersBulkDeleteWithResponse(ctx context.Context, body VolunteersBulkDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersBulkDeleteResponse, error)
+	BoteventsBulkDeleteWithResponse(ctx context.Context, body BoteventsBulkDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*BoteventsBulkDeleteResponse, error)
 
-	// VolunteersBulkUpdateWithBodyWithResponse request with any body
-	VolunteersBulkUpdateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersBulkUpdateResponse, error)
+	// BoteventsBulkUpdateWithBodyWithResponse request with any body
+	BoteventsBulkUpdateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BoteventsBulkUpdateResponse, error)
 
-	VolunteersBulkUpdateWithResponse(ctx context.Context, body VolunteersBulkUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersBulkUpdateResponse, error)
+	BoteventsBulkUpdateWithResponse(ctx context.Context, body BoteventsBulkUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BoteventsBulkUpdateResponse, error)
 
-	// VolunteersBulkCreateWithBodyWithResponse request with any body
-	VolunteersBulkCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersBulkCreateResponse, error)
+	// BoteventsBulkCreateWithBodyWithResponse request with any body
+	BoteventsBulkCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BoteventsBulkCreateResponse, error)
 
-	VolunteersBulkCreateWithResponse(ctx context.Context, body VolunteersBulkCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersBulkCreateResponse, error)
+	BoteventsBulkCreateWithResponse(ctx context.Context, body BoteventsBulkCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BoteventsBulkCreateResponse, error)
 
-	// VolunteersBulkDeleteAllWithResponse request
-	VolunteersBulkDeleteAllWithResponse(ctx context.Context, params *VolunteersBulkDeleteAllParams, reqEditors ...RequestEditorFn) (*VolunteersBulkDeleteAllResponse, error)
+	// BoteventsBulkDeleteAllWithResponse request
+	BoteventsBulkDeleteAllWithResponse(ctx context.Context, params *BoteventsBulkDeleteAllParams, reqEditors ...RequestEditorFn) (*BoteventsBulkDeleteAllResponse, error)
 
-	// VolunteersBulkUpdateAllWithBodyWithResponse request with any body
-	VolunteersBulkUpdateAllWithBodyWithResponse(ctx context.Context, params *VolunteersBulkUpdateAllParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersBulkUpdateAllResponse, error)
+	// BoteventsBulkUpdateAllWithBodyWithResponse request with any body
+	BoteventsBulkUpdateAllWithBodyWithResponse(ctx context.Context, params *BoteventsBulkUpdateAllParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BoteventsBulkUpdateAllResponse, error)
 
-	VolunteersBulkUpdateAllWithResponse(ctx context.Context, params *VolunteersBulkUpdateAllParams, body VolunteersBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersBulkUpdateAllResponse, error)
-
-	// CommEventsBulkDeleteWithBodyWithResponse request with any body
-	CommEventsBulkDeleteWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommEventsBulkDeleteResponse, error)
-
-	CommEventsBulkDeleteWithResponse(ctx context.Context, body CommEventsBulkDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*CommEventsBulkDeleteResponse, error)
-
-	// CommEventsBulkUpdateWithBodyWithResponse request with any body
-	CommEventsBulkUpdateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommEventsBulkUpdateResponse, error)
-
-	CommEventsBulkUpdateWithResponse(ctx context.Context, body CommEventsBulkUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommEventsBulkUpdateResponse, error)
-
-	// CommEventsBulkCreateWithBodyWithResponse request with any body
-	CommEventsBulkCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommEventsBulkCreateResponse, error)
-
-	CommEventsBulkCreateWithResponse(ctx context.Context, body CommEventsBulkCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommEventsBulkCreateResponse, error)
-
-	// CommEventsBulkDeleteAllWithResponse request
-	CommEventsBulkDeleteAllWithResponse(ctx context.Context, params *CommEventsBulkDeleteAllParams, reqEditors ...RequestEditorFn) (*CommEventsBulkDeleteAllResponse, error)
-
-	// CommEventsBulkUpdateAllWithBodyWithResponse request with any body
-	CommEventsBulkUpdateAllWithBodyWithResponse(ctx context.Context, params *CommEventsBulkUpdateAllParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommEventsBulkUpdateAllResponse, error)
-
-	CommEventsBulkUpdateAllWithResponse(ctx context.Context, params *CommEventsBulkUpdateAllParams, body CommEventsBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*CommEventsBulkUpdateAllResponse, error)
+	BoteventsBulkUpdateAllWithResponse(ctx context.Context, params *BoteventsBulkUpdateAllParams, body BoteventsBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*BoteventsBulkUpdateAllResponse, error)
 
 	// EventsBulkDeleteWithBodyWithResponse request with any body
 	EventsBulkDeleteWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*EventsBulkDeleteResponse, error)
@@ -6494,129 +9643,119 @@ type ClientWithResponsesInterface interface {
 
 	EventsBulkUpdateAllWithResponse(ctx context.Context, params *EventsBulkUpdateAllParams, body EventsBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*EventsBulkUpdateAllResponse, error)
 
-	// VolunteersDbTableRowListWithResponse request
-	VolunteersDbTableRowListWithResponse(ctx context.Context, params *VolunteersDbTableRowListParams, reqEditors ...RequestEditorFn) (*VolunteersDbTableRowListResponse, error)
+	// VolunteersBulkDeleteWithBodyWithResponse request with any body
+	VolunteersBulkDeleteWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersBulkDeleteResponse, error)
 
-	// VolunteersCreateWithBodyWithResponse request with any body
-	VolunteersCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersCreateResponse, error)
+	VolunteersBulkDeleteWithResponse(ctx context.Context, body VolunteersBulkDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersBulkDeleteResponse, error)
 
-	VolunteersCreateWithResponse(ctx context.Context, body VolunteersCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersCreateResponse, error)
+	// VolunteersBulkUpdateWithBodyWithResponse request with any body
+	VolunteersBulkUpdateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersBulkUpdateResponse, error)
 
-	// VolunteersCountWithResponse request
-	VolunteersCountWithResponse(ctx context.Context, params *VolunteersCountParams, reqEditors ...RequestEditorFn) (*VolunteersCountResponse, error)
+	VolunteersBulkUpdateWithResponse(ctx context.Context, body VolunteersBulkUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersBulkUpdateResponse, error)
 
-	// VolunteersCsvExportWithResponse request
-	VolunteersCsvExportWithResponse(ctx context.Context, pType string, params *VolunteersCsvExportParams, reqEditors ...RequestEditorFn) (*VolunteersCsvExportResponse, error)
+	// VolunteersBulkCreateWithBodyWithResponse request with any body
+	VolunteersBulkCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersBulkCreateResponse, error)
 
-	// VolunteersDbTableRowFindOneWithResponse request
-	VolunteersDbTableRowFindOneWithResponse(ctx context.Context, params *VolunteersDbTableRowFindOneParams, reqEditors ...RequestEditorFn) (*VolunteersDbTableRowFindOneResponse, error)
+	VolunteersBulkCreateWithResponse(ctx context.Context, body VolunteersBulkCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersBulkCreateResponse, error)
 
-	// VolunteersGroupbyWithResponse request
-	VolunteersGroupbyWithResponse(ctx context.Context, params *VolunteersGroupbyParams, reqEditors ...RequestEditorFn) (*VolunteersGroupbyResponse, error)
+	// VolunteersBulkDeleteAllWithResponse request
+	VolunteersBulkDeleteAllWithResponse(ctx context.Context, params *VolunteersBulkDeleteAllParams, reqEditors ...RequestEditorFn) (*VolunteersBulkDeleteAllResponse, error)
 
-	// VolunteersVolunteersRowListWithResponse request
-	VolunteersVolunteersRowListWithResponse(ctx context.Context, params *VolunteersVolunteersRowListParams, reqEditors ...RequestEditorFn) (*VolunteersVolunteersRowListResponse, error)
+	// VolunteersBulkUpdateAllWithBodyWithResponse request with any body
+	VolunteersBulkUpdateAllWithBodyWithResponse(ctx context.Context, params *VolunteersBulkUpdateAllParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersBulkUpdateAllResponse, error)
 
-	// VolunteersVolunteersRowCreateWithBodyWithResponse request with any body
-	VolunteersVolunteersRowCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersVolunteersRowCreateResponse, error)
+	VolunteersBulkUpdateAllWithResponse(ctx context.Context, params *VolunteersBulkUpdateAllParams, body VolunteersBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersBulkUpdateAllResponse, error)
 
-	VolunteersVolunteersRowCreateWithResponse(ctx context.Context, body VolunteersVolunteersRowCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersVolunteersRowCreateResponse, error)
+	// CommunicationoneventsBulkDeleteWithBodyWithResponse request with any body
+	CommunicationoneventsBulkDeleteWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommunicationoneventsBulkDeleteResponse, error)
 
-	// VolunteersVolunteersRowCountWithResponse request
-	VolunteersVolunteersRowCountWithResponse(ctx context.Context, params *VolunteersVolunteersRowCountParams, reqEditors ...RequestEditorFn) (*VolunteersVolunteersRowCountResponse, error)
+	CommunicationoneventsBulkDeleteWithResponse(ctx context.Context, body CommunicationoneventsBulkDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*CommunicationoneventsBulkDeleteResponse, error)
 
-	// VolunteersVolunteersRowExportWithResponse request
-	VolunteersVolunteersRowExportWithResponse(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*VolunteersVolunteersRowExportResponse, error)
+	// CommunicationoneventsBulkUpdateWithBodyWithResponse request with any body
+	CommunicationoneventsBulkUpdateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommunicationoneventsBulkUpdateResponse, error)
 
-	// VolunteersVolunteersRowDeleteWithResponse request
-	VolunteersVolunteersRowDeleteWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*VolunteersVolunteersRowDeleteResponse, error)
+	CommunicationoneventsBulkUpdateWithResponse(ctx context.Context, body CommunicationoneventsBulkUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommunicationoneventsBulkUpdateResponse, error)
 
-	// VolunteersVolunteersRowReadWithResponse request
-	VolunteersVolunteersRowReadWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*VolunteersVolunteersRowReadResponse, error)
+	// CommunicationoneventsBulkCreateWithBodyWithResponse request with any body
+	CommunicationoneventsBulkCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommunicationoneventsBulkCreateResponse, error)
 
-	// VolunteersVolunteersRowUpdateWithBodyWithResponse request with any body
-	VolunteersVolunteersRowUpdateWithBodyWithResponse(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersVolunteersRowUpdateResponse, error)
+	CommunicationoneventsBulkCreateWithResponse(ctx context.Context, body CommunicationoneventsBulkCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommunicationoneventsBulkCreateResponse, error)
 
-	VolunteersVolunteersRowUpdateWithResponse(ctx context.Context, rowId string, body VolunteersVolunteersRowUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersVolunteersRowUpdateResponse, error)
+	// CommunicationoneventsBulkDeleteAllWithResponse request
+	CommunicationoneventsBulkDeleteAllWithResponse(ctx context.Context, params *CommunicationoneventsBulkDeleteAllParams, reqEditors ...RequestEditorFn) (*CommunicationoneventsBulkDeleteAllResponse, error)
 
-	// VolunteersDeleteWithResponse request
-	VolunteersDeleteWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*VolunteersDeleteResponse, error)
+	// CommunicationoneventsBulkUpdateAllWithBodyWithResponse request with any body
+	CommunicationoneventsBulkUpdateAllWithBodyWithResponse(ctx context.Context, params *CommunicationoneventsBulkUpdateAllParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommunicationoneventsBulkUpdateAllResponse, error)
 
-	// VolunteersReadWithResponse request
-	VolunteersReadWithResponse(ctx context.Context, rowId string, params *VolunteersReadParams, reqEditors ...RequestEditorFn) (*VolunteersReadResponse, error)
+	CommunicationoneventsBulkUpdateAllWithResponse(ctx context.Context, params *CommunicationoneventsBulkUpdateAllParams, body CommunicationoneventsBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*CommunicationoneventsBulkUpdateAllResponse, error)
 
-	// VolunteersUpdateWithBodyWithResponse request with any body
-	VolunteersUpdateWithBodyWithResponse(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersUpdateResponse, error)
+	// BoteventsDbTableRowListWithResponse request
+	BoteventsDbTableRowListWithResponse(ctx context.Context, params *BoteventsDbTableRowListParams, reqEditors ...RequestEditorFn) (*BoteventsDbTableRowListResponse, error)
 
-	VolunteersUpdateWithResponse(ctx context.Context, rowId string, body VolunteersUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersUpdateResponse, error)
+	// BoteventsCreateWithBodyWithResponse request with any body
+	BoteventsCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BoteventsCreateResponse, error)
 
-	// VolunteersNestedListWithResponse request
-	VolunteersNestedListWithResponse(ctx context.Context, rowId string, relationType string, columnName string, params *VolunteersNestedListParams, reqEditors ...RequestEditorFn) (*VolunteersNestedListResponse, error)
+	BoteventsCreateWithResponse(ctx context.Context, body BoteventsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BoteventsCreateResponse, error)
 
-	// VolunteersNestedChildrenExcludedListWithResponse request
-	VolunteersNestedChildrenExcludedListWithResponse(ctx context.Context, rowId string, relationType string, columnName string, params *VolunteersNestedChildrenExcludedListParams, reqEditors ...RequestEditorFn) (*VolunteersNestedChildrenExcludedListResponse, error)
+	// BoteventsCountWithResponse request
+	BoteventsCountWithResponse(ctx context.Context, params *BoteventsCountParams, reqEditors ...RequestEditorFn) (*BoteventsCountResponse, error)
 
-	// VolunteersNestedRemoveWithResponse request
-	VolunteersNestedRemoveWithResponse(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, reqEditors ...RequestEditorFn) (*VolunteersNestedRemoveResponse, error)
+	// BoteventsCsvExportWithResponse request
+	BoteventsCsvExportWithResponse(ctx context.Context, pType string, params *BoteventsCsvExportParams, reqEditors ...RequestEditorFn) (*BoteventsCsvExportResponse, error)
 
-	// VolunteersNestedAddWithResponse request
-	VolunteersNestedAddWithResponse(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, params *VolunteersNestedAddParams, reqEditors ...RequestEditorFn) (*VolunteersNestedAddResponse, error)
+	// BoteventsDbTableRowFindOneWithResponse request
+	BoteventsDbTableRowFindOneWithResponse(ctx context.Context, params *BoteventsDbTableRowFindOneParams, reqEditors ...RequestEditorFn) (*BoteventsDbTableRowFindOneResponse, error)
 
-	// CommEventsDbTableRowListWithResponse request
-	CommEventsDbTableRowListWithResponse(ctx context.Context, params *CommEventsDbTableRowListParams, reqEditors ...RequestEditorFn) (*CommEventsDbTableRowListResponse, error)
+	// BoteventsGroupbyWithResponse request
+	BoteventsGroupbyWithResponse(ctx context.Context, params *BoteventsGroupbyParams, reqEditors ...RequestEditorFn) (*BoteventsGroupbyResponse, error)
 
-	// CommEventsCreateWithBodyWithResponse request with any body
-	CommEventsCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommEventsCreateResponse, error)
+	// BotEventsBotEventsRowListWithResponse request
+	BotEventsBotEventsRowListWithResponse(ctx context.Context, params *BotEventsBotEventsRowListParams, reqEditors ...RequestEditorFn) (*BotEventsBotEventsRowListResponse, error)
 
-	CommEventsCreateWithResponse(ctx context.Context, body CommEventsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommEventsCreateResponse, error)
+	// BotEventsBotEventsRowCreateWithBodyWithResponse request with any body
+	BotEventsBotEventsRowCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BotEventsBotEventsRowCreateResponse, error)
 
-	// CommEventsCountWithResponse request
-	CommEventsCountWithResponse(ctx context.Context, params *CommEventsCountParams, reqEditors ...RequestEditorFn) (*CommEventsCountResponse, error)
+	BotEventsBotEventsRowCreateWithResponse(ctx context.Context, body BotEventsBotEventsRowCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BotEventsBotEventsRowCreateResponse, error)
 
-	// CommEventsCsvExportWithResponse request
-	CommEventsCsvExportWithResponse(ctx context.Context, pType string, params *CommEventsCsvExportParams, reqEditors ...RequestEditorFn) (*CommEventsCsvExportResponse, error)
+	// BotEventsBotEventsRowCountWithResponse request
+	BotEventsBotEventsRowCountWithResponse(ctx context.Context, params *BotEventsBotEventsRowCountParams, reqEditors ...RequestEditorFn) (*BotEventsBotEventsRowCountResponse, error)
 
-	// CommEventsDbTableRowFindOneWithResponse request
-	CommEventsDbTableRowFindOneWithResponse(ctx context.Context, params *CommEventsDbTableRowFindOneParams, reqEditors ...RequestEditorFn) (*CommEventsDbTableRowFindOneResponse, error)
+	// BotEventsBotEventsRowExportWithResponse request
+	BotEventsBotEventsRowExportWithResponse(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*BotEventsBotEventsRowExportResponse, error)
 
-	// CommEventsGroupbyWithResponse request
-	CommEventsGroupbyWithResponse(ctx context.Context, params *CommEventsGroupbyParams, reqEditors ...RequestEditorFn) (*CommEventsGroupbyResponse, error)
+	// BotEventsBotEventsRowDeleteWithResponse request
+	BotEventsBotEventsRowDeleteWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*BotEventsBotEventsRowDeleteResponse, error)
 
-	// CommEventsCommEventsRowListWithResponse request
-	CommEventsCommEventsRowListWithResponse(ctx context.Context, params *CommEventsCommEventsRowListParams, reqEditors ...RequestEditorFn) (*CommEventsCommEventsRowListResponse, error)
+	// BotEventsBotEventsRowReadWithResponse request
+	BotEventsBotEventsRowReadWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*BotEventsBotEventsRowReadResponse, error)
 
-	// CommEventsCommEventsRowCreateWithBodyWithResponse request with any body
-	CommEventsCommEventsRowCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommEventsCommEventsRowCreateResponse, error)
+	// BotEventsBotEventsRowUpdateWithBodyWithResponse request with any body
+	BotEventsBotEventsRowUpdateWithBodyWithResponse(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BotEventsBotEventsRowUpdateResponse, error)
 
-	CommEventsCommEventsRowCreateWithResponse(ctx context.Context, body CommEventsCommEventsRowCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommEventsCommEventsRowCreateResponse, error)
+	BotEventsBotEventsRowUpdateWithResponse(ctx context.Context, rowId string, body BotEventsBotEventsRowUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BotEventsBotEventsRowUpdateResponse, error)
 
-	// CommEventsCommEventsRowCountWithResponse request
-	CommEventsCommEventsRowCountWithResponse(ctx context.Context, params *CommEventsCommEventsRowCountParams, reqEditors ...RequestEditorFn) (*CommEventsCommEventsRowCountResponse, error)
+	// BoteventsDeleteWithResponse request
+	BoteventsDeleteWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*BoteventsDeleteResponse, error)
 
-	// CommEventsCommEventsRowExportWithResponse request
-	CommEventsCommEventsRowExportWithResponse(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*CommEventsCommEventsRowExportResponse, error)
+	// BoteventsReadWithResponse request
+	BoteventsReadWithResponse(ctx context.Context, rowId string, params *BoteventsReadParams, reqEditors ...RequestEditorFn) (*BoteventsReadResponse, error)
 
-	// CommEventsCommEventsRowDeleteWithResponse request
-	CommEventsCommEventsRowDeleteWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*CommEventsCommEventsRowDeleteResponse, error)
+	// BoteventsUpdateWithBodyWithResponse request with any body
+	BoteventsUpdateWithBodyWithResponse(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BoteventsUpdateResponse, error)
 
-	// CommEventsCommEventsRowReadWithResponse request
-	CommEventsCommEventsRowReadWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*CommEventsCommEventsRowReadResponse, error)
+	BoteventsUpdateWithResponse(ctx context.Context, rowId string, body BoteventsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BoteventsUpdateResponse, error)
 
-	// CommEventsCommEventsRowUpdateWithBodyWithResponse request with any body
-	CommEventsCommEventsRowUpdateWithBodyWithResponse(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommEventsCommEventsRowUpdateResponse, error)
+	// BoteventsNestedListWithResponse request
+	BoteventsNestedListWithResponse(ctx context.Context, rowId string, relationType string, columnName string, params *BoteventsNestedListParams, reqEditors ...RequestEditorFn) (*BoteventsNestedListResponse, error)
 
-	CommEventsCommEventsRowUpdateWithResponse(ctx context.Context, rowId string, body CommEventsCommEventsRowUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommEventsCommEventsRowUpdateResponse, error)
+	// BoteventsNestedChildrenExcludedListWithResponse request
+	BoteventsNestedChildrenExcludedListWithResponse(ctx context.Context, rowId string, relationType string, columnName string, params *BoteventsNestedChildrenExcludedListParams, reqEditors ...RequestEditorFn) (*BoteventsNestedChildrenExcludedListResponse, error)
 
-	// CommEventsDeleteWithResponse request
-	CommEventsDeleteWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*CommEventsDeleteResponse, error)
+	// BoteventsNestedRemoveWithResponse request
+	BoteventsNestedRemoveWithResponse(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, reqEditors ...RequestEditorFn) (*BoteventsNestedRemoveResponse, error)
 
-	// CommEventsReadWithResponse request
-	CommEventsReadWithResponse(ctx context.Context, rowId string, params *CommEventsReadParams, reqEditors ...RequestEditorFn) (*CommEventsReadResponse, error)
-
-	// CommEventsUpdateWithBodyWithResponse request with any body
-	CommEventsUpdateWithBodyWithResponse(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommEventsUpdateResponse, error)
-
-	CommEventsUpdateWithResponse(ctx context.Context, rowId string, body CommEventsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommEventsUpdateResponse, error)
+	// BoteventsNestedAddWithResponse request
+	BoteventsNestedAddWithResponse(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, params *BoteventsNestedAddParams, reqEditors ...RequestEditorFn) (*BoteventsNestedAddResponse, error)
 
 	// EventsDbTableRowListWithResponse request
 	EventsDbTableRowListWithResponse(ctx context.Context, params *EventsDbTableRowListParams, reqEditors ...RequestEditorFn) (*EventsDbTableRowListResponse, error)
@@ -6685,16 +9824,152 @@ type ClientWithResponsesInterface interface {
 
 	// EventsNestedAddWithResponse request
 	EventsNestedAddWithResponse(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, params *EventsNestedAddParams, reqEditors ...RequestEditorFn) (*EventsNestedAddResponse, error)
+
+	// VolunteersDbTableRowListWithResponse request
+	VolunteersDbTableRowListWithResponse(ctx context.Context, params *VolunteersDbTableRowListParams, reqEditors ...RequestEditorFn) (*VolunteersDbTableRowListResponse, error)
+
+	// VolunteersCreateWithBodyWithResponse request with any body
+	VolunteersCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersCreateResponse, error)
+
+	VolunteersCreateWithResponse(ctx context.Context, body VolunteersCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersCreateResponse, error)
+
+	// VolunteersCountWithResponse request
+	VolunteersCountWithResponse(ctx context.Context, params *VolunteersCountParams, reqEditors ...RequestEditorFn) (*VolunteersCountResponse, error)
+
+	// VolunteersCsvExportWithResponse request
+	VolunteersCsvExportWithResponse(ctx context.Context, pType string, params *VolunteersCsvExportParams, reqEditors ...RequestEditorFn) (*VolunteersCsvExportResponse, error)
+
+	// VolunteersDbTableRowFindOneWithResponse request
+	VolunteersDbTableRowFindOneWithResponse(ctx context.Context, params *VolunteersDbTableRowFindOneParams, reqEditors ...RequestEditorFn) (*VolunteersDbTableRowFindOneResponse, error)
+
+	// VolunteersGroupbyWithResponse request
+	VolunteersGroupbyWithResponse(ctx context.Context, params *VolunteersGroupbyParams, reqEditors ...RequestEditorFn) (*VolunteersGroupbyResponse, error)
+
+	// VolunteersGridRowListWithResponse request
+	VolunteersGridRowListWithResponse(ctx context.Context, params *VolunteersGridRowListParams, reqEditors ...RequestEditorFn) (*VolunteersGridRowListResponse, error)
+
+	// VolunteersGridRowCreateWithBodyWithResponse request with any body
+	VolunteersGridRowCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersGridRowCreateResponse, error)
+
+	VolunteersGridRowCreateWithResponse(ctx context.Context, body VolunteersGridRowCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersGridRowCreateResponse, error)
+
+	// VolunteersGridRowCountWithResponse request
+	VolunteersGridRowCountWithResponse(ctx context.Context, params *VolunteersGridRowCountParams, reqEditors ...RequestEditorFn) (*VolunteersGridRowCountResponse, error)
+
+	// VolunteersGridRowExportWithResponse request
+	VolunteersGridRowExportWithResponse(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*VolunteersGridRowExportResponse, error)
+
+	// VolunteersGridRowDeleteWithResponse request
+	VolunteersGridRowDeleteWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*VolunteersGridRowDeleteResponse, error)
+
+	// VolunteersGridRowReadWithResponse request
+	VolunteersGridRowReadWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*VolunteersGridRowReadResponse, error)
+
+	// VolunteersGridRowUpdateWithBodyWithResponse request with any body
+	VolunteersGridRowUpdateWithBodyWithResponse(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersGridRowUpdateResponse, error)
+
+	VolunteersGridRowUpdateWithResponse(ctx context.Context, rowId string, body VolunteersGridRowUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersGridRowUpdateResponse, error)
+
+	// VolunteersDeleteWithResponse request
+	VolunteersDeleteWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*VolunteersDeleteResponse, error)
+
+	// VolunteersReadWithResponse request
+	VolunteersReadWithResponse(ctx context.Context, rowId string, params *VolunteersReadParams, reqEditors ...RequestEditorFn) (*VolunteersReadResponse, error)
+
+	// VolunteersUpdateWithBodyWithResponse request with any body
+	VolunteersUpdateWithBodyWithResponse(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersUpdateResponse, error)
+
+	VolunteersUpdateWithResponse(ctx context.Context, rowId string, body VolunteersUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersUpdateResponse, error)
+
+	// VolunteersNestedListWithResponse request
+	VolunteersNestedListWithResponse(ctx context.Context, rowId string, relationType string, columnName string, params *VolunteersNestedListParams, reqEditors ...RequestEditorFn) (*VolunteersNestedListResponse, error)
+
+	// VolunteersNestedChildrenExcludedListWithResponse request
+	VolunteersNestedChildrenExcludedListWithResponse(ctx context.Context, rowId string, relationType string, columnName string, params *VolunteersNestedChildrenExcludedListParams, reqEditors ...RequestEditorFn) (*VolunteersNestedChildrenExcludedListResponse, error)
+
+	// VolunteersNestedRemoveWithResponse request
+	VolunteersNestedRemoveWithResponse(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, reqEditors ...RequestEditorFn) (*VolunteersNestedRemoveResponse, error)
+
+	// VolunteersNestedAddWithResponse request
+	VolunteersNestedAddWithResponse(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, params *VolunteersNestedAddParams, reqEditors ...RequestEditorFn) (*VolunteersNestedAddResponse, error)
+
+	// CommunicationoneventsDbTableRowListWithResponse request
+	CommunicationoneventsDbTableRowListWithResponse(ctx context.Context, params *CommunicationoneventsDbTableRowListParams, reqEditors ...RequestEditorFn) (*CommunicationoneventsDbTableRowListResponse, error)
+
+	// CommunicationoneventsCreateWithBodyWithResponse request with any body
+	CommunicationoneventsCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommunicationoneventsCreateResponse, error)
+
+	CommunicationoneventsCreateWithResponse(ctx context.Context, body CommunicationoneventsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommunicationoneventsCreateResponse, error)
+
+	// CommunicationoneventsCountWithResponse request
+	CommunicationoneventsCountWithResponse(ctx context.Context, params *CommunicationoneventsCountParams, reqEditors ...RequestEditorFn) (*CommunicationoneventsCountResponse, error)
+
+	// CommunicationoneventsCsvExportWithResponse request
+	CommunicationoneventsCsvExportWithResponse(ctx context.Context, pType string, params *CommunicationoneventsCsvExportParams, reqEditors ...RequestEditorFn) (*CommunicationoneventsCsvExportResponse, error)
+
+	// CommunicationoneventsDbTableRowFindOneWithResponse request
+	CommunicationoneventsDbTableRowFindOneWithResponse(ctx context.Context, params *CommunicationoneventsDbTableRowFindOneParams, reqEditors ...RequestEditorFn) (*CommunicationoneventsDbTableRowFindOneResponse, error)
+
+	// CommunicationoneventsGroupbyWithResponse request
+	CommunicationoneventsGroupbyWithResponse(ctx context.Context, params *CommunicationoneventsGroupbyParams, reqEditors ...RequestEditorFn) (*CommunicationoneventsGroupbyResponse, error)
+
+	// CommunicationOnEventsCommunicationOnEventsRowListWithResponse request
+	CommunicationOnEventsCommunicationOnEventsRowListWithResponse(ctx context.Context, params *CommunicationOnEventsCommunicationOnEventsRowListParams, reqEditors ...RequestEditorFn) (*CommunicationOnEventsCommunicationOnEventsRowListResponse, error)
+
+	// CommunicationOnEventsCommunicationOnEventsRowCreateWithBodyWithResponse request with any body
+	CommunicationOnEventsCommunicationOnEventsRowCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommunicationOnEventsCommunicationOnEventsRowCreateResponse, error)
+
+	CommunicationOnEventsCommunicationOnEventsRowCreateWithResponse(ctx context.Context, body CommunicationOnEventsCommunicationOnEventsRowCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommunicationOnEventsCommunicationOnEventsRowCreateResponse, error)
+
+	// CommunicationOnEventsCommunicationOnEventsRowCountWithResponse request
+	CommunicationOnEventsCommunicationOnEventsRowCountWithResponse(ctx context.Context, params *CommunicationOnEventsCommunicationOnEventsRowCountParams, reqEditors ...RequestEditorFn) (*CommunicationOnEventsCommunicationOnEventsRowCountResponse, error)
+
+	// CommunicationOnEventsCommunicationOnEventsRowExportWithResponse request
+	CommunicationOnEventsCommunicationOnEventsRowExportWithResponse(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*CommunicationOnEventsCommunicationOnEventsRowExportResponse, error)
+
+	// CommunicationOnEventsCommunicationOnEventsRowDeleteWithResponse request
+	CommunicationOnEventsCommunicationOnEventsRowDeleteWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*CommunicationOnEventsCommunicationOnEventsRowDeleteResponse, error)
+
+	// CommunicationOnEventsCommunicationOnEventsRowReadWithResponse request
+	CommunicationOnEventsCommunicationOnEventsRowReadWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*CommunicationOnEventsCommunicationOnEventsRowReadResponse, error)
+
+	// CommunicationOnEventsCommunicationOnEventsRowUpdateWithBodyWithResponse request with any body
+	CommunicationOnEventsCommunicationOnEventsRowUpdateWithBodyWithResponse(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommunicationOnEventsCommunicationOnEventsRowUpdateResponse, error)
+
+	CommunicationOnEventsCommunicationOnEventsRowUpdateWithResponse(ctx context.Context, rowId string, body CommunicationOnEventsCommunicationOnEventsRowUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommunicationOnEventsCommunicationOnEventsRowUpdateResponse, error)
+
+	// CommunicationoneventsDeleteWithResponse request
+	CommunicationoneventsDeleteWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*CommunicationoneventsDeleteResponse, error)
+
+	// CommunicationoneventsReadWithResponse request
+	CommunicationoneventsReadWithResponse(ctx context.Context, rowId string, params *CommunicationoneventsReadParams, reqEditors ...RequestEditorFn) (*CommunicationoneventsReadResponse, error)
+
+	// CommunicationoneventsUpdateWithBodyWithResponse request with any body
+	CommunicationoneventsUpdateWithBodyWithResponse(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommunicationoneventsUpdateResponse, error)
+
+	CommunicationoneventsUpdateWithResponse(ctx context.Context, rowId string, body CommunicationoneventsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommunicationoneventsUpdateResponse, error)
+
+	// CommunicationoneventsNestedListWithResponse request
+	CommunicationoneventsNestedListWithResponse(ctx context.Context, rowId string, relationType string, columnName string, params *CommunicationoneventsNestedListParams, reqEditors ...RequestEditorFn) (*CommunicationoneventsNestedListResponse, error)
+
+	// CommunicationoneventsNestedChildrenExcludedListWithResponse request
+	CommunicationoneventsNestedChildrenExcludedListWithResponse(ctx context.Context, rowId string, relationType string, columnName string, params *CommunicationoneventsNestedChildrenExcludedListParams, reqEditors ...RequestEditorFn) (*CommunicationoneventsNestedChildrenExcludedListResponse, error)
+
+	// CommunicationoneventsNestedRemoveWithResponse request
+	CommunicationoneventsNestedRemoveWithResponse(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, reqEditors ...RequestEditorFn) (*CommunicationoneventsNestedRemoveResponse, error)
+
+	// CommunicationoneventsNestedAddWithResponse request
+	CommunicationoneventsNestedAddWithResponse(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, params *CommunicationoneventsNestedAddParams, reqEditors ...RequestEditorFn) (*CommunicationoneventsNestedAddResponse, error)
 }
 
-type VolunteersBulkDeleteResponse struct {
+type BoteventsBulkDeleteResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *interface{}
 }
 
 // Status returns HTTPResponse.Status
-func (r VolunteersBulkDeleteResponse) Status() string {
+func (r BoteventsBulkDeleteResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -6702,21 +9977,21 @@ func (r VolunteersBulkDeleteResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersBulkDeleteResponse) StatusCode() int {
+func (r BoteventsBulkDeleteResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type VolunteersBulkUpdateResponse struct {
+type BoteventsBulkUpdateResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *interface{}
 }
 
 // Status returns HTTPResponse.Status
-func (r VolunteersBulkUpdateResponse) Status() string {
+func (r BoteventsBulkUpdateResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -6724,21 +9999,21 @@ func (r VolunteersBulkUpdateResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersBulkUpdateResponse) StatusCode() int {
+func (r BoteventsBulkUpdateResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type VolunteersBulkCreateResponse struct {
+type BoteventsBulkCreateResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *interface{}
 }
 
 // Status returns HTTPResponse.Status
-func (r VolunteersBulkCreateResponse) Status() string {
+func (r BoteventsBulkCreateResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -6746,21 +10021,21 @@ func (r VolunteersBulkCreateResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersBulkCreateResponse) StatusCode() int {
+func (r BoteventsBulkCreateResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type VolunteersBulkDeleteAllResponse struct {
+type BoteventsBulkDeleteAllResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *interface{}
 }
 
 // Status returns HTTPResponse.Status
-func (r VolunteersBulkDeleteAllResponse) Status() string {
+func (r BoteventsBulkDeleteAllResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -6768,21 +10043,21 @@ func (r VolunteersBulkDeleteAllResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersBulkDeleteAllResponse) StatusCode() int {
+func (r BoteventsBulkDeleteAllResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type VolunteersBulkUpdateAllResponse struct {
+type BoteventsBulkUpdateAllResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *interface{}
 }
 
 // Status returns HTTPResponse.Status
-func (r VolunteersBulkUpdateAllResponse) Status() string {
+func (r BoteventsBulkUpdateAllResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -6790,117 +10065,7 @@ func (r VolunteersBulkUpdateAllResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersBulkUpdateAllResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CommEventsBulkDeleteResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *interface{}
-}
-
-// Status returns HTTPResponse.Status
-func (r CommEventsBulkDeleteResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CommEventsBulkDeleteResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CommEventsBulkUpdateResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *interface{}
-}
-
-// Status returns HTTPResponse.Status
-func (r CommEventsBulkUpdateResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CommEventsBulkUpdateResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CommEventsBulkCreateResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *interface{}
-}
-
-// Status returns HTTPResponse.Status
-func (r CommEventsBulkCreateResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CommEventsBulkCreateResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CommEventsBulkDeleteAllResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *interface{}
-}
-
-// Status returns HTTPResponse.Status
-func (r CommEventsBulkDeleteAllResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CommEventsBulkDeleteAllResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CommEventsBulkUpdateAllResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *interface{}
-}
-
-// Status returns HTTPResponse.Status
-func (r CommEventsBulkUpdateAllResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CommEventsBulkUpdateAllResponse) StatusCode() int {
+func (r BoteventsBulkUpdateAllResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -7017,17 +10182,237 @@ func (r EventsBulkUpdateAllResponse) StatusCode() int {
 	return 0
 }
 
-type VolunteersDbTableRowListResponse struct {
+type VolunteersBulkDeleteResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r VolunteersBulkDeleteResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersBulkDeleteResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type VolunteersBulkUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r VolunteersBulkUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersBulkUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type VolunteersBulkCreateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r VolunteersBulkCreateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersBulkCreateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type VolunteersBulkDeleteAllResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r VolunteersBulkDeleteAllResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersBulkDeleteAllResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type VolunteersBulkUpdateAllResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r VolunteersBulkUpdateAllResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersBulkUpdateAllResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationoneventsBulkDeleteResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationoneventsBulkDeleteResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationoneventsBulkDeleteResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationoneventsBulkUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationoneventsBulkUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationoneventsBulkUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationoneventsBulkCreateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationoneventsBulkCreateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationoneventsBulkCreateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationoneventsBulkDeleteAllResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationoneventsBulkDeleteAllResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationoneventsBulkDeleteAllResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationoneventsBulkUpdateAllResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationoneventsBulkUpdateAllResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationoneventsBulkUpdateAllResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BoteventsDbTableRowListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *struct {
-		PageInfo *Paginated            `json:"PageInfo,omitempty"`
-		List     *[]VolunteersResponse `json:"list,omitempty"`
+		PageInfo *Paginated           `json:"PageInfo,omitempty"`
+		List     *[]BotEventsResponse `json:"list,omitempty"`
 	}
 }
 
 // Status returns HTTPResponse.Status
-func (r VolunteersDbTableRowListResponse) Status() string {
+func (r BoteventsDbTableRowListResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -7035,21 +10420,21 @@ func (r VolunteersDbTableRowListResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersDbTableRowListResponse) StatusCode() int {
+func (r BoteventsDbTableRowListResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type VolunteersCreateResponse struct {
+type BoteventsCreateResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *VolunteersResponse
+	JSON200      *BotEventsResponse
 }
 
 // Status returns HTTPResponse.Status
-func (r VolunteersCreateResponse) Status() string {
+func (r BoteventsCreateResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -7057,136 +10442,21 @@ func (r VolunteersCreateResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersCreateResponse) StatusCode() int {
+func (r BoteventsCreateResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type VolunteersCountResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *interface{}
-}
-
-// Status returns HTTPResponse.Status
-func (r VolunteersCountResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersCountResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type VolunteersCsvExportResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r VolunteersCsvExportResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersCsvExportResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type VolunteersDbTableRowFindOneResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *VolunteersResponse
-}
-
-// Status returns HTTPResponse.Status
-func (r VolunteersDbTableRowFindOneResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersDbTableRowFindOneResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type VolunteersGroupbyResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *struct {
-		PageInfo *Paginated `json:"PageInfo,omitempty"`
-		List     *[]Groupby `json:"list,omitempty"`
-	}
-}
-
-// Status returns HTTPResponse.Status
-func (r VolunteersGroupbyResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersGroupbyResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type VolunteersVolunteersRowListResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *struct {
-		PageInfo *Paginated                          `json:"PageInfo,omitempty"`
-		List     *[]VolunteersVolunteersGridResponse `json:"list,omitempty"`
-	}
-}
-
-// Status returns HTTPResponse.Status
-func (r VolunteersVolunteersRowListResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersVolunteersRowListResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type VolunteersVolunteersRowCreateResponse struct {
+type BoteventsCountResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *interface{}
 }
 
 // Status returns HTTPResponse.Status
-func (r VolunteersVolunteersRowCreateResponse) Status() string {
+func (r BoteventsCountResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -7194,44 +10464,20 @@ func (r VolunteersVolunteersRowCreateResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersVolunteersRowCreateResponse) StatusCode() int {
+func (r BoteventsCountResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type VolunteersVolunteersRowCountResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *struct {
-		Count *float32 `json:"count,omitempty"`
-	}
-}
-
-// Status returns HTTPResponse.Status
-func (r VolunteersVolunteersRowCountResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersVolunteersRowCountResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type VolunteersVolunteersRowExportResponse struct {
+type BoteventsCsvExportResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 }
 
 // Status returns HTTPResponse.Status
-func (r VolunteersVolunteersRowExportResponse) Status() string {
+func (r BoteventsCsvExportResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -7239,20 +10485,21 @@ func (r VolunteersVolunteersRowExportResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersVolunteersRowExportResponse) StatusCode() int {
+func (r BoteventsCsvExportResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type VolunteersVolunteersRowDeleteResponse struct {
+type BoteventsDbTableRowFindOneResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *BotEventsResponse
 }
 
 // Status returns HTTPResponse.Status
-func (r VolunteersVolunteersRowDeleteResponse) Status() string {
+func (r BoteventsDbTableRowFindOneResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -7260,323 +10507,14 @@ func (r VolunteersVolunteersRowDeleteResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersVolunteersRowDeleteResponse) StatusCode() int {
+func (r BoteventsDbTableRowFindOneResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type VolunteersVolunteersRowReadResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *VolunteersVolunteersGridResponse
-}
-
-// Status returns HTTPResponse.Status
-func (r VolunteersVolunteersRowReadResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersVolunteersRowReadResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type VolunteersVolunteersRowUpdateResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *interface{}
-}
-
-// Status returns HTTPResponse.Status
-func (r VolunteersVolunteersRowUpdateResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersVolunteersRowUpdateResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type VolunteersDeleteResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r VolunteersDeleteResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersDeleteResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type VolunteersReadResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON201      *VolunteersResponse
-}
-
-// Status returns HTTPResponse.Status
-func (r VolunteersReadResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersReadResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type VolunteersUpdateResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *VolunteersRequest
-}
-
-// Status returns HTTPResponse.Status
-func (r VolunteersUpdateResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersUpdateResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type VolunteersNestedListResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *interface{}
-}
-
-// Status returns HTTPResponse.Status
-func (r VolunteersNestedListResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersNestedListResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type VolunteersNestedChildrenExcludedListResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *interface{}
-}
-
-// Status returns HTTPResponse.Status
-func (r VolunteersNestedChildrenExcludedListResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersNestedChildrenExcludedListResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type VolunteersNestedRemoveResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *interface{}
-}
-
-// Status returns HTTPResponse.Status
-func (r VolunteersNestedRemoveResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersNestedRemoveResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type VolunteersNestedAddResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *interface{}
-}
-
-// Status returns HTTPResponse.Status
-func (r VolunteersNestedAddResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r VolunteersNestedAddResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CommEventsDbTableRowListResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *struct {
-		PageInfo *Paginated            `json:"PageInfo,omitempty"`
-		List     *[]CommEventsResponse `json:"list,omitempty"`
-	}
-}
-
-// Status returns HTTPResponse.Status
-func (r CommEventsDbTableRowListResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CommEventsDbTableRowListResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CommEventsCreateResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *CommEventsResponse
-}
-
-// Status returns HTTPResponse.Status
-func (r CommEventsCreateResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CommEventsCreateResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CommEventsCountResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *interface{}
-}
-
-// Status returns HTTPResponse.Status
-func (r CommEventsCountResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CommEventsCountResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CommEventsCsvExportResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r CommEventsCsvExportResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CommEventsCsvExportResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CommEventsDbTableRowFindOneResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *CommEventsResponse
-}
-
-// Status returns HTTPResponse.Status
-func (r CommEventsDbTableRowFindOneResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CommEventsDbTableRowFindOneResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CommEventsGroupbyResponse struct {
+type BoteventsGroupbyResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *struct {
@@ -7586,7 +10524,7 @@ type CommEventsGroupbyResponse struct {
 }
 
 // Status returns HTTPResponse.Status
-func (r CommEventsGroupbyResponse) Status() string {
+func (r BoteventsGroupbyResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -7594,24 +10532,24 @@ func (r CommEventsGroupbyResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r CommEventsGroupbyResponse) StatusCode() int {
+func (r BoteventsGroupbyResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type CommEventsCommEventsRowListResponse struct {
+type BotEventsBotEventsRowListResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *struct {
-		PageInfo *Paginated                          `json:"PageInfo,omitempty"`
-		List     *[]CommEventscommEventsGridResponse `json:"list,omitempty"`
+		PageInfo *Paginated                        `json:"PageInfo,omitempty"`
+		List     *[]BotEventsBotEventsGridResponse `json:"list,omitempty"`
 	}
 }
 
 // Status returns HTTPResponse.Status
-func (r CommEventsCommEventsRowListResponse) Status() string {
+func (r BotEventsBotEventsRowListResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -7619,21 +10557,21 @@ func (r CommEventsCommEventsRowListResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r CommEventsCommEventsRowListResponse) StatusCode() int {
+func (r BotEventsBotEventsRowListResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type CommEventsCommEventsRowCreateResponse struct {
+type BotEventsBotEventsRowCreateResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *interface{}
 }
 
 // Status returns HTTPResponse.Status
-func (r CommEventsCommEventsRowCreateResponse) Status() string {
+func (r BotEventsBotEventsRowCreateResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -7641,14 +10579,14 @@ func (r CommEventsCommEventsRowCreateResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r CommEventsCommEventsRowCreateResponse) StatusCode() int {
+func (r BotEventsBotEventsRowCreateResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type CommEventsCommEventsRowCountResponse struct {
+type BotEventsBotEventsRowCountResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *struct {
@@ -7657,7 +10595,7 @@ type CommEventsCommEventsRowCountResponse struct {
 }
 
 // Status returns HTTPResponse.Status
-func (r CommEventsCommEventsRowCountResponse) Status() string {
+func (r BotEventsBotEventsRowCountResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -7665,20 +10603,20 @@ func (r CommEventsCommEventsRowCountResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r CommEventsCommEventsRowCountResponse) StatusCode() int {
+func (r BotEventsBotEventsRowCountResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type CommEventsCommEventsRowExportResponse struct {
+type BotEventsBotEventsRowExportResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 }
 
 // Status returns HTTPResponse.Status
-func (r CommEventsCommEventsRowExportResponse) Status() string {
+func (r BotEventsBotEventsRowExportResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -7686,20 +10624,20 @@ func (r CommEventsCommEventsRowExportResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r CommEventsCommEventsRowExportResponse) StatusCode() int {
+func (r BotEventsBotEventsRowExportResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type CommEventsCommEventsRowDeleteResponse struct {
+type BotEventsBotEventsRowDeleteResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 }
 
 // Status returns HTTPResponse.Status
-func (r CommEventsCommEventsRowDeleteResponse) Status() string {
+func (r BotEventsBotEventsRowDeleteResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -7707,21 +10645,21 @@ func (r CommEventsCommEventsRowDeleteResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r CommEventsCommEventsRowDeleteResponse) StatusCode() int {
+func (r BotEventsBotEventsRowDeleteResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type CommEventsCommEventsRowReadResponse struct {
+type BotEventsBotEventsRowReadResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *CommEventscommEventsGridResponse
+	JSON200      *BotEventsBotEventsGridResponse
 }
 
 // Status returns HTTPResponse.Status
-func (r CommEventsCommEventsRowReadResponse) Status() string {
+func (r BotEventsBotEventsRowReadResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -7729,21 +10667,21 @@ func (r CommEventsCommEventsRowReadResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r CommEventsCommEventsRowReadResponse) StatusCode() int {
+func (r BotEventsBotEventsRowReadResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type CommEventsCommEventsRowUpdateResponse struct {
+type BotEventsBotEventsRowUpdateResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *interface{}
 }
 
 // Status returns HTTPResponse.Status
-func (r CommEventsCommEventsRowUpdateResponse) Status() string {
+func (r BotEventsBotEventsRowUpdateResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -7751,20 +10689,20 @@ func (r CommEventsCommEventsRowUpdateResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r CommEventsCommEventsRowUpdateResponse) StatusCode() int {
+func (r BotEventsBotEventsRowUpdateResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type CommEventsDeleteResponse struct {
+type BoteventsDeleteResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 }
 
 // Status returns HTTPResponse.Status
-func (r CommEventsDeleteResponse) Status() string {
+func (r BoteventsDeleteResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -7772,21 +10710,21 @@ func (r CommEventsDeleteResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r CommEventsDeleteResponse) StatusCode() int {
+func (r BoteventsDeleteResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type CommEventsReadResponse struct {
+type BoteventsReadResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *CommEventsResponse
+	JSON201      *BotEventsResponse
 }
 
 // Status returns HTTPResponse.Status
-func (r CommEventsReadResponse) Status() string {
+func (r BoteventsReadResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -7794,21 +10732,21 @@ func (r CommEventsReadResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r CommEventsReadResponse) StatusCode() int {
+func (r BoteventsReadResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type CommEventsUpdateResponse struct {
+type BoteventsUpdateResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *CommEventsRequest
+	JSON200      *BotEventsRequest
 }
 
 // Status returns HTTPResponse.Status
-func (r CommEventsUpdateResponse) Status() string {
+func (r BoteventsUpdateResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -7816,7 +10754,95 @@ func (r CommEventsUpdateResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r CommEventsUpdateResponse) StatusCode() int {
+func (r BoteventsUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BoteventsNestedListResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r BoteventsNestedListResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BoteventsNestedListResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BoteventsNestedChildrenExcludedListResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r BoteventsNestedChildrenExcludedListResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BoteventsNestedChildrenExcludedListResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BoteventsNestedRemoveResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r BoteventsNestedRemoveResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BoteventsNestedRemoveResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BoteventsNestedAddResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r BoteventsNestedAddResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BoteventsNestedAddResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -8270,158 +11296,975 @@ func (r EventsNestedAddResponse) StatusCode() int {
 	return 0
 }
 
-// VolunteersBulkDeleteWithBodyWithResponse request with arbitrary body returning *VolunteersBulkDeleteResponse
-func (c *ClientWithResponses) VolunteersBulkDeleteWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersBulkDeleteResponse, error) {
-	rsp, err := c.VolunteersBulkDeleteWithBody(ctx, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
+type VolunteersDbTableRowListResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *struct {
+		PageInfo *Paginated            `json:"PageInfo,omitempty"`
+		List     *[]VolunteersResponse `json:"list,omitempty"`
 	}
-	return ParseVolunteersBulkDeleteResponse(rsp)
 }
 
-func (c *ClientWithResponses) VolunteersBulkDeleteWithResponse(ctx context.Context, body VolunteersBulkDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersBulkDeleteResponse, error) {
-	rsp, err := c.VolunteersBulkDelete(ctx, body, reqEditors...)
-	if err != nil {
-		return nil, err
+// Status returns HTTPResponse.Status
+func (r VolunteersDbTableRowListResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
 	}
-	return ParseVolunteersBulkDeleteResponse(rsp)
+	return http.StatusText(0)
 }
 
-// VolunteersBulkUpdateWithBodyWithResponse request with arbitrary body returning *VolunteersBulkUpdateResponse
-func (c *ClientWithResponses) VolunteersBulkUpdateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersBulkUpdateResponse, error) {
-	rsp, err := c.VolunteersBulkUpdateWithBody(ctx, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersDbTableRowListResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
 	}
-	return ParseVolunteersBulkUpdateResponse(rsp)
+	return 0
 }
 
-func (c *ClientWithResponses) VolunteersBulkUpdateWithResponse(ctx context.Context, body VolunteersBulkUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersBulkUpdateResponse, error) {
-	rsp, err := c.VolunteersBulkUpdate(ctx, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseVolunteersBulkUpdateResponse(rsp)
+type VolunteersCreateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *VolunteersResponse
 }
 
-// VolunteersBulkCreateWithBodyWithResponse request with arbitrary body returning *VolunteersBulkCreateResponse
-func (c *ClientWithResponses) VolunteersBulkCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersBulkCreateResponse, error) {
-	rsp, err := c.VolunteersBulkCreateWithBody(ctx, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
+// Status returns HTTPResponse.Status
+func (r VolunteersCreateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
 	}
-	return ParseVolunteersBulkCreateResponse(rsp)
+	return http.StatusText(0)
 }
 
-func (c *ClientWithResponses) VolunteersBulkCreateWithResponse(ctx context.Context, body VolunteersBulkCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersBulkCreateResponse, error) {
-	rsp, err := c.VolunteersBulkCreate(ctx, body, reqEditors...)
-	if err != nil {
-		return nil, err
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersCreateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
 	}
-	return ParseVolunteersBulkCreateResponse(rsp)
+	return 0
 }
 
-// VolunteersBulkDeleteAllWithResponse request returning *VolunteersBulkDeleteAllResponse
-func (c *ClientWithResponses) VolunteersBulkDeleteAllWithResponse(ctx context.Context, params *VolunteersBulkDeleteAllParams, reqEditors ...RequestEditorFn) (*VolunteersBulkDeleteAllResponse, error) {
-	rsp, err := c.VolunteersBulkDeleteAll(ctx, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseVolunteersBulkDeleteAllResponse(rsp)
+type VolunteersCountResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
 }
 
-// VolunteersBulkUpdateAllWithBodyWithResponse request with arbitrary body returning *VolunteersBulkUpdateAllResponse
-func (c *ClientWithResponses) VolunteersBulkUpdateAllWithBodyWithResponse(ctx context.Context, params *VolunteersBulkUpdateAllParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersBulkUpdateAllResponse, error) {
-	rsp, err := c.VolunteersBulkUpdateAllWithBody(ctx, params, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
+// Status returns HTTPResponse.Status
+func (r VolunteersCountResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
 	}
-	return ParseVolunteersBulkUpdateAllResponse(rsp)
+	return http.StatusText(0)
 }
 
-func (c *ClientWithResponses) VolunteersBulkUpdateAllWithResponse(ctx context.Context, params *VolunteersBulkUpdateAllParams, body VolunteersBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersBulkUpdateAllResponse, error) {
-	rsp, err := c.VolunteersBulkUpdateAll(ctx, params, body, reqEditors...)
-	if err != nil {
-		return nil, err
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersCountResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
 	}
-	return ParseVolunteersBulkUpdateAllResponse(rsp)
+	return 0
 }
 
-// CommEventsBulkDeleteWithBodyWithResponse request with arbitrary body returning *CommEventsBulkDeleteResponse
-func (c *ClientWithResponses) CommEventsBulkDeleteWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommEventsBulkDeleteResponse, error) {
-	rsp, err := c.CommEventsBulkDeleteWithBody(ctx, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCommEventsBulkDeleteResponse(rsp)
+type VolunteersCsvExportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
 }
 
-func (c *ClientWithResponses) CommEventsBulkDeleteWithResponse(ctx context.Context, body CommEventsBulkDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*CommEventsBulkDeleteResponse, error) {
-	rsp, err := c.CommEventsBulkDelete(ctx, body, reqEditors...)
-	if err != nil {
-		return nil, err
+// Status returns HTTPResponse.Status
+func (r VolunteersCsvExportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
 	}
-	return ParseCommEventsBulkDeleteResponse(rsp)
+	return http.StatusText(0)
 }
 
-// CommEventsBulkUpdateWithBodyWithResponse request with arbitrary body returning *CommEventsBulkUpdateResponse
-func (c *ClientWithResponses) CommEventsBulkUpdateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommEventsBulkUpdateResponse, error) {
-	rsp, err := c.CommEventsBulkUpdateWithBody(ctx, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersCsvExportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
 	}
-	return ParseCommEventsBulkUpdateResponse(rsp)
+	return 0
 }
 
-func (c *ClientWithResponses) CommEventsBulkUpdateWithResponse(ctx context.Context, body CommEventsBulkUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommEventsBulkUpdateResponse, error) {
-	rsp, err := c.CommEventsBulkUpdate(ctx, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCommEventsBulkUpdateResponse(rsp)
+type VolunteersDbTableRowFindOneResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *VolunteersResponse
 }
 
-// CommEventsBulkCreateWithBodyWithResponse request with arbitrary body returning *CommEventsBulkCreateResponse
-func (c *ClientWithResponses) CommEventsBulkCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommEventsBulkCreateResponse, error) {
-	rsp, err := c.CommEventsBulkCreateWithBody(ctx, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
+// Status returns HTTPResponse.Status
+func (r VolunteersDbTableRowFindOneResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
 	}
-	return ParseCommEventsBulkCreateResponse(rsp)
+	return http.StatusText(0)
 }
 
-func (c *ClientWithResponses) CommEventsBulkCreateWithResponse(ctx context.Context, body CommEventsBulkCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommEventsBulkCreateResponse, error) {
-	rsp, err := c.CommEventsBulkCreate(ctx, body, reqEditors...)
-	if err != nil {
-		return nil, err
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersDbTableRowFindOneResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
 	}
-	return ParseCommEventsBulkCreateResponse(rsp)
+	return 0
 }
 
-// CommEventsBulkDeleteAllWithResponse request returning *CommEventsBulkDeleteAllResponse
-func (c *ClientWithResponses) CommEventsBulkDeleteAllWithResponse(ctx context.Context, params *CommEventsBulkDeleteAllParams, reqEditors ...RequestEditorFn) (*CommEventsBulkDeleteAllResponse, error) {
-	rsp, err := c.CommEventsBulkDeleteAll(ctx, params, reqEditors...)
-	if err != nil {
-		return nil, err
+type VolunteersGroupbyResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *struct {
+		PageInfo *Paginated `json:"PageInfo,omitempty"`
+		List     *[]Groupby `json:"list,omitempty"`
 	}
-	return ParseCommEventsBulkDeleteAllResponse(rsp)
 }
 
-// CommEventsBulkUpdateAllWithBodyWithResponse request with arbitrary body returning *CommEventsBulkUpdateAllResponse
-func (c *ClientWithResponses) CommEventsBulkUpdateAllWithBodyWithResponse(ctx context.Context, params *CommEventsBulkUpdateAllParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommEventsBulkUpdateAllResponse, error) {
-	rsp, err := c.CommEventsBulkUpdateAllWithBody(ctx, params, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
+// Status returns HTTPResponse.Status
+func (r VolunteersGroupbyResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
 	}
-	return ParseCommEventsBulkUpdateAllResponse(rsp)
+	return http.StatusText(0)
 }
 
-func (c *ClientWithResponses) CommEventsBulkUpdateAllWithResponse(ctx context.Context, params *CommEventsBulkUpdateAllParams, body CommEventsBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*CommEventsBulkUpdateAllResponse, error) {
-	rsp, err := c.CommEventsBulkUpdateAll(ctx, params, body, reqEditors...)
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersGroupbyResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type VolunteersGridRowListResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *struct {
+		PageInfo *Paginated                    `json:"PageInfo,omitempty"`
+		List     *[]VolunteersgridGridResponse `json:"list,omitempty"`
+	}
+}
+
+// Status returns HTTPResponse.Status
+func (r VolunteersGridRowListResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersGridRowListResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type VolunteersGridRowCreateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r VolunteersGridRowCreateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersGridRowCreateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type VolunteersGridRowCountResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *struct {
+		Count *float32 `json:"count,omitempty"`
+	}
+}
+
+// Status returns HTTPResponse.Status
+func (r VolunteersGridRowCountResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersGridRowCountResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type VolunteersGridRowExportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r VolunteersGridRowExportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersGridRowExportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type VolunteersGridRowDeleteResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r VolunteersGridRowDeleteResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersGridRowDeleteResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type VolunteersGridRowReadResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *VolunteersgridGridResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r VolunteersGridRowReadResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersGridRowReadResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type VolunteersGridRowUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r VolunteersGridRowUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersGridRowUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type VolunteersDeleteResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r VolunteersDeleteResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersDeleteResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type VolunteersReadResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON201      *VolunteersResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r VolunteersReadResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersReadResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type VolunteersUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *VolunteersRequest
+}
+
+// Status returns HTTPResponse.Status
+func (r VolunteersUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type VolunteersNestedListResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r VolunteersNestedListResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersNestedListResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type VolunteersNestedChildrenExcludedListResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r VolunteersNestedChildrenExcludedListResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersNestedChildrenExcludedListResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type VolunteersNestedRemoveResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r VolunteersNestedRemoveResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersNestedRemoveResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type VolunteersNestedAddResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r VolunteersNestedAddResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r VolunteersNestedAddResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationoneventsDbTableRowListResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *struct {
+		PageInfo *Paginated                       `json:"PageInfo,omitempty"`
+		List     *[]CommunicationOnEventsResponse `json:"list,omitempty"`
+	}
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationoneventsDbTableRowListResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationoneventsDbTableRowListResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationoneventsCreateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *CommunicationOnEventsResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationoneventsCreateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationoneventsCreateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationoneventsCountResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationoneventsCountResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationoneventsCountResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationoneventsCsvExportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationoneventsCsvExportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationoneventsCsvExportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationoneventsDbTableRowFindOneResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *CommunicationOnEventsResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationoneventsDbTableRowFindOneResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationoneventsDbTableRowFindOneResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationoneventsGroupbyResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *struct {
+		PageInfo *Paginated `json:"PageInfo,omitempty"`
+		List     *[]Groupby `json:"list,omitempty"`
+	}
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationoneventsGroupbyResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationoneventsGroupbyResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationOnEventsCommunicationOnEventsRowListResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *struct {
+		PageInfo *Paginated                                                `json:"PageInfo,omitempty"`
+		List     *[]CommunicationOnEventscommunicationOnEventsGridResponse `json:"list,omitempty"`
+	}
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationOnEventsCommunicationOnEventsRowListResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationOnEventsCommunicationOnEventsRowListResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationOnEventsCommunicationOnEventsRowCreateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationOnEventsCommunicationOnEventsRowCreateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationOnEventsCommunicationOnEventsRowCreateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationOnEventsCommunicationOnEventsRowCountResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *struct {
+		Count *float32 `json:"count,omitempty"`
+	}
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationOnEventsCommunicationOnEventsRowCountResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationOnEventsCommunicationOnEventsRowCountResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationOnEventsCommunicationOnEventsRowExportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationOnEventsCommunicationOnEventsRowExportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationOnEventsCommunicationOnEventsRowExportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationOnEventsCommunicationOnEventsRowDeleteResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationOnEventsCommunicationOnEventsRowDeleteResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationOnEventsCommunicationOnEventsRowDeleteResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationOnEventsCommunicationOnEventsRowReadResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *CommunicationOnEventscommunicationOnEventsGridResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationOnEventsCommunicationOnEventsRowReadResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationOnEventsCommunicationOnEventsRowReadResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationOnEventsCommunicationOnEventsRowUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationOnEventsCommunicationOnEventsRowUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationOnEventsCommunicationOnEventsRowUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationoneventsDeleteResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationoneventsDeleteResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationoneventsDeleteResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationoneventsReadResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON201      *CommunicationOnEventsResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationoneventsReadResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationoneventsReadResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationoneventsUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *CommunicationOnEventsRequest
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationoneventsUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationoneventsUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationoneventsNestedListResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationoneventsNestedListResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationoneventsNestedListResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationoneventsNestedChildrenExcludedListResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationoneventsNestedChildrenExcludedListResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationoneventsNestedChildrenExcludedListResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationoneventsNestedRemoveResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationoneventsNestedRemoveResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationoneventsNestedRemoveResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CommunicationoneventsNestedAddResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r CommunicationoneventsNestedAddResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CommunicationoneventsNestedAddResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// BoteventsBulkDeleteWithBodyWithResponse request with arbitrary body returning *BoteventsBulkDeleteResponse
+func (c *ClientWithResponses) BoteventsBulkDeleteWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BoteventsBulkDeleteResponse, error) {
+	rsp, err := c.BoteventsBulkDeleteWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCommEventsBulkUpdateAllResponse(rsp)
+	return ParseBoteventsBulkDeleteResponse(rsp)
+}
+
+func (c *ClientWithResponses) BoteventsBulkDeleteWithResponse(ctx context.Context, body BoteventsBulkDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*BoteventsBulkDeleteResponse, error) {
+	rsp, err := c.BoteventsBulkDelete(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBoteventsBulkDeleteResponse(rsp)
+}
+
+// BoteventsBulkUpdateWithBodyWithResponse request with arbitrary body returning *BoteventsBulkUpdateResponse
+func (c *ClientWithResponses) BoteventsBulkUpdateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BoteventsBulkUpdateResponse, error) {
+	rsp, err := c.BoteventsBulkUpdateWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBoteventsBulkUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) BoteventsBulkUpdateWithResponse(ctx context.Context, body BoteventsBulkUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BoteventsBulkUpdateResponse, error) {
+	rsp, err := c.BoteventsBulkUpdate(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBoteventsBulkUpdateResponse(rsp)
+}
+
+// BoteventsBulkCreateWithBodyWithResponse request with arbitrary body returning *BoteventsBulkCreateResponse
+func (c *ClientWithResponses) BoteventsBulkCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BoteventsBulkCreateResponse, error) {
+	rsp, err := c.BoteventsBulkCreateWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBoteventsBulkCreateResponse(rsp)
+}
+
+func (c *ClientWithResponses) BoteventsBulkCreateWithResponse(ctx context.Context, body BoteventsBulkCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BoteventsBulkCreateResponse, error) {
+	rsp, err := c.BoteventsBulkCreate(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBoteventsBulkCreateResponse(rsp)
+}
+
+// BoteventsBulkDeleteAllWithResponse request returning *BoteventsBulkDeleteAllResponse
+func (c *ClientWithResponses) BoteventsBulkDeleteAllWithResponse(ctx context.Context, params *BoteventsBulkDeleteAllParams, reqEditors ...RequestEditorFn) (*BoteventsBulkDeleteAllResponse, error) {
+	rsp, err := c.BoteventsBulkDeleteAll(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBoteventsBulkDeleteAllResponse(rsp)
+}
+
+// BoteventsBulkUpdateAllWithBodyWithResponse request with arbitrary body returning *BoteventsBulkUpdateAllResponse
+func (c *ClientWithResponses) BoteventsBulkUpdateAllWithBodyWithResponse(ctx context.Context, params *BoteventsBulkUpdateAllParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BoteventsBulkUpdateAllResponse, error) {
+	rsp, err := c.BoteventsBulkUpdateAllWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBoteventsBulkUpdateAllResponse(rsp)
+}
+
+func (c *ClientWithResponses) BoteventsBulkUpdateAllWithResponse(ctx context.Context, params *BoteventsBulkUpdateAllParams, body BoteventsBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*BoteventsBulkUpdateAllResponse, error) {
+	rsp, err := c.BoteventsBulkUpdateAll(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBoteventsBulkUpdateAllResponse(rsp)
 }
 
 // EventsBulkDeleteWithBodyWithResponse request with arbitrary body returning *EventsBulkDeleteResponse
@@ -8501,392 +12344,370 @@ func (c *ClientWithResponses) EventsBulkUpdateAllWithResponse(ctx context.Contex
 	return ParseEventsBulkUpdateAllResponse(rsp)
 }
 
-// VolunteersDbTableRowListWithResponse request returning *VolunteersDbTableRowListResponse
-func (c *ClientWithResponses) VolunteersDbTableRowListWithResponse(ctx context.Context, params *VolunteersDbTableRowListParams, reqEditors ...RequestEditorFn) (*VolunteersDbTableRowListResponse, error) {
-	rsp, err := c.VolunteersDbTableRowList(ctx, params, reqEditors...)
+// VolunteersBulkDeleteWithBodyWithResponse request with arbitrary body returning *VolunteersBulkDeleteResponse
+func (c *ClientWithResponses) VolunteersBulkDeleteWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersBulkDeleteResponse, error) {
+	rsp, err := c.VolunteersBulkDeleteWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersDbTableRowListResponse(rsp)
+	return ParseVolunteersBulkDeleteResponse(rsp)
 }
 
-// VolunteersCreateWithBodyWithResponse request with arbitrary body returning *VolunteersCreateResponse
-func (c *ClientWithResponses) VolunteersCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersCreateResponse, error) {
-	rsp, err := c.VolunteersCreateWithBody(ctx, contentType, body, reqEditors...)
+func (c *ClientWithResponses) VolunteersBulkDeleteWithResponse(ctx context.Context, body VolunteersBulkDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersBulkDeleteResponse, error) {
+	rsp, err := c.VolunteersBulkDelete(ctx, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersCreateResponse(rsp)
+	return ParseVolunteersBulkDeleteResponse(rsp)
 }
 
-func (c *ClientWithResponses) VolunteersCreateWithResponse(ctx context.Context, body VolunteersCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersCreateResponse, error) {
-	rsp, err := c.VolunteersCreate(ctx, body, reqEditors...)
+// VolunteersBulkUpdateWithBodyWithResponse request with arbitrary body returning *VolunteersBulkUpdateResponse
+func (c *ClientWithResponses) VolunteersBulkUpdateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersBulkUpdateResponse, error) {
+	rsp, err := c.VolunteersBulkUpdateWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersCreateResponse(rsp)
+	return ParseVolunteersBulkUpdateResponse(rsp)
 }
 
-// VolunteersCountWithResponse request returning *VolunteersCountResponse
-func (c *ClientWithResponses) VolunteersCountWithResponse(ctx context.Context, params *VolunteersCountParams, reqEditors ...RequestEditorFn) (*VolunteersCountResponse, error) {
-	rsp, err := c.VolunteersCount(ctx, params, reqEditors...)
+func (c *ClientWithResponses) VolunteersBulkUpdateWithResponse(ctx context.Context, body VolunteersBulkUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersBulkUpdateResponse, error) {
+	rsp, err := c.VolunteersBulkUpdate(ctx, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersCountResponse(rsp)
+	return ParseVolunteersBulkUpdateResponse(rsp)
 }
 
-// VolunteersCsvExportWithResponse request returning *VolunteersCsvExportResponse
-func (c *ClientWithResponses) VolunteersCsvExportWithResponse(ctx context.Context, pType string, params *VolunteersCsvExportParams, reqEditors ...RequestEditorFn) (*VolunteersCsvExportResponse, error) {
-	rsp, err := c.VolunteersCsvExport(ctx, pType, params, reqEditors...)
+// VolunteersBulkCreateWithBodyWithResponse request with arbitrary body returning *VolunteersBulkCreateResponse
+func (c *ClientWithResponses) VolunteersBulkCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersBulkCreateResponse, error) {
+	rsp, err := c.VolunteersBulkCreateWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersCsvExportResponse(rsp)
+	return ParseVolunteersBulkCreateResponse(rsp)
 }
 
-// VolunteersDbTableRowFindOneWithResponse request returning *VolunteersDbTableRowFindOneResponse
-func (c *ClientWithResponses) VolunteersDbTableRowFindOneWithResponse(ctx context.Context, params *VolunteersDbTableRowFindOneParams, reqEditors ...RequestEditorFn) (*VolunteersDbTableRowFindOneResponse, error) {
-	rsp, err := c.VolunteersDbTableRowFindOne(ctx, params, reqEditors...)
+func (c *ClientWithResponses) VolunteersBulkCreateWithResponse(ctx context.Context, body VolunteersBulkCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersBulkCreateResponse, error) {
+	rsp, err := c.VolunteersBulkCreate(ctx, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersDbTableRowFindOneResponse(rsp)
+	return ParseVolunteersBulkCreateResponse(rsp)
 }
 
-// VolunteersGroupbyWithResponse request returning *VolunteersGroupbyResponse
-func (c *ClientWithResponses) VolunteersGroupbyWithResponse(ctx context.Context, params *VolunteersGroupbyParams, reqEditors ...RequestEditorFn) (*VolunteersGroupbyResponse, error) {
-	rsp, err := c.VolunteersGroupby(ctx, params, reqEditors...)
+// VolunteersBulkDeleteAllWithResponse request returning *VolunteersBulkDeleteAllResponse
+func (c *ClientWithResponses) VolunteersBulkDeleteAllWithResponse(ctx context.Context, params *VolunteersBulkDeleteAllParams, reqEditors ...RequestEditorFn) (*VolunteersBulkDeleteAllResponse, error) {
+	rsp, err := c.VolunteersBulkDeleteAll(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersGroupbyResponse(rsp)
+	return ParseVolunteersBulkDeleteAllResponse(rsp)
 }
 
-// VolunteersVolunteersRowListWithResponse request returning *VolunteersVolunteersRowListResponse
-func (c *ClientWithResponses) VolunteersVolunteersRowListWithResponse(ctx context.Context, params *VolunteersVolunteersRowListParams, reqEditors ...RequestEditorFn) (*VolunteersVolunteersRowListResponse, error) {
-	rsp, err := c.VolunteersVolunteersRowList(ctx, params, reqEditors...)
+// VolunteersBulkUpdateAllWithBodyWithResponse request with arbitrary body returning *VolunteersBulkUpdateAllResponse
+func (c *ClientWithResponses) VolunteersBulkUpdateAllWithBodyWithResponse(ctx context.Context, params *VolunteersBulkUpdateAllParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersBulkUpdateAllResponse, error) {
+	rsp, err := c.VolunteersBulkUpdateAllWithBody(ctx, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersVolunteersRowListResponse(rsp)
+	return ParseVolunteersBulkUpdateAllResponse(rsp)
 }
 
-// VolunteersVolunteersRowCreateWithBodyWithResponse request with arbitrary body returning *VolunteersVolunteersRowCreateResponse
-func (c *ClientWithResponses) VolunteersVolunteersRowCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersVolunteersRowCreateResponse, error) {
-	rsp, err := c.VolunteersVolunteersRowCreateWithBody(ctx, contentType, body, reqEditors...)
+func (c *ClientWithResponses) VolunteersBulkUpdateAllWithResponse(ctx context.Context, params *VolunteersBulkUpdateAllParams, body VolunteersBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersBulkUpdateAllResponse, error) {
+	rsp, err := c.VolunteersBulkUpdateAll(ctx, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersVolunteersRowCreateResponse(rsp)
+	return ParseVolunteersBulkUpdateAllResponse(rsp)
 }
 
-func (c *ClientWithResponses) VolunteersVolunteersRowCreateWithResponse(ctx context.Context, body VolunteersVolunteersRowCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersVolunteersRowCreateResponse, error) {
-	rsp, err := c.VolunteersVolunteersRowCreate(ctx, body, reqEditors...)
+// CommunicationoneventsBulkDeleteWithBodyWithResponse request with arbitrary body returning *CommunicationoneventsBulkDeleteResponse
+func (c *ClientWithResponses) CommunicationoneventsBulkDeleteWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommunicationoneventsBulkDeleteResponse, error) {
+	rsp, err := c.CommunicationoneventsBulkDeleteWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersVolunteersRowCreateResponse(rsp)
+	return ParseCommunicationoneventsBulkDeleteResponse(rsp)
 }
 
-// VolunteersVolunteersRowCountWithResponse request returning *VolunteersVolunteersRowCountResponse
-func (c *ClientWithResponses) VolunteersVolunteersRowCountWithResponse(ctx context.Context, params *VolunteersVolunteersRowCountParams, reqEditors ...RequestEditorFn) (*VolunteersVolunteersRowCountResponse, error) {
-	rsp, err := c.VolunteersVolunteersRowCount(ctx, params, reqEditors...)
+func (c *ClientWithResponses) CommunicationoneventsBulkDeleteWithResponse(ctx context.Context, body CommunicationoneventsBulkDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*CommunicationoneventsBulkDeleteResponse, error) {
+	rsp, err := c.CommunicationoneventsBulkDelete(ctx, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersVolunteersRowCountResponse(rsp)
+	return ParseCommunicationoneventsBulkDeleteResponse(rsp)
 }
 
-// VolunteersVolunteersRowExportWithResponse request returning *VolunteersVolunteersRowExportResponse
-func (c *ClientWithResponses) VolunteersVolunteersRowExportWithResponse(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*VolunteersVolunteersRowExportResponse, error) {
-	rsp, err := c.VolunteersVolunteersRowExport(ctx, pType, reqEditors...)
+// CommunicationoneventsBulkUpdateWithBodyWithResponse request with arbitrary body returning *CommunicationoneventsBulkUpdateResponse
+func (c *ClientWithResponses) CommunicationoneventsBulkUpdateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommunicationoneventsBulkUpdateResponse, error) {
+	rsp, err := c.CommunicationoneventsBulkUpdateWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersVolunteersRowExportResponse(rsp)
+	return ParseCommunicationoneventsBulkUpdateResponse(rsp)
 }
 
-// VolunteersVolunteersRowDeleteWithResponse request returning *VolunteersVolunteersRowDeleteResponse
-func (c *ClientWithResponses) VolunteersVolunteersRowDeleteWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*VolunteersVolunteersRowDeleteResponse, error) {
-	rsp, err := c.VolunteersVolunteersRowDelete(ctx, rowId, reqEditors...)
+func (c *ClientWithResponses) CommunicationoneventsBulkUpdateWithResponse(ctx context.Context, body CommunicationoneventsBulkUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommunicationoneventsBulkUpdateResponse, error) {
+	rsp, err := c.CommunicationoneventsBulkUpdate(ctx, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersVolunteersRowDeleteResponse(rsp)
+	return ParseCommunicationoneventsBulkUpdateResponse(rsp)
 }
 
-// VolunteersVolunteersRowReadWithResponse request returning *VolunteersVolunteersRowReadResponse
-func (c *ClientWithResponses) VolunteersVolunteersRowReadWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*VolunteersVolunteersRowReadResponse, error) {
-	rsp, err := c.VolunteersVolunteersRowRead(ctx, rowId, reqEditors...)
+// CommunicationoneventsBulkCreateWithBodyWithResponse request with arbitrary body returning *CommunicationoneventsBulkCreateResponse
+func (c *ClientWithResponses) CommunicationoneventsBulkCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommunicationoneventsBulkCreateResponse, error) {
+	rsp, err := c.CommunicationoneventsBulkCreateWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersVolunteersRowReadResponse(rsp)
+	return ParseCommunicationoneventsBulkCreateResponse(rsp)
 }
 
-// VolunteersVolunteersRowUpdateWithBodyWithResponse request with arbitrary body returning *VolunteersVolunteersRowUpdateResponse
-func (c *ClientWithResponses) VolunteersVolunteersRowUpdateWithBodyWithResponse(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersVolunteersRowUpdateResponse, error) {
-	rsp, err := c.VolunteersVolunteersRowUpdateWithBody(ctx, rowId, contentType, body, reqEditors...)
+func (c *ClientWithResponses) CommunicationoneventsBulkCreateWithResponse(ctx context.Context, body CommunicationoneventsBulkCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommunicationoneventsBulkCreateResponse, error) {
+	rsp, err := c.CommunicationoneventsBulkCreate(ctx, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersVolunteersRowUpdateResponse(rsp)
+	return ParseCommunicationoneventsBulkCreateResponse(rsp)
 }
 
-func (c *ClientWithResponses) VolunteersVolunteersRowUpdateWithResponse(ctx context.Context, rowId string, body VolunteersVolunteersRowUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersVolunteersRowUpdateResponse, error) {
-	rsp, err := c.VolunteersVolunteersRowUpdate(ctx, rowId, body, reqEditors...)
+// CommunicationoneventsBulkDeleteAllWithResponse request returning *CommunicationoneventsBulkDeleteAllResponse
+func (c *ClientWithResponses) CommunicationoneventsBulkDeleteAllWithResponse(ctx context.Context, params *CommunicationoneventsBulkDeleteAllParams, reqEditors ...RequestEditorFn) (*CommunicationoneventsBulkDeleteAllResponse, error) {
+	rsp, err := c.CommunicationoneventsBulkDeleteAll(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersVolunteersRowUpdateResponse(rsp)
+	return ParseCommunicationoneventsBulkDeleteAllResponse(rsp)
 }
 
-// VolunteersDeleteWithResponse request returning *VolunteersDeleteResponse
-func (c *ClientWithResponses) VolunteersDeleteWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*VolunteersDeleteResponse, error) {
-	rsp, err := c.VolunteersDelete(ctx, rowId, reqEditors...)
+// CommunicationoneventsBulkUpdateAllWithBodyWithResponse request with arbitrary body returning *CommunicationoneventsBulkUpdateAllResponse
+func (c *ClientWithResponses) CommunicationoneventsBulkUpdateAllWithBodyWithResponse(ctx context.Context, params *CommunicationoneventsBulkUpdateAllParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommunicationoneventsBulkUpdateAllResponse, error) {
+	rsp, err := c.CommunicationoneventsBulkUpdateAllWithBody(ctx, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersDeleteResponse(rsp)
+	return ParseCommunicationoneventsBulkUpdateAllResponse(rsp)
 }
 
-// VolunteersReadWithResponse request returning *VolunteersReadResponse
-func (c *ClientWithResponses) VolunteersReadWithResponse(ctx context.Context, rowId string, params *VolunteersReadParams, reqEditors ...RequestEditorFn) (*VolunteersReadResponse, error) {
-	rsp, err := c.VolunteersRead(ctx, rowId, params, reqEditors...)
+func (c *ClientWithResponses) CommunicationoneventsBulkUpdateAllWithResponse(ctx context.Context, params *CommunicationoneventsBulkUpdateAllParams, body CommunicationoneventsBulkUpdateAllJSONRequestBody, reqEditors ...RequestEditorFn) (*CommunicationoneventsBulkUpdateAllResponse, error) {
+	rsp, err := c.CommunicationoneventsBulkUpdateAll(ctx, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersReadResponse(rsp)
+	return ParseCommunicationoneventsBulkUpdateAllResponse(rsp)
 }
 
-// VolunteersUpdateWithBodyWithResponse request with arbitrary body returning *VolunteersUpdateResponse
-func (c *ClientWithResponses) VolunteersUpdateWithBodyWithResponse(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersUpdateResponse, error) {
-	rsp, err := c.VolunteersUpdateWithBody(ctx, rowId, contentType, body, reqEditors...)
+// BoteventsDbTableRowListWithResponse request returning *BoteventsDbTableRowListResponse
+func (c *ClientWithResponses) BoteventsDbTableRowListWithResponse(ctx context.Context, params *BoteventsDbTableRowListParams, reqEditors ...RequestEditorFn) (*BoteventsDbTableRowListResponse, error) {
+	rsp, err := c.BoteventsDbTableRowList(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersUpdateResponse(rsp)
+	return ParseBoteventsDbTableRowListResponse(rsp)
 }
 
-func (c *ClientWithResponses) VolunteersUpdateWithResponse(ctx context.Context, rowId string, body VolunteersUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersUpdateResponse, error) {
-	rsp, err := c.VolunteersUpdate(ctx, rowId, body, reqEditors...)
+// BoteventsCreateWithBodyWithResponse request with arbitrary body returning *BoteventsCreateResponse
+func (c *ClientWithResponses) BoteventsCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BoteventsCreateResponse, error) {
+	rsp, err := c.BoteventsCreateWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersUpdateResponse(rsp)
+	return ParseBoteventsCreateResponse(rsp)
 }
 
-// VolunteersNestedListWithResponse request returning *VolunteersNestedListResponse
-func (c *ClientWithResponses) VolunteersNestedListWithResponse(ctx context.Context, rowId string, relationType string, columnName string, params *VolunteersNestedListParams, reqEditors ...RequestEditorFn) (*VolunteersNestedListResponse, error) {
-	rsp, err := c.VolunteersNestedList(ctx, rowId, relationType, columnName, params, reqEditors...)
+func (c *ClientWithResponses) BoteventsCreateWithResponse(ctx context.Context, body BoteventsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BoteventsCreateResponse, error) {
+	rsp, err := c.BoteventsCreate(ctx, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersNestedListResponse(rsp)
+	return ParseBoteventsCreateResponse(rsp)
 }
 
-// VolunteersNestedChildrenExcludedListWithResponse request returning *VolunteersNestedChildrenExcludedListResponse
-func (c *ClientWithResponses) VolunteersNestedChildrenExcludedListWithResponse(ctx context.Context, rowId string, relationType string, columnName string, params *VolunteersNestedChildrenExcludedListParams, reqEditors ...RequestEditorFn) (*VolunteersNestedChildrenExcludedListResponse, error) {
-	rsp, err := c.VolunteersNestedChildrenExcludedList(ctx, rowId, relationType, columnName, params, reqEditors...)
+// BoteventsCountWithResponse request returning *BoteventsCountResponse
+func (c *ClientWithResponses) BoteventsCountWithResponse(ctx context.Context, params *BoteventsCountParams, reqEditors ...RequestEditorFn) (*BoteventsCountResponse, error) {
+	rsp, err := c.BoteventsCount(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersNestedChildrenExcludedListResponse(rsp)
+	return ParseBoteventsCountResponse(rsp)
 }
 
-// VolunteersNestedRemoveWithResponse request returning *VolunteersNestedRemoveResponse
-func (c *ClientWithResponses) VolunteersNestedRemoveWithResponse(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, reqEditors ...RequestEditorFn) (*VolunteersNestedRemoveResponse, error) {
-	rsp, err := c.VolunteersNestedRemove(ctx, rowId, relationType, columnName, refRowId, reqEditors...)
+// BoteventsCsvExportWithResponse request returning *BoteventsCsvExportResponse
+func (c *ClientWithResponses) BoteventsCsvExportWithResponse(ctx context.Context, pType string, params *BoteventsCsvExportParams, reqEditors ...RequestEditorFn) (*BoteventsCsvExportResponse, error) {
+	rsp, err := c.BoteventsCsvExport(ctx, pType, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersNestedRemoveResponse(rsp)
+	return ParseBoteventsCsvExportResponse(rsp)
 }
 
-// VolunteersNestedAddWithResponse request returning *VolunteersNestedAddResponse
-func (c *ClientWithResponses) VolunteersNestedAddWithResponse(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, params *VolunteersNestedAddParams, reqEditors ...RequestEditorFn) (*VolunteersNestedAddResponse, error) {
-	rsp, err := c.VolunteersNestedAdd(ctx, rowId, relationType, columnName, refRowId, params, reqEditors...)
+// BoteventsDbTableRowFindOneWithResponse request returning *BoteventsDbTableRowFindOneResponse
+func (c *ClientWithResponses) BoteventsDbTableRowFindOneWithResponse(ctx context.Context, params *BoteventsDbTableRowFindOneParams, reqEditors ...RequestEditorFn) (*BoteventsDbTableRowFindOneResponse, error) {
+	rsp, err := c.BoteventsDbTableRowFindOne(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVolunteersNestedAddResponse(rsp)
+	return ParseBoteventsDbTableRowFindOneResponse(rsp)
 }
 
-// CommEventsDbTableRowListWithResponse request returning *CommEventsDbTableRowListResponse
-func (c *ClientWithResponses) CommEventsDbTableRowListWithResponse(ctx context.Context, params *CommEventsDbTableRowListParams, reqEditors ...RequestEditorFn) (*CommEventsDbTableRowListResponse, error) {
-	rsp, err := c.CommEventsDbTableRowList(ctx, params, reqEditors...)
+// BoteventsGroupbyWithResponse request returning *BoteventsGroupbyResponse
+func (c *ClientWithResponses) BoteventsGroupbyWithResponse(ctx context.Context, params *BoteventsGroupbyParams, reqEditors ...RequestEditorFn) (*BoteventsGroupbyResponse, error) {
+	rsp, err := c.BoteventsGroupby(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCommEventsDbTableRowListResponse(rsp)
+	return ParseBoteventsGroupbyResponse(rsp)
 }
 
-// CommEventsCreateWithBodyWithResponse request with arbitrary body returning *CommEventsCreateResponse
-func (c *ClientWithResponses) CommEventsCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommEventsCreateResponse, error) {
-	rsp, err := c.CommEventsCreateWithBody(ctx, contentType, body, reqEditors...)
+// BotEventsBotEventsRowListWithResponse request returning *BotEventsBotEventsRowListResponse
+func (c *ClientWithResponses) BotEventsBotEventsRowListWithResponse(ctx context.Context, params *BotEventsBotEventsRowListParams, reqEditors ...RequestEditorFn) (*BotEventsBotEventsRowListResponse, error) {
+	rsp, err := c.BotEventsBotEventsRowList(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCommEventsCreateResponse(rsp)
+	return ParseBotEventsBotEventsRowListResponse(rsp)
 }
 
-func (c *ClientWithResponses) CommEventsCreateWithResponse(ctx context.Context, body CommEventsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommEventsCreateResponse, error) {
-	rsp, err := c.CommEventsCreate(ctx, body, reqEditors...)
+// BotEventsBotEventsRowCreateWithBodyWithResponse request with arbitrary body returning *BotEventsBotEventsRowCreateResponse
+func (c *ClientWithResponses) BotEventsBotEventsRowCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BotEventsBotEventsRowCreateResponse, error) {
+	rsp, err := c.BotEventsBotEventsRowCreateWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCommEventsCreateResponse(rsp)
+	return ParseBotEventsBotEventsRowCreateResponse(rsp)
 }
 
-// CommEventsCountWithResponse request returning *CommEventsCountResponse
-func (c *ClientWithResponses) CommEventsCountWithResponse(ctx context.Context, params *CommEventsCountParams, reqEditors ...RequestEditorFn) (*CommEventsCountResponse, error) {
-	rsp, err := c.CommEventsCount(ctx, params, reqEditors...)
+func (c *ClientWithResponses) BotEventsBotEventsRowCreateWithResponse(ctx context.Context, body BotEventsBotEventsRowCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BotEventsBotEventsRowCreateResponse, error) {
+	rsp, err := c.BotEventsBotEventsRowCreate(ctx, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCommEventsCountResponse(rsp)
+	return ParseBotEventsBotEventsRowCreateResponse(rsp)
 }
 
-// CommEventsCsvExportWithResponse request returning *CommEventsCsvExportResponse
-func (c *ClientWithResponses) CommEventsCsvExportWithResponse(ctx context.Context, pType string, params *CommEventsCsvExportParams, reqEditors ...RequestEditorFn) (*CommEventsCsvExportResponse, error) {
-	rsp, err := c.CommEventsCsvExport(ctx, pType, params, reqEditors...)
+// BotEventsBotEventsRowCountWithResponse request returning *BotEventsBotEventsRowCountResponse
+func (c *ClientWithResponses) BotEventsBotEventsRowCountWithResponse(ctx context.Context, params *BotEventsBotEventsRowCountParams, reqEditors ...RequestEditorFn) (*BotEventsBotEventsRowCountResponse, error) {
+	rsp, err := c.BotEventsBotEventsRowCount(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCommEventsCsvExportResponse(rsp)
+	return ParseBotEventsBotEventsRowCountResponse(rsp)
 }
 
-// CommEventsDbTableRowFindOneWithResponse request returning *CommEventsDbTableRowFindOneResponse
-func (c *ClientWithResponses) CommEventsDbTableRowFindOneWithResponse(ctx context.Context, params *CommEventsDbTableRowFindOneParams, reqEditors ...RequestEditorFn) (*CommEventsDbTableRowFindOneResponse, error) {
-	rsp, err := c.CommEventsDbTableRowFindOne(ctx, params, reqEditors...)
+// BotEventsBotEventsRowExportWithResponse request returning *BotEventsBotEventsRowExportResponse
+func (c *ClientWithResponses) BotEventsBotEventsRowExportWithResponse(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*BotEventsBotEventsRowExportResponse, error) {
+	rsp, err := c.BotEventsBotEventsRowExport(ctx, pType, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCommEventsDbTableRowFindOneResponse(rsp)
+	return ParseBotEventsBotEventsRowExportResponse(rsp)
 }
 
-// CommEventsGroupbyWithResponse request returning *CommEventsGroupbyResponse
-func (c *ClientWithResponses) CommEventsGroupbyWithResponse(ctx context.Context, params *CommEventsGroupbyParams, reqEditors ...RequestEditorFn) (*CommEventsGroupbyResponse, error) {
-	rsp, err := c.CommEventsGroupby(ctx, params, reqEditors...)
+// BotEventsBotEventsRowDeleteWithResponse request returning *BotEventsBotEventsRowDeleteResponse
+func (c *ClientWithResponses) BotEventsBotEventsRowDeleteWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*BotEventsBotEventsRowDeleteResponse, error) {
+	rsp, err := c.BotEventsBotEventsRowDelete(ctx, rowId, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCommEventsGroupbyResponse(rsp)
+	return ParseBotEventsBotEventsRowDeleteResponse(rsp)
 }
 
-// CommEventsCommEventsRowListWithResponse request returning *CommEventsCommEventsRowListResponse
-func (c *ClientWithResponses) CommEventsCommEventsRowListWithResponse(ctx context.Context, params *CommEventsCommEventsRowListParams, reqEditors ...RequestEditorFn) (*CommEventsCommEventsRowListResponse, error) {
-	rsp, err := c.CommEventsCommEventsRowList(ctx, params, reqEditors...)
+// BotEventsBotEventsRowReadWithResponse request returning *BotEventsBotEventsRowReadResponse
+func (c *ClientWithResponses) BotEventsBotEventsRowReadWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*BotEventsBotEventsRowReadResponse, error) {
+	rsp, err := c.BotEventsBotEventsRowRead(ctx, rowId, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCommEventsCommEventsRowListResponse(rsp)
+	return ParseBotEventsBotEventsRowReadResponse(rsp)
 }
 
-// CommEventsCommEventsRowCreateWithBodyWithResponse request with arbitrary body returning *CommEventsCommEventsRowCreateResponse
-func (c *ClientWithResponses) CommEventsCommEventsRowCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommEventsCommEventsRowCreateResponse, error) {
-	rsp, err := c.CommEventsCommEventsRowCreateWithBody(ctx, contentType, body, reqEditors...)
+// BotEventsBotEventsRowUpdateWithBodyWithResponse request with arbitrary body returning *BotEventsBotEventsRowUpdateResponse
+func (c *ClientWithResponses) BotEventsBotEventsRowUpdateWithBodyWithResponse(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BotEventsBotEventsRowUpdateResponse, error) {
+	rsp, err := c.BotEventsBotEventsRowUpdateWithBody(ctx, rowId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCommEventsCommEventsRowCreateResponse(rsp)
+	return ParseBotEventsBotEventsRowUpdateResponse(rsp)
 }
 
-func (c *ClientWithResponses) CommEventsCommEventsRowCreateWithResponse(ctx context.Context, body CommEventsCommEventsRowCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommEventsCommEventsRowCreateResponse, error) {
-	rsp, err := c.CommEventsCommEventsRowCreate(ctx, body, reqEditors...)
+func (c *ClientWithResponses) BotEventsBotEventsRowUpdateWithResponse(ctx context.Context, rowId string, body BotEventsBotEventsRowUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BotEventsBotEventsRowUpdateResponse, error) {
+	rsp, err := c.BotEventsBotEventsRowUpdate(ctx, rowId, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCommEventsCommEventsRowCreateResponse(rsp)
+	return ParseBotEventsBotEventsRowUpdateResponse(rsp)
 }
 
-// CommEventsCommEventsRowCountWithResponse request returning *CommEventsCommEventsRowCountResponse
-func (c *ClientWithResponses) CommEventsCommEventsRowCountWithResponse(ctx context.Context, params *CommEventsCommEventsRowCountParams, reqEditors ...RequestEditorFn) (*CommEventsCommEventsRowCountResponse, error) {
-	rsp, err := c.CommEventsCommEventsRowCount(ctx, params, reqEditors...)
+// BoteventsDeleteWithResponse request returning *BoteventsDeleteResponse
+func (c *ClientWithResponses) BoteventsDeleteWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*BoteventsDeleteResponse, error) {
+	rsp, err := c.BoteventsDelete(ctx, rowId, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCommEventsCommEventsRowCountResponse(rsp)
+	return ParseBoteventsDeleteResponse(rsp)
 }
 
-// CommEventsCommEventsRowExportWithResponse request returning *CommEventsCommEventsRowExportResponse
-func (c *ClientWithResponses) CommEventsCommEventsRowExportWithResponse(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*CommEventsCommEventsRowExportResponse, error) {
-	rsp, err := c.CommEventsCommEventsRowExport(ctx, pType, reqEditors...)
+// BoteventsReadWithResponse request returning *BoteventsReadResponse
+func (c *ClientWithResponses) BoteventsReadWithResponse(ctx context.Context, rowId string, params *BoteventsReadParams, reqEditors ...RequestEditorFn) (*BoteventsReadResponse, error) {
+	rsp, err := c.BoteventsRead(ctx, rowId, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCommEventsCommEventsRowExportResponse(rsp)
+	return ParseBoteventsReadResponse(rsp)
 }
 
-// CommEventsCommEventsRowDeleteWithResponse request returning *CommEventsCommEventsRowDeleteResponse
-func (c *ClientWithResponses) CommEventsCommEventsRowDeleteWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*CommEventsCommEventsRowDeleteResponse, error) {
-	rsp, err := c.CommEventsCommEventsRowDelete(ctx, rowId, reqEditors...)
+// BoteventsUpdateWithBodyWithResponse request with arbitrary body returning *BoteventsUpdateResponse
+func (c *ClientWithResponses) BoteventsUpdateWithBodyWithResponse(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BoteventsUpdateResponse, error) {
+	rsp, err := c.BoteventsUpdateWithBody(ctx, rowId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCommEventsCommEventsRowDeleteResponse(rsp)
+	return ParseBoteventsUpdateResponse(rsp)
 }
 
-// CommEventsCommEventsRowReadWithResponse request returning *CommEventsCommEventsRowReadResponse
-func (c *ClientWithResponses) CommEventsCommEventsRowReadWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*CommEventsCommEventsRowReadResponse, error) {
-	rsp, err := c.CommEventsCommEventsRowRead(ctx, rowId, reqEditors...)
+func (c *ClientWithResponses) BoteventsUpdateWithResponse(ctx context.Context, rowId string, body BoteventsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BoteventsUpdateResponse, error) {
+	rsp, err := c.BoteventsUpdate(ctx, rowId, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCommEventsCommEventsRowReadResponse(rsp)
+	return ParseBoteventsUpdateResponse(rsp)
 }
 
-// CommEventsCommEventsRowUpdateWithBodyWithResponse request with arbitrary body returning *CommEventsCommEventsRowUpdateResponse
-func (c *ClientWithResponses) CommEventsCommEventsRowUpdateWithBodyWithResponse(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommEventsCommEventsRowUpdateResponse, error) {
-	rsp, err := c.CommEventsCommEventsRowUpdateWithBody(ctx, rowId, contentType, body, reqEditors...)
+// BoteventsNestedListWithResponse request returning *BoteventsNestedListResponse
+func (c *ClientWithResponses) BoteventsNestedListWithResponse(ctx context.Context, rowId string, relationType string, columnName string, params *BoteventsNestedListParams, reqEditors ...RequestEditorFn) (*BoteventsNestedListResponse, error) {
+	rsp, err := c.BoteventsNestedList(ctx, rowId, relationType, columnName, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCommEventsCommEventsRowUpdateResponse(rsp)
+	return ParseBoteventsNestedListResponse(rsp)
 }
 
-func (c *ClientWithResponses) CommEventsCommEventsRowUpdateWithResponse(ctx context.Context, rowId string, body CommEventsCommEventsRowUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommEventsCommEventsRowUpdateResponse, error) {
-	rsp, err := c.CommEventsCommEventsRowUpdate(ctx, rowId, body, reqEditors...)
+// BoteventsNestedChildrenExcludedListWithResponse request returning *BoteventsNestedChildrenExcludedListResponse
+func (c *ClientWithResponses) BoteventsNestedChildrenExcludedListWithResponse(ctx context.Context, rowId string, relationType string, columnName string, params *BoteventsNestedChildrenExcludedListParams, reqEditors ...RequestEditorFn) (*BoteventsNestedChildrenExcludedListResponse, error) {
+	rsp, err := c.BoteventsNestedChildrenExcludedList(ctx, rowId, relationType, columnName, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCommEventsCommEventsRowUpdateResponse(rsp)
+	return ParseBoteventsNestedChildrenExcludedListResponse(rsp)
 }
 
-// CommEventsDeleteWithResponse request returning *CommEventsDeleteResponse
-func (c *ClientWithResponses) CommEventsDeleteWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*CommEventsDeleteResponse, error) {
-	rsp, err := c.CommEventsDelete(ctx, rowId, reqEditors...)
+// BoteventsNestedRemoveWithResponse request returning *BoteventsNestedRemoveResponse
+func (c *ClientWithResponses) BoteventsNestedRemoveWithResponse(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, reqEditors ...RequestEditorFn) (*BoteventsNestedRemoveResponse, error) {
+	rsp, err := c.BoteventsNestedRemove(ctx, rowId, relationType, columnName, refRowId, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCommEventsDeleteResponse(rsp)
+	return ParseBoteventsNestedRemoveResponse(rsp)
 }
 
-// CommEventsReadWithResponse request returning *CommEventsReadResponse
-func (c *ClientWithResponses) CommEventsReadWithResponse(ctx context.Context, rowId string, params *CommEventsReadParams, reqEditors ...RequestEditorFn) (*CommEventsReadResponse, error) {
-	rsp, err := c.CommEventsRead(ctx, rowId, params, reqEditors...)
+// BoteventsNestedAddWithResponse request returning *BoteventsNestedAddResponse
+func (c *ClientWithResponses) BoteventsNestedAddWithResponse(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, params *BoteventsNestedAddParams, reqEditors ...RequestEditorFn) (*BoteventsNestedAddResponse, error) {
+	rsp, err := c.BoteventsNestedAdd(ctx, rowId, relationType, columnName, refRowId, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseCommEventsReadResponse(rsp)
-}
-
-// CommEventsUpdateWithBodyWithResponse request with arbitrary body returning *CommEventsUpdateResponse
-func (c *ClientWithResponses) CommEventsUpdateWithBodyWithResponse(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommEventsUpdateResponse, error) {
-	rsp, err := c.CommEventsUpdateWithBody(ctx, rowId, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCommEventsUpdateResponse(rsp)
-}
-
-func (c *ClientWithResponses) CommEventsUpdateWithResponse(ctx context.Context, rowId string, body CommEventsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommEventsUpdateResponse, error) {
-	rsp, err := c.CommEventsUpdate(ctx, rowId, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCommEventsUpdateResponse(rsp)
+	return ParseBoteventsNestedAddResponse(rsp)
 }
 
 // EventsDbTableRowListWithResponse request returning *EventsDbTableRowListResponse
@@ -9101,15 +12922,439 @@ func (c *ClientWithResponses) EventsNestedAddWithResponse(ctx context.Context, r
 	return ParseEventsNestedAddResponse(rsp)
 }
 
-// ParseVolunteersBulkDeleteResponse parses an HTTP response from a VolunteersBulkDeleteWithResponse call
-func ParseVolunteersBulkDeleteResponse(rsp *http.Response) (*VolunteersBulkDeleteResponse, error) {
+// VolunteersDbTableRowListWithResponse request returning *VolunteersDbTableRowListResponse
+func (c *ClientWithResponses) VolunteersDbTableRowListWithResponse(ctx context.Context, params *VolunteersDbTableRowListParams, reqEditors ...RequestEditorFn) (*VolunteersDbTableRowListResponse, error) {
+	rsp, err := c.VolunteersDbTableRowList(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersDbTableRowListResponse(rsp)
+}
+
+// VolunteersCreateWithBodyWithResponse request with arbitrary body returning *VolunteersCreateResponse
+func (c *ClientWithResponses) VolunteersCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersCreateResponse, error) {
+	rsp, err := c.VolunteersCreateWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersCreateResponse(rsp)
+}
+
+func (c *ClientWithResponses) VolunteersCreateWithResponse(ctx context.Context, body VolunteersCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersCreateResponse, error) {
+	rsp, err := c.VolunteersCreate(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersCreateResponse(rsp)
+}
+
+// VolunteersCountWithResponse request returning *VolunteersCountResponse
+func (c *ClientWithResponses) VolunteersCountWithResponse(ctx context.Context, params *VolunteersCountParams, reqEditors ...RequestEditorFn) (*VolunteersCountResponse, error) {
+	rsp, err := c.VolunteersCount(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersCountResponse(rsp)
+}
+
+// VolunteersCsvExportWithResponse request returning *VolunteersCsvExportResponse
+func (c *ClientWithResponses) VolunteersCsvExportWithResponse(ctx context.Context, pType string, params *VolunteersCsvExportParams, reqEditors ...RequestEditorFn) (*VolunteersCsvExportResponse, error) {
+	rsp, err := c.VolunteersCsvExport(ctx, pType, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersCsvExportResponse(rsp)
+}
+
+// VolunteersDbTableRowFindOneWithResponse request returning *VolunteersDbTableRowFindOneResponse
+func (c *ClientWithResponses) VolunteersDbTableRowFindOneWithResponse(ctx context.Context, params *VolunteersDbTableRowFindOneParams, reqEditors ...RequestEditorFn) (*VolunteersDbTableRowFindOneResponse, error) {
+	rsp, err := c.VolunteersDbTableRowFindOne(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersDbTableRowFindOneResponse(rsp)
+}
+
+// VolunteersGroupbyWithResponse request returning *VolunteersGroupbyResponse
+func (c *ClientWithResponses) VolunteersGroupbyWithResponse(ctx context.Context, params *VolunteersGroupbyParams, reqEditors ...RequestEditorFn) (*VolunteersGroupbyResponse, error) {
+	rsp, err := c.VolunteersGroupby(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersGroupbyResponse(rsp)
+}
+
+// VolunteersGridRowListWithResponse request returning *VolunteersGridRowListResponse
+func (c *ClientWithResponses) VolunteersGridRowListWithResponse(ctx context.Context, params *VolunteersGridRowListParams, reqEditors ...RequestEditorFn) (*VolunteersGridRowListResponse, error) {
+	rsp, err := c.VolunteersGridRowList(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersGridRowListResponse(rsp)
+}
+
+// VolunteersGridRowCreateWithBodyWithResponse request with arbitrary body returning *VolunteersGridRowCreateResponse
+func (c *ClientWithResponses) VolunteersGridRowCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersGridRowCreateResponse, error) {
+	rsp, err := c.VolunteersGridRowCreateWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersGridRowCreateResponse(rsp)
+}
+
+func (c *ClientWithResponses) VolunteersGridRowCreateWithResponse(ctx context.Context, body VolunteersGridRowCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersGridRowCreateResponse, error) {
+	rsp, err := c.VolunteersGridRowCreate(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersGridRowCreateResponse(rsp)
+}
+
+// VolunteersGridRowCountWithResponse request returning *VolunteersGridRowCountResponse
+func (c *ClientWithResponses) VolunteersGridRowCountWithResponse(ctx context.Context, params *VolunteersGridRowCountParams, reqEditors ...RequestEditorFn) (*VolunteersGridRowCountResponse, error) {
+	rsp, err := c.VolunteersGridRowCount(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersGridRowCountResponse(rsp)
+}
+
+// VolunteersGridRowExportWithResponse request returning *VolunteersGridRowExportResponse
+func (c *ClientWithResponses) VolunteersGridRowExportWithResponse(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*VolunteersGridRowExportResponse, error) {
+	rsp, err := c.VolunteersGridRowExport(ctx, pType, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersGridRowExportResponse(rsp)
+}
+
+// VolunteersGridRowDeleteWithResponse request returning *VolunteersGridRowDeleteResponse
+func (c *ClientWithResponses) VolunteersGridRowDeleteWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*VolunteersGridRowDeleteResponse, error) {
+	rsp, err := c.VolunteersGridRowDelete(ctx, rowId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersGridRowDeleteResponse(rsp)
+}
+
+// VolunteersGridRowReadWithResponse request returning *VolunteersGridRowReadResponse
+func (c *ClientWithResponses) VolunteersGridRowReadWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*VolunteersGridRowReadResponse, error) {
+	rsp, err := c.VolunteersGridRowRead(ctx, rowId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersGridRowReadResponse(rsp)
+}
+
+// VolunteersGridRowUpdateWithBodyWithResponse request with arbitrary body returning *VolunteersGridRowUpdateResponse
+func (c *ClientWithResponses) VolunteersGridRowUpdateWithBodyWithResponse(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersGridRowUpdateResponse, error) {
+	rsp, err := c.VolunteersGridRowUpdateWithBody(ctx, rowId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersGridRowUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) VolunteersGridRowUpdateWithResponse(ctx context.Context, rowId string, body VolunteersGridRowUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersGridRowUpdateResponse, error) {
+	rsp, err := c.VolunteersGridRowUpdate(ctx, rowId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersGridRowUpdateResponse(rsp)
+}
+
+// VolunteersDeleteWithResponse request returning *VolunteersDeleteResponse
+func (c *ClientWithResponses) VolunteersDeleteWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*VolunteersDeleteResponse, error) {
+	rsp, err := c.VolunteersDelete(ctx, rowId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersDeleteResponse(rsp)
+}
+
+// VolunteersReadWithResponse request returning *VolunteersReadResponse
+func (c *ClientWithResponses) VolunteersReadWithResponse(ctx context.Context, rowId string, params *VolunteersReadParams, reqEditors ...RequestEditorFn) (*VolunteersReadResponse, error) {
+	rsp, err := c.VolunteersRead(ctx, rowId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersReadResponse(rsp)
+}
+
+// VolunteersUpdateWithBodyWithResponse request with arbitrary body returning *VolunteersUpdateResponse
+func (c *ClientWithResponses) VolunteersUpdateWithBodyWithResponse(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VolunteersUpdateResponse, error) {
+	rsp, err := c.VolunteersUpdateWithBody(ctx, rowId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) VolunteersUpdateWithResponse(ctx context.Context, rowId string, body VolunteersUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*VolunteersUpdateResponse, error) {
+	rsp, err := c.VolunteersUpdate(ctx, rowId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersUpdateResponse(rsp)
+}
+
+// VolunteersNestedListWithResponse request returning *VolunteersNestedListResponse
+func (c *ClientWithResponses) VolunteersNestedListWithResponse(ctx context.Context, rowId string, relationType string, columnName string, params *VolunteersNestedListParams, reqEditors ...RequestEditorFn) (*VolunteersNestedListResponse, error) {
+	rsp, err := c.VolunteersNestedList(ctx, rowId, relationType, columnName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersNestedListResponse(rsp)
+}
+
+// VolunteersNestedChildrenExcludedListWithResponse request returning *VolunteersNestedChildrenExcludedListResponse
+func (c *ClientWithResponses) VolunteersNestedChildrenExcludedListWithResponse(ctx context.Context, rowId string, relationType string, columnName string, params *VolunteersNestedChildrenExcludedListParams, reqEditors ...RequestEditorFn) (*VolunteersNestedChildrenExcludedListResponse, error) {
+	rsp, err := c.VolunteersNestedChildrenExcludedList(ctx, rowId, relationType, columnName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersNestedChildrenExcludedListResponse(rsp)
+}
+
+// VolunteersNestedRemoveWithResponse request returning *VolunteersNestedRemoveResponse
+func (c *ClientWithResponses) VolunteersNestedRemoveWithResponse(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, reqEditors ...RequestEditorFn) (*VolunteersNestedRemoveResponse, error) {
+	rsp, err := c.VolunteersNestedRemove(ctx, rowId, relationType, columnName, refRowId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersNestedRemoveResponse(rsp)
+}
+
+// VolunteersNestedAddWithResponse request returning *VolunteersNestedAddResponse
+func (c *ClientWithResponses) VolunteersNestedAddWithResponse(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, params *VolunteersNestedAddParams, reqEditors ...RequestEditorFn) (*VolunteersNestedAddResponse, error) {
+	rsp, err := c.VolunteersNestedAdd(ctx, rowId, relationType, columnName, refRowId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseVolunteersNestedAddResponse(rsp)
+}
+
+// CommunicationoneventsDbTableRowListWithResponse request returning *CommunicationoneventsDbTableRowListResponse
+func (c *ClientWithResponses) CommunicationoneventsDbTableRowListWithResponse(ctx context.Context, params *CommunicationoneventsDbTableRowListParams, reqEditors ...RequestEditorFn) (*CommunicationoneventsDbTableRowListResponse, error) {
+	rsp, err := c.CommunicationoneventsDbTableRowList(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationoneventsDbTableRowListResponse(rsp)
+}
+
+// CommunicationoneventsCreateWithBodyWithResponse request with arbitrary body returning *CommunicationoneventsCreateResponse
+func (c *ClientWithResponses) CommunicationoneventsCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommunicationoneventsCreateResponse, error) {
+	rsp, err := c.CommunicationoneventsCreateWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationoneventsCreateResponse(rsp)
+}
+
+func (c *ClientWithResponses) CommunicationoneventsCreateWithResponse(ctx context.Context, body CommunicationoneventsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommunicationoneventsCreateResponse, error) {
+	rsp, err := c.CommunicationoneventsCreate(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationoneventsCreateResponse(rsp)
+}
+
+// CommunicationoneventsCountWithResponse request returning *CommunicationoneventsCountResponse
+func (c *ClientWithResponses) CommunicationoneventsCountWithResponse(ctx context.Context, params *CommunicationoneventsCountParams, reqEditors ...RequestEditorFn) (*CommunicationoneventsCountResponse, error) {
+	rsp, err := c.CommunicationoneventsCount(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationoneventsCountResponse(rsp)
+}
+
+// CommunicationoneventsCsvExportWithResponse request returning *CommunicationoneventsCsvExportResponse
+func (c *ClientWithResponses) CommunicationoneventsCsvExportWithResponse(ctx context.Context, pType string, params *CommunicationoneventsCsvExportParams, reqEditors ...RequestEditorFn) (*CommunicationoneventsCsvExportResponse, error) {
+	rsp, err := c.CommunicationoneventsCsvExport(ctx, pType, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationoneventsCsvExportResponse(rsp)
+}
+
+// CommunicationoneventsDbTableRowFindOneWithResponse request returning *CommunicationoneventsDbTableRowFindOneResponse
+func (c *ClientWithResponses) CommunicationoneventsDbTableRowFindOneWithResponse(ctx context.Context, params *CommunicationoneventsDbTableRowFindOneParams, reqEditors ...RequestEditorFn) (*CommunicationoneventsDbTableRowFindOneResponse, error) {
+	rsp, err := c.CommunicationoneventsDbTableRowFindOne(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationoneventsDbTableRowFindOneResponse(rsp)
+}
+
+// CommunicationoneventsGroupbyWithResponse request returning *CommunicationoneventsGroupbyResponse
+func (c *ClientWithResponses) CommunicationoneventsGroupbyWithResponse(ctx context.Context, params *CommunicationoneventsGroupbyParams, reqEditors ...RequestEditorFn) (*CommunicationoneventsGroupbyResponse, error) {
+	rsp, err := c.CommunicationoneventsGroupby(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationoneventsGroupbyResponse(rsp)
+}
+
+// CommunicationOnEventsCommunicationOnEventsRowListWithResponse request returning *CommunicationOnEventsCommunicationOnEventsRowListResponse
+func (c *ClientWithResponses) CommunicationOnEventsCommunicationOnEventsRowListWithResponse(ctx context.Context, params *CommunicationOnEventsCommunicationOnEventsRowListParams, reqEditors ...RequestEditorFn) (*CommunicationOnEventsCommunicationOnEventsRowListResponse, error) {
+	rsp, err := c.CommunicationOnEventsCommunicationOnEventsRowList(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationOnEventsCommunicationOnEventsRowListResponse(rsp)
+}
+
+// CommunicationOnEventsCommunicationOnEventsRowCreateWithBodyWithResponse request with arbitrary body returning *CommunicationOnEventsCommunicationOnEventsRowCreateResponse
+func (c *ClientWithResponses) CommunicationOnEventsCommunicationOnEventsRowCreateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommunicationOnEventsCommunicationOnEventsRowCreateResponse, error) {
+	rsp, err := c.CommunicationOnEventsCommunicationOnEventsRowCreateWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationOnEventsCommunicationOnEventsRowCreateResponse(rsp)
+}
+
+func (c *ClientWithResponses) CommunicationOnEventsCommunicationOnEventsRowCreateWithResponse(ctx context.Context, body CommunicationOnEventsCommunicationOnEventsRowCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommunicationOnEventsCommunicationOnEventsRowCreateResponse, error) {
+	rsp, err := c.CommunicationOnEventsCommunicationOnEventsRowCreate(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationOnEventsCommunicationOnEventsRowCreateResponse(rsp)
+}
+
+// CommunicationOnEventsCommunicationOnEventsRowCountWithResponse request returning *CommunicationOnEventsCommunicationOnEventsRowCountResponse
+func (c *ClientWithResponses) CommunicationOnEventsCommunicationOnEventsRowCountWithResponse(ctx context.Context, params *CommunicationOnEventsCommunicationOnEventsRowCountParams, reqEditors ...RequestEditorFn) (*CommunicationOnEventsCommunicationOnEventsRowCountResponse, error) {
+	rsp, err := c.CommunicationOnEventsCommunicationOnEventsRowCount(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationOnEventsCommunicationOnEventsRowCountResponse(rsp)
+}
+
+// CommunicationOnEventsCommunicationOnEventsRowExportWithResponse request returning *CommunicationOnEventsCommunicationOnEventsRowExportResponse
+func (c *ClientWithResponses) CommunicationOnEventsCommunicationOnEventsRowExportWithResponse(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*CommunicationOnEventsCommunicationOnEventsRowExportResponse, error) {
+	rsp, err := c.CommunicationOnEventsCommunicationOnEventsRowExport(ctx, pType, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationOnEventsCommunicationOnEventsRowExportResponse(rsp)
+}
+
+// CommunicationOnEventsCommunicationOnEventsRowDeleteWithResponse request returning *CommunicationOnEventsCommunicationOnEventsRowDeleteResponse
+func (c *ClientWithResponses) CommunicationOnEventsCommunicationOnEventsRowDeleteWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*CommunicationOnEventsCommunicationOnEventsRowDeleteResponse, error) {
+	rsp, err := c.CommunicationOnEventsCommunicationOnEventsRowDelete(ctx, rowId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationOnEventsCommunicationOnEventsRowDeleteResponse(rsp)
+}
+
+// CommunicationOnEventsCommunicationOnEventsRowReadWithResponse request returning *CommunicationOnEventsCommunicationOnEventsRowReadResponse
+func (c *ClientWithResponses) CommunicationOnEventsCommunicationOnEventsRowReadWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*CommunicationOnEventsCommunicationOnEventsRowReadResponse, error) {
+	rsp, err := c.CommunicationOnEventsCommunicationOnEventsRowRead(ctx, rowId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationOnEventsCommunicationOnEventsRowReadResponse(rsp)
+}
+
+// CommunicationOnEventsCommunicationOnEventsRowUpdateWithBodyWithResponse request with arbitrary body returning *CommunicationOnEventsCommunicationOnEventsRowUpdateResponse
+func (c *ClientWithResponses) CommunicationOnEventsCommunicationOnEventsRowUpdateWithBodyWithResponse(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommunicationOnEventsCommunicationOnEventsRowUpdateResponse, error) {
+	rsp, err := c.CommunicationOnEventsCommunicationOnEventsRowUpdateWithBody(ctx, rowId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationOnEventsCommunicationOnEventsRowUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) CommunicationOnEventsCommunicationOnEventsRowUpdateWithResponse(ctx context.Context, rowId string, body CommunicationOnEventsCommunicationOnEventsRowUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommunicationOnEventsCommunicationOnEventsRowUpdateResponse, error) {
+	rsp, err := c.CommunicationOnEventsCommunicationOnEventsRowUpdate(ctx, rowId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationOnEventsCommunicationOnEventsRowUpdateResponse(rsp)
+}
+
+// CommunicationoneventsDeleteWithResponse request returning *CommunicationoneventsDeleteResponse
+func (c *ClientWithResponses) CommunicationoneventsDeleteWithResponse(ctx context.Context, rowId string, reqEditors ...RequestEditorFn) (*CommunicationoneventsDeleteResponse, error) {
+	rsp, err := c.CommunicationoneventsDelete(ctx, rowId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationoneventsDeleteResponse(rsp)
+}
+
+// CommunicationoneventsReadWithResponse request returning *CommunicationoneventsReadResponse
+func (c *ClientWithResponses) CommunicationoneventsReadWithResponse(ctx context.Context, rowId string, params *CommunicationoneventsReadParams, reqEditors ...RequestEditorFn) (*CommunicationoneventsReadResponse, error) {
+	rsp, err := c.CommunicationoneventsRead(ctx, rowId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationoneventsReadResponse(rsp)
+}
+
+// CommunicationoneventsUpdateWithBodyWithResponse request with arbitrary body returning *CommunicationoneventsUpdateResponse
+func (c *ClientWithResponses) CommunicationoneventsUpdateWithBodyWithResponse(ctx context.Context, rowId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommunicationoneventsUpdateResponse, error) {
+	rsp, err := c.CommunicationoneventsUpdateWithBody(ctx, rowId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationoneventsUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) CommunicationoneventsUpdateWithResponse(ctx context.Context, rowId string, body CommunicationoneventsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*CommunicationoneventsUpdateResponse, error) {
+	rsp, err := c.CommunicationoneventsUpdate(ctx, rowId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationoneventsUpdateResponse(rsp)
+}
+
+// CommunicationoneventsNestedListWithResponse request returning *CommunicationoneventsNestedListResponse
+func (c *ClientWithResponses) CommunicationoneventsNestedListWithResponse(ctx context.Context, rowId string, relationType string, columnName string, params *CommunicationoneventsNestedListParams, reqEditors ...RequestEditorFn) (*CommunicationoneventsNestedListResponse, error) {
+	rsp, err := c.CommunicationoneventsNestedList(ctx, rowId, relationType, columnName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationoneventsNestedListResponse(rsp)
+}
+
+// CommunicationoneventsNestedChildrenExcludedListWithResponse request returning *CommunicationoneventsNestedChildrenExcludedListResponse
+func (c *ClientWithResponses) CommunicationoneventsNestedChildrenExcludedListWithResponse(ctx context.Context, rowId string, relationType string, columnName string, params *CommunicationoneventsNestedChildrenExcludedListParams, reqEditors ...RequestEditorFn) (*CommunicationoneventsNestedChildrenExcludedListResponse, error) {
+	rsp, err := c.CommunicationoneventsNestedChildrenExcludedList(ctx, rowId, relationType, columnName, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationoneventsNestedChildrenExcludedListResponse(rsp)
+}
+
+// CommunicationoneventsNestedRemoveWithResponse request returning *CommunicationoneventsNestedRemoveResponse
+func (c *ClientWithResponses) CommunicationoneventsNestedRemoveWithResponse(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, reqEditors ...RequestEditorFn) (*CommunicationoneventsNestedRemoveResponse, error) {
+	rsp, err := c.CommunicationoneventsNestedRemove(ctx, rowId, relationType, columnName, refRowId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationoneventsNestedRemoveResponse(rsp)
+}
+
+// CommunicationoneventsNestedAddWithResponse request returning *CommunicationoneventsNestedAddResponse
+func (c *ClientWithResponses) CommunicationoneventsNestedAddWithResponse(ctx context.Context, rowId string, relationType string, columnName string, refRowId string, params *CommunicationoneventsNestedAddParams, reqEditors ...RequestEditorFn) (*CommunicationoneventsNestedAddResponse, error) {
+	rsp, err := c.CommunicationoneventsNestedAdd(ctx, rowId, relationType, columnName, refRowId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCommunicationoneventsNestedAddResponse(rsp)
+}
+
+// ParseBoteventsBulkDeleteResponse parses an HTTP response from a BoteventsBulkDeleteWithResponse call
+func ParseBoteventsBulkDeleteResponse(rsp *http.Response) (*BoteventsBulkDeleteResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &VolunteersBulkDeleteResponse{
+	response := &BoteventsBulkDeleteResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -9127,15 +13372,15 @@ func ParseVolunteersBulkDeleteResponse(rsp *http.Response) (*VolunteersBulkDelet
 	return response, nil
 }
 
-// ParseVolunteersBulkUpdateResponse parses an HTTP response from a VolunteersBulkUpdateWithResponse call
-func ParseVolunteersBulkUpdateResponse(rsp *http.Response) (*VolunteersBulkUpdateResponse, error) {
+// ParseBoteventsBulkUpdateResponse parses an HTTP response from a BoteventsBulkUpdateWithResponse call
+func ParseBoteventsBulkUpdateResponse(rsp *http.Response) (*BoteventsBulkUpdateResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &VolunteersBulkUpdateResponse{
+	response := &BoteventsBulkUpdateResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -9153,15 +13398,15 @@ func ParseVolunteersBulkUpdateResponse(rsp *http.Response) (*VolunteersBulkUpdat
 	return response, nil
 }
 
-// ParseVolunteersBulkCreateResponse parses an HTTP response from a VolunteersBulkCreateWithResponse call
-func ParseVolunteersBulkCreateResponse(rsp *http.Response) (*VolunteersBulkCreateResponse, error) {
+// ParseBoteventsBulkCreateResponse parses an HTTP response from a BoteventsBulkCreateWithResponse call
+func ParseBoteventsBulkCreateResponse(rsp *http.Response) (*BoteventsBulkCreateResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &VolunteersBulkCreateResponse{
+	response := &BoteventsBulkCreateResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -9179,15 +13424,15 @@ func ParseVolunteersBulkCreateResponse(rsp *http.Response) (*VolunteersBulkCreat
 	return response, nil
 }
 
-// ParseVolunteersBulkDeleteAllResponse parses an HTTP response from a VolunteersBulkDeleteAllWithResponse call
-func ParseVolunteersBulkDeleteAllResponse(rsp *http.Response) (*VolunteersBulkDeleteAllResponse, error) {
+// ParseBoteventsBulkDeleteAllResponse parses an HTTP response from a BoteventsBulkDeleteAllWithResponse call
+func ParseBoteventsBulkDeleteAllResponse(rsp *http.Response) (*BoteventsBulkDeleteAllResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &VolunteersBulkDeleteAllResponse{
+	response := &BoteventsBulkDeleteAllResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -9205,145 +13450,15 @@ func ParseVolunteersBulkDeleteAllResponse(rsp *http.Response) (*VolunteersBulkDe
 	return response, nil
 }
 
-// ParseVolunteersBulkUpdateAllResponse parses an HTTP response from a VolunteersBulkUpdateAllWithResponse call
-func ParseVolunteersBulkUpdateAllResponse(rsp *http.Response) (*VolunteersBulkUpdateAllResponse, error) {
+// ParseBoteventsBulkUpdateAllResponse parses an HTTP response from a BoteventsBulkUpdateAllWithResponse call
+func ParseBoteventsBulkUpdateAllResponse(rsp *http.Response) (*BoteventsBulkUpdateAllResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &VolunteersBulkUpdateAllResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseCommEventsBulkDeleteResponse parses an HTTP response from a CommEventsBulkDeleteWithResponse call
-func ParseCommEventsBulkDeleteResponse(rsp *http.Response) (*CommEventsBulkDeleteResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CommEventsBulkDeleteResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseCommEventsBulkUpdateResponse parses an HTTP response from a CommEventsBulkUpdateWithResponse call
-func ParseCommEventsBulkUpdateResponse(rsp *http.Response) (*CommEventsBulkUpdateResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CommEventsBulkUpdateResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseCommEventsBulkCreateResponse parses an HTTP response from a CommEventsBulkCreateWithResponse call
-func ParseCommEventsBulkCreateResponse(rsp *http.Response) (*CommEventsBulkCreateResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CommEventsBulkCreateResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseCommEventsBulkDeleteAllResponse parses an HTTP response from a CommEventsBulkDeleteAllWithResponse call
-func ParseCommEventsBulkDeleteAllResponse(rsp *http.Response) (*CommEventsBulkDeleteAllResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CommEventsBulkDeleteAllResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseCommEventsBulkUpdateAllResponse parses an HTTP response from a CommEventsBulkUpdateAllWithResponse call
-func ParseCommEventsBulkUpdateAllResponse(rsp *http.Response) (*CommEventsBulkUpdateAllResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CommEventsBulkUpdateAllResponse{
+	response := &BoteventsBulkUpdateAllResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -9491,15 +13606,275 @@ func ParseEventsBulkUpdateAllResponse(rsp *http.Response) (*EventsBulkUpdateAllR
 	return response, nil
 }
 
-// ParseVolunteersDbTableRowListResponse parses an HTTP response from a VolunteersDbTableRowListWithResponse call
-func ParseVolunteersDbTableRowListResponse(rsp *http.Response) (*VolunteersDbTableRowListResponse, error) {
+// ParseVolunteersBulkDeleteResponse parses an HTTP response from a VolunteersBulkDeleteWithResponse call
+func ParseVolunteersBulkDeleteResponse(rsp *http.Response) (*VolunteersBulkDeleteResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &VolunteersDbTableRowListResponse{
+	response := &VolunteersBulkDeleteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersBulkUpdateResponse parses an HTTP response from a VolunteersBulkUpdateWithResponse call
+func ParseVolunteersBulkUpdateResponse(rsp *http.Response) (*VolunteersBulkUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersBulkUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersBulkCreateResponse parses an HTTP response from a VolunteersBulkCreateWithResponse call
+func ParseVolunteersBulkCreateResponse(rsp *http.Response) (*VolunteersBulkCreateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersBulkCreateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersBulkDeleteAllResponse parses an HTTP response from a VolunteersBulkDeleteAllWithResponse call
+func ParseVolunteersBulkDeleteAllResponse(rsp *http.Response) (*VolunteersBulkDeleteAllResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersBulkDeleteAllResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersBulkUpdateAllResponse parses an HTTP response from a VolunteersBulkUpdateAllWithResponse call
+func ParseVolunteersBulkUpdateAllResponse(rsp *http.Response) (*VolunteersBulkUpdateAllResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersBulkUpdateAllResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationoneventsBulkDeleteResponse parses an HTTP response from a CommunicationoneventsBulkDeleteWithResponse call
+func ParseCommunicationoneventsBulkDeleteResponse(rsp *http.Response) (*CommunicationoneventsBulkDeleteResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationoneventsBulkDeleteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationoneventsBulkUpdateResponse parses an HTTP response from a CommunicationoneventsBulkUpdateWithResponse call
+func ParseCommunicationoneventsBulkUpdateResponse(rsp *http.Response) (*CommunicationoneventsBulkUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationoneventsBulkUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationoneventsBulkCreateResponse parses an HTTP response from a CommunicationoneventsBulkCreateWithResponse call
+func ParseCommunicationoneventsBulkCreateResponse(rsp *http.Response) (*CommunicationoneventsBulkCreateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationoneventsBulkCreateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationoneventsBulkDeleteAllResponse parses an HTTP response from a CommunicationoneventsBulkDeleteAllWithResponse call
+func ParseCommunicationoneventsBulkDeleteAllResponse(rsp *http.Response) (*CommunicationoneventsBulkDeleteAllResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationoneventsBulkDeleteAllResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationoneventsBulkUpdateAllResponse parses an HTTP response from a CommunicationoneventsBulkUpdateAllWithResponse call
+func ParseCommunicationoneventsBulkUpdateAllResponse(rsp *http.Response) (*CommunicationoneventsBulkUpdateAllResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationoneventsBulkUpdateAllResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBoteventsDbTableRowListResponse parses an HTTP response from a BoteventsDbTableRowListWithResponse call
+func ParseBoteventsDbTableRowListResponse(rsp *http.Response) (*BoteventsDbTableRowListResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BoteventsDbTableRowListResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -9507,8 +13882,8 @@ func ParseVolunteersDbTableRowListResponse(rsp *http.Response) (*VolunteersDbTab
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			PageInfo *Paginated            `json:"PageInfo,omitempty"`
-			List     *[]VolunteersResponse `json:"list,omitempty"`
+			PageInfo *Paginated           `json:"PageInfo,omitempty"`
+			List     *[]BotEventsResponse `json:"list,omitempty"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -9520,22 +13895,22 @@ func ParseVolunteersDbTableRowListResponse(rsp *http.Response) (*VolunteersDbTab
 	return response, nil
 }
 
-// ParseVolunteersCreateResponse parses an HTTP response from a VolunteersCreateWithResponse call
-func ParseVolunteersCreateResponse(rsp *http.Response) (*VolunteersCreateResponse, error) {
+// ParseBoteventsCreateResponse parses an HTTP response from a BoteventsCreateWithResponse call
+func ParseBoteventsCreateResponse(rsp *http.Response) (*BoteventsCreateResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &VolunteersCreateResponse{
+	response := &BoteventsCreateResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest VolunteersResponse
+		var dest BotEventsResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -9546,141 +13921,15 @@ func ParseVolunteersCreateResponse(rsp *http.Response) (*VolunteersCreateRespons
 	return response, nil
 }
 
-// ParseVolunteersCountResponse parses an HTTP response from a VolunteersCountWithResponse call
-func ParseVolunteersCountResponse(rsp *http.Response) (*VolunteersCountResponse, error) {
+// ParseBoteventsCountResponse parses an HTTP response from a BoteventsCountWithResponse call
+func ParseBoteventsCountResponse(rsp *http.Response) (*BoteventsCountResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &VolunteersCountResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseVolunteersCsvExportResponse parses an HTTP response from a VolunteersCsvExportWithResponse call
-func ParseVolunteersCsvExportResponse(rsp *http.Response) (*VolunteersCsvExportResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &VolunteersCsvExportResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseVolunteersDbTableRowFindOneResponse parses an HTTP response from a VolunteersDbTableRowFindOneWithResponse call
-func ParseVolunteersDbTableRowFindOneResponse(rsp *http.Response) (*VolunteersDbTableRowFindOneResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &VolunteersDbTableRowFindOneResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest VolunteersResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseVolunteersGroupbyResponse parses an HTTP response from a VolunteersGroupbyWithResponse call
-func ParseVolunteersGroupbyResponse(rsp *http.Response) (*VolunteersGroupbyResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &VolunteersGroupbyResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			PageInfo *Paginated `json:"PageInfo,omitempty"`
-			List     *[]Groupby `json:"list,omitempty"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseVolunteersVolunteersRowListResponse parses an HTTP response from a VolunteersVolunteersRowListWithResponse call
-func ParseVolunteersVolunteersRowListResponse(rsp *http.Response) (*VolunteersVolunteersRowListResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &VolunteersVolunteersRowListResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			PageInfo *Paginated                          `json:"PageInfo,omitempty"`
-			List     *[]VolunteersVolunteersGridResponse `json:"list,omitempty"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseVolunteersVolunteersRowCreateResponse parses an HTTP response from a VolunteersVolunteersRowCreateWithResponse call
-func ParseVolunteersVolunteersRowCreateResponse(rsp *http.Response) (*VolunteersVolunteersRowCreateResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &VolunteersVolunteersRowCreateResponse{
+	response := &BoteventsCountResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -9698,24 +13947,38 @@ func ParseVolunteersVolunteersRowCreateResponse(rsp *http.Response) (*Volunteers
 	return response, nil
 }
 
-// ParseVolunteersVolunteersRowCountResponse parses an HTTP response from a VolunteersVolunteersRowCountWithResponse call
-func ParseVolunteersVolunteersRowCountResponse(rsp *http.Response) (*VolunteersVolunteersRowCountResponse, error) {
+// ParseBoteventsCsvExportResponse parses an HTTP response from a BoteventsCsvExportWithResponse call
+func ParseBoteventsCsvExportResponse(rsp *http.Response) (*BoteventsCsvExportResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &VolunteersVolunteersRowCountResponse{
+	response := &BoteventsCsvExportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBoteventsDbTableRowFindOneResponse parses an HTTP response from a BoteventsDbTableRowFindOneWithResponse call
+func ParseBoteventsDbTableRowFindOneResponse(rsp *http.Response) (*BoteventsDbTableRowFindOneResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BoteventsDbTableRowFindOneResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Count *float32 `json:"count,omitempty"`
-		}
+		var dest BotEventsResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -9726,394 +13989,15 @@ func ParseVolunteersVolunteersRowCountResponse(rsp *http.Response) (*VolunteersV
 	return response, nil
 }
 
-// ParseVolunteersVolunteersRowExportResponse parses an HTTP response from a VolunteersVolunteersRowExportWithResponse call
-func ParseVolunteersVolunteersRowExportResponse(rsp *http.Response) (*VolunteersVolunteersRowExportResponse, error) {
+// ParseBoteventsGroupbyResponse parses an HTTP response from a BoteventsGroupbyWithResponse call
+func ParseBoteventsGroupbyResponse(rsp *http.Response) (*BoteventsGroupbyResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &VolunteersVolunteersRowExportResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseVolunteersVolunteersRowDeleteResponse parses an HTTP response from a VolunteersVolunteersRowDeleteWithResponse call
-func ParseVolunteersVolunteersRowDeleteResponse(rsp *http.Response) (*VolunteersVolunteersRowDeleteResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &VolunteersVolunteersRowDeleteResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseVolunteersVolunteersRowReadResponse parses an HTTP response from a VolunteersVolunteersRowReadWithResponse call
-func ParseVolunteersVolunteersRowReadResponse(rsp *http.Response) (*VolunteersVolunteersRowReadResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &VolunteersVolunteersRowReadResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest VolunteersVolunteersGridResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseVolunteersVolunteersRowUpdateResponse parses an HTTP response from a VolunteersVolunteersRowUpdateWithResponse call
-func ParseVolunteersVolunteersRowUpdateResponse(rsp *http.Response) (*VolunteersVolunteersRowUpdateResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &VolunteersVolunteersRowUpdateResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseVolunteersDeleteResponse parses an HTTP response from a VolunteersDeleteWithResponse call
-func ParseVolunteersDeleteResponse(rsp *http.Response) (*VolunteersDeleteResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &VolunteersDeleteResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseVolunteersReadResponse parses an HTTP response from a VolunteersReadWithResponse call
-func ParseVolunteersReadResponse(rsp *http.Response) (*VolunteersReadResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &VolunteersReadResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest VolunteersResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON201 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseVolunteersUpdateResponse parses an HTTP response from a VolunteersUpdateWithResponse call
-func ParseVolunteersUpdateResponse(rsp *http.Response) (*VolunteersUpdateResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &VolunteersUpdateResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest VolunteersRequest
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseVolunteersNestedListResponse parses an HTTP response from a VolunteersNestedListWithResponse call
-func ParseVolunteersNestedListResponse(rsp *http.Response) (*VolunteersNestedListResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &VolunteersNestedListResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseVolunteersNestedChildrenExcludedListResponse parses an HTTP response from a VolunteersNestedChildrenExcludedListWithResponse call
-func ParseVolunteersNestedChildrenExcludedListResponse(rsp *http.Response) (*VolunteersNestedChildrenExcludedListResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &VolunteersNestedChildrenExcludedListResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseVolunteersNestedRemoveResponse parses an HTTP response from a VolunteersNestedRemoveWithResponse call
-func ParseVolunteersNestedRemoveResponse(rsp *http.Response) (*VolunteersNestedRemoveResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &VolunteersNestedRemoveResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseVolunteersNestedAddResponse parses an HTTP response from a VolunteersNestedAddWithResponse call
-func ParseVolunteersNestedAddResponse(rsp *http.Response) (*VolunteersNestedAddResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &VolunteersNestedAddResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseCommEventsDbTableRowListResponse parses an HTTP response from a CommEventsDbTableRowListWithResponse call
-func ParseCommEventsDbTableRowListResponse(rsp *http.Response) (*CommEventsDbTableRowListResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CommEventsDbTableRowListResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			PageInfo *Paginated            `json:"PageInfo,omitempty"`
-			List     *[]CommEventsResponse `json:"list,omitempty"`
-		}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseCommEventsCreateResponse parses an HTTP response from a CommEventsCreateWithResponse call
-func ParseCommEventsCreateResponse(rsp *http.Response) (*CommEventsCreateResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CommEventsCreateResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest CommEventsResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseCommEventsCountResponse parses an HTTP response from a CommEventsCountWithResponse call
-func ParseCommEventsCountResponse(rsp *http.Response) (*CommEventsCountResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CommEventsCountResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseCommEventsCsvExportResponse parses an HTTP response from a CommEventsCsvExportWithResponse call
-func ParseCommEventsCsvExportResponse(rsp *http.Response) (*CommEventsCsvExportResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CommEventsCsvExportResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseCommEventsDbTableRowFindOneResponse parses an HTTP response from a CommEventsDbTableRowFindOneWithResponse call
-func ParseCommEventsDbTableRowFindOneResponse(rsp *http.Response) (*CommEventsDbTableRowFindOneResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CommEventsDbTableRowFindOneResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest CommEventsResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseCommEventsGroupbyResponse parses an HTTP response from a CommEventsGroupbyWithResponse call
-func ParseCommEventsGroupbyResponse(rsp *http.Response) (*CommEventsGroupbyResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CommEventsGroupbyResponse{
+	response := &BoteventsGroupbyResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -10134,15 +14018,15 @@ func ParseCommEventsGroupbyResponse(rsp *http.Response) (*CommEventsGroupbyRespo
 	return response, nil
 }
 
-// ParseCommEventsCommEventsRowListResponse parses an HTTP response from a CommEventsCommEventsRowListWithResponse call
-func ParseCommEventsCommEventsRowListResponse(rsp *http.Response) (*CommEventsCommEventsRowListResponse, error) {
+// ParseBotEventsBotEventsRowListResponse parses an HTTP response from a BotEventsBotEventsRowListWithResponse call
+func ParseBotEventsBotEventsRowListResponse(rsp *http.Response) (*BotEventsBotEventsRowListResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &CommEventsCommEventsRowListResponse{
+	response := &BotEventsBotEventsRowListResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -10150,8 +14034,8 @@ func ParseCommEventsCommEventsRowListResponse(rsp *http.Response) (*CommEventsCo
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			PageInfo *Paginated                          `json:"PageInfo,omitempty"`
-			List     *[]CommEventscommEventsGridResponse `json:"list,omitempty"`
+			PageInfo *Paginated                        `json:"PageInfo,omitempty"`
+			List     *[]BotEventsBotEventsGridResponse `json:"list,omitempty"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -10163,15 +14047,15 @@ func ParseCommEventsCommEventsRowListResponse(rsp *http.Response) (*CommEventsCo
 	return response, nil
 }
 
-// ParseCommEventsCommEventsRowCreateResponse parses an HTTP response from a CommEventsCommEventsRowCreateWithResponse call
-func ParseCommEventsCommEventsRowCreateResponse(rsp *http.Response) (*CommEventsCommEventsRowCreateResponse, error) {
+// ParseBotEventsBotEventsRowCreateResponse parses an HTTP response from a BotEventsBotEventsRowCreateWithResponse call
+func ParseBotEventsBotEventsRowCreateResponse(rsp *http.Response) (*BotEventsBotEventsRowCreateResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &CommEventsCommEventsRowCreateResponse{
+	response := &BotEventsBotEventsRowCreateResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -10189,15 +14073,15 @@ func ParseCommEventsCommEventsRowCreateResponse(rsp *http.Response) (*CommEvents
 	return response, nil
 }
 
-// ParseCommEventsCommEventsRowCountResponse parses an HTTP response from a CommEventsCommEventsRowCountWithResponse call
-func ParseCommEventsCommEventsRowCountResponse(rsp *http.Response) (*CommEventsCommEventsRowCountResponse, error) {
+// ParseBotEventsBotEventsRowCountResponse parses an HTTP response from a BotEventsBotEventsRowCountWithResponse call
+func ParseBotEventsBotEventsRowCountResponse(rsp *http.Response) (*BotEventsBotEventsRowCountResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &CommEventsCommEventsRowCountResponse{
+	response := &BotEventsBotEventsRowCountResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -10217,15 +14101,15 @@ func ParseCommEventsCommEventsRowCountResponse(rsp *http.Response) (*CommEventsC
 	return response, nil
 }
 
-// ParseCommEventsCommEventsRowExportResponse parses an HTTP response from a CommEventsCommEventsRowExportWithResponse call
-func ParseCommEventsCommEventsRowExportResponse(rsp *http.Response) (*CommEventsCommEventsRowExportResponse, error) {
+// ParseBotEventsBotEventsRowExportResponse parses an HTTP response from a BotEventsBotEventsRowExportWithResponse call
+func ParseBotEventsBotEventsRowExportResponse(rsp *http.Response) (*BotEventsBotEventsRowExportResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &CommEventsCommEventsRowExportResponse{
+	response := &BotEventsBotEventsRowExportResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -10233,15 +14117,15 @@ func ParseCommEventsCommEventsRowExportResponse(rsp *http.Response) (*CommEvents
 	return response, nil
 }
 
-// ParseCommEventsCommEventsRowDeleteResponse parses an HTTP response from a CommEventsCommEventsRowDeleteWithResponse call
-func ParseCommEventsCommEventsRowDeleteResponse(rsp *http.Response) (*CommEventsCommEventsRowDeleteResponse, error) {
+// ParseBotEventsBotEventsRowDeleteResponse parses an HTTP response from a BotEventsBotEventsRowDeleteWithResponse call
+func ParseBotEventsBotEventsRowDeleteResponse(rsp *http.Response) (*BotEventsBotEventsRowDeleteResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &CommEventsCommEventsRowDeleteResponse{
+	response := &BotEventsBotEventsRowDeleteResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -10249,22 +14133,22 @@ func ParseCommEventsCommEventsRowDeleteResponse(rsp *http.Response) (*CommEvents
 	return response, nil
 }
 
-// ParseCommEventsCommEventsRowReadResponse parses an HTTP response from a CommEventsCommEventsRowReadWithResponse call
-func ParseCommEventsCommEventsRowReadResponse(rsp *http.Response) (*CommEventsCommEventsRowReadResponse, error) {
+// ParseBotEventsBotEventsRowReadResponse parses an HTTP response from a BotEventsBotEventsRowReadWithResponse call
+func ParseBotEventsBotEventsRowReadResponse(rsp *http.Response) (*BotEventsBotEventsRowReadResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &CommEventsCommEventsRowReadResponse{
+	response := &BotEventsBotEventsRowReadResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest CommEventscommEventsGridResponse
+		var dest BotEventsBotEventsGridResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -10275,15 +14159,15 @@ func ParseCommEventsCommEventsRowReadResponse(rsp *http.Response) (*CommEventsCo
 	return response, nil
 }
 
-// ParseCommEventsCommEventsRowUpdateResponse parses an HTTP response from a CommEventsCommEventsRowUpdateWithResponse call
-func ParseCommEventsCommEventsRowUpdateResponse(rsp *http.Response) (*CommEventsCommEventsRowUpdateResponse, error) {
+// ParseBotEventsBotEventsRowUpdateResponse parses an HTTP response from a BotEventsBotEventsRowUpdateWithResponse call
+func ParseBotEventsBotEventsRowUpdateResponse(rsp *http.Response) (*BotEventsBotEventsRowUpdateResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &CommEventsCommEventsRowUpdateResponse{
+	response := &BotEventsBotEventsRowUpdateResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -10301,15 +14185,15 @@ func ParseCommEventsCommEventsRowUpdateResponse(rsp *http.Response) (*CommEvents
 	return response, nil
 }
 
-// ParseCommEventsDeleteResponse parses an HTTP response from a CommEventsDeleteWithResponse call
-func ParseCommEventsDeleteResponse(rsp *http.Response) (*CommEventsDeleteResponse, error) {
+// ParseBoteventsDeleteResponse parses an HTTP response from a BoteventsDeleteWithResponse call
+func ParseBoteventsDeleteResponse(rsp *http.Response) (*BoteventsDeleteResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &CommEventsDeleteResponse{
+	response := &BoteventsDeleteResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -10317,22 +14201,22 @@ func ParseCommEventsDeleteResponse(rsp *http.Response) (*CommEventsDeleteRespons
 	return response, nil
 }
 
-// ParseCommEventsReadResponse parses an HTTP response from a CommEventsReadWithResponse call
-func ParseCommEventsReadResponse(rsp *http.Response) (*CommEventsReadResponse, error) {
+// ParseBoteventsReadResponse parses an HTTP response from a BoteventsReadWithResponse call
+func ParseBoteventsReadResponse(rsp *http.Response) (*BoteventsReadResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &CommEventsReadResponse{
+	response := &BoteventsReadResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest CommEventsResponse
+		var dest BotEventsResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -10343,22 +14227,126 @@ func ParseCommEventsReadResponse(rsp *http.Response) (*CommEventsReadResponse, e
 	return response, nil
 }
 
-// ParseCommEventsUpdateResponse parses an HTTP response from a CommEventsUpdateWithResponse call
-func ParseCommEventsUpdateResponse(rsp *http.Response) (*CommEventsUpdateResponse, error) {
+// ParseBoteventsUpdateResponse parses an HTTP response from a BoteventsUpdateWithResponse call
+func ParseBoteventsUpdateResponse(rsp *http.Response) (*BoteventsUpdateResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &CommEventsUpdateResponse{
+	response := &BoteventsUpdateResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest CommEventsRequest
+		var dest BotEventsRequest
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBoteventsNestedListResponse parses an HTTP response from a BoteventsNestedListWithResponse call
+func ParseBoteventsNestedListResponse(rsp *http.Response) (*BoteventsNestedListResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BoteventsNestedListResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBoteventsNestedChildrenExcludedListResponse parses an HTTP response from a BoteventsNestedChildrenExcludedListWithResponse call
+func ParseBoteventsNestedChildrenExcludedListResponse(rsp *http.Response) (*BoteventsNestedChildrenExcludedListResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BoteventsNestedChildrenExcludedListResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBoteventsNestedRemoveResponse parses an HTTP response from a BoteventsNestedRemoveWithResponse call
+func ParseBoteventsNestedRemoveResponse(rsp *http.Response) (*BoteventsNestedRemoveResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BoteventsNestedRemoveResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBoteventsNestedAddResponse parses an HTTP response from a BoteventsNestedAddWithResponse call
+func ParseBoteventsNestedAddResponse(rsp *http.Response) (*BoteventsNestedAddResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BoteventsNestedAddResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -10843,6 +14831,988 @@ func ParseEventsNestedAddResponse(rsp *http.Response) (*EventsNestedAddResponse,
 	}
 
 	response := &EventsNestedAddResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersDbTableRowListResponse parses an HTTP response from a VolunteersDbTableRowListWithResponse call
+func ParseVolunteersDbTableRowListResponse(rsp *http.Response) (*VolunteersDbTableRowListResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersDbTableRowListResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			PageInfo *Paginated            `json:"PageInfo,omitempty"`
+			List     *[]VolunteersResponse `json:"list,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersCreateResponse parses an HTTP response from a VolunteersCreateWithResponse call
+func ParseVolunteersCreateResponse(rsp *http.Response) (*VolunteersCreateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersCreateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest VolunteersResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersCountResponse parses an HTTP response from a VolunteersCountWithResponse call
+func ParseVolunteersCountResponse(rsp *http.Response) (*VolunteersCountResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersCountResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersCsvExportResponse parses an HTTP response from a VolunteersCsvExportWithResponse call
+func ParseVolunteersCsvExportResponse(rsp *http.Response) (*VolunteersCsvExportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersCsvExportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersDbTableRowFindOneResponse parses an HTTP response from a VolunteersDbTableRowFindOneWithResponse call
+func ParseVolunteersDbTableRowFindOneResponse(rsp *http.Response) (*VolunteersDbTableRowFindOneResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersDbTableRowFindOneResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest VolunteersResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersGroupbyResponse parses an HTTP response from a VolunteersGroupbyWithResponse call
+func ParseVolunteersGroupbyResponse(rsp *http.Response) (*VolunteersGroupbyResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersGroupbyResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			PageInfo *Paginated `json:"PageInfo,omitempty"`
+			List     *[]Groupby `json:"list,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersGridRowListResponse parses an HTTP response from a VolunteersGridRowListWithResponse call
+func ParseVolunteersGridRowListResponse(rsp *http.Response) (*VolunteersGridRowListResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersGridRowListResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			PageInfo *Paginated                    `json:"PageInfo,omitempty"`
+			List     *[]VolunteersgridGridResponse `json:"list,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersGridRowCreateResponse parses an HTTP response from a VolunteersGridRowCreateWithResponse call
+func ParseVolunteersGridRowCreateResponse(rsp *http.Response) (*VolunteersGridRowCreateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersGridRowCreateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersGridRowCountResponse parses an HTTP response from a VolunteersGridRowCountWithResponse call
+func ParseVolunteersGridRowCountResponse(rsp *http.Response) (*VolunteersGridRowCountResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersGridRowCountResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Count *float32 `json:"count,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersGridRowExportResponse parses an HTTP response from a VolunteersGridRowExportWithResponse call
+func ParseVolunteersGridRowExportResponse(rsp *http.Response) (*VolunteersGridRowExportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersGridRowExportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersGridRowDeleteResponse parses an HTTP response from a VolunteersGridRowDeleteWithResponse call
+func ParseVolunteersGridRowDeleteResponse(rsp *http.Response) (*VolunteersGridRowDeleteResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersGridRowDeleteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersGridRowReadResponse parses an HTTP response from a VolunteersGridRowReadWithResponse call
+func ParseVolunteersGridRowReadResponse(rsp *http.Response) (*VolunteersGridRowReadResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersGridRowReadResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest VolunteersgridGridResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersGridRowUpdateResponse parses an HTTP response from a VolunteersGridRowUpdateWithResponse call
+func ParseVolunteersGridRowUpdateResponse(rsp *http.Response) (*VolunteersGridRowUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersGridRowUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersDeleteResponse parses an HTTP response from a VolunteersDeleteWithResponse call
+func ParseVolunteersDeleteResponse(rsp *http.Response) (*VolunteersDeleteResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersDeleteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersReadResponse parses an HTTP response from a VolunteersReadWithResponse call
+func ParseVolunteersReadResponse(rsp *http.Response) (*VolunteersReadResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersReadResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest VolunteersResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersUpdateResponse parses an HTTP response from a VolunteersUpdateWithResponse call
+func ParseVolunteersUpdateResponse(rsp *http.Response) (*VolunteersUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest VolunteersRequest
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersNestedListResponse parses an HTTP response from a VolunteersNestedListWithResponse call
+func ParseVolunteersNestedListResponse(rsp *http.Response) (*VolunteersNestedListResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersNestedListResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersNestedChildrenExcludedListResponse parses an HTTP response from a VolunteersNestedChildrenExcludedListWithResponse call
+func ParseVolunteersNestedChildrenExcludedListResponse(rsp *http.Response) (*VolunteersNestedChildrenExcludedListResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersNestedChildrenExcludedListResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersNestedRemoveResponse parses an HTTP response from a VolunteersNestedRemoveWithResponse call
+func ParseVolunteersNestedRemoveResponse(rsp *http.Response) (*VolunteersNestedRemoveResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersNestedRemoveResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseVolunteersNestedAddResponse parses an HTTP response from a VolunteersNestedAddWithResponse call
+func ParseVolunteersNestedAddResponse(rsp *http.Response) (*VolunteersNestedAddResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &VolunteersNestedAddResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationoneventsDbTableRowListResponse parses an HTTP response from a CommunicationoneventsDbTableRowListWithResponse call
+func ParseCommunicationoneventsDbTableRowListResponse(rsp *http.Response) (*CommunicationoneventsDbTableRowListResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationoneventsDbTableRowListResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			PageInfo *Paginated                       `json:"PageInfo,omitempty"`
+			List     *[]CommunicationOnEventsResponse `json:"list,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationoneventsCreateResponse parses an HTTP response from a CommunicationoneventsCreateWithResponse call
+func ParseCommunicationoneventsCreateResponse(rsp *http.Response) (*CommunicationoneventsCreateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationoneventsCreateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest CommunicationOnEventsResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationoneventsCountResponse parses an HTTP response from a CommunicationoneventsCountWithResponse call
+func ParseCommunicationoneventsCountResponse(rsp *http.Response) (*CommunicationoneventsCountResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationoneventsCountResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationoneventsCsvExportResponse parses an HTTP response from a CommunicationoneventsCsvExportWithResponse call
+func ParseCommunicationoneventsCsvExportResponse(rsp *http.Response) (*CommunicationoneventsCsvExportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationoneventsCsvExportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationoneventsDbTableRowFindOneResponse parses an HTTP response from a CommunicationoneventsDbTableRowFindOneWithResponse call
+func ParseCommunicationoneventsDbTableRowFindOneResponse(rsp *http.Response) (*CommunicationoneventsDbTableRowFindOneResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationoneventsDbTableRowFindOneResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest CommunicationOnEventsResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationoneventsGroupbyResponse parses an HTTP response from a CommunicationoneventsGroupbyWithResponse call
+func ParseCommunicationoneventsGroupbyResponse(rsp *http.Response) (*CommunicationoneventsGroupbyResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationoneventsGroupbyResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			PageInfo *Paginated `json:"PageInfo,omitempty"`
+			List     *[]Groupby `json:"list,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationOnEventsCommunicationOnEventsRowListResponse parses an HTTP response from a CommunicationOnEventsCommunicationOnEventsRowListWithResponse call
+func ParseCommunicationOnEventsCommunicationOnEventsRowListResponse(rsp *http.Response) (*CommunicationOnEventsCommunicationOnEventsRowListResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationOnEventsCommunicationOnEventsRowListResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			PageInfo *Paginated                                                `json:"PageInfo,omitempty"`
+			List     *[]CommunicationOnEventscommunicationOnEventsGridResponse `json:"list,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationOnEventsCommunicationOnEventsRowCreateResponse parses an HTTP response from a CommunicationOnEventsCommunicationOnEventsRowCreateWithResponse call
+func ParseCommunicationOnEventsCommunicationOnEventsRowCreateResponse(rsp *http.Response) (*CommunicationOnEventsCommunicationOnEventsRowCreateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationOnEventsCommunicationOnEventsRowCreateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationOnEventsCommunicationOnEventsRowCountResponse parses an HTTP response from a CommunicationOnEventsCommunicationOnEventsRowCountWithResponse call
+func ParseCommunicationOnEventsCommunicationOnEventsRowCountResponse(rsp *http.Response) (*CommunicationOnEventsCommunicationOnEventsRowCountResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationOnEventsCommunicationOnEventsRowCountResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			Count *float32 `json:"count,omitempty"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationOnEventsCommunicationOnEventsRowExportResponse parses an HTTP response from a CommunicationOnEventsCommunicationOnEventsRowExportWithResponse call
+func ParseCommunicationOnEventsCommunicationOnEventsRowExportResponse(rsp *http.Response) (*CommunicationOnEventsCommunicationOnEventsRowExportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationOnEventsCommunicationOnEventsRowExportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationOnEventsCommunicationOnEventsRowDeleteResponse parses an HTTP response from a CommunicationOnEventsCommunicationOnEventsRowDeleteWithResponse call
+func ParseCommunicationOnEventsCommunicationOnEventsRowDeleteResponse(rsp *http.Response) (*CommunicationOnEventsCommunicationOnEventsRowDeleteResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationOnEventsCommunicationOnEventsRowDeleteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationOnEventsCommunicationOnEventsRowReadResponse parses an HTTP response from a CommunicationOnEventsCommunicationOnEventsRowReadWithResponse call
+func ParseCommunicationOnEventsCommunicationOnEventsRowReadResponse(rsp *http.Response) (*CommunicationOnEventsCommunicationOnEventsRowReadResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationOnEventsCommunicationOnEventsRowReadResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest CommunicationOnEventscommunicationOnEventsGridResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationOnEventsCommunicationOnEventsRowUpdateResponse parses an HTTP response from a CommunicationOnEventsCommunicationOnEventsRowUpdateWithResponse call
+func ParseCommunicationOnEventsCommunicationOnEventsRowUpdateResponse(rsp *http.Response) (*CommunicationOnEventsCommunicationOnEventsRowUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationOnEventsCommunicationOnEventsRowUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationoneventsDeleteResponse parses an HTTP response from a CommunicationoneventsDeleteWithResponse call
+func ParseCommunicationoneventsDeleteResponse(rsp *http.Response) (*CommunicationoneventsDeleteResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationoneventsDeleteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationoneventsReadResponse parses an HTTP response from a CommunicationoneventsReadWithResponse call
+func ParseCommunicationoneventsReadResponse(rsp *http.Response) (*CommunicationoneventsReadResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationoneventsReadResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest CommunicationOnEventsResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationoneventsUpdateResponse parses an HTTP response from a CommunicationoneventsUpdateWithResponse call
+func ParseCommunicationoneventsUpdateResponse(rsp *http.Response) (*CommunicationoneventsUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationoneventsUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest CommunicationOnEventsRequest
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationoneventsNestedListResponse parses an HTTP response from a CommunicationoneventsNestedListWithResponse call
+func ParseCommunicationoneventsNestedListResponse(rsp *http.Response) (*CommunicationoneventsNestedListResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationoneventsNestedListResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationoneventsNestedChildrenExcludedListResponse parses an HTTP response from a CommunicationoneventsNestedChildrenExcludedListWithResponse call
+func ParseCommunicationoneventsNestedChildrenExcludedListResponse(rsp *http.Response) (*CommunicationoneventsNestedChildrenExcludedListResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationoneventsNestedChildrenExcludedListResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationoneventsNestedRemoveResponse parses an HTTP response from a CommunicationoneventsNestedRemoveWithResponse call
+func ParseCommunicationoneventsNestedRemoveResponse(rsp *http.Response) (*CommunicationoneventsNestedRemoveResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationoneventsNestedRemoveResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCommunicationoneventsNestedAddResponse parses an HTTP response from a CommunicationoneventsNestedAddWithResponse call
+func ParseCommunicationoneventsNestedAddResponse(rsp *http.Response) (*CommunicationoneventsNestedAddResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CommunicationoneventsNestedAddResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
