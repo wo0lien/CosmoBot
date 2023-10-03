@@ -23,8 +23,17 @@ func init() {
 
 	DB = DbStruct{db}
 
+	logging.Info.Println("Setting up join table")
+	err = DB.SetupJoinTable(&models.Volunteer{}, "Events", &models.VolunteerEvent{})
+
 	logging.Info.Println("Migrating the models")
+
 	DB.AutoMigrate(&models.CosmoEvent{})
+	DB.AutoMigrate(&models.Volunteer{})
+
+	if err != nil {
+		logging.Critical.Fatalf("Could not setup join table, error : %s", err)
+	}
 
 	logging.Info.Println("Database ready")
 }

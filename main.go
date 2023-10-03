@@ -17,14 +17,26 @@ func main() {
 }
 
 func StartNoco() {
-	upcomingEvents, err := api.NocoApi.GetAllUpcomingEvents()
+	events, err := api.NocoApi.GetAllEvents()
 
 	if err != nil {
 		panic(err)
 	}
-	controllers.LoadEventsInDBFromAPI(*upcomingEvents)
+	controllers.LoadEventsInDBFromAPI(*events)
 
 	modules.StartDiscussionForUpcomingEvents()
+
+	volunteers, err := api.NocoApi.GetAllVolunteers()
+
+	if err != nil {
+		panic(err)
+	}
+
+	controllers.LoadVolunteersToDBFromAPI(volunteers)
+	controllers.LoadVolunteersEventsJoinsFromApi(volunteers)
+
+	modules.TagAllVolunteersInAllEvents()
+
 }
 
 func StartBot() {

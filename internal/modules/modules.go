@@ -4,33 +4,14 @@ import (
 	"fmt"
 
 	"github.com/wo0lien/cosmoBot/internal/discord"
+	"github.com/wo0lien/cosmoBot/internal/logging"
 	"github.com/wo0lien/cosmoBot/internal/storage/controllers"
 )
 
 // Modules aims to be the main logic parts of the program
 /*
 
-1. Load every events from NocoDB, store them in database.
-Using NocoDB IDs will prevent adding two times the same element
-Detecting deleted elements is trickier should be done by storing a list of IDs and poping
-element from it for each time db event
-
-2. If el in future + discussionId empty = start discussion
-
-3. Tag volunteers when assigned to an event
-If a volunteer can’t be tagged - Send a message to an admin channel
-
 5. Send reminders of communication if it does not exist at desired timing
-
-6.
-
-
-TODO
-2
-DOING
-
-DONE
-1
 */
 
 // Lookup for upcoming events in DB and create a discussion for each of them
@@ -54,4 +35,48 @@ func StartDiscussionForUpcomingEvents() error {
 	}
 
 	return nil
+}
+
+func tagVolunteerInEvent(volunteerId, eventId uint) error {
+	event := controllers.GetEventByID(eventId)
+	volunteer := controllers.GetVolunteerById(volunteerId)
+
+	if event == nil || volunteer == nil {
+		return fmt.Errorf("could not find event or volunteer with id %d and %d", eventId, volunteerId)
+	}
+
+	// check if event has a channel
+	if !event.DoesChannelExist {
+		logging.Info.Printf("event %s does not have a channel", event.Name)
+		return nil
+	}
+
+	_, err := discord.Bot.ChannelMessageSend(*event.ChannelID, fmt.Sprintf("<@%s> has been assigned to this event", *volunteer.DiscordID))
+
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func TagAllVolunteersInAllEvents() {
+	// get all volunteers events joins
+	joins := controllers.GetAllVolunteersEvents()
+
+	// for each join
+	for _, join := range *joins {
+		// check if already tagged
+		if !join.VolunteerHasBeenTagged {
+			// tag
+			err := tagVolunteerInEvent(join.VolunteerID, join.CosmoEventID)
+			if err != nil {
+				logging.Error.Println(err)
+			}
+			// set tagged to true
+			join.VolunteerHasBeenTagged = true
+			// save join
+			controllers.SaveVolunteerEvent(&join)
+		}
+	}
 }

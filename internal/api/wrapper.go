@@ -5,8 +5,8 @@ import (
 )
 
 // Get all volunteers
-func (na *NocoApiStruct) GetAllVolunteers() (*[]VolunteersgridGridResponse, error) {
-	res, err := na.ClientWithResponses.VolunteersGridRowListWithResponse(context.Background(), &VolunteersGridRowListParams{})
+func (na *NocoApiStruct) GetAllVolunteers() (*[]VolunteersResponse, error) {
+	res, err := na.ClientWithResponses.VolunteersDbTableRowListWithResponse(context.Background(), &VolunteersDbTableRowListParams{})
 
 	if err != nil {
 		return nil, err

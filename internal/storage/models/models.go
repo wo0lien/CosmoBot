@@ -18,9 +18,20 @@ type CosmoEvent struct {
 	ChannelID        *string
 }
 
-type Volunteers struct {
+type Volunteer struct {
 	gorm.Model
-	NocoID int
+	FirstName string
+	LastName  string
+	Email     string
+	Phone     string
+	Events    []CosmoEvent `gorm:"many2many:volunteers_events;"`
+	DiscordID *string
+}
+
+type VolunteerEvent struct {
+	CosmoEventID           uint `gorm:"primaryKey"`
+	VolunteerID            uint `gorm:"primaryKey"`
+	VolunteerHasBeenTagged bool `gorm:"default:false"`
 }
 
 // Get the channelType of the event discussion on discord
