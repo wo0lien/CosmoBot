@@ -104,7 +104,7 @@ type EventsResponse struct {
 	Volunteers                     *float32                      `json:"Volunteers,omitempty"`
 	CommunicationOnEvents          *CommunicationOnEventsRequest `json:"communicationOnEvents,omitempty"`
 	NcCurgBotEventsId              *int                          `json:"nc_curg___BotEvents_id,omitempty"`
-	NcCurgNcM2mW5i3lbdpwrs         *NcCurgNcM2mW5i3lbdpwrRequest `json:"nc_curg___nc_m2m_w5i3lbdpwrs,omitempty"`
+	NcCurgNcM2mW5i3lbdpwrs         *[]NcCurgNcM2mW5i3lbdpwrRequest `json:"nc_curg___nc_m2m_w5i3lbdpwrs,omitempty"`
 	NcCurgCommunicationOnEventsId  *int                          `json:"nc_curg__communicationOnEvents_id,omitempty"`
 	NcCurgCommunicationOnEventsId1 *int                          `json:"nc_curg__communicationOnEvents_id1,omitempty"`
 }
