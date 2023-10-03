@@ -143,7 +143,7 @@ type VolunteersResponse struct {
 	Lastname               *string                       `json:"Lastname,omitempty"`
 	Tel                    *string                       `json:"Tel,omitempty"`
 	UpdatedAt              *string                       `json:"UpdatedAt,omitempty"`
-	NcCurgNcM2mW5i3lbdpwrs *[]NcCurgNcM2mW5i3lbdpwrRequest `json:"nc_curg___nc_m2m_w5i3lbdpwrs,omitempty"`
+	NcCurgNcM2mW5i3lbdpwrs *NcCurgNcM2mW5i3lbdpwrRequest `json:"nc_curg___nc_m2m_w5i3lbdpwrs,omitempty"`
 }
 
 // VolunteersgridGridRequest defines model for VolunteersgridGridRequest.
@@ -169,7 +169,7 @@ type VolunteersgridGridResponse struct {
 	Lastname               *string                       `json:"Lastname,omitempty"`
 	Tel                    *string                       `json:"Tel,omitempty"`
 	UpdatedAt              *string                       `json:"UpdatedAt,omitempty"`
-	NcCurgNcM2mW5i3lbdpwrs *[]NcCurgNcM2mW5i3lbdpwrRequest `json:"nc_curg___nc_m2m_w5i3lbdpwrs,omitempty"`
+	NcCurgNcM2mW5i3lbdpwrs *NcCurgNcM2mW5i3lbdpwrRequest `json:"nc_curg___nc_m2m_w5i3lbdpwrs,omitempty"`
 }
 
 // CommunicationOnEventsRequest defines model for communicationOnEventsRequest.
