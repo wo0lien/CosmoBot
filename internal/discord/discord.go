@@ -5,7 +5,14 @@ import (
 
 	"github.com/bwmarrin/discordgo"
 	"github.com/joho/godotenv"
+	"github.com/wo0lien/cosmoBot/internal/logging"
 )
+
+var Bot *discordBot
+
+type discordBot struct {
+	*discordgo.Session
+}
 
 var BOT_TOKEN string
 
@@ -18,26 +25,28 @@ func init() {
 	// load env variables BOT_TOKEN
 	BOT_TOKEN = os.Getenv("BOT_TOKEN")
 	if BOT_TOKEN == "" {
-		panic("BOT_TOKEN env variable is not set")
+		logging.Critical.Fatal("BOT_TOKEN env variable is not set")
 	}
-}
+	// start bot
 
-// Instantiate a new bot
-func CreateBot() (*discordgo.Session, error) {
-	dg, err := discordgo.New("Bot " + BOT_TOKEN)
+	logging.Info.Println("CosmoBot is starting...")
+
+	bot, err := discordgo.New("Bot " + BOT_TOKEN)
 
 	if err != nil {
-		return nil, err
+		logging.Critical.Fatalf("Could not start bot: %s", err)
 	}
 
-	dg.Identify.Intents = discordgo.IntentsGuildMessages
+	bot.Identify.Intents = discordgo.IntentsGuildMessages
+
+	bot.AddHandler(messageCreate)
 
 	// running the bot
-
-	err = dg.Open()
+	err = bot.Open()
 	if err != nil {
-		return nil, err
+		logging.Critical.Fatalf("Could not connect to discord: %s", err)
 	}
 
-	return dg, nil
+	Bot = &discordBot{bot}
+
 }
