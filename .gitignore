@@ -1,2 +1,4 @@
 /.env
 vendor/
+config.json
+*.db

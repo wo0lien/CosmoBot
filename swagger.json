@@ -6,13 +6,13 @@
     },
     "servers": [
         {
-            "url": "http://localhost:8080"
+            "url": "http://192.168.0.20:8081"
         },
         {
             "url": "{customUrl}",
             "variables": {
                 "customUrl": {
-                    "default": "http://localhost:8080",
+                    "default": "http://192.168.0.20:8081",
                     "description": "Provide custom nocodb app base url"
                 }
             }
@@ -593,9 +593,7 @@
                 {
                     "schema": {
                         "type": "string",
-                        "enum": [
-                            "Events"
-                        ]
+                        "enum": []
                     },
                     "name": "columnName",
                     "in": "path",
@@ -669,9 +667,7 @@
                 {
                     "schema": {
                         "type": "string",
-                        "enum": [
-                            "Events"
-                        ]
+                        "enum": []
                     },
                     "name": "columnName",
                     "in": "path",
@@ -782,9 +778,7 @@
                 {
                     "schema": {
                         "type": "string",
-                        "enum": [
-                            "Events"
-                        ]
+                        "enum": []
                     },
                     "name": "columnName",
                     "in": "path",
@@ -1773,7 +1767,6 @@
                     "schema": {
                         "type": "string",
                         "enum": [
-                            "Volunteers",
                             "communicationOnEvents",
                             "BotEvents"
                         ]
@@ -1851,7 +1844,6 @@
                     "schema": {
                         "type": "string",
                         "enum": [
-                            "Volunteers",
                             "communicationOnEvents",
                             "BotEvents"
                         ]
@@ -1966,7 +1958,6 @@
                     "schema": {
                         "type": "string",
                         "enum": [
-                            "Volunteers",
                             "communicationOnEvents",
                             "BotEvents"
                         ]
@@ -2913,9 +2904,7 @@
                 {
                     "schema": {
                         "type": "string",
-                        "enum": [
-                            "Event"
-                        ]
+                        "enum": []
                     },
                     "name": "columnName",
                     "in": "path",
@@ -2989,9 +2978,7 @@
                 {
                     "schema": {
                         "type": "string",
-                        "enum": [
-                            "Event"
-                        ]
+                        "enum": []
                     },
                     "name": "columnName",
                     "in": "path",
@@ -3102,9 +3089,7 @@
                 {
                     "schema": {
                         "type": "string",
-                        "enum": [
-                            "Event"
-                        ]
+                        "enum": []
                     },
                     "name": "columnName",
                     "in": "path",
@@ -3988,9 +3973,7 @@
                 {
                     "schema": {
                         "type": "string",
-                        "enum": [
-                            "Event"
-                        ]
+                        "enum": []
                     },
                     "name": "columnName",
                     "in": "path",
@@ -4064,9 +4047,7 @@
                 {
                     "schema": {
                         "type": "string",
-                        "enum": [
-                            "Event"
-                        ]
+                        "enum": []
                     },
                     "name": "columnName",
                     "in": "path",
@@ -4177,9 +4158,7 @@
                 {
                     "schema": {
                         "type": "string",
-                        "enum": [
-                            "Event"
-                        ]
+                        "enum": []
                     },
                     "name": "columnName",
                     "in": "path",
