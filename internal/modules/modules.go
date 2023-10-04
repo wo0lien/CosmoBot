@@ -17,15 +17,19 @@ import (
 // Lookup for upcoming events in DB and create a discussion for each of them
 // if the discussion does not exist
 func StartDiscussionForUpcomingEvents() error {
+	logging.Info.Println("Starting discussion for upcoming events")
 	// use events from db
 	events := controllers.GetAllUpcomingCosmoEvents()
 
 	for _, ev := range *events {
+		logging.Info.Printf("Checking if event %s (id %d) has a channel", ev.Name, ev.ID)
 		if !ev.DoesChannelExist {
+			logging.Info.Printf("Event %s does not have a channel, creating one", ev.Name)
 			ch, err := discord.Bot.StartEventDiscussion(&ev, fmt.Sprintf("%s - %s", ev.StartDate.Format("01/02"), ev.Name), ":Cosmix:")
 
 			if err != nil {
-				return err
+				logging.Error.Printf("Could not create channel for event %s. Error: %s", ev.Name, err)
+				continue
 			}
 
 			ev.DoesChannelExist = true
@@ -38,7 +42,11 @@ func StartDiscussionForUpcomingEvents() error {
 }
 
 func tagVolunteerInEvent(volunteerId, eventId uint) error {
-	event := controllers.GetEventByID(eventId)
+	event, err := controllers.GetEventByID(eventId)
+	if err != nil {
+		return err
+	}
+
 	volunteer := controllers.GetVolunteerById(volunteerId)
 
 	if event == nil || volunteer == nil {
@@ -51,7 +59,8 @@ func tagVolunteerInEvent(volunteerId, eventId uint) error {
 		return nil
 	}
 
-	_, err := discord.Bot.ChannelMessageSend(*event.ChannelID, fmt.Sprintf("<@%s> has been assigned to this event", *volunteer.DiscordID))
+	logging.Info.Printf("Tagging volunteer %s in event %s", volunteer.FirstName, event.Name)
+	_, err = discord.Bot.ChannelMessageSend(*event.ChannelID, fmt.Sprintf("<@%s> has been assigned to this event", *volunteer.DiscordID))
 
 	if err != nil {
 		return err

@@ -6,8 +6,7 @@ import (
 	"syscall"
 
 	"github.com/wo0lien/cosmoBot/internal/api"
-	"github.com/wo0lien/cosmoBot/internal/discord"
-	"github.com/wo0lien/cosmoBot/internal/logging"
+	"github.com/wo0lien/cosmoBot/internal/api/webhooks"
 	"github.com/wo0lien/cosmoBot/internal/modules"
 	"github.com/wo0lien/cosmoBot/internal/storage/controllers"
 )
@@ -17,6 +16,9 @@ func main() {
 }
 
 func StartNoco() {
+
+	go webhooks.StartWebHooksHandlingServer()
+
 	events, err := api.NocoApi.GetAllEvents()
 
 	if err != nil {
@@ -37,16 +39,8 @@ func StartNoco() {
 
 	modules.TagAllVolunteersInAllEvents()
 
-}
-
-func StartBot() {
-
-	logging.Info.Println("CosmoBot is now running. Press CTRL-C to exit.")
-
 	sc := make(chan os.Signal, 1)
 	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt)
 	<-sc
 
-	// Cleanly close down the Discord session.
-	discord.Bot.Close()
 }

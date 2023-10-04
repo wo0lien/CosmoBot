@@ -25,8 +25,8 @@ type EventType string
 const (
 	EventTypeVisit         EventType = "CosmoVisit"
 	EventTypeApero         EventType = "CosmoApero"
-	EventTypeBaO           EventType = "CosmoBaO"
-	EvetTypeCafeDesLangues EventType = "CafeDesLangues"
+	EventTypeBaO           EventType = "BaO"
+	EvetTypeCafeDesLangues EventType = "Café des langues"
 	EventTypePerm          EventType = "Perm"
 	EventTypeOther         EventType = "Other"
 )
@@ -36,7 +36,7 @@ type ResponseMethod struct {
 	ChannelType discordgo.ChannelType `json:"channelType"`
 }
 
-//go:generate go run schema.gen.go
+//go:generate go run config_gen/schema.gen.go
 
 type ConfigStruct struct {
 	schema                    string                       `json:"$schema",omitempty`

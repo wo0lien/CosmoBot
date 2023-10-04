@@ -16,10 +16,10 @@ func SaveEvent(event *models.CosmoEvent) {
 	db.DB.Save(event)
 }
 
-func GetEventByID(id uint) *models.CosmoEvent {
+func GetEventByID(id uint) (*models.CosmoEvent, error) {
 	var event models.CosmoEvent
-	db.DB.First(&event, id)
-	return &event
+	err := db.DB.First(&event, id).Error
+	return &event, err
 }
 
 func GetAllCosmoEvents() *[]models.CosmoEvent {
