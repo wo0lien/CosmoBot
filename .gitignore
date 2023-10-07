@@ -1,4 +1,6 @@
 /.env
 vendor/
 config.json
+credentials.json
+token.json
 *.db

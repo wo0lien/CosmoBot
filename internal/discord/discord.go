@@ -1,6 +1,7 @@
 package discord
 
 import (
+	"log"
 	"os"
 
 	"github.com/bwmarrin/discordgo"
@@ -12,6 +13,7 @@ var Bot *discordBot
 
 type discordBot struct {
 	*discordgo.Session
+	registreredCommands []*discordgo.ApplicationCommand
 }
 
 var BOT_TOKEN string
@@ -39,14 +41,40 @@ func init() {
 
 	bot.Identify.Intents = discordgo.IntentsGuildMessages
 
-	bot.AddHandler(messageCreate)
-
 	// running the bot
 	err = bot.Open()
 	if err != nil {
 		logging.Critical.Fatalf("Could not connect to discord: %s", err)
 	}
 
-	Bot = &discordBot{bot}
+	// adding handlers
+	bot.AddHandler(messageCreate)
+	logging.Debug.Println("Adding commands...")
 
+	registeredCommands := make([]*discordgo.ApplicationCommand, len(commands))
+
+	for i, v := range commands {
+		logging.Debug.Printf("Registering command '%v'\n", v.Name)
+		cmd, err := bot.ApplicationCommandCreate(bot.State.User.ID, "1050133146517110855", v)
+		if err != nil {
+			log.Panicf("Cannot create '%v' command: %v", v.Name, err)
+		}
+		registeredCommands[i] = cmd
+	}
+
+	Bot = &discordBot{
+		bot,
+		registeredCommands,
+	}
+
+}
+
+func (d *discordBot) Close() {
+	d.Session.Close()
+	for _, v := range d.registreredCommands {
+		err := d.ApplicationCommandDelete(d.State.User.ID, "1050133146517110855", v.ID)
+		if err != nil {
+			log.Panicf("Cannot delete '%v' command: %v", v.Name, err)
+		}
+	}
 }
