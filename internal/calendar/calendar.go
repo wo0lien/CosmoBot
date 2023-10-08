@@ -57,8 +57,10 @@ func getTokenFromWeb(config *oauth2.Config) *oauth2.Token {
 	return tok
 }
 
-// refreshToken if expired
+// RefreshToken if expired using the config and the old token
 func refreshToken(oldToken *oauth2.Token, config oauth2.Config) (*oauth2.Token, error) {
+	// log
+	log.Printf("Refreshing token...")
 	newToken, err := config.TokenSource(context.TODO(), oldToken).Token()
 	if err != nil {
 		return nil, err
