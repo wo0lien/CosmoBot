@@ -31,11 +31,10 @@ type WebHookResponse struct {
 // Handle websockets
 
 func StartWebHooksHandlingServer() {
-
 	// event insert can be a new event or a new link from the dashboard
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		// Print the request method and path to the console.
-		logging.Info.Printf("Received %s request for %s\n", r.Method, r.URL.Path)
+		logging.Info.Printf("Webhook server received %s request for %s\n", r.Method, r.URL.Path)
 
 		// Write a response back to the client.
 		w.WriteHeader(http.StatusOK)
@@ -44,7 +43,7 @@ func StartWebHooksHandlingServer() {
 
 		// do not continue in case of error
 		if err != nil {
-			logging.Warning.Printf("Could not parse webhook data. Stop processing.")
+			logging.Warning.Printf("Could not parse webhook data. Stop processing this webhook call.")
 			return
 		}
 
