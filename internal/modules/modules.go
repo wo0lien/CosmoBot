@@ -19,7 +19,7 @@ import (
 func StartDiscussionForUpcomingEvents() error {
 	logging.Info.Println("Starting discussion for upcoming events")
 	// use events from db
-	events := controllers.GetAllUpcomingCosmoEvents()
+	events := controllers.AllUpcomingEvents()
 
 	for _, ev := range *events {
 		logging.Info.Printf("Checking if event %s (id %d) has a channel", ev.Name, ev.ID)
@@ -42,7 +42,7 @@ func StartDiscussionForUpcomingEvents() error {
 }
 
 func tagVolunteerInEvent(volunteerId, eventId uint) error {
-	event, err := controllers.GetEventByID(eventId)
+	event, err := controllers.EventByID(eventId)
 	if err != nil {
 		return err
 	}
@@ -60,7 +60,7 @@ func tagVolunteerInEvent(volunteerId, eventId uint) error {
 	}
 
 	logging.Info.Printf("Tagging volunteer %s in event %s", volunteer.FirstName, event.Name)
-	_, err = discord.Bot.ChannelMessageSend(*event.ChannelID, fmt.Sprintf("<@%s> has been assigned to this event", *volunteer.DiscordID))
+	_, err = discord.Bot.ChannelMessageSend(*event.ChannelID, fmt.Sprintf("<@%s> rejoins l'orga !", *volunteer.DiscordID))
 
 	if err != nil {
 		return err
@@ -85,7 +85,11 @@ func TagAllVolunteersInAllEvents() {
 			// set tagged to true
 			join.VolunteerHasBeenTagged = true
 			// save join
-			controllers.SaveVolunteerEvent(&join)
+			err = controllers.SaveVolunteerEvent(&join)
+			if err != nil {
+				logging.Error.Println(err)
+			}
+
 		}
 	}
 }

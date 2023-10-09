@@ -4,7 +4,6 @@ import (
 	"errors"
 
 	"github.com/wo0lien/cosmoBot/internal/api"
-	"github.com/wo0lien/cosmoBot/internal/logging"
 	"github.com/wo0lien/cosmoBot/internal/storage/db"
 	"github.com/wo0lien/cosmoBot/internal/storage/models"
 	"gorm.io/gorm"
@@ -46,6 +45,7 @@ func LoadVolunteerToDBFromAPI(volunteer *api.VolunteersResponse) error {
 	}
 
 	db.DB.Create(&models.Volunteer{
+		Model:     gorm.Model{ID: uint(*volunteer.Id)}, // never nil
 		FirstName: *volunteer.Firstname,
 		LastName:  *volunteer.Lastname,
 		Email:     *volunteer.Email,
@@ -64,38 +64,4 @@ func LoadVolunteersToDBFromAPI(volunteers *[]api.VolunteersResponse) error {
 		}
 	}
 	return nil
-}
-
-func LoadVolunteersEventsJoinsFromApi(volunteers *[]api.VolunteersResponse) error {
-	for _, volunteer := range *volunteers {
-		err := LoadVolunteerEventsJoinsFromApi(&volunteer)
-		if err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-func LoadVolunteerEventsJoinsFromApi(volunteer *api.VolunteersResponse) error {
-	// find volunteer in db
-	volunteerInDB := GetVolunteerById(uint(*volunteer.Id))
-
-	// check if volunteer exists in db
-	if volunteerInDB == nil {
-		return errors.New("volunteer not found in db")
-	}
-
-	// Add assocation to the volunteer
-	for _, association := range *volunteer.NcCurgNcM2mW5i3lbdpwrs {
-		logging.Debug.Printf("Adding association to volunteer %v", association)
-		db.DB.Model(volunteerInDB).Association("Events").Append(&models.CosmoEvent{Model: gorm.Model{ID: uint(*association.Table1Id)}})
-	}
-
-	return nil
-}
-
-func GetVolunteersEventsJoinByVolunteerId(id uint) *[]models.VolunteerEvent {
-	var volunteersEventsJoin []models.VolunteerEvent
-	db.DB.Where("volunteer_id = ?", id).Find(&volunteersEventsJoin)
-	return &volunteersEventsJoin
 }

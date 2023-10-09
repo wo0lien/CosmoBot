@@ -13,7 +13,7 @@ import (
 )
 
 type WebHookResponseDataRow struct {
-	Id uint `json:"id"`
+	ID uint `json:"id"`
 	// + other fields that are not relevant for us
 }
 
@@ -43,7 +43,7 @@ func StartWebHooksHandlingServer() {
 
 		// do not continue in case of error
 		if err != nil {
-			logging.Warning.Printf("Could not parse webhook data. Stop processing this webhook call.")
+			logging.Warning.Printf("Could not parse webhook data. Stop processing this webhook call. Error : %s", err)
 			return
 		}
 
@@ -59,7 +59,7 @@ func StartWebHooksHandlingServer() {
 				}
 				// check if the volunteer exists in db
 				// if not, add it
-				vol := controllers.GetVolunteerById(webhookRes.Data.Rows[0].Id)
+				vol := controllers.GetVolunteerById(webhookRes.Data.Rows[0].ID)
 				if vol == nil {
 					controllers.LoadVolunteersToDBFromAPI(volunteers)
 				}
@@ -95,8 +95,8 @@ func StartWebHooksHandlingServer() {
 
 				// check if the event exists in db
 				// if not, add it
-				logging.Debug.Printf("Event id: %d", webhookRes.Data.Rows[0].Id)
-				event, err := controllers.GetEventByID(webhookRes.Data.Rows[0].Id)
+				logging.Debug.Printf("Event id: %d", webhookRes.Data.Rows[0].ID)
+				event, err := controllers.EventByID(webhookRes.Data.Rows[0].ID)
 				logging.Debug.Printf("Event: %v", event)
 				if err != nil {
 					logging.Info.Printf("Event does not exist in db. Adding it.\n")
@@ -116,7 +116,65 @@ func StartWebHooksHandlingServer() {
 				return
 			}
 
+			logging.Warning.Printf("Received webhook of type %s of unknown table name %s", webhookRes.Type, webhookRes.Data.TableName)
+			return
 		}
+		if webhookRes.Type == "records.after.update" {
+			// check if volunteer
+			if webhookRes.Data.TableName == "Volunteers" {
+				logging.Info.Printf("Received volunteers related webhook.")
+				volunteers, err := api.NocoApi.GetAllVolunteers()
+				if err != nil {
+					logging.Error.Printf("Could not get all volunteers from API. Error: %s", err)
+				}
+				err = controllers.LoadVolunteersToDBFromAPI(volunteers)
+
+				if err != nil {
+					logging.Error.Printf("Could not load volunteers to db. Error: %s", err)
+					return
+				}
+
+				err = controllers.LoadVolunteersEventsJoinsFromApi(volunteers)
+
+				if err != nil {
+					logging.Error.Printf("Could not load volunteers events joins. Error: %s", err)
+					return
+				}
+			}
+
+			// check if event
+			if webhookRes.Data.TableName == "Events" {
+				logging.Info.Printf("Received events related webhook.")
+
+				events, err := api.NocoApi.GetAllEvents()
+				if err != nil {
+					logging.Error.Printf("Could not get all events from API. Error: %s", err)
+					return
+				}
+
+				volunteers, err := api.NocoApi.GetAllVolunteers()
+				if err != nil {
+					logging.Error.Printf("Could not get all volunteers from API. Error: %s", err)
+					return
+				}
+
+				err = controllers.LoadEventsInDBFromAPI(*events)
+				if err != nil {
+					logging.Error.Printf("Could not load events to db. Error: %s", err)
+					return
+				}
+
+				err = controllers.LoadVolunteersEventsJoinsFromApi(volunteers)
+
+				if err != nil {
+					logging.Error.Printf("Could not load volunteers events joins. Error: %s", err)
+					return
+				}
+
+			}
+			return
+		}
+		logging.Warning.Printf("Received webhook of unknown type %s", webhookRes.Type)
 
 	})
 

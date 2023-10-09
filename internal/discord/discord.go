@@ -49,6 +49,12 @@ func init() {
 
 	// adding handlers
 	bot.AddHandler(messageCreate)
+	bot.AddHandler(func(s *discordgo.Session, i *discordgo.InteractionCreate) {
+		if h, ok := commandHandlers[i.ApplicationCommandData().Name]; ok {
+			h(s, i)
+		}
+	})
+
 	logging.Debug.Println("Adding commands...")
 
 	registeredCommands := make([]*discordgo.ApplicationCommand, len(commands))
@@ -67,6 +73,15 @@ func init() {
 		registeredCommands,
 	}
 
+}
+
+// Delete channel of the given id
+func (d *discordBot) DeleteChannel(channelId string) error {
+	_, err := d.ChannelDelete(channelId)
+	if err != nil {
+		return err
+	}
+	return nil
 }
 
 func (d *discordBot) Close() {

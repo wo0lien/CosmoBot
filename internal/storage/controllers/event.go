@@ -12,24 +12,24 @@ import (
 	"gorm.io/gorm"
 )
 
-func SaveEvent(event *models.CosmoEvent) {
-	db.DB.Save(event)
+func SaveEvent(event *models.CosmoEvent) error {
+	return db.DB.Save(event).Error
 }
 
-func GetEventByID(id uint) (*models.CosmoEvent, error) {
+func EventByID(id uint) (*models.CosmoEvent, error) {
 	var event models.CosmoEvent
 	err := db.DB.First(&event, id).Error
 	return &event, err
 }
 
-func GetAllCosmoEvents() *[]models.CosmoEvent {
+func AllEvents() *[]models.CosmoEvent {
 	var events []models.CosmoEvent
 	db.DB.Find(&events)
 	return &events
 }
 
 // get all events where end date is greater than today
-func GetAllUpcomingCosmoEvents() *[]models.CosmoEvent {
+func AllUpcomingEvents() *[]models.CosmoEvent {
 	var events []models.CosmoEvent
 	db.DB.Where("end_date > ?", time.Now()).Find(&events)
 	return &events
@@ -38,6 +38,21 @@ func GetAllUpcomingCosmoEvents() *[]models.CosmoEvent {
 // Delete CosmoEvent by id in the database
 func DeleteEventById(id uint) error {
 	db.DB.Delete(&models.CosmoEvent{Model: gorm.Model{ID: id}})
+	return nil
+}
+
+func DeleteChannelEventByIdAndSave(id uint) error {
+	var event models.CosmoEvent
+	err := db.DB.Model(event).Where("channel_id = ?", id).Update("channel_id", nil).Update("does_channel_exist", false).Error
+	if err != nil {
+		return err
+	}
+	err = SaveEvent(&event)
+
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -64,7 +79,7 @@ func LoadEventInDBFromAPI(event api.EventsResponse) error {
 		StartDate: StartDate,
 		EndDate:   EndDate,
 		Model: gorm.Model{
-			ID: uint(*event.Id),
+			ID: uint(*event.Id), // never nil
 		},
 	})
 
@@ -75,7 +90,7 @@ func LoadEventInDBFromAPI(event api.EventsResponse) error {
 
 // remove an int from a list of ints
 // change the order of the element for performance reasons
-func popIdFromList(ids *[]uint, id uint) *[]uint {
+func popIdFromList(ids *[]uint, id uint) {
 	for i, el := range *ids {
 		if el == id {
 			// remove the id from the list
@@ -85,7 +100,6 @@ func popIdFromList(ids *[]uint, id uint) *[]uint {
 			break
 		}
 	}
-	return ids
 }
 
 // load a list of events in the database from the api response format
@@ -93,7 +107,7 @@ func LoadEventsInDBFromAPI(events []api.EventsResponse) error {
 	// store a list of Ids
 	var ids []uint
 	// load events ids in the list
-	for _, event := range *GetAllCosmoEvents() {
+	for _, event := range *AllEvents() {
 		ids = append(ids, event.ID)
 	}
 
