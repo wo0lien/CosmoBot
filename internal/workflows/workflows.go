@@ -449,13 +449,7 @@ func DeleteEventByID(cs *calendar.Service, eventID uint) error {
 }
 
 // Refresh all
-func RefreshAll() {
-
-	cs, err := calendar.CalendarService()
-
-	if err != nil {
-		logging.Critical.Fatalf("Could not connect to calendar with err : %s", err)
-	}
+func RefreshAll(cs *calendar.Service) {
 
 	// load volunteers
 	volunteers, err := api.NocoApi.AllVolunteers()

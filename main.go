@@ -6,6 +6,7 @@ import (
 	"syscall"
 
 	"github.com/wo0lien/cosmoBot/internal/api/webhooks"
+	"github.com/wo0lien/cosmoBot/internal/calendar"
 	"github.com/wo0lien/cosmoBot/internal/discord"
 	"github.com/wo0lien/cosmoBot/internal/workflows"
 )
@@ -14,8 +15,13 @@ func main() {
 	// loading bot
 	var _ = discord.Bot
 
+	cs, err := calendar.CalendarService()
+	if err != nil {
+		panic(err)
+	}
+
 	// Refresh everything
-	workflows.RefreshAll()
+	workflows.RefreshAll(cs)
 
 	// Start the webhooks server
 	go webhooks.StartWebHooksHandlingServer()

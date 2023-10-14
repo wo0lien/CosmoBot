@@ -33,6 +33,7 @@ var (
 			Description: "Dis bonjour à Cosmix pour qu’il te connaisse !",
 		},
 	}
+
 	commandHandlers = map[string]func(s *discordgo.Session, i *discordgo.InteractionCreate){
 		"bonjour": func(s *discordgo.Session, i *discordgo.InteractionCreate) {
 			logging.Info.Println("Received bonjour command")
