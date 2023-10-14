@@ -40,7 +40,7 @@ func init() {
 
 // Connect to the database
 func Connect() (*gorm.DB, error) {
-	db, err := gorm.Open(sqlite.Open("gorm.db"), &gorm.Config{})
+	db, err := gorm.Open(sqlite.Open("data/gorm.db"), &gorm.Config{})
 	if err != nil {
 		return nil, err
 	}

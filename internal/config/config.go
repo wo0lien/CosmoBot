@@ -48,14 +48,14 @@ func LoadConfig() (*ConfigStruct, error) {
 	var config ConfigStruct
 
 	// check if config.json exists
-	_, err := os.Stat("config.json")
+	_, err := os.Stat("data/config.json")
 
 	if err != nil {
 		return nil, err
 	}
 
 	// create config.json with default values
-	f, err := os.ReadFile("config.json")
+	f, err := os.ReadFile("data/config.json")
 
 	if err != nil {
 		return nil, err
