@@ -19,6 +19,26 @@ TODO Send rex reminders
 TODO Update calendar on even update
 */
 
+func StartDiscussionForEvent(event *models.CosmoEvent) error {
+	if event.DoesChannelExist {
+		logging.Info.Printf("Event %s already has a channel, skipping it", event.Name)
+		return nil
+	}
+	ch, err := discord.Bot.StartEventDiscussion(event, fmt.Sprintf("%s - %s", event.StartDate.Format("01/02"), event.Name), ":Cosmix:")
+
+	if err != nil {
+		return err
+	}
+
+	event.DoesChannelExist = true
+	event.ChannelID = &ch.ID
+	err = controllers.SaveEvent(event)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
 // Lookup for upcoming events in DB and create a discussion for each of them
 // if the discussion does not exist
 func StartDiscussionForUpcomingEvents() error {
@@ -27,23 +47,9 @@ func StartDiscussionForUpcomingEvents() error {
 	events := controllers.AllUpcomingEvents()
 
 	for _, ev := range *events {
-		logging.Info.Printf("Checking if event %s (id %d) has a channel", ev.Name, ev.ID)
-		if !ev.DoesChannelExist {
-			logging.Info.Printf("Event %s does not have a channel, creating one", ev.Name)
-			ch, err := discord.Bot.StartEventDiscussion(&ev, fmt.Sprintf("%s - %s", ev.StartDate.Format("01/02"), ev.Name), ":Cosmix:")
-
-			if err != nil {
-				logging.Error.Printf("Could not create channel for event %s. Error: %s", ev.Name, err)
-				continue
-			}
-
-			ev.DoesChannelExist = true
-			ev.ChannelID = &ch.ID
-			err = controllers.SaveEvent(&ev)
-			if err != nil {
-				logging.Error.Printf("Could not save event %s. Error: %s", ev.Name, err)
-				continue
-			}
+		err := StartDiscussionForEvent(&ev)
+		if err != nil {
+			logging.Error.Println(err)
 		}
 	}
 
@@ -211,26 +217,43 @@ func UninviteVolunteerInEvent(service *calendar.Service, volunteer models.Volunt
 	return nil
 }
 
+// Create a calendar event and save it in the database
+// Checks if the event has a calendar event first
+func CreateCalendarEvent(cs *calendar.Service, event *models.CosmoEvent) error {
+	// check if event has a channel
+	if event.DoesCalendarExist {
+		logging.Info.Printf("event %s already has a calendar event. Skipping it", event.Name)
+		return nil
+	}
+
+	logging.Info.Printf("Creating calendar event for event %s", event.Name)
+	calendarEvent, err := cs.CreateEvent(event)
+
+	if err != nil {
+		return err
+	}
+
+	event.CalendarID = &calendarEvent.Id
+	event.DoesCalendarExist = true
+
+	err = controllers.SaveEvent(event)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// Create a calendar event for each upcoming event
+// update the database
 func CrateCalendarEventForAllUpcomingEvents(cs calendar.Service) {
 	logging.Info.Println("Creating calendar events for all upcoming events")
 	events := controllers.AllUpcomingEvents()
 
 	for _, ev := range *events {
-		logging.Info.Printf("Checking if event %s (id %d) has a calendar", ev.Name, ev.ID)
-		calEvent, err := cs.CreateEvent(&ev)
+		err := CreateCalendarEvent(&cs, &ev)
 		if err != nil {
-			logging.Warning.Printf("could not create a calendar event for event : %s err : %s", ev.Name, err)
-			continue
-		}
-
-		// update event with calendar id
-		ev.DoesCalendarExist = true
-		ev.CalendarID = &calEvent.Id
-
-		err = controllers.SaveEvent(&ev)
-		if err != nil {
-			logging.Warning.Printf("could not save event %s", ev.Name)
-			continue
+			logging.Error.Println(err)
 		}
 	}
 }
@@ -360,10 +383,17 @@ func InsertEventByID(cs *calendar.Service, eventID uint) error {
 	// check if event is upcoming
 	if eventInDB.IsUpcoming() {
 		// Start discussion for event
-		err = StartDiscussionForUpcomingEvents()
+		_, err = discord.Bot.StartEventDiscussion(eventInDB, fmt.Sprintf("%s - %s", eventInDB.StartDate.Format("01/02"), eventInDB.Name), ":Cosmix:")
 		if err != nil {
 			logging.Error.Println(err)
 		}
+
+		// create calendar event
+		err = CreateCalendarEvent(cs, eventInDB)
+		if err != nil {
+			logging.Error.Println(err)
+		}
+
 		// get all event’s volunteers
 		volunteers, err := controllers.AllVolunteersByEventID(eventInDB.ID)
 		if err != nil {
@@ -397,6 +427,23 @@ func UpdateEventByID(cs *calendar.Service, eventID uint) error {
 	event, err := api.NocoApi.EventByID(eventID)
 	if err != nil {
 		return err
+	}
+
+	var eventInDB *models.CosmoEvent
+
+	//TODO improve to do everything in a single Api call
+	// get event from db
+	eventInDB, err = controllers.EventByID(eventID)
+	if err != nil {
+		return err
+	}
+	if eventInDB == nil {
+		logging.Warning.Printf("event %d does not exist in db, creating it", eventID)
+		// create it
+		_, err = controllers.CreateOrUpdateEventInDBFromApi(*event)
+		if err != nil {
+			return err
+		}
 	}
 
 	// update volunteersEvent joins

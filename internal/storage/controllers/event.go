@@ -72,31 +72,41 @@ func DeleteChannelEventByIdAndSave(id uint) error {
 
 // load an event in the database from the api response format
 func CreateOrUpdateEventInDBFromApi(event api.EventsResponse) (*models.CosmoEvent, error) {
-
 	logging.Info.Println("Got an event to load into DB")
+	// check if event exists in db
+	var eventInDB *models.CosmoEvent
+	eventInDB, err := EventByID(uint(*event.Id))
+	if err != nil {
+		logging.Info.Println("Event does not exist in DB, creating it")
+		eventInDB = &models.CosmoEvent{}
+	}
 
 	if event.Type == nil {
 		return nil, errors.New("event type is nil, could not load type in db")
 	}
 
+	if event.Start == nil {
+		return nil, errors.New("event start is nil, could not load start in db")
+	}
 	StartDate, err := time.Parse(api.NOCO_TIME_LAYOUT, *event.Start)
 	if err != nil {
 		return nil, err
 	}
 
+	if event.End == nil {
+		return nil, errors.New("event end is nil, could not load end in db")
+	}
 	EndDate, err := time.Parse(api.NOCO_TIME_LAYOUT, *event.End)
 	if err != nil {
 		return nil, err
 	}
 
-	eventInDB := models.CosmoEvent{
-		EventType: config.EventType(*event.Type),
-		Name:      *event.Title, // never nil
-		StartDate: StartDate,
-		EndDate:   EndDate,
-		Model: gorm.Model{
-			ID: uint(*event.Id), // never nil
-		},
+	eventInDB.EventType = config.EventType(*event.Type)
+	eventInDB.Name = *event.Title // never nil
+	eventInDB.StartDate = StartDate
+	eventInDB.EndDate = EndDate
+	eventInDB.Model = gorm.Model{
+		ID: uint(*event.Id), // never nil
 	}
 
 	err = db.DB.Save(&eventInDB).Error
@@ -106,7 +116,7 @@ func CreateOrUpdateEventInDBFromApi(event api.EventsResponse) (*models.CosmoEven
 
 	logging.Info.Println("Loaded event into DB")
 
-	return &eventInDB, nil
+	return eventInDB, nil
 }
 
 // load a list of events in the database from the api response format

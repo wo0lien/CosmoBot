@@ -140,6 +140,7 @@ func (s *Service) Event(event *models.CosmoEvent) (*calendar.Event, error) {
 }
 
 // Create a new event in the calendar
+// Does not update the DB with the google eventID of the event
 func (s *Service) CreateEvent(event *models.CosmoEvent) (*calendar.Event, error) {
 	// create event
 	newEvent := &calendar.Event{
