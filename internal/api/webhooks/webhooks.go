@@ -6,10 +6,9 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/wo0lien/cosmoBot/internal/api"
+	"github.com/wo0lien/cosmoBot/internal/calendar"
 	"github.com/wo0lien/cosmoBot/internal/logging"
-	"github.com/wo0lien/cosmoBot/internal/modules"
-	"github.com/wo0lien/cosmoBot/internal/storage/controllers"
+	"github.com/wo0lien/cosmoBot/internal/workflows"
 )
 
 type WebHookResponseDataRow struct {
@@ -31,8 +30,24 @@ type WebHookResponse struct {
 // Handle websockets
 
 func StartWebHooksHandlingServer() {
+	// Get the current calendar service
+	cs, err := calendar.CalendarService()
+	if err != nil {
+		panic(err)
+	}
 	// event insert can be a new event or a new link from the dashboard
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/", httpHandler(cs))
+
+	// Start the HTTP server on port 8080.
+	fmt.Println("Server is listening on :8080...")
+	if err := http.ListenAndServe(":8080", nil); err != nil {
+		panic(err)
+	}
+}
+
+// wrapper around the http handler to pass the calendar service
+func httpHandler(cs *calendar.Service) func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
 		// Print the request method and path to the console.
 		logging.Info.Printf("Webhook server received %s request for %s\n", r.Method, r.URL.Path)
 
@@ -47,141 +62,32 @@ func StartWebHooksHandlingServer() {
 			return
 		}
 
-		// check if the event is an insert
-		if webhookRes.Type == "records.after.insert" {
-			// check if volunteer
-			if webhookRes.Data.TableName == "Volunteers" {
-				logging.Info.Printf("Received volunteers related webhook.")
-				volunteers, err := api.NocoApi.GetAllVolunteers()
-				if err != nil {
-					logging.Error.Printf("Could not get all volunteers from API. Error: %s", err)
-					return
-				}
-				// check if the volunteer exists in db
-				// if not, add it
-				vol := controllers.GetVolunteerById(webhookRes.Data.Rows[0].ID)
-				if vol == nil {
-					controllers.LoadVolunteersToDBFromAPI(volunteers)
-				}
+		identifierTypeTableName := webhookRes.Type + webhookRes.Data.TableName
+		rowId := webhookRes.Data.Rows[0].ID
 
-				// update volunteer relations
-				err = controllers.LoadVolunteersEventsJoinsFromApi(volunteers)
-				if err != nil {
-					logging.Error.Printf("Could not update volunteers events joins. Error: %s", err)
-					return
-				}
+		logging.Info.Printf("Handling webhook of type %s", identifierTypeTableName)
 
-				// tag all volunteers in all events
-				modules.TagAllVolunteersInAllEvents()
-
-				return
-			}
-
-			// check if event
-			if webhookRes.Data.TableName == "Events" {
-				logging.Info.Printf("Received events related webhook.")
-
-				events, err := api.NocoApi.GetAllEvents()
-				if err != nil {
-					logging.Error.Printf("Could not get all events from API. Error: %s", err)
-					return
-				}
-
-				volunteers, err := api.NocoApi.GetAllVolunteers()
-				if err != nil {
-					logging.Error.Printf("Could not get all volunteers from API. Error: %s", err)
-					return
-				}
-
-				// check if the event exists in db
-				// if not, add it
-				logging.Debug.Printf("Event id: %d", webhookRes.Data.Rows[0].ID)
-				event, err := controllers.EventByID(webhookRes.Data.Rows[0].ID)
-				logging.Debug.Printf("Event: %v", event)
-				if err != nil {
-					logging.Info.Printf("Event does not exist in db. Adding it.\n")
-					controllers.LoadEventsInDBFromAPI(*events)
-					modules.StartDiscussionForUpcomingEvents()
-				}
-
-				// update volunteer relations
-				err = controllers.LoadVolunteersEventsJoinsFromApi(volunteers)
-				if err != nil {
-					logging.Error.Printf("Could not update volunteers events joins. Error: %s", err)
-				}
-
-				// tag all volunteers in all events
-				modules.TagAllVolunteersInAllEvents()
-
-				return
-			}
-
-			logging.Warning.Printf("Received webhook of type %s of unknown table name %s", webhookRes.Type, webhookRes.Data.TableName)
+		switch identifierTypeTableName {
+		case "records.after.insertVolunteers":
+			err = workflows.InsertVolunteerByID(cs, rowId)
+		case "records.after.updateVolunteers":
+			err = workflows.UpdateVolunteerByID(cs, rowId)
+		case "records.after.deleteVolunteers":
+			err = workflows.DeleteVolunteerByID(rowId)
+		case "records.after.insertEvents":
+			err = workflows.InsertEventByID(cs, rowId)
+		case "records.after.updateEvents":
+			err = workflows.UpdateEventByID(cs, rowId)
+		case "records.after.deleteEvents":
+			err = workflows.DeleteEventByID(cs, rowId)
+		default:
+			logging.Warning.Printf("Received webhook of unknown type %s", identifierTypeTableName)
 			return
 		}
-		if webhookRes.Type == "records.after.update" {
-			// check if volunteer
-			if webhookRes.Data.TableName == "Volunteers" {
-				logging.Info.Printf("Received volunteers related webhook.")
-				volunteers, err := api.NocoApi.GetAllVolunteers()
-				if err != nil {
-					logging.Error.Printf("Could not get all volunteers from API. Error: %s", err)
-				}
-				err = controllers.LoadVolunteersToDBFromAPI(volunteers)
-
-				if err != nil {
-					logging.Error.Printf("Could not load volunteers to db. Error: %s", err)
-					return
-				}
-
-				err = controllers.LoadVolunteersEventsJoinsFromApi(volunteers)
-
-				if err != nil {
-					logging.Error.Printf("Could not load volunteers events joins. Error: %s", err)
-					return
-				}
-			}
-
-			// check if event
-			if webhookRes.Data.TableName == "Events" {
-				logging.Info.Printf("Received events related webhook.")
-
-				events, err := api.NocoApi.GetAllEvents()
-				if err != nil {
-					logging.Error.Printf("Could not get all events from API. Error: %s", err)
-					return
-				}
-
-				volunteers, err := api.NocoApi.GetAllVolunteers()
-				if err != nil {
-					logging.Error.Printf("Could not get all volunteers from API. Error: %s", err)
-					return
-				}
-
-				err = controllers.LoadEventsInDBFromAPI(*events)
-				if err != nil {
-					logging.Error.Printf("Could not load events to db. Error: %s", err)
-					return
-				}
-
-				err = controllers.LoadVolunteersEventsJoinsFromApi(volunteers)
-
-				if err != nil {
-					logging.Error.Printf("Could not load volunteers events joins. Error: %s", err)
-					return
-				}
-
-			}
-			return
+		// logging error
+		if err != nil {
+			logging.Warning.Printf("Could not handle webhook of type %s. Error: %s", identifierTypeTableName, err)
 		}
-		logging.Warning.Printf("Received webhook of unknown type %s", webhookRes.Type)
-
-	})
-
-	// Start the HTTP server on port 8080.
-	fmt.Println("Server is listening on :8080...")
-	if err := http.ListenAndServe(":8080", nil); err != nil {
-		panic(err)
 	}
 }
 

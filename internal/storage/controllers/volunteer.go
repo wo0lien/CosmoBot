@@ -26,39 +26,53 @@ func DeleteVolunteerById(id uint) error {
 	return nil
 }
 
-func GetVolunteerById(id uint) *models.Volunteer {
+func VolunteerById(id uint) (*models.Volunteer, error) {
 	var volunteer models.Volunteer
-	db.DB.Preload("Events").First(&volunteer, id)
-	return &volunteer
+	err := db.DB.Preload("Events").First(&volunteer, id).Error
+	return &volunteer, err
 }
 
-func GetVolunteerByDiscordId(id string) *models.Volunteer {
+func VolunteerWithEventsById(id uint) (*models.Volunteer, error) {
+	var volunteer models.Volunteer
+	err := db.DB.Preload("Events").First(&volunteer, id).Error
+	return &volunteer, err
+}
+
+func VolunteerByDiscordId(id string) *models.Volunteer {
 	var volunteer models.Volunteer
 	db.DB.Where("discord_id = ?", id).First(&volunteer)
 	return &volunteer
 }
 
-func LoadVolunteerToDBFromAPI(volunteer *api.VolunteersResponse) error {
+func AllVolunteersByEventID(id uint) (*[]models.Volunteer, error) {
+	var volunteers []models.Volunteer
+	err := db.DB.Model(&models.CosmoEvent{Model: gorm.Model{ID: id}}).Association("Volunteers").Find(&volunteers)
+	return &volunteers, err
+}
+
+func CreateOrUpdateVolunteerToDBFromAPI(volunteer *api.VolunteersResponse) (*models.Volunteer, error) {
 	// check if pointers to field are not empty
 	if volunteer.Firstname == nil || volunteer.Lastname == nil || volunteer.Email == nil || volunteer.Tel == nil {
-		return errors.New("one of the fields is nil, could not load volunteer in db")
+		return nil, errors.New("one of the fields is nil, could not load volunteer in db")
 	}
 
-	db.DB.Create(&models.Volunteer{
+	vol := models.Volunteer{
 		Model:     gorm.Model{ID: uint(*volunteer.Id)}, // never nil
 		FirstName: *volunteer.Firstname,
 		LastName:  *volunteer.Lastname,
 		Email:     *volunteer.Email,
 		Phone:     *volunteer.Tel,
 		DiscordID: volunteer.DiscordId,
-	})
+	}
 
-	return nil
+	err := db.DB.Save(&vol).Error
+
+	return &vol, err
 }
 
-func LoadVolunteersToDBFromAPI(volunteers *[]api.VolunteersResponse) error {
+func CreateOrUpdateVolunteersToDBFromAPI(volunteers *[]api.VolunteersResponse) error {
 	for _, volunteer := range *volunteers {
-		err := LoadVolunteerToDBFromAPI(&volunteer)
+		_, err := CreateOrUpdateVolunteerToDBFromAPI(&volunteer)
 		if err != nil {
 			return err
 		}

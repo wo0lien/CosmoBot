@@ -17,6 +17,7 @@ type discordBot struct {
 }
 
 var BOT_TOKEN string
+var DISCORD_GUILD_ID string
 
 func init() {
 	// load .env file
@@ -28,6 +29,12 @@ func init() {
 	BOT_TOKEN = os.Getenv("BOT_TOKEN")
 	if BOT_TOKEN == "" {
 		logging.Critical.Fatal("BOT_TOKEN env variable is not set")
+	}
+
+	// load env variables BOT_TOKEN
+	DISCORD_GUILD_ID = os.Getenv("DISCORD_GUILD_ID")
+	if DISCORD_GUILD_ID == "" {
+		logging.Critical.Fatal("DISCORD_GUILD_ID env variable is not set")
 	}
 	// start bot
 
@@ -61,7 +68,7 @@ func init() {
 
 	for i, v := range commands {
 		logging.Debug.Printf("Registering command '%v'\n", v.Name)
-		cmd, err := bot.ApplicationCommandCreate(bot.State.User.ID, "1050133146517110855", v)
+		cmd, err := bot.ApplicationCommandCreate(bot.State.User.ID, DISCORD_GUILD_ID, v)
 		if err != nil {
 			log.Panicf("Cannot create '%v' command: %v", v.Name, err)
 		}
@@ -87,7 +94,7 @@ func (d *discordBot) DeleteChannel(channelId string) error {
 func (d *discordBot) Close() {
 	d.Session.Close()
 	for _, v := range d.registreredCommands {
-		err := d.ApplicationCommandDelete(d.State.User.ID, "1050133146517110855", v.ID)
+		err := d.ApplicationCommandDelete(d.State.User.ID, DISCORD_GUILD_ID, v.ID)
 		if err != nil {
 			log.Panicf("Cannot delete '%v' command: %v", v.Name, err)
 		}

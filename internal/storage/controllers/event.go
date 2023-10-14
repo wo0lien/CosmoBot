@@ -9,6 +9,7 @@ import (
 	"github.com/wo0lien/cosmoBot/internal/logging"
 	"github.com/wo0lien/cosmoBot/internal/storage/db"
 	"github.com/wo0lien/cosmoBot/internal/storage/models"
+	"github.com/wo0lien/cosmoBot/internal/utils"
 	"gorm.io/gorm"
 )
 
@@ -22,10 +23,16 @@ func EventByID(id uint) (*models.CosmoEvent, error) {
 	return &event, err
 }
 
-func AllEvents() *[]models.CosmoEvent {
+func EventWithVolunteersByID(id uint) (*models.CosmoEvent, error) {
+	var event models.CosmoEvent
+	err := db.DB.Preload("Volunteers").First(&event, id).Error
+	return &event, err
+}
+
+func AllEvents() (*[]models.CosmoEvent, error) {
 	var events []models.CosmoEvent
-	db.DB.Find(&events)
-	return &events
+	err := db.DB.Find(&events).Error
+	return &events, err
 }
 
 // get all events where end date is greater than today
@@ -33,6 +40,13 @@ func AllUpcomingEvents() *[]models.CosmoEvent {
 	var events []models.CosmoEvent
 	db.DB.Where("end_date > ?", time.Now()).Find(&events)
 	return &events
+}
+
+// Get all upcoming events ids
+func AllUpcomingEventIDs() (*[]uint, error) {
+	var eventIDs []uint
+	err := db.DB.Select("ID").Where("end_date > ?", time.Now()).Find(&eventIDs).Error
+	return &eventIDs, err
 }
 
 // Delete CosmoEvent by id in the database
@@ -57,23 +71,25 @@ func DeleteChannelEventByIdAndSave(id uint) error {
 }
 
 // load an event in the database from the api response format
-func LoadEventInDBFromAPI(event api.EventsResponse) error {
+func CreateOrUpdateEventInDBFromApi(event api.EventsResponse) (*models.CosmoEvent, error) {
 
 	logging.Info.Println("Got an event to load into DB")
 
 	if event.Type == nil {
-		return errors.New("event type is nil, could not load type in db")
-	}
-	StartDate, err := time.Parse(api.NOCO_TIME_LAYOUT, *event.Start)
-	if err != nil {
-		return err
-	}
-	EndDate, err := time.Parse(api.NOCO_TIME_LAYOUT, *event.End)
-	if err != nil {
-		return err
+		return nil, errors.New("event type is nil, could not load type in db")
 	}
 
-	db.DB.Create(&models.CosmoEvent{
+	StartDate, err := time.Parse(api.NOCO_TIME_LAYOUT, *event.Start)
+	if err != nil {
+		return nil, err
+	}
+
+	EndDate, err := time.Parse(api.NOCO_TIME_LAYOUT, *event.End)
+	if err != nil {
+		return nil, err
+	}
+
+	eventInDB := models.CosmoEvent{
 		EventType: config.EventType(*event.Type),
 		Name:      *event.Title, // never nil
 		StartDate: StartDate,
@@ -81,44 +97,40 @@ func LoadEventInDBFromAPI(event api.EventsResponse) error {
 		Model: gorm.Model{
 			ID: uint(*event.Id), // never nil
 		},
-	})
+	}
+
+	err = db.DB.Save(&eventInDB).Error
+	if err != nil {
+		return nil, err
+	}
 
 	logging.Info.Println("Loaded event into DB")
 
-	return nil
-}
-
-// remove an int from a list of ints
-// change the order of the element for performance reasons
-func popIdFromList(ids *[]uint, id uint) {
-	for i, el := range *ids {
-		if el == id {
-			// remove the id from the list
-			// order does not matter
-			(*ids)[i] = (*ids)[len(*ids)-1]
-			*ids = (*ids)[:len(*ids)-1]
-			break
-		}
-	}
+	return &eventInDB, nil
 }
 
 // load a list of events in the database from the api response format
-func LoadEventsInDBFromAPI(events []api.EventsResponse) error {
+func CreateOrUpdateEventsInDBFromApi(events []api.EventsResponse) error {
 	// store a list of Ids
 	var ids []uint
 	// load events ids in the list
-	for _, event := range *AllEvents() {
+	eventsFromDB, err := AllEvents()
+	if err != nil {
+		return err
+	}
+	for _, event := range *eventsFromDB {
 		ids = append(ids, event.ID)
 	}
 
 	for _, event := range events {
 		logging.Debug.Printf("Loading event with id %d\n in db", *event.Id)
-		err := LoadEventInDBFromAPI(event)
+		_, err := CreateOrUpdateEventInDBFromApi(event)
 		if err != nil {
-			return err
+			logging.Warning.Printf("error loading the event %s : %s ", *event.Title, err)
+			continue
 		}
 		// remove the id from the list
-		popIdFromList(&ids, uint(*event.Id))
+		utils.PopIdFromList(&ids, uint(*event.Id))
 	}
 
 	for _, el := range ids {

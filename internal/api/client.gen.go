@@ -53,7 +53,6 @@ type EventsResponse struct {
 	Id                             *int                          `json:"Id,omitempty"`
 	NbVolunteers                   *int                          `json:"NbVolunteers,omitempty"`
 	NeedComm                       *bool                         `json:"NeedComm ? ,omitempty"`
-	Picture                        *[]Attachment                 `json:"Picture,omitempty"`
 	Place                          *string                       `json:"Place,omitempty"`
 	Start                          *string                       `json:"Start,omitempty"`
 	Title                          *string                       `json:"Title,omitempty"`

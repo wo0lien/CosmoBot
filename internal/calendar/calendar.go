@@ -3,17 +3,25 @@ package calendar
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"log"
 	"net/http"
 	"os"
 	"time"
 
+	"github.com/wo0lien/cosmoBot/internal/storage/models"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/calendar/v3"
 	"google.golang.org/api/option"
 )
+
+var service Service
+
+type Service struct {
+	*calendar.Service
+}
 
 // Retrieve a token, saves the token, then returns the generated client.
 func getClient(config *oauth2.Config) *http.Client {
@@ -91,66 +99,204 @@ func saveToken(path string, token *oauth2.Token) {
 	json.NewEncoder(f).Encode(token)
 }
 
-func Main() {
+// Starts the calendar service
+func CalendarService() (*Service, error) {
+	if service.Service != nil {
+		return &service, nil
+	}
+
 	ctx := context.Background()
 	b, err := os.ReadFile("credentials.json")
 	if err != nil {
-		log.Fatalf("Unable to read client secret file: %v", err)
+		return nil, err
 	}
 
 	// If modifying these scopes, delete your previously saved token.json.
 	config, err := google.ConfigFromJSON(b, calendar.CalendarScope)
 	if err != nil {
-		log.Fatalf("Unable to parse client secret file to config: %v", err)
+		return nil, err
 	}
 	client := getClient(config)
 
 	srv, err := calendar.NewService(ctx, option.WithHTTPClient(client))
 	if err != nil {
-		log.Fatalf("Unable to retrieve Calendar client: %v", err)
+		return nil, err
 	}
 
-	t := time.Now().Format(time.RFC3339)
-	events, err := srv.Events.List("primary").ShowDeleted(false).
-		SingleEvents(true).TimeMin(t).MaxResults(10).OrderBy("startTime").Do()
-	if err != nil {
-		log.Fatalf("Unable to retrieve next ten of the user's events: %v", err)
+	return &Service{srv}, err
+}
+
+// Get event in the calendar
+func (s *Service) Event(event *models.CosmoEvent) (*calendar.Event, error) {
+	// checks if calendar exists
+	if !event.DoesCalendarExist {
+		return nil, errors.New("calendar event does not exist")
 	}
-	fmt.Println("Upcoming events:")
-	if len(events.Items) == 0 {
-		fmt.Println("No upcoming events found.")
-	} else {
-		for _, item := range events.Items {
-			date := item.Start.DateTime
-			if date == "" {
-				date = item.Start.Date
-			}
-			fmt.Printf("%v (%v) %v\n", item.Summary, date, item.Id)
+	ev, err := s.Events.Get("primary", *event.CalendarID).Do()
+	if err != nil {
+		return nil, err
+	}
+	return ev, nil
+}
+
+// Create a new event in the calendar
+func (s *Service) CreateEvent(event *models.CosmoEvent) (*calendar.Event, error) {
+	// create event
+	newEvent := &calendar.Event{
+		Summary: event.Name,
+		// TODO
+		Location:    "",
+		Description: "",
+		Start: &calendar.EventDateTime{
+			DateTime: event.StartDate.Format(time.RFC3339),
+			TimeZone: "Europe/Paris",
+		},
+		End: &calendar.EventDateTime{
+			DateTime: event.EndDate.Format(time.RFC3339),
+			TimeZone: "Europe/Paris",
+		},
+	}
+
+	// insert event
+	ev, err := s.Events.Insert("primary", newEvent).Do()
+	if err != nil {
+		return nil, err
+	}
+
+	return ev, nil
+}
+
+// Update event in the calendar
+func (s *Service) UpdateEvent(event *models.CosmoEvent) (*calendar.Event, error) {
+	// checks if calendar exists
+	if !event.DoesCalendarExist {
+		return nil, errors.New("calendar event does not exist")
+	}
+
+	// retrieve event
+	ev, err := s.Events.Get("primary", *event.CalendarID).Do()
+	if err != nil {
+		return nil, err
+	}
+
+	// update event
+	ev.Summary = event.Name
+	ev.Start.DateTime = event.StartDate.Format(time.RFC3339)
+	ev.End.DateTime = event.EndDate.Format(time.RFC3339)
+
+	// update event
+	updatedEvent, err := s.Events.Update("primary", *event.CalendarID, ev).SendUpdates("all").Do()
+	if err != nil {
+		return nil, err
+	}
+
+	return updatedEvent, nil
+}
+
+// Update attendees of an event in the calendar
+// Do not update the event in the database
+// Replace all attendees of the event by the new ones
+func (s *Service) UpdateEventAttendees(event *models.CosmoEvent, volunteers *[]models.Volunteer) (*calendar.Event, error) {
+	// checks if calendar exists
+	if !event.DoesCalendarExist {
+		return nil, errors.New("calendar event does not exist")
+	}
+
+	// retrieve event
+	ev, err := s.Events.Get("primary", *event.CalendarID).Do()
+	if err != nil {
+		return nil, err
+	}
+
+	// remove all attendees
+	ev.Attendees = []*calendar.EventAttendee{}
+
+	// update attendees
+	for _, volunteer := range *volunteers {
+		// add volunteer to attendees
+		newAttendee := &calendar.EventAttendee{
+			Email: volunteer.Email,
+		}
+		ev.Attendees = append(ev.Attendees, newAttendee)
+	}
+
+	// update event
+	updatedEvent, err := s.Events.Update("primary", *event.CalendarID, ev).SendUpdates("all").Do()
+	if err != nil {
+		return nil, err
+	}
+
+	return updatedEvent, nil
+}
+
+func (s *Service) AddEventAttendee(event *models.CosmoEvent, volunteer *models.Volunteer) (*calendar.Event, error) {
+	// checks if calendar exists
+	if !event.DoesCalendarExist {
+		return nil, errors.New("calendar event does not exist")
+	}
+
+	// retrieve event
+	ev, err := s.Events.Get("primary", *event.CalendarID).Do()
+	if err != nil {
+		return nil, err
+	}
+
+	// append attendee to event list
+	ev.Attendees = append(ev.Attendees, &calendar.EventAttendee{
+		Email: volunteer.Email,
+	})
+
+	// update event
+	updatedEvent, err := s.Events.Update("primary", *event.CalendarID, ev).SendUpdates("all").Do()
+	if err != nil {
+		return nil, err
+	}
+
+	return updatedEvent, nil
+}
+
+func (s *Service) RemoveEventAttendee(event models.CosmoEvent, volunteer models.Volunteer) (*calendar.Event, error) {
+	// checks if calendar exists
+	if !event.DoesCalendarExist {
+		return nil, errors.New("calendar event does not exist")
+	}
+
+	// retrieve event
+	ev, err := s.Events.Get("primary", *event.CalendarID).Do()
+	if err != nil {
+		return nil, err
+	}
+
+	// remove attendee from event list
+	for i, attendee := range ev.Attendees {
+		if attendee.Email == volunteer.Email {
+			ev.Attendees = append(ev.Attendees[:i], ev.Attendees[i+1:]...)
+			break
 		}
 	}
 
-	// eventID := "<event_id>"
-	// calendarID := "primary"
+	// update event
+	updatedEvent, err := s.Events.Update("primary", *event.CalendarID, ev).SendUpdates("all").Do()
+	if err != nil {
+		return nil, err
+	}
 
-	// // Retrieve the event
-	// event, err := srv.Events.Get(calendarID, eventID).Do()
-	// if err != nil {
-	// 	log.Fatalf("Unable to retrieve event: %v", err)
-	// }
+	return updatedEvent, nil
+}
 
-	// // Add an attendee to the event
-	// newAttendee := &calendar.EventAttendee{
-	// 	Email: "antoine.merle@insa-lyon.fr",
-	// }
-	// event.Attendees = append(event.Attendees, newAttendee)
+// Delete event in the calendar
+// Do not delete the event in the database neither the calendarID of the event or flag
+func (s *Service) DeleteEvent(event *models.CosmoEvent) error {
+	// checks if calendar exists
+	if !event.DoesCalendarExist {
+		return errors.New("calendar event does not exist")
+	}
 
-	// event.Visibility = "default"
+	// delete event
+	err := s.Events.Delete("primary", *event.CalendarID).Do()
+	if err != nil {
+		return err
+	}
 
-	// // Update the event
-	// updatedEvent, err := srv.Events.Update(calendarID, eventID, event).SendUpdates("all").Do()
-	// if err != nil {
-	// 	log.Fatalf("Unable to update event: %v", err)
-	// }
-
-	// fmt.Printf("Event updated: %s\n", updatedEvent.Id)
+	return nil
 }
