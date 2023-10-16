@@ -5,12 +5,13 @@ WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
 COPY . .
-RUN CGO_ENABLED=1 GOOS=linux go build -o cosmoBot
+RUN CGO_ENABLED=1 GOOS=linux go build -o cosmobot
 
-FROM gcr.io/distroless/base-debian12
-WORKDIR /app
+FROM alpine:3 as prod
 # copy app
-COPY --from=builder /app/cosmoBot /app/cosmoBot
+WORKDIR /app
+COPY --from=builder /app/cosmobot .
 
 EXPOSE 8080
-ENTRYPOINT [ "/app/cosmoBot" ]
+
+CMD ["/bin/sh", "-c", "./cosmobot"]
