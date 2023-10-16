@@ -10,6 +10,8 @@ import (
 	"os"
 	"time"
 
+	"github.com/wo0lien/cosmoBot/internal/config"
+	"github.com/wo0lien/cosmoBot/internal/logging"
 	"github.com/wo0lien/cosmoBot/internal/storage/models"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
@@ -101,6 +103,13 @@ func saveToken(path string, token *oauth2.Token) {
 
 // Starts the calendar service
 func CalendarService() (*Service, error) {
+	// check calendar enabled
+	if !config.Config.EnableCalendar {
+		logging.Info.Println("Calendar disabled")
+		// TODO add custom error that would be handled by the caller differently
+		return nil, nil
+	}
+
 	if service.Service != nil {
 		return &service, nil
 	}
@@ -128,6 +137,9 @@ func CalendarService() (*Service, error) {
 
 // Get event in the calendar
 func (s *Service) Event(event *models.CosmoEvent) (*calendar.Event, error) {
+	if service.Service == nil {
+		return nil, errors.New("calendar service not started")
+	}
 	// checks if calendar exists
 	if !event.DoesCalendarExist {
 		return nil, errors.New("calendar event does not exist")
@@ -142,6 +154,9 @@ func (s *Service) Event(event *models.CosmoEvent) (*calendar.Event, error) {
 // Create a new event in the calendar
 // Does not update the DB with the google eventID of the event
 func (s *Service) CreateEvent(event *models.CosmoEvent) (*calendar.Event, error) {
+	if service.Service == nil {
+		return nil, errors.New("calendar service not started")
+	}
 	// create event
 	newEvent := &calendar.Event{
 		Summary: event.Name,
@@ -169,6 +184,9 @@ func (s *Service) CreateEvent(event *models.CosmoEvent) (*calendar.Event, error)
 
 // Update event in the calendar
 func (s *Service) UpdateEvent(event *models.CosmoEvent) (*calendar.Event, error) {
+	if service.Service == nil {
+		return nil, errors.New("calendar service not started")
+	}
 	// checks if calendar exists
 	if !event.DoesCalendarExist {
 		return nil, errors.New("calendar event does not exist")
@@ -198,6 +216,9 @@ func (s *Service) UpdateEvent(event *models.CosmoEvent) (*calendar.Event, error)
 // Do not update the event in the database
 // Replace all attendees of the event by the new ones
 func (s *Service) UpdateEventAttendees(event *models.CosmoEvent, volunteers *[]models.Volunteer) (*calendar.Event, error) {
+	if service.Service == nil {
+		return nil, errors.New("calendar service not started")
+	}
 	// checks if calendar exists
 	if !event.DoesCalendarExist {
 		return nil, errors.New("calendar event does not exist")
@@ -231,6 +252,9 @@ func (s *Service) UpdateEventAttendees(event *models.CosmoEvent, volunteers *[]m
 }
 
 func (s *Service) AddEventAttendee(event *models.CosmoEvent, volunteer *models.Volunteer) (*calendar.Event, error) {
+	if service.Service == nil {
+		return nil, errors.New("calendar service not started")
+	}
 	// checks if calendar exists
 	if !event.DoesCalendarExist {
 		return nil, errors.New("calendar event does not exist")
@@ -257,6 +281,9 @@ func (s *Service) AddEventAttendee(event *models.CosmoEvent, volunteer *models.V
 }
 
 func (s *Service) RemoveEventAttendee(event models.CosmoEvent, volunteer models.Volunteer) (*calendar.Event, error) {
+	if service.Service == nil {
+		return nil, errors.New("calendar service not started")
+	}
 	// checks if calendar exists
 	if !event.DoesCalendarExist {
 		return nil, errors.New("calendar event does not exist")
@@ -288,6 +315,9 @@ func (s *Service) RemoveEventAttendee(event models.CosmoEvent, volunteer models.
 // Delete event in the calendar
 // Do not delete the event in the database neither the calendarID of the event or flag
 func (s *Service) DeleteEvent(event *models.CosmoEvent) error {
+	if service.Service == nil {
+		return errors.New("calendar service not started")
+	}
 	// checks if calendar exists
 	if !event.DoesCalendarExist {
 		return errors.New("calendar event does not exist")

@@ -139,7 +139,7 @@ func TagVolunteerInEvent(volunteer *models.Volunteer, event *models.CosmoEvent, 
 	return nil
 }
 
-func InviteVolunteersToAllUpcomingEvents(cs calendar.Service) {
+func InviteVolunteersToAllUpcomingEvents(cs *calendar.Service) {
 	// get all volunteers events joins
 	joins, err := controllers.AllUpcomingVolunteersEvents()
 	if err != nil {
@@ -164,7 +164,7 @@ func InviteVolunteersToAllUpcomingEvents(cs calendar.Service) {
 				continue
 			}
 
-			err = InviteVolunteerInEvent(&cs, volunteer, event)
+			err = InviteVolunteerInEvent(cs, volunteer, event)
 			if err != nil {
 				logging.Error.Println(err)
 				continue
@@ -246,12 +246,12 @@ func CreateCalendarEvent(cs *calendar.Service, event *models.CosmoEvent) error {
 
 // Create a calendar event for each upcoming event
 // update the database
-func CrateCalendarEventForAllUpcomingEvents(cs calendar.Service) {
+func CrateCalendarEventForAllUpcomingEvents(cs *calendar.Service) {
 	logging.Info.Println("Creating calendar events for all upcoming events")
 	events := controllers.AllUpcomingEvents()
 
 	for _, ev := range *events {
-		err := CreateCalendarEvent(&cs, &ev)
+		err := CreateCalendarEvent(cs, &ev)
 		if err != nil {
 			logging.Error.Println(err)
 		}
@@ -531,7 +531,6 @@ func RefreshAll(cs *calendar.Service) {
 	TagAllVolunteersInAllUpcomingEvents()
 
 	// calendar init
-	CrateCalendarEventForAllUpcomingEvents(*cs)
-	InviteVolunteersToAllUpcomingEvents(*cs)
-
+	CrateCalendarEventForAllUpcomingEvents(cs)
+	InviteVolunteersToAllUpcomingEvents(cs)
 }

@@ -39,13 +39,15 @@ type ResponseMethod struct {
 //go:generate go run config_gen/schema.gen.go
 
 type ConfigStruct struct {
-	schema                    string                       `json:"$schema",omitempty`
 	ResponseMethodByEventType map[EventType]ResponseMethod `json:"responseMethodByEventType"`
+	EnableCalendar            bool                         `json:"enableCalendar"`
 }
 
 // load config from config.json file in the root directory
 func LoadConfig() (*ConfigStruct, error) {
-	var config ConfigStruct
+	config := ConfigStruct{
+		EnableCalendar: false, // default value
+	}
 
 	// check if config.json exists
 	_, err := os.Stat("data/config.json")
