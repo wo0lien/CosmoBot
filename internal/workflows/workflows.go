@@ -383,9 +383,11 @@ func InsertEventByID(cs *calendar.Service, eventID uint) error {
 	// check if event is upcoming
 	if eventInDB.IsUpcoming() {
 		// Start discussion for event
-		_, err = discord.Bot.StartEventDiscussion(eventInDB, fmt.Sprintf("%s - %s", eventInDB.StartDate.Format("01/02"), eventInDB.Name), ":Cosmix:")
-		if err != nil {
-			logging.Error.Println(err)
+		if !eventInDB.DoesChannelExist {
+			_, err = discord.Bot.StartEventDiscussion(eventInDB, fmt.Sprintf("%s - %s", eventInDB.StartDate.Format("01/02"), eventInDB.Name), ":Cosmix:")
+			if err != nil {
+				logging.Error.Println(err)
+			}
 		}
 
 		// create calendar event
